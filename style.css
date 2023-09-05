@@ -1,0 +1,392 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+*{
+
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--font-text);
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+
+}
+
+:root{
+
+    --cor-nav-pri:rgb(255, 255, 255);
+    --cor-nav-sec:rgb(248, 248, 247);
+    --cor-main-lateral: rgb(255, 255, 255);
+    --cor-main-meio: rgb(255, 255, 255);
+
+
+
+    --tamanho_lateral_slide: 400%;
+    --tamanho_vertical_slide: 470px;
+
+    --tamanho_lateral_slide_img: 1920px;
+    --tamanho_vertical_slide_img: 470px;
+
+    --color-radio: rgba(99, 99, 99, 0.379);  /*Cor dos Três Btns do Slide*/
+    --color-dropdown: rgba(0, 0, 0, 0.587); /*Cor do dropdown*/
+
+
+    --margin-left:0px;
+    --marfin-right:0px;
+
+    --font-text: 16px;
+    --font-title:18px;
+    --font-drop:15px;
+}
+
+
+
+
+
+/*-------------HEADER-------------*/
+
+
+header{
+
+}
+
+.nav-container{
+    display: inline-flex;
+    justify-content: center;
+    
+    padding-top: 15px;
+
+    width: 100%;
+    height: 70px;
+
+    background-color: var(--cor-nav-pri);
+
+
+    font-size: var(--font-text);
+}
+
+.nav-pri{
+    display: inline-flex;
+    justify-content: space-between;
+
+    width: 1200px;
+    
+}
+
+.img-logo-princ img{
+    width: 100px;
+    height: 69px;
+
+
+}
+
+.img-logo-princ{
+    overflow: hidden;
+}
+
+.div-pri{
+    margin: auto;
+}
+/*-------------Segundo menu-------------*/
+
+.dropdown_div{
+    display: flex;
+    justify-content: center;
+
+
+    background-color: var(--cor-nav-sec);
+    width: 100%;
+
+
+    border-top: 0.5px solid rgba(255, 255, 255, 0.77);
+}
+
+/* Estilize o dropdown */
+
+.dropdown button:hover{
+
+}
+
+.dropdown{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/* Estilize o botão do dropdown */
+.dropdown button {
+    background-color: var(--cor-pri);
+    border-radius: 5px;
+    
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilize o conteúdo dos itens*/
+.dropdown-content  {
+    display: none;
+    position: absolute;
+    background-color: aliceblue;
+
+    box-shadow: 0px -1px 6px 0px rgba(0,0,0,0.2);
+
+    padding: 5px;
+
+    min-width: 160px;
+
+    z-index: 1;
+}
+
+/*.dropdown-content #img-jd{
+    width: 50px;
+    height: 50px;
+}*/
+
+/* Estilize os itens do dropdown */
+.dropdown-content a {
+
+    padding: 12px 16px;
+    color: rgba(68, 68, 68, 0.885);
+    text-decoration: none;
+    font-size: var(--font-drop);
+    display: block;
+}
+
+.dropdown-content a:hover {
+    color: rgb(40, 40, 40);
+}
+
+/* Mude a cor de fundo do item quando o mouse passar por cima */
+.dropdown-content a:hover {
+
+}
+
+/* Mostre o conteúdo do dropdown quando o mouse passar por cima do botão */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+.mg p1{
+    color: rgb(115, 115, 219);
+    border-bottom:2px solid rgb(115, 115, 219);
+    margin-left: 2px;
+    
+}
+
+.mg p2{
+    color: rgb(71, 169, 71);
+    border-bottom:2px solid rgb(71, 169, 71);
+    margin-left: 2px;
+}
+
+/*-------------Segundo menu fim-------------*/
+
+
+
+/*--------------Slide Carrosel Inicio --------------*/
+.slide{
+    overflow: hidden;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+
+    padding: 0 !important;
+}
+
+.slide-content{
+    width: var(--tamanho_lateral_slide);
+    height: var(--tamanho_vertical_slide);
+    display: flex;
+}
+
+.slide-content input{
+    display: none;
+}
+
+.slide-box{
+    width: 25%;
+    height: auto;
+    background-color: #0f0f0f;
+    position: relative;
+    text-align: center;
+
+    overflow-y: hidden;
+
+    transition: 1s;
+
+}
+
+.slide-box img{  
+    height: var(--tamanho_vertical_slide_img);
+    width: var(--tamanho_lateral_slide_img);
+
+    object-fit: cover;
+
+}
+
+.nav-manual, .nav-auto{
+    position: absolute;
+    width: 100%;
+    top: 35rem;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-manual .manual-btn, .nav-auto div{
+    border: 1px solid var(--color-radio);
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.nav-manual .manual-btn:not(:last-child), .nav-auto div:not(:last-child){
+    margin-right: 15px;
+}
+
+.nav-manual .manual-btn:hover{
+    transition: 0.2s;
+    background-color: var(--color-radio-hover);
+}
+
+#radio1:checked ~ .nav-auto .auto1{
+    background-color:var(--color-radio);
+}
+
+#radio2:checked ~ .nav-auto .auto2{
+    background-color:var(--color-radio);
+}
+
+#radio3:checked ~ .nav-auto .auto3{
+    background-color:var(--color-radio);
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0%;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -25%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -50%;
+}
+/*-------------- Slide Carrosel FIM --------------*/
+
+/*-------------HEADER FIM-------------*/
+
+.novidades{
+    background-color: var(--cor-main-lateral);
+
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.container-main{
+    text-align: center;
+
+    width: 1210px;
+    height: 1000px;
+    background-color:var(--cor-main-meio);
+}   
+
+
+.container-produt{
+    display: inline-flex;
+}
+
+.novidades-container{
+    padding-top: 20px;
+}
+
+
+
+.novid-um{
+    width: 300px;
+    margin-left:25px;
+    margin-right: 25px;
+    margin-top: 50px;
+    padding: 10px;
+    border-radius: 15px;
+
+    background-color: aliceblue;
+}
+
+.novid-um h3{
+    margin-bottom: 30px;
+}
+
+.novid-um p{
+   
+}
+
+.novid-um .desc{
+    text-align: justify;
+}
+
+.novid-um #p-desc {
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+
+.novid-um img{
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+
+.novid-um input{
+    width: 100%;
+    height: 50px;
+
+    background-color: rgb(16, 145, 16);
+    
+    border-radius: 10px;
+
+}
+
+.novid-um input:hover{
+    background-color: rgb(6, 117, 6);
+
+}
+
+
+
+.wpp-container{
+
+    
+    text-align: center;
+    position:fixed;
+    left: 95%;
+    top: 75%;
+
+}
+
+.wpp-container img{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 7px;
+    margin-top: 7px;
+}
+
+.wpp-container img:hover{
+    width: 60px;
+    height: 60px;
+}
+
+
+
+.container-ig{
+    display: block;
+    height: 200px;
+    width: 500px;
+   
+}
