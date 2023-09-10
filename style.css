@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
+
 *{
 
     font-family: 'Roboto', sans-serif;
@@ -15,7 +16,7 @@
 :root{
 
     --cor-nav-pri:rgb(255, 255, 255);
-    --cor-nav-sec:rgb(248, 248, 247);
+    --cor-nav-sec:rgb(255, 255, 255);
     --cor-main-lateral: rgb(255, 255, 255);
     --cor-main-meio: rgb(255, 255, 255);
 
@@ -24,7 +25,7 @@
     --tamanho_lateral_slide: 400%;
     --tamanho_vertical_slide: 470px;
 
-    --tamanho_lateral_slide_img: 1920px;
+    --tamanho_lateral_slide_img: 100%;
     --tamanho_vertical_slide_img: 470px;
 
     --color-radio: rgba(99, 99, 99, 0.379);  /*Cor dos Três Btns do Slide*/
@@ -39,7 +40,12 @@
     --font-drop:15px;
 }
 
+@media screen and (max-width: 1600px) {
+    .novidades .container-main .wpp-container{
+        top: 600px;
+    }
 
+}
 
 
 
@@ -164,6 +170,7 @@ header{
 /* Mostre o conteúdo do dropdown quando o mouse passar por cima do botão */
 .dropdown:hover .dropdown-content {
     display: block;
+   
 }
 
 
@@ -301,6 +308,32 @@ header{
     display: inline-flex;
 }
 
+.a-wpp{
+
+
+    background-color: rgb(51, 204, 51);
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+
+ 
+}
+
+.a-wpp a{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    color: #0f0f0f;
+}
+
+.a-wpp:hover{
+    background-color: rgb(49, 171, 49);
+}
+
 .novidades-container{
     padding-top: 20px;
 }
@@ -366,7 +399,7 @@ header{
     text-align: center;
     position:fixed;
     left: 95%;
-    top: 75%;
+    top: 780px;
 
 }
 
