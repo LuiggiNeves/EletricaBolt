@@ -1,0 +1,20 @@
+{
+    "name": "eletrica-bolt/eletrica-bolt",
+    "require": {
+        "php-di/php-di": "^6.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app//"
+        },
+        "files": [
+            "app/source/Config.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Fábio Augusto Rodrigues",
+            "email": "69022068+FabioAugustoRodrigues@users.noreply.github.com"
+        }
+    ]
+}
