@@ -19,6 +19,9 @@ class ControllerRoutes extends ControllerAbstract
         // Usuario
         $this->addRoute("criar-usuario", "app\\controller\\http\\API\\UsuarioController", "criar", false, false, null);
         $this->addRoute("login", "app\\controller\\http\\API\\UsuarioController", "login", false, false, null);
+
+        // Categoria
+        $this->addRoute("listar-categorias", "app\\controller\\http\\API\\CategoriaController", "listar", false, false, null);
     }
 
     public function addRoute($route, $class, $method, $needsAuth, $needsPermission, $codePermission = null)

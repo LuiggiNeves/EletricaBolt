@@ -25,11 +25,25 @@ include('../../layout/auth.php');
 
             <div class="col-sm-12 col-md-10 rounded bg-white border shadow-sm" style="height: 400px;">
                 <div class="row p-4">
-                    <div class="col-sm-12 col-md-12">
+                    <div class="col-sm-12 col-md-12 mb-2">
                         <h3>
                             <i class="bi bi-grid"></i>
                             Categorias
                         </h3>
+                    </div>
+
+                    <div class="col-sm-12 col-md-12 mb-2">
+                        <table class="table tabela-categorias">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -40,8 +54,13 @@ include('../../layout/auth.php');
     include('../../layout/footer.php');
     ?>
 
+    <!-- Arquivos JS -->
+    <script src="<?php echo HOST_APP; ?>/app/view/js/categorias.js?v=<?php echo VERSION; ?>"></script>
+
     <script>
         $(".divCategorias").addClass("btn-item-navbar-selecionado");
+
+        listar();
     </script>
 
 </body>
