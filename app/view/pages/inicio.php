@@ -41,10 +41,20 @@ include('layout/head.php');
             </div>
         </section>
 
-        <div class="album py-5 bg-light">
+        <div class="album py-5">
             <div class="container">
-
-
+                <div class="row justify-content-center">
+                    <div class="col-sm-12 col-md-10 border rounded p-4">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-3">
+                                <img src="https://cdn.pixabay.com/photo/2017/03/15/20/31/control-cabinet-2147370_1280.jpg" class="w-100 rounded" />
+                            </div>
+                            <div class="col-sm-12 col-md-9">
+                                <h4>Disjuntor 125 Amperes Tripolar Curva D Para Padrão Energia</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

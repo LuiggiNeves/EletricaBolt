@@ -15,6 +15,9 @@ class ControllerRoutes extends ControllerAbstract
     public function __construct()
     {
         self::$routes = array();
+
+        // Usuario
+        $this->addRoute("criar-usuario", "app\\controller\\http\\API\\UsuarioController", "criar", false, false, null);
     }
 
     public function addRoute($route, $class, $method, $needsAuth, $needsPermission, $codePermission = null)
