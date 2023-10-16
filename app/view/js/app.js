@@ -34,7 +34,7 @@ function desativarGifLoader(div_do_gif, div_para_ativar) {
     $(div_para_ativar).show();
 }
 
-function ajaxDinamico(url, tipo, dados, sucesso, token = "") {
+function ajaxDinamico(url, tipo, dados, sucesso, token = "", error = null) {
     $.ajax({
         url: url,
         type: tipo,
@@ -52,9 +52,8 @@ function ajaxDinamico(url, tipo, dados, sucesso, token = "") {
             // Depuração
             // console.log(response);
 
-            if ($("#realizaLogin").length > 0) {
-                $("#realizaLogin").html("Acessar");
-                $("#realizaLogin").removeAttr("disabled");
+            if (error != null) {
+                error();
             }
 
             let mensagem = response["responseJSON"][0];

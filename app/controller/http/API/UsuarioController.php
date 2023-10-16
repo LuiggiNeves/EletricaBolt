@@ -29,4 +29,19 @@ class UsuarioController extends ControllerAbstract
             201
         );
     }
+
+    public function login($dados)
+    {
+        $loginFoiRealizadoComSucesso = $this->usuarioService->login($dados["email"], $dados["senha"]);
+
+        return $this->respondeComDados(
+            [
+                "dados" => [
+                    "login_realizado" => $loginFoiRealizadoComSucesso
+                ],
+                "mensagem" => "Login realizado com sucesso"
+            ],
+            200
+        );
+    }
 }

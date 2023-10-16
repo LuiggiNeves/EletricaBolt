@@ -27,4 +27,25 @@ class UsuarioRepository
         Conexao::desconecta();
         return $id;
     }
+
+    public function lePorEmail(string $email): ?Usuario
+    {
+        $sql = "SELECT * FROM usuarios WHERE email = :email";
+        $stmt = Conexao::getConexao()->prepare($sql);
+        $stmt->bindValue(':email', $email);
+        $stmt->execute();
+        Conexao::desconecta();
+
+        $result = $stmt->fetch();
+
+        if (!$result) {
+            return null;
+        }
+
+        return Usuario::create()
+            ->setId($result["id"])
+            ->setNome($result["nome"])
+            ->setEmail($result["email"])
+            ->setSenha($result["senha"]);
+    }
 }

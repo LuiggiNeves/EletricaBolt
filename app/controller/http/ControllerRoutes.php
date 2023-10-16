@@ -18,6 +18,7 @@ class ControllerRoutes extends ControllerAbstract
 
         // Usuario
         $this->addRoute("criar-usuario", "app\\controller\\http\\API\\UsuarioController", "criar", false, false, null);
+        $this->addRoute("login", "app\\controller\\http\\API\\UsuarioController", "login", false, false, null);
     }
 
     public function addRoute($route, $class, $method, $needsAuth, $needsPermission, $codePermission = null)
@@ -48,45 +49,17 @@ class ControllerRoutes extends ControllerAbstract
                 try {
                     return $container->call([self::$routes[$route]->getClass(), self::$routes[$route]->getMethod()], array($post));
                 } catch (DomainHttpException $domainHttpException) {
-                    $container->call(
-                        ["app\\domain\\service\\NotificacaoUsuarioService", "geraNotificacaoDeLogDeErro"],
-                        [
-                            $domainHttpException->getMessage() .
-                                "<br><br>Arquivo: " . $domainHttpException->getFile() .
-                                (isset($_SESSION["usuario_logado"]) ? "<br><br>Usuário: " . unserialize($_SESSION["usuario_logado"])->getNome() : "")
-                        ]
-                    );
-                    $container->call(["app\\domain\\service\\HistoricoUtilizacaoService", "inserir"], [$domainHttpException->getMessage(), "[ SISTEMA LOG ]"]);
-
                     return $this->respondeComDados(
                         $domainHttpException->getMessage(),
                         $domainHttpException->getHttpStatusCode()
                     );
                 } catch (DomainException $domainException) {
-                    $container->call(
-                        ["app\\domain\\service\\NotificacaoUsuarioService", "geraNotificacaoDeLogDeErro"],
-                        [
-                            $domainException->getMessage() .
-                                "<br><br>Arquivo: " . $domainException->getFile() .
-                                (isset($_SESSION["usuario_logado"]) ? "<br><br>Usuário: " . unserialize($_SESSION["usuario_logado"])->getNome() : "")
-                        ]
-                    );
-                    $container->call(["app\\domain\\service\\HistoricoUtilizacaoService", "inserir"], [$domainException->getMessage(), "[ SISTEMA LOG ]"]);
-
                     return $this->respondeComDados(
                         $domainException->getMessage(),
                         500
                     );
                 } catch (Exception $exception) {
-                    $container->call(
-                        ["app\\domain\\service\\NotificacaoUsuarioService", "geraNotificacaoDeLogDeErro"],
-                        [
-                            $exception->getMessage() .
-                                "<br><br>Arquivo: " . $exception->getFile() .
-                                (isset($_SESSION["usuario_logado"]) ? "<br><br>Usuário: " . unserialize($_SESSION["usuario_logado"])->getNome() : "")
-                        ]
-                    );
-                    $container->call(["app\\domain\\service\\HistoricoUtilizacaoService", "inserir"], [$exception->getMessage(), "[ SISTEMA LOG ]"]);
+                    var_dump($exception->getMessage());die();
 
                     return $this->respondeComDados(
                         "Houve um erro durante a operação. Contate o administrador do sistema.",
