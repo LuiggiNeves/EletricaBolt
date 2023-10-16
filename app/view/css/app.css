@@ -6,5 +6,29 @@
 
 .backgroundTema {
     background-color: #5c1414;
-    border: 2px solid #470f0f
+    border: 2px solid #470f0f;
+}
+
+.btn-selecionar-item-navbar{
+    color: black;
+    cursor: pointer;
+}
+
+.btn-selecionar-item-navbar:hover {
+    background-color: #dadada;
+    color: black;
+    transition: 0.3s;
+}
+
+.btn-item-navbar-selecionado {
+    background-color: #5c1414;
+    border: 2px solid #470f0f;
+    color: white;
+}
+
+.btn-item-navbar-selecionado:hover{
+    background-color: #470f0f;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
 }
