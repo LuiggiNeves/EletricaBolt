@@ -19,7 +19,7 @@ class CategoriaService extends ServiceAbstract
     public function criar(array $dados): array
     {
         if ($this->lePorNome($dados["nome"]) != null) {
-            throw new DomainHttpException("Nome de categoria já está em uso.", 404);
+            throw new DomainHttpException("Nome de categoria já está em uso.", 409);
         }
 
         $categoria = Categoria::create()->setNome($dados["nome"]);
