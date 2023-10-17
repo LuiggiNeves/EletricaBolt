@@ -24,7 +24,7 @@ class CategoriaController extends ControllerAbstract
                 "dados" => [
                     "categoria" => $this->categoriaService->criar($dados)
                 ],
-                "mensagem" => ""
+                "mensagem" => "Categoria cadastrada com sucesso!"
             ],
             201
         );

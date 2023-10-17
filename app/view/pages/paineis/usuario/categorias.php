@@ -33,6 +33,14 @@ include('../../layout/auth.php');
                     </div>
 
                     <div class="col-sm-12 col-md-12 mb-2">
+                        <div class="row mt-4">
+                            <div class="col-sm-12 col-md-3">
+                                <button class="btn btn-sm w-100 backgroundTema text-white" id="modalNovaCategoria">Nova categoria</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-12 mb-2">
                         <table class="table tabela-categorias">
                             <thead>
                                 <tr>
@@ -41,7 +49,7 @@ include('../../layout/auth.php');
                                 </tr>
                             </thead>
                             <tbody>
-                                
+
                             </tbody>
                         </table>
                     </div>
@@ -49,6 +57,11 @@ include('../../layout/auth.php');
             </div>
         </div>
     </div>
+
+    <!-- Modal para visualizar ranking de unidade -->
+    <?php
+    include('../../layout/modals/categoria_cadastrar.php');
+    ?>
 
     <?php
     include('../../layout/footer.php');
