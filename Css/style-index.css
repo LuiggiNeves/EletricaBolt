@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+/**/
+
+*{
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--font-text);
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+:root{
+    --font-color-two: rgb(87, 87, 87);
+
+    --color-btn-search:rgb(255, 226, 39);
+
+
+
+    --lateral-site:1200px;
+}
+
+/*HEADER*/
+/*header{
+
+}*/
+/*Header container de todos os itens do cabeçalho*/
+.header-container{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+/*Primeira divisão da nav-header*/
+
+
+
+
+.social-ico-container{
+    width: var(--lateral-site);
+
+    display: inline-flex;
+
+    margin-top: 6px;
+    margin-bottom: 10px;
+
+    color: var(--font-color-two);
+}
+.social-generic{
+
+    margin-top: auto;
+    margin-bottom: auto; 
+}
+
+.social-ico-img{
+    display: inline-flex;
+
+}
+
+.ico-generic{
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.social-ico-img img{
+
+    width: 30px;
+}
+
+.social-name-center{
+    text-align: center;
+    margin: auto;
+
+}
+
+.social-name-partnes a{
+    text-decoration: none;
+    color: var(--font-color-two);
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+header hr{
+    color: rgba(53, 53, 53, 0.613);
+}
+
+
+
+/*Segunda divisão da nav-header*/
+
+
+
+#menu-search-name{
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.ico-user{
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.menu-search-container{
+    width: var(--lateral-site);
+    display: flex;
+
+    margin-bottom: 10px;
+
+}
+.menu-search{
+    width: var(--lateral-site);
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    padding: 5px;
+}
+
+/* Estilo do ícone de pesquisa */
+.search-icon {
+    color: #999;
+    padding: 5px;
+}
+
+/* Estilo da caixa de entrada de texto */
+.search-input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 350px;
+}
+
+/* Estilo do botão de pesquisa */
+.search-button {
+    background-color: var(--color-btn-search);
+    color: #272727;
+    border: none;
+    border-radius: 25px;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.search-container{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ico-user-container{
+    display: inline-flex;
+
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+.ico-user-container img{
+    width: 30px;
+    height: 30px;
+
+}
+
+.ico-user-generic{
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+
+
+/*Terceira divisão da nav-header*/
+
+.nav-container{
+    width: var(--lateral-site);
+    display: flex;
+
+    margin-bottom: 10px;
+}
+
+.nav-box{
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+.nav-item-generic{
+    margin: 1px;
+}
+/*FIM HEADER*/
+
+
+/*MAIN*/
+.main-container{
+
+}
+/*carrosel*/
+.carrosel-container{
+    width: 100%;
+    height: 350px;
+
+    background-color: #525252;
+}
+
+/*Fim carrosel*/
+
+/*Apresentção de produtos*/
+
+.main-product{
+
+}
+
+.main-product-container{
+
+}
+
+.main-product-catalago-box{
+
+}
+
+.main-product-filter-product{
+    
+}
+
