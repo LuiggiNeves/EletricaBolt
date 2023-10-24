@@ -288,8 +288,8 @@ main a{
 
 .catalago-box-container{
     width: 1000px;
-
-    display: inline-flex;
+    height: 100%;
+    display: flex;
     justify-content: center;
 }
 
@@ -297,6 +297,7 @@ main a{
 
 .catalago-box{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .catalago-product-base{
