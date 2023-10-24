@@ -41,7 +41,17 @@
 /*Primeira divisão da nav-header*/
 
 
+.light-text{
+    animation: colorLight 5s infinite; /* Duração de 5 segundos de mudança de cor*/
+}
 
+@keyframes colorLight {
+    0% { color: rgb(0, 0, 0); } /* Cor inicial */
+    25% { color: rgb(229, 214, 0); } /* Nova cor em 25%*/
+    50% { color: rgb(243, 203, 1); } /* Nova cor em 50%*/
+    75% { color: rgb(221, 3, 3); } /* Nova cor em 75%*/
+    100% { color: rgb(0, 0, 0); } /* Cor final*/
+}
 
 .social-ico-container{
     width: var(--lateral-site);
