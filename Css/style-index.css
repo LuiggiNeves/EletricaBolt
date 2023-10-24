@@ -12,8 +12,13 @@
 
 :root{
     --font-color-two: rgb(87, 87, 87);
+    --font-color-tree:rgba(87, 87, 87, 0.729);
 
     --color-btn-search:rgb(255, 226, 39);
+    --color-btn-product:rgb(255, 226, 39);
+    --color-btn-product-hv:rgb(205, 178, 0);
+
+    --color-border-div:#4747478a;
 
 
 
@@ -94,8 +99,14 @@ header hr{
 
 
 #menu-search-name{
-    margin-bottom: auto;
-    margin-top: auto;
+
+}
+
+#menu-search-name img{
+    width: 55px;
+    height: 50px;
+
+    margin-left: 20%;
 }
 
 .ico-user{
@@ -107,14 +118,14 @@ header hr{
     width: var(--lateral-site);
     display: flex;
 
-    margin-bottom: 10px;
+    margin-bottom: 2px;
 
 }
 .menu-search{
     width: var(--lateral-site);
     display: flex;
-    margin-top: 25px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
 .search-bar {
@@ -123,6 +134,7 @@ header hr{
     border: 2px solid #ccc;
     border-radius: 25px;
     padding: 5px;
+    margin-top: 13px;
 }
 
 /* Estilo do ícone de pesquisa */
@@ -192,10 +204,27 @@ header hr{
 .nav-item-generic{
     margin: 1px;
 }
+
+
+
+
+
+
+
+
+
+
+
 /*FIM HEADER*/
 
 
 /*MAIN*/
+
+main a{
+    color: black;
+    text-decoration: none;
+}
+
 .main-container{
 
 }
@@ -212,11 +241,13 @@ header hr{
 /*Apresentção de produtos*/
 
 .main-product{
-
+    display: flex;
+    justify-content: center;
 }
 
 .main-product-container{
-
+    width: var(--lateral-site);
+    display: inline-flex;
 }
 
 .main-product-catalago-box{
@@ -225,5 +256,106 @@ header hr{
 
 .main-product-filter-product{
     
+}
+
+.filter-product{
+    padding: 5px;
+    margin-top: 30px;
+    border: 1px solid var(--color-border-div);
+    border-radius: 5px;
+}
+
+.filter-product > p,h1{
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.filter-product-two{
+    padding: 5px;
+    margin-top: 20px;
+    border: 1px solid var(--color-border-div);
+    border-radius: 5px;
+}
+
+.filter-product-two h1{
+    margin-bottom: 5px;
+}
+
+.catalago-box-container{
+    width: 100%;
+
+    display: inline-flex;
+    justify-content: center;
+}
+
+/*BASE PRODUTOS*/
+
+.catalago-product-base{
+    
+}
+
+.container-base-product{
+    width: 270px;
+    border: 1px solid var(--color-border-div);
+    border-radius: 5px;
+    padding: 5px;
+
+    margin-top: 90px;
+}
+
+.product-img img{
+    width: 120px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.product-img p{
+
+    text-align: center;
+}
+
+
+.product-name{
+    text-align: center;
+}
+
+.product-cod{
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    color: var(--font-color-tree);
+    font-size: 15px;
+}
+
+/*.product-price-wpp{
+
+}
+
+.product-price-wpp button{
+   
+}
+
+
+.product-add-orc{
+
+}
+
+.product-add-orc button{
+    
+}*/
+
+.generic-btn-product button{
+    width: 100%;
+    height: 40px;
+    margin-top: 6px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+    background-color: var(--color-btn-product);
+    color: var(--font-color-two);
+
+}
+
+.generic-btn-product button:hover{
+    background-color: var(--color-btn-product-hv);
 }
 
