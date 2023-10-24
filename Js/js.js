@@ -1,8 +1,4 @@
-function toggleDropdown() {
-    var dropdown = document.getElementById("dropdown-menu");
-    if (dropdown.style.display === "block") {
-        dropdown.style.display = "none";
-    } else {
-        dropdown.style.display = "block";
-    }
-}
+document.getElementById('menu-button').addEventListener('click', function () {
+    document.getElementById('menu').classList.toggle('active');
+    document.querySelector('.content').classList.toggle('active');
+});

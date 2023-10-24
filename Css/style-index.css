@@ -292,6 +292,48 @@ main a{
     border-radius: 5px;
 }
 
+.menu {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s;
+}
+
+.menu.active {
+    height: auto;
+}
+
+#menu-button {
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+}
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-list li {
+    margin: 10px 0;
+}
+.menu-list li:last-child{
+    margin-bottom: 20px;
+}
+
+.menu-list li a {
+    text-decoration: none;
+    color: var(--font-color-two); /* Azul */
+}
+
+.content {
+    transition: margin-top 0.3s;
+    margin-top: 0;
+}
+
+.content.active {
+    margin-top: 100px; /* Ajuste a altura do menu conforme necessário */
+}
+
 .filter-product-two h1{
     margin-bottom: 5px;
 }
@@ -308,11 +350,13 @@ main a{
 .catalago-box{
     display: flex;
     flex-wrap: wrap;
+    margin-top: 5px;
 }
 
 .catalago-product-base{
     margin-left: 10px;
     margin-right: 10px;
+    margin-top: 6px;
 }
 
 .container-base-product{
@@ -379,4 +423,14 @@ main a{
 .generic-btn-product button:hover{
     background-color: var(--color-btn-product-hv);
 }
+
+
+
+
+
+
+
+
+
+
 
