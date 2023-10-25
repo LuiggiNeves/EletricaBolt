@@ -105,6 +105,8 @@ header hr{
 
 
 
+
+
 /*Segunda divisão da nav-header*/
 
 
@@ -287,6 +289,7 @@ main a{
 
 .filter-product-two{
     padding: 5px;
+    width: 150px;
     margin-top: 20px;
     border: 1px solid var(--color-border-div);
     border-radius: 5px;
@@ -303,7 +306,7 @@ main a{
     height: auto;
 }
 
-#menu-button {
+.menu-button {
     cursor: pointer;
     background-color: #fff;
     border: none;
@@ -333,6 +336,22 @@ main a{
 .content.active {
     margin-top: 100px; /* Ajuste a altura do menu conforme necessário */
 }
+.menu-button{
+    width: 100%;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid rgb(219, 180, 24);
+}
+
+.menu-button-style-two{
+    border-bottom: 2px solid rgb(196, 30, 30);
+}
+.menu-button-style-tree{
+    border-bottom: 2px solid rgb(29, 90, 203);
+}
+
+
 
 .filter-product-two h1{
     margin-bottom: 5px;
@@ -342,6 +361,7 @@ main a{
     width: 1000px;
     height: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -349,6 +369,7 @@ main a{
 
 .catalago-box{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     margin-top: 5px;
 }
@@ -411,13 +432,34 @@ main a{
 
 .generic-btn-product button{
     width: 100%;
-    height: 40px;
+    min-height: 30px;
+    font-weight: bold;
+    font-size: 15px;
     margin-top: 6px;
     margin-bottom: 3px;
     border-radius: 5px;
     background-color: var(--color-btn-product);
     color: var(--font-color-two);
+    border: none;
 
+}
+
+.btn-bag{
+
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.btn-bag img{
+    width: 32px;
+}
+.btn-bag button{
+    width: 32px;
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
 }
 
 .generic-btn-product button:hover{
@@ -432,5 +474,41 @@ main a{
 
 
 
+footer{
+    margin-top: 200px;
+}
 
+.footer-container{
+    width: 100%;
 
+    display: flex;
+    justify-content: center;
+}
+
+.footer-container p{
+    text-align: justify;
+}
+
+.box-footer-img img{
+    width: 90px;
+    
+}
+.footer-dev-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.footer-dev a{
+    text-decoration: none;
+    color: black;
+}
+.footer-dev a:hover{
+    color: #f8ba00;
+}
+.footer-fix-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}

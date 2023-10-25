@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Elétrica Bolt</title>
     <link rel="stylesheet" href="Css/style-index.css">
+    <link rel="shortcut icon" href="Assets/logos/bolt-ico32x32.png" type="image/x-icon">
 </head>
 <body>
 
@@ -33,7 +34,7 @@
                     </div>
 
                     <div class="social-name-partnes social-generic">
-                        <a href="#">Localização</a>
+                        <a href="https://www.bing.com/ck/a?!&&p=3055a31e23cdc5c3JmltdHM9MTY5ODEwNTYwMCZpZ3VpZD0yNDJlYmY1ZS04NDc3LTZmYzktMzBhOS1hYzQ1ODUwZTZlMmYmaW5zaWQ9NTgzOA&ptn=3&hsh=3&fclid=242ebf5e-8477-6fc9-30a9-ac45850e6e2f&u=a1L21hcHM_Jm1lcGk9MTM0fn5Vbmtub3dufkFkZHJlc3NfTGluayZ0eT0xOCZxPUVsZXRyaWNhJTIwQm9sdCZzcz15cGlkLllONzk5M3g4NDcxNjUwMzkxMTM3NDEyMzE2JnBwb2lzPS0yMi41OTYwNDgzNTUxMDI1NF8tNDcuNDIxNDA1NzkyMjM2MzNfRWxldHJpY2ElMjBCb2x0X1lONzk5M3g4NDcxNjUwMzkxMTM3NDEyMzE2fiZjcD0tMjIuNTk2MDQ4fi00Ny40MjE0MDYmdj0yJnNWPTE&ntb=1" target="_blank">Localização</a>
                         <a href="#">Parceiros</a>
                     </div>
 
@@ -46,7 +47,7 @@
                 <div class="menu-search-container">
                     <div class="menu-search">
                         <div id="menu-search-name">
-                            <h3><img src="Assets/logos/bolt-logo-parcial.png" alt=""></h3>
+                            <h3><img src="Assets/logos/bolt-logo-am.png" alt=""></h3>
                             <h3>Elétrica Bolt</h3>
                         </div>
                         <div class="search-container">
@@ -138,8 +139,8 @@
                             <div class="filter-product-two">
                                 <div><h1>Filtro</h1></div>
                                 <div>
-                                    <button id="menu-button">Elétrica</button>
-                                    <div id="menu" class="menu">
+                                    <button class="menu-button" data-target="menu-1"><div  class="menu-name-exp">Elétrica</div></button>
+                                    <div class="menu menu-1">
                                         <ul class="menu-list">
                                             <li><a href="#">Disjuntores</a></li>
                                             <li><a href="#">Cabos</a></li>
@@ -151,36 +152,45 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div><p><a href="#">Ferramentas</a></p></div>
-                                <div><p><a href="#">Hidraulica</a></p></div>
+                                <div>
+                                    <button class="menu-button menu-button-style-two" data-target="menu-2"><div class="menu-name-exp2">Ferramentas</div></button>
+                                    <div class="menu menu-2">
+                                        <ul class="menu-list">
+                                            <li><a href="#">Alicates</a></li>
+                                            <li><a href="#">Multimetro</a></li>
+                                            <li><a href="#">Trenas</a></li>
+                                            <li><a href="#">Fenda & Philips</a></li>
+                                            <li><a href="#">Outros</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+ 
+                                <div>
+                                    <button class="menu-button menu-button-style-tree" data-target="menu-3"><div class="menu-name-exp3">Hidraulica</div></button>
+                                    <div class="menu menu-3">
+                                        <ul class="menu-list">
+                                            <li><a href="#">Canos</a></li>
+                                            <li><a href="#">Joelhos</a></li>
+                                            <li><a href="#">Luvas</a></li>
+                                            <li><a href="#">Caps</a></li>
+                                            <li><a href="#">Outros</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
 
                     </div>
                     <div class="catalago-box-container">
- 
                         <div class="catalago-box">
                             <div class="catalago-product-base">
                                 <div class="container-base-product">
-                                    <div class="product-img"><p><img src="Assets/img/product/wago img teste.jpg" alt=""></p></div>
-                                    <div class="product-name"><p>Conector Wago 2P 6mm²  </p></div>
-                                    <div class="product-cod"><p>cód: 55555</p></div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
-                                    <div class="product-add-orc generic-btn-product"><p><button>Por no carrinho</button></p></div>
-                                </div>
-                            </div>
-
-
-
-                        <div class="catalago-box">
-                            <div class="catalago-product-base">
-                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
                                     <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
                                     <div class="product-name"><p>Conector Duplo 2P 0.75mm² à 4mm²  </p></div>
                                     <div class="product-cod"><p>cód: 55555</p></div>
                                     <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
-                                    <div class="product-add-orc generic-btn-product"><p><button>Por no carrinho</button></p></div>
                                 </div>
                             </div>
                         </div>
@@ -190,23 +200,22 @@
                         <div class="catalago-box">
                             <div class="catalago-product-base">
                                 <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
                                     <div class="product-img"><p><img src="Assets/img/product/wago img teste.jpg" alt=""></p></div>
                                     <div class="product-name"><p>Conector Wago 2P 6mm²  </p></div>
                                     <div class="product-cod"><p>cód: 55555</p></div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
-                                    <div class="product-add-orc generic-btn-product"><p><button>Por no carrinho</button></p></div>
-                                </div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>                                </div>
                             </div>
                         </div>
 
                         <div class="catalago-box">
                             <div class="catalago-product-base">
                                 <div class="container-base-product">
-                                    <div class="product-img"><p><img src="Assets/img/product/wago img teste.jpg" alt=""></p></div>
-                                    <div class="product-name"><p>Conector Wago 2P 6mm²  </p></div>
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Duplo 2P 0.75mm² à 4mm²  </p></div>
                                     <div class="product-cod"><p>cód: 55555</p></div>
                                     <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
-                                    <div class="product-add-orc generic-btn-product"><p><button>Por no carrinho</button></p></div>
                                 </div>
                             </div>
                         </div>
@@ -269,11 +278,35 @@
     </main>
 
     <footer>
-        <div>
-            <div>
-                
+        <hr>
+        <div class="footer-container">
+            <div class="box-footer">
+                <div class="box-footer-img">
+                    <img src="Assets/logos/bolt-logo-completa-am.jpg" alt="">
+                    <h4>Elétrica Bolt</h4>
+                </div>
             </div>
         </div>
+
+        <div class="footer-fix-container">
+            <div>
+                <h4>Whatsapp (19)98117-5834   |   Fixo 38888-0808</h4>
+            </div>
+        </div>
+
+        <div class="footer-dev-container">
+            <div class="footer-dev">
+                <p>Desenvolvido por <strong><a href="#">LF SOFTWARE.</a></strong></p>
+            </div>
+        </div>
+
+        <div class="footer-fix-container">
+            <div>
+                <p><strong>Rua</strong> Monge Beneditino Dom Bernardo Botelho Nunes <strong>142</strong>-Limeira, SP, 13482-131 </p>
+            </div>
+        </div>
+
+
     </footer>
     
 <script src="Js/js.js"></script>
