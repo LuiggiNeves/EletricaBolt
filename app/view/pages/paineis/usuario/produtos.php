@@ -31,17 +31,49 @@ include('../../layout/auth.php');
                             Produtos
                         </h3>
                     </div>
+
+                    <div class="col-sm-12 col-md-12 mb-2">
+                        <div class="row mt-4">
+                            <div class="col-sm-12 col-md-3">
+                                <button class="btn btn-sm w-100 backgroundTema text-white" id="modalNovoProduto">Novo produto</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-12 mb-2">
+                        <table class="table tabela-produtos">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Modal para visualizar ranking de unidade -->
+    <?php
+    include('../../layout/modals/produto_cadastrar.php');
+    ?>
+
     <?php
     include('../../layout/footer.php');
     ?>
 
+    <!-- Arquivos JS -->
+    <script src="<?php echo HOST_APP; ?>/app/view/js/produtos.js?v=<?php echo VERSION; ?>"></script>
+
     <script>
         $(".divProdutos").addClass("btn-item-navbar-selecionado");
+
+        listar();
     </script>
 
 </body>
