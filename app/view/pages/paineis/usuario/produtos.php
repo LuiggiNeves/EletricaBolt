@@ -23,7 +23,7 @@ include('../../layout/auth.php');
                 </span>
             </div>
 
-            <div class="col-sm-12 col-md-10 rounded bg-white border shadow-sm" style="height: 400px;">
+            <div class="col-sm-12 col-md-10 rounded bg-white border shadow-sm" style="height: 800px;">
                 <div class="row p-4">
                     <div class="col-sm-12 col-md-12">
                         <h3>
@@ -40,18 +40,15 @@ include('../../layout/auth.php');
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-12 mb-2">
-                        <table class="table tabela-produtos">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Nome</th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                    <div class="col-sm-12 col-md-12 mb-2 mt-4">
+                        <div class="alert alert-success" role="alert" id="qtdProdutos">
+                            
+                        </div>
+                    </div>
 
-                            </tbody>
-                        </table>
+                    <div class="col-sm-12 col-md-12 mb-2">
+                        <div class="tabela-produtos row">
+                        </div>
                     </div>
                 </div>
             </div>

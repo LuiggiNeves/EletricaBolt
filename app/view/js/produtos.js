@@ -9,22 +9,35 @@ function listar() {
 
             let produtos = dados["produtos"];
 
-            $(".tabela-produtos tbody tr").remove();
+            $(".tabela-produtos .produto-encontrado").remove();
+
+            let textoQtdProdutos = "";
+            if (produtos.length == 0) {
+                textoQtdProdutos = "Nenhum produto encontrado";
+            } else if (produtos.length == 1) {
+                textoQtdProdutos = "<b>1</b> produto encontrado";
+            } else {
+                textoQtdProdutos = "<b>" + produtos.length + "</b> produtos encontrado";
+            }
+
+            $("#qtdProdutos").html(
+                textoQtdProdutos
+            );
 
             for (let i = 0; i < produtos.length; i++) {
-                $(".tabela-produtos tbody").append(
+                $(".tabela-produtos").append(
                     `
-                        <tr>
-                            <td style="width: 80%">
-                                `+ produtos[i]["nome"] + `
-                            </td>
-
-                            <td style="width: 20%">
-                                <button class="btn btn-sm backgroundTema text-white w-100">
-                                    Visualizar
-                                </button>
-                            </td>
-                        </tr>
+                        <div class='produto-encontrado mx-2 mb-1 col-sm-10 col-md-2 border p-3' id_produto='`+ produtos[i]["id"] + `'>
+                            <div class='col-sm-12 col-md-12 p-3 mb-1'>
+                                <img src='../app/files/entities/`+ produtos[i]["imagem_path"] + `' class='w-100 rounded' height='120px'/>
+                            </div>
+                            <div class='col-sm-12 col-md-10 mb-1'>
+                                <b>`+ produtos[i]["nome"] + `</b>
+                            </div>
+                            <div class='col-sm-12 col-md-12'>
+                                <button class='btn btn-sm backgroundTema text-white w-100 btn-visualizar-produto'>Visualizar</button>
+                            </div>
+                        </div>
                     `
                 );
             }
