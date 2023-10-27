@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elétrica Bolt</title>
     <link rel="stylesheet" href="Css/style-index.css">
-    <link rel="shortcut icon" href="Assets/logos/bolt-ico32x32.png" type="image/x-icon">
+    <link rel="shortcut icon" href="Assets/logos/bolt-192x192.png" type="image/x-icon">
 </head>
 <body>
 
@@ -116,10 +116,19 @@
         <div class="main-container">
 
             <div class="carrosel-container">
-                <div class="carrosel-box">
-                    <div>
-                        
+                <div class="slideshow-container">
+                    <!-- Slides -->
+                    <div class="mySlides">
+                      <img src="Assets/img/slides/banner-1.png" style="width:100%">
                     </div>
+                  
+                    <div class="mySlides">
+                      <img src="Assets/img/slides/banner-2.png" style="width:100%">
+                    </div>
+                  
+                    <!-- Botões para avançar e retroceder manualmente -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
             </div>
 
@@ -220,64 +229,309 @@
                             </div>
                         </div>
 
-                        <div class="catalago-box">
-                            <div class="catalago-product-base">
-                                <div class="container-base-product">
-                                    <div class="product-img"><p><img src="Assets/img/product/wago img teste.jpg" alt=""></p></div>
-                                    <div class="product-name"><p>Conector Wago 2P 6mm²  </p></div>
-                                    <div class="product-cod"><p>cód: 55555</p></div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
-                                    <div class="product-add-orc generic-btn-product"><p><button>Por no carrinho</button></p></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="catalago-box">
-                            <div class="catalago-product-base">
-                                <div class="container-base-product">
-                                    <div class="product-img"><p><img src="Assets/img/product/wago img teste.jpg" alt=""></p></div>
-                                    <div class="product-name"><p>Conector Wago 2P 6mm²  </p></div>
-                                    <div class="product-cod"><p>cód: 55555</p></div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
-                                    <div class="product-add-orc generic-btn-product"><p><button>Por no carrinho</button></p></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="catalago-box">
-                            <div class="catalago-product-base">
-                                <div class="container-base-product">
-                                    <div class="product-img"><p><img src="Assets/img/product/wago img teste.jpg" alt=""></p></div>
-                                    <div class="product-name"><p>Conector Wago 2P 6mm²  </p></div>
-                                    <div class="product-cod"><p>cód: 55555</p></div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
-                                    <div class="product-add-orc generic-btn-product"><p><button>Por no carrinho</button></p></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="catalago-box">
-                            <div class="catalago-product-base">
-                                <div class="container-base-product">
-                                    <div class="product-img"><p><img src="Assets/img/product/wago img teste.jpg" alt=""></p></div>
-                                    <div class="product-name"><p>Conector Wago 2P 6mm²  </p></div>
-                                    <div class="product-cod"><p>cód: 55555</p></div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
-                                    <div class="product-add-orc generic-btn-product"><p><button>Por no carrinho</button></p></div>
-                                </div>
-                            </div>
-                        </div>
                         
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/wago img teste.jpg" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Wago 2P 6mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Duplo 2P 0.75mm² à 4mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/wago img teste.jpg" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Wago 2P 6mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Duplo 2P 0.75mm² à 4mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/wago img teste.jpg" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Wago 2P 6mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Duplo 2P 0.75mm² à 4mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/wago img teste.jpg" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Wago 2P 6mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Duplo 2P 0.75mm² à 4mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/wago img teste.jpg" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Wago 2P 6mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Duplo 2P 0.75mm² à 4mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/wago img teste.jpg" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Wago 2P 6mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Duplo 2P 0.75mm² à 4mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/wago img teste.jpg" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Wago 2P 6mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Duplo 2P 0.75mm² à 4mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/wago img teste.jpg" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Wago 2P 6mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Duplo 2P 0.75mm² à 4mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/wago img teste.jpg" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Wago 2P 6mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Duplo 2P 0.75mm² à 4mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/wago img teste.jpg" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Wago 2P 6mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Duplo 2P 0.75mm² à 4mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/wago img teste.jpg" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Wago 2P 6mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Duplo 2P 0.75mm² à 4mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/wago img teste.jpg" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Wago 2P 6mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalago-box">
+                            <div class="catalago-product-base">
+                                <div class="container-base-product">
+                                    <div class="product-add-orc btn-bag"><p><button><img src="Assets/ico/ico-user/cart-product.png" alt=""></button></p></div>
+                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
+                                    <div class="product-name"><p>Conector Duplo 2P 0.75mm² à 4mm²  </p></div>
+                                    <div class="product-cod"><p>cód: 55555</p></div>
+                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
+                                </div>
+                            </div>
+                        </div>
+
 
 
 
                     </div>
                 </div>
             </div>
+
         </div>
     </main>
 
     <footer>
+        
+        <div class="container-maps">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17522.835279870113!2d-47.424479728267265!3d-22.589485758683427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c881102109f7d5%3A0xa02316d1e6c0f085!2sEletrica%20Bolt!5e0!3m2!1spt-BR!2sbr!4v1698365687170!5m2!1spt-BR!2sbr" 
+            width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>  
         <hr>
         <div class="footer-container">
             <div class="box-footer">
