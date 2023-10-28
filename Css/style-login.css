@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+/**/
+
+*{
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--font-text);
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+:root{
+    --font-color-two: rgb(87, 87, 87);
+    --font-color-tree:rgba(87, 87, 87, 0.729);
+    --color-back:rgba(159, 159, 159, 0.825) ;
+    --color-btn-search:rgb(255, 228, 20);
+    --color-btn-product:rgb(255, 181, 20);
+    --color-btn-product-hv:rgb(205, 178, 0);
+
+    --color-border-div:#4747478a;
+
+    --color-box-login:#ffc005e9;
+    --color-btn: rgb(255, 255, 255);
+
+    --lateral-site:1200px;
+}
+
+body{
+    background-color: var(--color-back);
+}
+
+section{
+    flex-direction: column;  
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 50px;
+}
+
+h1{
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 10%;
+}
+
+.box_img{
+    display: flex;
+    background-color: white;
+    border-top-left-radius: 150px;
+    border-top-right-radius:150px ;
+
+    margin: auto;
+    height: auto;
+    width: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.box_img img{
+    display: flex;
+    margin: auto;
+    
+
+    width: 100px;
+    height: 100px;
+
+    
+}
+
+.box-login{
+    background-color: #fff;
+
+    padding: 20px;
+
+   
+    width: 450px;
+    border-radius: 5px;
+
+}
+
+.box-login label{
+    color: black;
+    background-color: none;
+
+}
+
+.box-login #email, #senha{
+    display: flex;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    border-radius: 5px;
+    padding: 3px;
+
+    color: black;
+
+
+    width: 100%;
+    height: 30px;
+
+}
+
+input{
+    background-color: #fff;
+}
+
+#button_ok {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30%;
+    margin-bottom: 10px;
+    width:100%;
+    height: 50px;
+    border-radius: 5px;
+    background-color: var(--color-btn-product);
+}
+
+#button_ok:hover{
+    background-color: var(--color-btn-product-hv);
+    color: #fff;
+}
+
+.box a{
+    text-align: right;
+    text-decoration: none;
+    font-size: 0.8em;
+    
+}
