@@ -600,3 +600,38 @@ footer{
     justify-content: center;
     margin-top: 10px;
 }
+
+@media screen and (max-width: 1020px){
+    
+    .social-name-partnes, .social-ico-img, .ico-user-two, .ico-user-tree, .container-header-two, #hr-two{
+        display: none;
+    }
+    .menu-search-name  h3{
+        text-align: center;
+    }
+
+    .menu-search{
+        display: block;
+    }
+
+    .menu-search-name h3{
+        text-align: center;
+    }
+    #text-menu-bolt{
+        text-align: center;
+    }
+
+    .search-container{
+        width: 350px;
+    }
+
+    .search-button{
+        padding: 8px;
+        width: 166px;
+    }
+
+    .catalago-box-container{
+        width: 550px;
+    }
+
+}
