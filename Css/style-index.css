@@ -429,7 +429,7 @@ main a{
 }
 
 .container-base-product{
-    width: 270px;
+    width: 260px;
     border: 1px solid var(--color-border-div);
     border-radius: 5px;
     padding: 5px;
@@ -601,37 +601,56 @@ footer{
     margin-top: 10px;
 }
 
-@media screen and (max-width: 1020px){
-    
-    .social-name-partnes, .social-ico-img, .ico-user-two, .ico-user-tree, .container-header-two, #hr-two{
+@media screen and (max-width: 600px){
+    .container-header-two, .hr-two, .social-ico-img, .social-name-partnes {
         display: none;
-    }
-    .menu-search-name  h3{
-        text-align: center;
     }
 
     .menu-search{
         display: block;
     }
 
-    .menu-search-name h3{
+    .ico-user{
+        display: flex;
+        margin-top: 10px;
         text-align: center;
+    }
+
+    .ico-user-container{
+        width: 100%;
+        justify-content: space-between;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .menu-search-name{
+        text-align: center;
+    }
+
+    .h2-img-pos{
+        margin-left: 31%;
     }
     #text-menu-bolt{
         text-align: center;
     }
 
     .search-container{
-        width: 350px;
+        width: 430px;
     }
 
     .search-button{
-        padding: 8px;
-        width: 166px;
+        width: 130px;
+        text-align: center;
+    }
+    /*MAIN*/
+    .main-product-catalago-box{
+        display: none;
+    }
+    .container-base-product{
+        width: 180px;
     }
 
-    .catalago-box-container{
-        width: 550px;
+    .footer-fix-container{
+        text-align: center;
     }
-
 }
