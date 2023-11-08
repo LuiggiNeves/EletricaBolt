@@ -4,6 +4,14 @@ include('layout/head.php');
 
 <link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/pagina_incial.css?v=<?php echo VERSION; ?>" />
 
+<style>
+    @media(max-width: 570px) {
+        #logoBolt {
+            width: 20% !important;
+        }
+    }
+</style>
+
 </head>
 
 <body>
@@ -39,8 +47,8 @@ include('layout/head.php');
 
             <div class="container-fluid">
                 <div class="row justify-content-center">
-                    <div class="col-sm-1 col-md-1 mb-2">
-                        <img src="<?php echo HOST_APP; ?>/app/view/images/bolt-logo-am.png" class="w-100">
+                    <div class="col-sm-1 col-md-1 mb-2 text-center">
+                        <img src="<?php echo HOST_APP; ?>/app/view/images/bolt-logo-am.png" class="w-100" id="logoBolt">
                     </div>
                     <div class="col-sm-12 col-md-12 text-center">
                         <h3 id="text-menu-bolt">Elétrica Bolt</h3>
