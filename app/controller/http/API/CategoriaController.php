@@ -57,4 +57,20 @@ class CategoriaController extends ControllerAbstract
             200
         );
     }
+
+    public function altera($dados)
+    {
+        $id = intval($dados["id"]);
+        $nome = $dados["nome"];
+
+        return $this->respondeComDados(
+            [
+                "dados" => [
+                    "atualizado" => $this->categoriaService->altera($id, $nome)
+                ],
+                "mensagem" => "Categoria atualizada com sucesso!"
+            ],
+            200
+        );
+    }
 }

@@ -37,6 +37,22 @@ class CategoriaService extends ServiceAbstract
         return $this->categoriaRepository->listar();
     }
 
+    public function altera(int $id, string $nome): bool
+    {
+        $categoria = $this->lePorId($id);
+        if ($categoria == null) {
+            throw new DomainHttpException("Categoria não encontrada", 404);
+        }
+
+        $categoriaEncontradaPorNome = $this->lePorNome($nome);
+        if ($categoriaEncontradaPorNome != null && $categoriaEncontradaPorNome->getId() != $id) {
+            throw new DomainHttpException("Nome de categoria já está em uso.", 409);
+        }
+
+        $categoria->setNome($nome);
+        return $this->categoriaRepository->altera($categoria);
+    }
+
     public function leDadosPorId(int $id): array
     {
         $categoria = $this->lePorId($id);

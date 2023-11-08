@@ -9,12 +9,12 @@ use app\domain\model\Usuario;
 
 class CategoriaRepository
 {
-    public function criar(Categoria $usuario): int
+    public function criar(Categoria $categoria): int
     {
         $sql = "INSERT INTO categorias (nome)
                 VALUES (:nome)";
         $stmt = Conexao::getConexao()->prepare($sql);
-        $stmt->bindValue(':nome', $usuario->getNome());
+        $stmt->bindValue(':nome', $categoria->getNome());
         $result = $stmt->execute();
 
         if ($result == 0) {
@@ -80,5 +80,21 @@ class CategoriaRepository
         }
 
         return $result;
+    }
+
+    public function altera(Categoria $categoria): int
+    {
+        $sql = "UPDATE categorias SET nome = :nome WHERE id = :id";
+        $stmt = Conexao::getConexao()->prepare($sql);
+        $stmt->bindValue(':nome', $categoria->getNome());
+        $stmt->bindValue(':id', $categoria->getId());
+        $result = $stmt->execute();
+        Conexao::desconecta();
+
+        if (!$result) {
+            return false;
+        }
+
+        return true;
     }
 }

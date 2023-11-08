@@ -12,6 +12,8 @@
                         <input class="form-control w-100" id="nomeCategoriaVisualizada" />
                     </div>
                 </div>
+
+                <input type="hidden" id="idCategoriaAtual" />
             </div>
             <div class="modal-footer">
                 <button class="btn btn-success" id="alterarCategoria">
