@@ -3,7 +3,6 @@
 namespace app\domain\service;
 
 use app\domain\exception\http\DomainHttpException;
-use app\domain\model\Categoria;
 use app\domain\model\Produto;
 use app\domain\repository\ProdutoRepository;
 use app\util\FileUtil;
@@ -38,7 +37,7 @@ class ProdutoService extends ServiceAbstract
         return $produto->setId($this->produtoRepository->criar($produto))->toArray();
     }
 
-    public function lePorNome(string $nome): ?Categoria
+    public function lePorNome(string $nome): ?Produto
     {
         return $this->produtoRepository->lePorNome($nome);
     }

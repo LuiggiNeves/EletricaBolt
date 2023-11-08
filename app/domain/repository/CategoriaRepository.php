@@ -4,6 +4,7 @@ namespace app\domain\repository;
 
 use app\database\Conexao;
 use app\domain\model\Categoria;
+use app\domain\model\Produto;
 use app\domain\model\Usuario;
 
 class CategoriaRepository
@@ -41,7 +42,26 @@ class CategoriaRepository
             return null;
         }
 
-        return Usuario::create()
+        return Categoria::create()
+            ->setId($result["id"])
+            ->setNome($result["nome"]);
+    }
+
+    public function lePorId(string $id): ?Categoria
+    {
+        $sql = "SELECT * FROM categorias WHERE id = :id";
+        $stmt = Conexao::getConexao()->prepare($sql);
+        $stmt->bindValue(':id', $id);
+        $stmt->execute();
+        Conexao::desconecta();
+
+        $result = $stmt->fetch();
+
+        if (!$result) {
+            return null;
+        }
+
+        return Categoria::create()
             ->setId($result["id"])
             ->setNome($result["nome"]);
     }

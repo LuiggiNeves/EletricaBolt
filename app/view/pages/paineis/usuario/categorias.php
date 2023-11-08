@@ -58,9 +58,14 @@ include('../../layout/auth.php');
         </div>
     </div>
 
-    <!-- Modal para visualizar ranking de unidade -->
+    <!-- Modal para cadastrar categoria -->
     <?php
     include('../../layout/modals/categoria_cadastrar.php');
+    ?>
+
+    <!-- Modal para visualizar categoria -->
+    <?php
+    include('../../layout/modals/categoria_visualizar.php');
     ?>
 
     <?php

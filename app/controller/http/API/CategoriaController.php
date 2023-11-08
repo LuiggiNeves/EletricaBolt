@@ -42,4 +42,19 @@ class CategoriaController extends ControllerAbstract
             200
         );
     }
+
+    public function lePorId($dados)
+    {
+        $id = intval($dados["id"]);
+
+        return $this->respondeComDados(
+            [
+                "dados" => [
+                    "categoria" => $this->categoriaService->leDadosPorId($id)
+                ],
+                "mensagem" => ""
+            ],
+            200
+        );
+    }
 }
