@@ -46,4 +46,9 @@ class ProdutoService extends ServiceAbstract
     {
         return $this->produtoRepository->listar();
     }
+
+    public function listarSemCategoria(): array
+    {
+        return $this->produtoRepository->listarSemCategoria();
+    }
 }

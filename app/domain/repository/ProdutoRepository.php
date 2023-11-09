@@ -68,4 +68,22 @@ class ProdutoRepository
             ->setImagem_path($result["imagem_path"])
             ->setPreco($result["preco"]);
     }
+
+    public function listarSemCategoria(): array
+    {
+        $sql = "SELECT * FROM produtos 
+                WHERE id NOT IN (SELECT id_produto FROM categoria_produtos)
+                ORDER BY nome";
+        $stmt = Conexao::getConexao()->prepare($sql);
+        $stmt->execute();
+        Conexao::desconecta();
+
+        $result = $stmt->fetchAll();
+
+        if (!$result) {
+            return [];
+        }
+
+        return $result;
+    }
 }

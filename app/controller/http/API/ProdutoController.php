@@ -42,4 +42,17 @@ class ProdutoController extends ControllerAbstract
             200
         );
     }
+
+    public function listarSemCategoria($dados)
+    {
+        return $this->respondeComDados(
+            [
+                "dados" => [
+                    "produtos" => $this->produtoService->listarSemCategoria()
+                ],
+                "mensagem" => ""
+            ],
+            200
+        );
+    }
 }
