@@ -17,7 +17,7 @@ class CategoriaProdutoService extends ServiceAbstract
 
     public function criar(int $id_categoria, int $id_produto): array
     {
-        $categoriaProduto = CategoriaProduto::create()->setId(null)->setId_categoria($id_categoria)->setId_produto($id_produto);
+        $categoriaProduto = CategoriaProduto::create()->setId(null)->setCategoria_id($id_categoria)->setProduto_id($id_produto);
 
         return $categoriaProduto->setId($this->categoriaProdutoRepository->criar($categoriaProduto))->toArray();
     }

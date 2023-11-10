@@ -10,12 +10,12 @@ class CategoriaProdutoRepository
     public function criar(CategoriaProduto $categoriaProduto): int
     {
         $sql = "INSERT INTO categoria_produtos 
-                (id_categoria, id_produto)
+                (categoria_id, produto_id)
                 VALUES
-                (:id_categoria, :id_produto)";
+                (:categoria_id, :produto_id)";
         $stmt = Conexao::getConexao()->prepare($sql);
-        $stmt->bindValue(':id_categoria', $categoriaProduto->getId_categoria());
-        $stmt->bindValue(':id_produto', $categoriaProduto->getId_produto());
+        $stmt->bindValue(':categoria_id', $categoriaProduto->getCategoria_id());
+        $stmt->bindValue(':produto_id', $categoriaProduto->getProduto_id());
         $result = $stmt->execute();
 
         if ($result == 0) {
@@ -29,15 +29,15 @@ class CategoriaProdutoRepository
         return $id;
     }
 
-    public function listarProdutosPorCategoria(int $id_categoria): array
+    public function listarProdutosPorCategoria(int $categoria_id): array
     {
         $sql = "SELECT 
                     produto.*
                 FROM categoria_produtos
-                INNER JOIN produto ON produto.id = categoria_produtos.id_produto
-                WHERE categoria_produtos.id_categoria = :id_categoria";
+                INNER JOIN produto ON produto.id = categoria_produtos.produto_id
+                WHERE categoria_produtos.categoria_id = :categoria_id";
         $stmt = Conexao::getConexao()->prepare($sql);
-        $stmt->bindValue(':id_categoria', $id_categoria);
+        $stmt->bindValue(':categoria_id', $categoria_id);
         $stmt->execute();
         Conexao::desconecta();
 
@@ -50,12 +50,12 @@ class CategoriaProdutoRepository
         return $result;
     }
 
-    public function removeProdutoDeCategoria(int $id_categoria, int $id_produto): bool
+    public function removeProdutoDeCategoria(int $categoria_id, int $produto_id): bool
     {
-        $sql = "DELETE FROM categoria_produtos WHERE id_categoria = :id_categoria AND id_produto = :id_produto";
+        $sql = "DELETE FROM categoria_produtos WHERE categoria_id = :categoria_id AND produto_id = :produto_id";
         $stmt = Conexao::getConexao()->prepare($sql);
-        $stmt->bindValue(':id_categoria', $id_categoria);
-        $stmt->bindValue(':id_produto', $id_produto);
+        $stmt->bindValue(':categoria_id', $categoria_id);
+        $stmt->bindValue(':produto_id', $produto_id);
         $stmt->execute();
         Conexao::desconecta();
 

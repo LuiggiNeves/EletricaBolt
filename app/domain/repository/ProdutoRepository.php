@@ -72,7 +72,7 @@ class ProdutoRepository
     public function listarSemCategoria(): array
     {
         $sql = "SELECT * FROM produtos 
-                WHERE id NOT IN (SELECT id_produto FROM categoria_produtos)
+                WHERE id NOT IN (SELECT produto_id FROM categoria_produtos)
                 ORDER BY nome";
         $stmt = Conexao::getConexao()->prepare($sql);
         $stmt->execute();

@@ -6,8 +6,8 @@ class CategoriaProduto extends ModelAbstract
 {
 
     private $id;
-    private $id_categoria;
-    private $id_produto;
+    private $categoria_id;
+    private $produto_id;
 
     public static function create()
     {
@@ -25,25 +25,25 @@ class CategoriaProduto extends ModelAbstract
         return $this;
     }
 
-    public function getId_categoria()
+    public function getCategoria_id()
     {
-        return $this->id_categoria;
+        return $this->categoria_id;
     }
-
-    public function setId_categoria($id_categoria)
+ 
+    public function setCategoria_id($categoria_id)
     {
-        $this->id_categoria = $id_categoria;
+        $this->categoria_id = $categoria_id;
         return $this;
     }
 
-    public function getId_produto()
+    public function getProduto_id()
     {
-        return $this->id_produto;
+        return $this->produto_id;
     }
 
-    public function setId_produto($id_produto)
+    public function setProduto_id($produto_id)
     {
-        $this->id_produto = $id_produto;
+        $this->produto_id = $produto_id;
         return $this;
     }
 
@@ -51,8 +51,8 @@ class CategoriaProduto extends ModelAbstract
     {
         return [
             "id" => $this->id,
-            "id_categoria" => $this->id_categoria,
-            "id_produto" => $this->id_produto
+            "categoria_id" => $this->categoria_id,
+            "produto_id" => $this->produto_id
         ];
     }
 }

@@ -68,6 +68,11 @@ include('../../layout/auth.php');
     include('../../layout/modals/categoria_visualizar.php');
     ?>
 
+    <!-- Modal para visualizar produtos da categoria -->
+    <?php
+    include('../../layout/modals/categoria_produtos.php');
+    ?>
+
     <?php
     include('../../layout/footer.php');
     ?>
@@ -79,6 +84,7 @@ include('../../layout/auth.php');
         $(".divCategorias").addClass("btn-item-navbar-selecionado");
 
         listar();
+        listarProdutosSemCategoria();
     </script>
 
 </body>
