@@ -12,7 +12,7 @@
     <header>
         <div class="header-primary">
             <!--ig, wpp, face-->
-            <div class="header-container">
+            <div class="header-container header-primary-color">
                 <div class="social-ico-container">
                     <div class="social-ico-img ">
                         <div class="ico-one ico-generic">
@@ -50,12 +50,14 @@
                             <h2 class="h2-img-pos"><img src="Assets/logos/bolt-logo-am.png" alt=""></h2>
                             <h3 id="text-menu-bolt">Elétrica Bolt</h3>
                         </div></a>
-                        <div class="search-container">
-                            <div class="search-bar">
-                                <div class="search-icon"><i class="fas fa-search"></i></div>
-                                <input type="text" class="search-input" placeholder="Pesquisar...">
-                                <button class="search-button">Pesquisar</button>
+                        <div class="search-container search-container-paralel">
+                            <div>
+                                <input type="text" class="search-bar" placeholder="Pesquisar...">
                             </div>
+                            <div class="search-container-btn">
+                                <button class="search-button"><p>Buscar</p></button>
+                            </div>
+                         
                         </div>
                         <div class="ico-user">
                             <p><div class="ico-user-container">
@@ -78,32 +80,76 @@
                     </div>
                 </div>
             </div>
-        <hr class="hr-two">
+
             <div class="header-container container-header-two">
                 <div class="nav-container">
-                    <div class="nav-box">
-                        <div class="nav-item-one nav-item-generic">
-                            <p>Todas as Categorias</p>
+                    <div class="nav-box dropdown_div nav_position">
+                        <div class="nav-item-one nav-item-generic dropdown">
+                            <p>Todos</p>
+                            <div class="dropdown-content">
+                                <a href="#">Chuveiros & Resistencias</a>
+                                <a href="#">Perfil & Led´s</a>
+                                <a href="#">Espelhos & Tomadas</a>
+                                <a href="#">Cabos</a>
+                                <a href="#">Hidraulica</a>
+                                <a href="#">Ventiladores</a>
+                                <a href="#">Iluminação</a>
+                                <a href="#">Eletrodutos</a>
+                                <a href="#">Automação</a>
+                                <a href="#">Todos os Produtos</a>
+                            </div>
                         </div>
 
-                        <div class="nav-item-two nav-item-generic">
+                        <div class="nav-item-two nav-item-generic dropdown">
                             <p>Novidades</p>
+                            <div class="dropdown-content">
+                                <a href="#">Novidades</a>
+                            </div>
                         </div>
 
-                        <div class="nav-item-tree nav-item-generic">
-                            <p>Margirius</p>
+                        <div class="nav-item-tree nav-item-generic dropdown">
+                            <p>MarGirius</p>
+                            <div class="dropdown-content">
+                                <a href="#">Chaves</a>
+                                <a href="#">Espelhos</a>
+                                <a href="#">Módulos</a>
+                                <a href="#">Disjuntores</a>
+                                <a href="#">Tudo MG</a>
+                            </div>
                         </div>
 
-                        <div class="nav-item-four nav-item-generic">
+                        <div class="nav-item-four nav-item-generic dropdown">
                             <p>Cabos</p>
+                            <div class="dropdown-content">
+                                <a href="#">1,0mm²</a>
+                                <a href="#">1,5mm²</a>
+                                <a href="#">2,5mm²</a>
+                                <a href="#">4,0mm²</a>
+                                <a href="#">6,0mm²</a>
+                                <a href="#">10,0mm²</a>
+                                <a href="#">16,0mm²</a>
+                                <a href="#">Todos Cabos</a>
+                            </div>
                         </div>
 
-                        <div class="nav-item-five nav-item-generic">
+                        <div class="nav-item-five nav-item-generic dropdown">
                             <p>Hidraulica</p>
+                            <div class="dropdown-content">
+                                <a href="#">Tubos</a>
+                                <a href="#">Conexões</a>
+                                <a href="#">Cotovelos</a>
+                                <a href="#">Tudo Hidraulica</a>
+                            </div>
                         </div>
 
-                        <div class="nav-item-six nav-item-generic">
+                        <div class="nav-item-six nav-item-generic dropdown">
                             <p>Chuveiros</p>
+                            <div class="dropdown-content">
+                                <a href="#">Lorenzetti</a>
+                                <a href="#">Zagonel</a>
+                                <a href="#">Hydra</a>
+                                <a href="#">Tudo Chuveiro</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -132,224 +178,156 @@
                 </div>
             </div>
 
-            <div class="title-main-product">
-                <h1>Todos os produtos</h1>
 
+
+            <div class="main-product">
+                
+                <div class="container-main-anuncio">
+                    
+                    <div class="main-anuncios">
+                        
+                        <a href=""><div class="main-anuncios-box">
+                            <img src="Assets/img/anuncios/anuncio-one.png" alt="">
+                        </div></a>
+                        <a href=""><div class="main-anuncios-box">
+                            <img src="Assets/img/anuncios/anuncio-two.png" alt="">
+                        </div></a>
+                    </div>
+                </div>
 
             </div>
             <div class="main-product">
                 <div class="main-product-container">
                     <div class="main-product-catalago-box">
                         <div class="main-product-filter-product">
-                            <div class="filter-product">
-                                <div><h1><a href="#">Todos os Produtos</a></h1></div>
-                                <div><p>Promoção</p></div>
-                            </div>
-                            <div class="filter-product-two">
-                                <div><h1>Filtro</h1></div>
-                                <div>
-                                    <button class="menu-button" data-target="menu-1"><div  class="menu-name-exp">Elétrica</div></button>
-                                    <div class="menu menu-1">
-                                        <ul class="menu-list">
-                                            <li><a href="#">Disjuntores</a></li>
-                                            <li><a href="#">Cabos</a></li>
-                                            <li><a href="#">Eletrodutos</a></li>
-                                            <li><a href="#">Conectores</a></li>
-                                            <li><a href="#">Chuveiros</a></li>
-                                            <li><a href="#">Contatores etc...</a></li>
-                                            <li><a href="#">Outros</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div>
-                                    <button class="menu-button menu-button-style-two" data-target="menu-2"><div class="menu-name-exp2">Ferramentas</div></button>
-                                    <div class="menu menu-2">
-                                        <ul class="menu-list">
-                                            <li><a href="#">Alicates</a></li>
-                                            <li><a href="#">Multimetro</a></li>
-                                            <li><a href="#">Trenas</a></li>
-                                            <li><a href="#">Fenda & Philips</a></li>
-                                            <li><a href="#">Outros</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
- 
-                                <div>
-                                    <button class="menu-button menu-button-style-tree" data-target="menu-3"><div class="menu-name-exp3">Hidraulica</div></button>
-                                    <div class="menu menu-3">
-                                        <ul class="menu-list">
-                                            <li><a href="#">Canos</a></li>
-                                            <li><a href="#">Joelhos</a></li>
-                                            <li><a href="#">Luvas</a></li>
-                                            <li><a href="#">Caps</a></li>
-                                            <li><a href="#">Outros</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                     <div class="catalago-box-container">
                         <div class="catalago-box">
                             <div class="catalago-product-base">
-                                <div class="container-base-product">
-                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
-                                    <div class="product-name"><p><a href="html/info-product.html">Conector Duplo 2P 0.75mm² à 4mm²  </a></p></div>
-                                    <div class="product-cod"><p>cód: 6867</p></div>
-                                    <div class="container-product-quantity">
-                                        <div class="product-quantity">
-                                            <button class="decrement generic-btn-quantity">-</button>
-                                            <input type="number" name="" id="" class="product-quantity-input" placeholder="0" min="1" max="9999">
-                                            <button class="increment generic-btn-quantity">+</button>
-                                        </div>
+                                <div class="card">
+                                    <div class="card-img">
+                                        <p><img src="Assets/img/product/wago img teste.jpg" alt="Nome do Produto"></p>
                                     </div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Carrinho</button></p></div>
+                                    <div class="card-body">
+                                        <div class="product-title">Wago 0,75mm à 4mm² 2PWago 0,75mm à 4mm² 2P</div>
+                                        <div class="product-price">R$--,--</div>
+                                        <div class="product-quantity">Quantidade: 1</div>
+                                        <button class="add-to-cart" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+                                        <button class="add-to-cart" onclick="Preço()">Preço</button>
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="catalago-product-base">
-                                <div class="container-base-product">
-                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
-                                    <div class="product-name"><p><a href="html/info-product.html">Conector Duplo 2P 0.75mm² à 4mm²  </a></p></div>
-                                    <div class="product-cod"><p>cód: 6867</p></div>
-                                    <div class="container-product-quantity">
-                                        <div class="product-quantity">
-                                            <button class="decrement generic-btn-quantity">-</button>
-                                            <input type="number" name="" id="" class="product-quantity-input" placeholder="0" min="1" max="9999">
-                                            <button class="increment generic-btn-quantity">+</button>
-                                        </div>
+                                <div class="card">
+                                    <div class="card-img">
+                                        <p><img src="Assets/img/product/wago img teste.jpg" alt="Nome do Produto"></p>
                                     </div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Carrinho</button></p></div>
+                                    <div class="card-body">
+                                        <div class="product-title">Wago 0,75mm à 4mm² 2PWago 0,75mm à 4mm² 2P</div>
+                                        <div class="product-price">R$--,--</div>
+                                        <div class="product-quantity">Quantidade: 1</div>
+                                        <button class="add-to-cart" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+                                        <button class="add-to-cart" onclick="Preço()">Preço</button>
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="catalago-product-base">
-                                <div class="container-base-product">
-                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
-                                    <div class="product-name"><p><a href="html/info-product.html">Conector Duplo 2P 0.75mm² à 4mm²  </a></p></div>
-                                    <div class="product-cod"><p>cód: 6867</p></div>
-                                    <div class="container-product-quantity">
-                                        <div class="product-quantity">
-                                            <button class="decrement generic-btn-quantity">-</button>
-                                            <input type="number" name="" id="" class="product-quantity-input" placeholder="0" min="1" max="9999">
-                                            <button class="increment generic-btn-quantity">+</button>
-                                        </div>
+                                <div class="card">
+                                    <div class="card-img">
+                                        <p><img src="Assets/img/product/wago img teste.jpg" alt="Nome do Produto"></p>
                                     </div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Carrinho</button></p></div>
+                                    <div class="card-body">
+                                        <div class="product-title">Wago 0,75mm à 4mm² 2PWago 0,75mm à 4mm² 2P</div>
+                                        <div class="product-price">R$--,--</div>
+                                        <div class="product-quantity">Quantidade: 1</div>
+                                        <button class="add-to-cart" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+                                        <button class="add-to-cart" onclick="Preço()">Preço</button>
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="catalago-product-base">
-                                <div class="container-base-product">
-                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
-                                    <div class="product-name"><p><a href="html/info-product.html">Conector Duplo 2P 0.75mm² à 4mm²  </a></p></div>
-                                    <div class="product-cod"><p>cód: 6867</p></div>
-                                    <div class="container-product-quantity">
-                                        <div class="product-quantity">
-                                            <button class="decrement generic-btn-quantity">-</button>
-                                            <input type="number" name="" id="" class="product-quantity-input" placeholder="0" min="1" max="9999">
-                                            <button class="increment generic-btn-quantity">+</button>
-                                        </div>
+                                <div class="card">
+                                    <div class="card-img">
+                                        <p><img src="Assets/img/product/wago img teste.jpg" alt="Nome do Produto"></p>
                                     </div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Carrinho</button></p></div>
-                                </div>
-                            </div>
-
-
-                            <div class="catalago-product-base">
-                                <div class="container-base-product">
-                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
-                                    <div class="product-name"><p><a href="html/info-product.html">Conector Duplo 2P 0.75mm² à 4mm²  </a></p></div>
-                                    <div class="product-cod"><p>cód: 6867</p></div>
-                                    <div class="container-product-quantity">
-                                        <div class="product-quantity">
-                                            <button class="decrement generic-btn-quantity">-</button>
-                                            <input type="number" name="" id="" class="product-quantity-input" placeholder="0" min="1" max="9999">
-                                            <button class="increment generic-btn-quantity">+</button>
-                                        </div>
+                                    <div class="card-body">
+                                        <div class="product-title">Wago 0,75mm à 4mm² 2PWago 0,75mm à 4mm² 2P</div>
+                                        <div class="product-price">R$--,--</div>
+                                        <div class="product-quantity">Quantidade: 1</div>
+                                        <button class="add-to-cart" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+                                        <button class="add-to-cart" onclick="Preço()">Preço</button>
                                     </div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Carrinho</button></p></div>
-                                </div>
-                            </div>
-
-
-                            <div class="catalago-product-base">
-                                <div class="container-base-product">
-                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
-                                    <div class="product-name"><p><a href="html/info-product.html">Conector Duplo 2P 0.75mm² à 4mm²  </a></p></div>
-                                    <div class="product-cod"><p>cód: 6867</p></div>
-                                    <div class="container-product-quantity">
-                                        <div class="product-quantity">
-                                            <button class="decrement generic-btn-quantity">-</button>
-                                            <input type="number" name="" id="" class="product-quantity-input" placeholder="0" min="1" max="9999">
-                                            <button class="increment generic-btn-quantity">+</button>
-                                        </div>
-                                    </div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Carrinho</button></p></div>
                                 </div>
                             </div>
 
                             <div class="catalago-product-base">
-                                <div class="container-base-product">
-                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
-                                    <div class="product-name"><p><a href="html/info-product.html">Conector Duplo 2P 0.75mm² à 4mm²  </a></p></div>
-                                    <div class="product-cod"><p>cód: 6867</p></div>
-                                    <div class="container-product-quantity">
-                                        <div class="product-quantity">
-                                            <button class="decrement generic-btn-quantity">-</button>
-                                            <input type="number" name="" id="" class="product-quantity-input" placeholder="0" min="1" max="9999">
-                                            <button class="increment generic-btn-quantity">+</button>
-                                        </div>
+                                <div class="card">
+                                    <div class="card-img">
+                                        <p><img src="Assets/img/product/wago img teste.jpg" alt="Nome do Produto"></p>
                                     </div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Carrinho</button></p></div>
+                                    <div class="card-body">
+                                        <div class="product-title">Wago 0,75mm à 4mm² 2PWago 0,75mm à 4mm² 2P</div>
+                                        <div class="product-price">R$--,--</div>
+                                        <div class="product-quantity">Quantidade: 1</div>
+                                        <button class="add-to-cart" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+                                        <button class="add-to-cart" onclick="Preço()">Preço</button>
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="catalago-product-base">
-                                <div class="container-base-product">
-                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
-                                    <div class="product-name"><p><a href="html/info-product.html">Conector Duplo 2P 0.75mm² à 4mm²  </a></p></div>
-                                    <div class="product-cod"><p>cód: 6867</p></div>
-                                    <div class="container-product-quantity">
-                                        <div class="product-quantity">
-                                            <button class="decrement generic-btn-quantity">-</button>
-                                            <input type="number" name="" id="" class="product-quantity-input" placeholder="0" min="1" max="9999">
-                                            <button class="increment generic-btn-quantity">+</button>
-                                        </div>
+                                <div class="card">
+                                    <div class="card-img">
+                                        <p><img src="Assets/img/product/wago img teste.jpg" alt="Nome do Produto"></p>
                                     </div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Carrinho</button></p></div>
+                                    <div class="card-body">
+                                        <div class="product-title">Wago 0,75mm à 4mm² 2PWago 0,75mm à 4mm² 2P</div>
+                                        <div class="product-price">R$--,--</div>
+                                        <div class="product-quantity">Quantidade: 1</div>
+                                        <button class="add-to-cart" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+                                        <button class="add-to-cart" onclick="Preço()">Preço</button>
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="catalago-product-base">
-                                <div class="container-base-product">
-                                    <div class="product-img"><p><img src="Assets/img/product/conector-duplo.png" alt=""></p></div>
-                                    <div class="product-name"><p><a href="html/info-product.html">Conector Duplo 2P 0.75mm² à 4mm²  </a></p></div>
-                                    <div class="product-cod"><p>cód: 6867</p></div>
-                                    <div class="container-product-quantity">
-                                        <div class="product-quantity">
-                                            <button class="decrement generic-btn-quantity">-</button>
-                                            <input type="number" name="" id="" class="product-quantity-input" placeholder="0" min="1" max="9999">
-                                            <button class="increment generic-btn-quantity">+</button>
-                                        </div>
+                                <div class="card">
+                                    <div class="card-img">
+                                        <p><img src="Assets/img/product/wago img teste.jpg" alt="Nome do Produto"></p>
                                     </div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Perguntar Preço</button></p></div>
-                                    <div class="product-price-wpp generic-btn-product"><p><button>Carrinho</button></p></div>
+                                    <div class="card-body">
+                                        <div class="product-title">Wago 0,75mm à 4mm² 2PWago 0,75mm à 4mm² 2P</div>
+                                        <div class="product-price">R$--,--</div>
+                                        <div class="product-quantity">Quantidade: 1</div>
+                                        <button class="add-to-cart" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+                                        <button class="add-to-cart" onclick="Preço()">Preço</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="catalago-product-base">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <p><img src="Assets/img/product/wago img teste.jpg" alt="Nome do Produto"></p>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="product-title">Wago 0,75mm à 4mm² 2PWago 0,75mm à 4mm² 2P</div>
+                                        <div class="product-price">R$--,--</div>
+                                        <div class="product-quantity">Quantidade: 1</div>
+                                        <button class="add-to-cart" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+                                        <button class="add-to-cart" onclick="Preço()">Preço</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </main>
 
@@ -377,7 +355,7 @@
 
         <div class="footer-dev-container">
             <div class="footer-dev">
-                <p>Desenvolvido por <strong><a href="#">LF SOFTWARE.</a></strong></p>
+                <p>Desenvolvido por <strong><a href="www.nive.com.br" target="_blank">Nive Sistemas.</a></strong></p>
             </div>
         </div>
 

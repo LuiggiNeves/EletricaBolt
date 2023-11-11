@@ -28,6 +28,10 @@
 
 body{
     background-color: var(--color-back);
+    background-image: url('../Assets/img/loja/Eletrica-Bolt.jpg');
+    background-size: cover; /* Isso garante que a imagem cubra todo o elemento */
+    background-repeat: no-repeat; /* Isso impede a repetição da imagem*/
+    background-position: center -390px;
 }
 
 section{
@@ -48,7 +52,7 @@ h1{
 
 .box_img{
     display: flex;
-    background-color: white;
+    background-color: #ffffffd9;
     border-top-left-radius: 150px;
     border-top-right-radius:150px ;
 
@@ -71,12 +75,12 @@ h1{
 }
 
 .box-login{
-    background-color: #fff;
+    background-color: #ffffffd9;
 
     padding: 20px;
 
    
-    width: 450px;
+    width: 530px;
     border-radius: 5px;
 
 }

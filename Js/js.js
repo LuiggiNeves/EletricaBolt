@@ -49,3 +49,14 @@ function restartTimer() {
 }
 
 autoSlides(); // Inicia o efeito automático
+
+
+const selectHead = document.querySelector('.select_head');
+
+selectHead.addEventListener('mouseenter', function() {
+  this.querySelector('select').style.display = 'block';
+});
+
+selectHead.addEventListener('mouseleave', function() {
+  this.querySelector('select').style.display = 'none';
+});
