@@ -1,0 +1,247 @@
+@charset "UTF-8";
+
+*{
+
+}
+:root{
+    --color-input:#e1e1e1;
+}
+
+main{
+
+}
+/*Container de todo info prod*/
+.Container-product-view{
+    display: flex;
+    justify-content:center;
+    align-items: center ;
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+}
+
+/*Visual do prod*/
+.product-view{
+    width: 1100px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(201, 201, 201);
+}
+
+/*product main*/
+.product-view-main{
+    display: inline-flex;
+}
+/*container img*/
+.product-view-img-container{
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Altera a IMG bruta*/
+.product-view-img{
+
+    
+
+}.product-view-img-container img{
+    width: 100%;
+    height: 100%;
+
+}
+
+/*container das infos do produto*/
+.container-product-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-view-info{
+    width: 600px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 50px;
+
+}
+
+/*container title*/
+.product-view-title{
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+/*container da descrição*/
+.product-view-desc{
+    width: 510px;
+    height: 100px;
+    text-align: justify;
+    font-size: var(--font-pc-medio);
+    margin-bottom: 20px;
+}
+
+/*Preço*/
+.product-view-price{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}.view-price{
+    color: rgb(82, 82, 251);
+}
+/*Quantidade desejada*/
+.product-view-qnt{
+
+}.quantity-block {
+    display: flex;
+    align-items: center;
+    width: 130px;
+    height: 45px;
+    border: none;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: var(--color-input);
+    margin-bottom: 10px;
+}
+
+/* Estilo para o botão de aumento e diminuição */
+.quantity-button {
+    cursor: pointer;
+    font-size: 1.2em;
+    margin: auto;
+    height: 100%;
+    background-color: #fff;
+    border: none;
+    user-select: none;
+    text-align: center;
+    color: var(--color-btn-product);
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    background-color: var(--color-input);
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+/* Estilo para a caixa de números */
+.quantity-input-style{
+    width: 50px;
+    height: 40px;
+    overflow: hidden;
+}
+.quantity-input {
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+    border: none;
+    font-size: 1em;
+    
+    background-color: var(--color-input);
+}
+/*Container Btn*/
+.product-view-btn{
+    width: 100%;
+    display: inline-flex;
+
+}
+
+.product-view-btn input{
+    width: 130px;
+    height: 40px;
+    margin-right: 20px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: var(--color-btn-product);
+    
+    color: var(--color-uni-br);
+    font-size: 16px;
+    font-weight: bolder;
+
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 1200px){
+/*Container de todo info prod*/
+
+
+/*Visual do prod*/
+.product-view{
+    width: 400px;
+    padding: 10px;
+}
+
+/*product main*/
+.product-view-main{
+    display: flex;
+    flex-direction: column;
+}
+/*container img*/
+.product-view-img-container{
+    width: 100%;
+    height: 100%;
+}
+
+.product-view-img-container img{
+    width: 200px;
+    height: 200px;
+}
+
+/*container das infos do produto*/
+
+
+
+.product-view-info{
+    width: 100%;
+    height: 100%;
+
+    margin-left: 0px;
+
+}
+
+/*container title*/
+.product-view-title{
+
+    text-align: center;
+
+}
+
+/*container da descrição*/
+.product-view-desc{
+    width: 100%;
+    height: 100%;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+/*Quantidade desejada*/
+.product-view-qnt{
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo para o botão de aumento e diminuição */
+
+
+/* Estilo para a caixa de números */
+
+
+/*Container Btn*/
+.product-view-btn{
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-around;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+}

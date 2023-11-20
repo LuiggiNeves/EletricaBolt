@@ -1,30 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
-
-/**/
-
-*{
-    font-family: 'Poppins', sans-serif;
-    font-size: var(--font-text);
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-}
-
-:root{
-    --font-color-two: rgb(87, 87, 87);
-    --font-color-tree:rgba(87, 87, 87, 0.729);
-
-    --color-btn-search:rgb(255, 220, 20);
-    --color-btn-product:rgb(255, 181, 20);
-    --color-btn-product-hv:rgb(205, 178, 0);
-
-    --color-border-div:#4747478a;
-
-
-
-    --lateral-site:1200px;
-}
-
 /*HEADER*/
 /*header{
 
@@ -116,17 +89,6 @@ header hr{
 
 
 
-#menu-search-name a{
-    text-decoration: none;
-    color: var(--font-color-two);
-}
-
-#menu-search-name img{
-    width: 70px;
-    height: 65px;
-
-    margin-left: 20%;
-}
 
 .ico-user{
     margin-bottom: auto;
@@ -145,10 +107,15 @@ header hr{
     display: flex;
     margin-top: 15px;
     margin-bottom: 5px;
+    justify-content: space-around;
 }
 
 .search-container input:focus{
     outline: none;
+}
+
+.search-container-princ{
+    margin: auto;
 }
 
 .search-container input{
@@ -174,11 +141,25 @@ header hr{
 }
 
 .search-container-btn{
-    width: 90px;
+    width: 100px;
 }
 
 
+.container-menu-logo{
 
+}
+
+.menu-logo{
+
+}
+
+.logo{
+
+}
+
+.img-logo img{
+    width: 95px;
+}
 
 
 .search-container{
@@ -188,7 +169,7 @@ header hr{
     width: 700px;
     display: inline-flex;
     border: 2px solid var(--color-border-div);
-    border-radius: 15px;
+    border-radius: 10px;
 }
 .ico-user-container{
     display: inline-flex;
@@ -258,6 +239,7 @@ header hr{
 
 .dropdown button:hover{
     background-color: rgb(102, 102, 102);
+
 }
 
 /* Estilize o botão do dropdown */
@@ -278,7 +260,7 @@ header hr{
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    top: 215px;
+    top: 260px;
 }
 
 /* Estilize os itens do dropdown */
@@ -349,7 +331,7 @@ main a{
     margin-top: -22px;
     color: white;
     font-weight: bold;
-    font-size: 20px;
+    font-size: var(--font-pc-big);
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
 
@@ -383,9 +365,7 @@ main a{
     justify-content: center;
 }
 
-.main-product-catalago-box{
 
-}
 
 
 .container-main-anuncio{
@@ -461,7 +441,7 @@ main a{
 
 .card {
     width: 275px;
-    height: 375px;
+    height: 410px;
     border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
@@ -487,15 +467,19 @@ main a{
 }
 
 .product-title {
-    font-size: 16px;
+    font-size: var(--font-pc-medio);
     height: 55px;
     width: 100%;
     font-weight: bold;
     margin-bottom: 5px;
+    cursor: pointer;
+}
+.product-title a{
+    cursor: pointer;
 }
 
 .product-price {
-    font-size: 16px;
+    font-size: var(--font-pc-medio);
     color: #3498db;
     margin-bottom: 5px;
 }
@@ -503,6 +487,20 @@ main a{
 .product-quantity {
     font-size: 14px;
     color: #666;
+    display: flex;
+    justify-content: center;
+}
+
+.quantity-block-product{
+    display: flex;
+    align-items: center;
+    width: 130px;
+    height: 45px;
+    border: none;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: var(--color-input);
+    margin-bottom: 10px;
 }
 
 .add-to-cart {
@@ -518,19 +516,56 @@ main a{
     margin-top: 10px;
 }
 
+.add-to-cart:hover{
+    background-color: var(--color-btn-product-hv);
+}
+
+.search-button{
+    cursor: pointer;
+}
 
 
 
+/*Block Menu Anuncios*/
 
+.main-block-anuncios{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
 
+}
 
+.container-block{
+    width: var(--lateral-site);
+    display: inline-flex;
+    justify-content: center;
+}
 
+.block-box{
+    width: 100%;
+    margin: 50px;
+    
+    display: inline-flex;
+    justify-content: space-between;
+}
 
+.box-anuncio{
 
+    padding: 5px;
+    overflow: hidden;
+    width: 180px;
+    height: 150px;
+    border-radius: 15px;
+    margin: auto;
+}
+.box-anuncio img{
+    margin-top: 25%;
+    margin-bottom: 25%;
+    width: 100%;
+}
 
-
-
-
+/*Fim Block menu anuncios*/
 
 .container-maps{
     display: flex;
@@ -550,7 +585,7 @@ footer{
 .footer-container{
     width: 100%;
 
-    display: flex;
+    display: inline-flex;
     justify-content: center;
 }
 
@@ -582,9 +617,329 @@ footer{
     margin-top: 10px;
 }
 
-@media screen and (max-width: 600px){
-    .container-header-two, .hr-two, .social-ico-img, .social-name-partnes {
+
+
+
+
+
+
+
+
+
+
+/*Conteudo Desligado para Smart*/
+
+.main-block-anuncios-smart{
+    display: none;
+}
+    
+
+/*FIM Conteudo Desligado para Smart*/
+
+
+/*Carrinho personalização*/
+
+/*Modal (.modal): É a janela modal principal que envolve todo o conteúdo.*/
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+/*Modal Content (.modal-content): Contém todo o conteúdo da modal.*/
+.modal-content {
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    
+}
+
+.close-btn {
+    
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/*Container Modal (.container-modal): Um contêiner que limita a largura do conteúdo modal.*/
+.container-modal{
+    overflow: hidden;
+    width: 500px;
+}
+
+/*Modal Title (.modal-title): A área do título da modal, que inclui a imagem, o título e o botão de fechar.*/
+.modal-title{
+    width: 100%;
+    border-bottom: 1px solid var(--color-border-div);
+    display: inline-flex;
+    
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*Modal Title Image (.modal-title img): A área que contém a imagem do título.*/
+.modal-title img{
+    width: 50px;
+    
+}
+
+/*Modal Title Heading (.modal-title-h2): A área que contém o título da modal.*/
+.modal-title-h2{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
+/*Modal Title Close Button (.modal-title-close): A área que contém o botão de fechar a modal.*/
+.modal-title-close{
+    margin-left: 65%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/*Modal Product Display Area (.modal-product): A área onde os produtos no carrinho seriam exibidos.*/
+.modal-product{
+    height: 450px;
+}
+
+/*Modal Buttons Area (.modal-btn): A área que contém o botão para solicitar um orçamento.*/
+.modal-btn{
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid var(--color-border-div);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*Botão para Solicitar Orçamento (<input type="button" value="Solicitar Orçamento">): O botão na modal para realizar uma ação específica (solicitar orçamento, neste caso).*/
+.modal-btn input{
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--color-btn-product);
+    color: rgb(30, 30, 30);
+}
+/*Hover do botão orçamento*/
+.modal-btn input:hover{
+    background-color: var(--color-btn-product-hv);
+}
+
+/*Fim carrinho Personalização*/
+
+/*Mostra o produto com mais detalhemento em uma nova janela*/
+.page-product-view {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.product-view-content {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.close-product-btn {
+    top: 10px;
+    margin-left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/*Estilo dentro da view*/
+/*Container de todo info prod*/
+.Container-product-view{
+    display: flex;
+    justify-content:center;
+    align-items: center ;
+    width: 100%;
+    height: 100%;
+}
+
+/*Visual do prod*/
+.product-view{
+    width: 1100px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(201, 201, 201);
+}
+
+/*product main*/
+.product-view-main{
+    display: inline-flex;
+}
+/*container img*/
+.product-view-img-container{
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Altera a IMG bruta*/
+.product-view-img{
+
+    
+
+}.product-view-img-container img{
+    width: 100%;
+    height: 100%;
+
+}
+
+/*container das infos do produto*/
+.container-product-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-view-info{
+    width: 600px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 50px;
+
+}
+
+/*container title*/
+.product-view-title{
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+/*container da descrição*/
+.product-view-desc{
+    width: 510px;
+    height: 100px;
+    text-align: justify;
+    font-size: var(--font-pc-medio);
+    margin-bottom: 20px;
+}
+
+/*Preço*/
+.product-view-price{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}.view-price{
+    color: rgb(82, 82, 251);
+}
+/*Quantidade desejada*/
+.product-view-qnt{
+
+}.quantity-block {
+    display: flex;
+    align-items: center;
+    width: 130px;
+    height: 45px;
+    border: none;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: var(--color-input);
+    margin-bottom: 10px;
+}
+
+/* Estilo para o botão de aumento e diminuição */
+.quantity-button {
+    cursor: pointer;
+    font-size: 1.2em;
+    margin: auto;
+    height: 100%;
+    background-color: #fff;
+    border: none;
+    user-select: none;
+    text-align: center;
+    color: var(--color-btn-product);
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    background-color: var(--color-input);
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+/* Estilo para a caixa de números */
+.quantity-input-style{
+    width: 50px;
+    height: 40px;
+    overflow: hidden;
+}
+.quantity-input {
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+    border: none;
+    font-size: 1em;
+    
+    background-color: var(--color-input);
+}
+/*Container Btn*/
+.product-view-btn{
+    width: 100%;
+    display: inline-flex;
+
+}
+
+.product-view-btn input{
+    width: 130px;
+    height: 40px;
+    margin-right: 20px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: var(--color-btn-product);
+    
+    color: var(--color-uni-br);
+    font-size: 16px;
+    font-weight: bolder;
+
+    cursor: pointer;
+}
+
+
+
+/*FIM Mostra o produto com mais detalhemento em uma nova janela*/
+
+
+/*Menu responsivo celular*/
+
+
+@media screen and (max-width: 1200px){
+    .container-header-two, .main-anuncios-box, .hr-two, .social-ico-img, .social-name-partnes,.anuncios-box_two,
+    .main-block-anuncios, .main-block-pc {
         display: none;
+    }
+
+    *{
+        font-size: var(--font-smart-medio);
     }
 
     .menu-search{
@@ -599,30 +954,90 @@ footer{
 
     .ico-user-container{
         width: 100%;
-        justify-content: space-between;
-        margin-left: 50px;
-        margin-right: 50px;
+        justify-content: space-around;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
-    .menu-search-name{
-        text-align: center;
+    
+
+
+
+    .img-logo{
+        display: flex;
+        justify-content: center;
+    }   
+    .search-container-princ{
+        display: flex;
+        justify-content: center;
     }
 
-    .h2-img-pos{
-        margin-left: 31%;
-    }
-    #text-menu-bolt{
-        text-align: center;
+    .search-bar-header{
+        width: 100%;
     }
 
     .search-container{
-        width: 430px;
+        margin: auto;
+    }
+    .search-container-paralel{
+        width: 95%;
+    }
+    .search-container input{
+        font-size: var(--font-smart-medio);
+        height: 27px;
+    
+    }
+    
+    .search-container button{
+        width: 100%;
+        
+
+    }
+    
+    
+    .search-container-btn{
+        width: 120px;
+        
+    }
+    
+    /*Anuncio box*/
+    .main-block-anuncios-smart{
+        display: flex;
     }
 
-    .search-button{
-        width: 130px;
-        text-align: center;
+    .main-block-anuncios{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        
+    
     }
+    
+    .container-block{
+        width: var(--lateral-site);
+        display: inline-flex;
+        justify-content: center;
+    }
+    
+    .block-box{
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 1px;
+        margin-right: 1px;
+        display: inline-flex;
+        
+    }
+    
+    .box-anuncio{
+        
+
+        width: 90px;
+        height: 90px;
+        border-radius: 15px;
+    }
+    
+    /*Fim anuncio box*/
     /*MAIN*/
     .main-product-catalago-box{
         display: none;
@@ -631,7 +1046,280 @@ footer{
         width: 180px;
     }
 
+    .main-anuncios{
+         display: grid;
+         width: 500px;
+    }
+
+    .main-anuncios-box img{
+        width: 100%;
+        
+    }
+
+
+    /*Carrosel*/
+    .carrosel-container{
+        width: 100%;
+    }
+
+    .mySlides img{
+        object-fit: cover;
+    }
+    /*
+        Base Responsiva da Base dos produtos
+    */
+    .catalago-box-container{
+        width: 100%;
+    }
+    .card {
+        width: 160px;
+        height: 420px;
+        padding-bottom: 5px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-img {
+        width: 100%;
+        height: auto;
+        
+    }
+    .card-img img{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .card-body {
+        padding: 15px;
+    }
+    
+    .card-img p{
+        text-align: center;
+    }
+    
+    .product-title {
+        height: 55px;
+        width: 100%;
+        font-weight: bold;
+        font-size: var(--font-smart-medio);
+        margin-bottom: 5px;
+        cursor: pointer;
+    }
+    
+    .product-price {
+        font-size:var(--font-pc-small);
+        color: #3498db;
+        margin-bottom: 5px;
+    }
+    
+    .product-quantity {
+        font-size: var(--font-smart-small);
+        color: #666;
+    }
+    
+    .add-to-cart {
+        background-color: var(--color-btn-product);
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .add-to-cart:hover{
+        background-color: var(--color-btn-product-hv);
+    }
+    
+
+    /*
+      FIM  Base Responsiva da Base dos produtos FIM
+    */
+
     .footer-fix-container{
         text-align: center;
     }
+
+    /*Modal (.modal): É a janela modal principal que envolve todo o conteúdo.*/
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+    }
+
+    /*Modal Content (.modal-content): Contém todo o conteúdo da modal.*/
+    .modal-content {
+        background: #fff;
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        
+    }
+
+    .close-btn {
+
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /*Container Modal (.container-modal): Um contêiner que limita a largura do conteúdo modal.*/
+    .container-modal{
+        overflow: hidden;
+        width: 350px;
+    }
+
+    /*Modal Title (.modal-title): A área do título da modal, que inclui a imagem, o título e o botão de fechar.*/
+    .modal-title{
+        width: 100%;
+        border-bottom: 1px solid var(--color-border-div);
+        display: inline-flex;
+        
+        text-align: center;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    /*Modal Title Image (.modal-title img): A área que contém a imagem do título.*/
+    .modal-title img{
+        width: 50px;
+        
+    }
+
+    /*Modal Title Heading (.modal-title-h2): A área que contém o título da modal.*/
+    .modal-title-h2{
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: 10px;
+    }
+
+    /*Modal Title Close Button (.modal-title-close): A área que contém o botão de fechar a modal.*/
+    .modal-title-close{
+        margin-left: 55%;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    /*Modal Product Display Area (.modal-product): A área onde os produtos no carrinho seriam exibidos.*/
+    .modal-product{
+        height: 450px;
+    }
+
+    /*Modal Buttons Area (.modal-btn): A área que contém o botão para solicitar um orçamento.*/
+    .modal-btn{
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid var(--color-border-div);
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    /*Botão para Solicitar Orçamento (<input type="button" value="Solicitar Orçamento">): O botão na modal para realizar uma ação específica (solicitar orçamento, neste caso).*/
+    .modal-btn input{
+        width: 250px;
+        height: 40px;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: var(--color-btn-product);
+        color: rgb(30, 30, 30);
+    }
+    /*Hover do botão orçamento*/
+    .modal-btn input:hover{
+        background-color: var(--color-btn-product-hv);
+    }
+
+    /*Fim carrinho Personalização*/
+
+    /*Personalização do painel escondido de menu dos produtos detalhado (Responsivo)*/
+    /*Container de todo info prod*/
+
+
+    /*Visual do prod*/
+    .product-view{
+        width: 400px;
+        padding: 10px;
+    }
+
+    /*product main*/
+    .product-view-main{
+        display: flex;
+        flex-direction: column;
+    }
+    /*container img*/
+    .product-view-img-container{
+        width: 100%;
+        height: 100%;
+    }
+
+    .product-view-img-container img{
+        width: 200px;
+        height: 200px;
+    }
+
+    /*container das infos do produto*/
+
+
+
+    .product-view-info{
+        width: 100%;
+        height: 100%;
+
+        margin-left: 0px;
+
+    }
+
+    /*container title*/
+    .product-view-title{
+
+        text-align: center;
+
+    }
+
+    /*container da descrição*/
+    .product-view-desc{
+        width: 100%;
+        height: 100%;
+        text-align: justify;
+        margin-bottom: 20px;
+    }
+
+    /*Quantidade desejada*/
+    .product-view-qnt{
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Estilo para o botão de aumento e diminuição */
+
+
+    /* Estilo para a caixa de números */
+
+
+    /*Container Btn*/
+    .product-view-btn{
+        width: 100%;
+        display: inline-flex;
+        justify-content: space-around;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 10px;
+    }
 }
+    
+
+
+

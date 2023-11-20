@@ -1,3 +1,10 @@
+//Mudar de pa´gina para pesquisa
+
+document.getElementById("search-button").addEventListener("click", function() {
+  // Mudar para a próxima página
+  window.location.href = "html/product-search.html";
+});
+
 const menuButtons = document.querySelectorAll('.menu-button');
 
 // Adicione um evento de clique a cada botão
@@ -51,6 +58,10 @@ function restartTimer() {
 autoSlides(); // Inicia o efeito automático
 
 
+
+//Menu do inicio para abrir os menus ao passar o mouse
+//favor não apagar nada kk
+
 const selectHead = document.querySelector('.select_head');
 
 selectHead.addEventListener('mouseenter', function() {
@@ -60,3 +71,81 @@ selectHead.addEventListener('mouseenter', function() {
 selectHead.addEventListener('mouseleave', function() {
   this.querySelector('select').style.display = 'none';
 });
+
+//fim
+
+/*Menu abre e fecha do carrinho*/
+
+function openModal() {
+  document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+
+function openModal() {
+  document.getElementById("modal").style.display = "flex";
+
+  // Adiciona um ouvinte de clique no overlay
+  document.getElementById("modal").addEventListener("click", function(event) {
+      if (event.target === this) {
+          closeModal();
+      }
+  });
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+
+
+
+/*Menu abre e fecha dos produtos ao todo*/
+function openProductView() {
+  document.getElementById("page-product-view").style.display = "flex";
+}
+
+function closeProductView() {
+  document.getElementById("page-product-view").style.display = "none";
+}
+
+function openProductView() {
+  document.getElementById("page-product-view").style.display = "flex";
+
+  // Adiciona um ouvinte de clique no overlay
+  document.getElementById("page-product-view").addEventListener("click", function(event) {
+      if (event.target === this) {
+          closeProductView();
+      }
+  });
+}
+
+function closeProductView() {
+  document.getElementById("page-product-view").style.display = "none";
+}
+
+
+
+
+/*Div de quantidade dos produtos da tela que abre o menu overlay*/
+//OVERLAY
+// Função para aumentar a quantidade
+function increaseQuantity() {
+  var quantityInput = document.getElementById('quantity');
+  var currentQuantity = parseInt(quantityInput.value);
+  quantityInput.value = currentQuantity + 1;
+}
+
+// Função para diminuir a quantidade
+function decreaseQuantity() {
+  var quantityInput = document.getElementById('quantity');
+  var currentQuantity = parseInt(quantityInput.value);
+  if (currentQuantity > 0) {
+      quantityInput.value = currentQuantity - 1;
+  }
+}
+
+/*Div de quantidade dos produtos da tela que abre o menu overlay*/
+//OVERLAY
+//---------------Fim overlay ----------------//
