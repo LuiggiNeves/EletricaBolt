@@ -149,3 +149,8 @@ function decreaseQuantity() {
 /*Div de quantidade dos produtos da tela que abre o menu overlay*/
 //OVERLAY
 //---------------Fim overlay ----------------//
+
+
+
+
+
