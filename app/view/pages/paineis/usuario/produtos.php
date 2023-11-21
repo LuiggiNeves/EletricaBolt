@@ -45,7 +45,13 @@ include('../../layout/auth.php');
                     </div>
 
                     <div class="col-sm-12 col-md-12 mb-2" style="height: 230px; overflow-y: scroll;">
-                        <div class="tabela-produtos row">
+                        <div class="spinner-loading-produtos" style="display: none;">
+                            <div class="spinner-border text-primary mt-5" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+
+                        <div class="tabela-produtos row" style="display: none;">
                         </div>
                     </div>
                 </div>

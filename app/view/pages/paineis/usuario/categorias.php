@@ -41,7 +41,13 @@ include('../../layout/auth.php');
                     </div>
 
                     <div class="col-sm-12 col-md-12 mb-2">
-                        <div class="table-responsive" style="height: 300px; overflow-y: scroll; overflow-x: hidden;">
+                        <div class="spinner-loading-categorias w-100 text-center" style="display: none;">
+                            <div class="spinner-border text-primary mt-5" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+
+                        <div class="divTabelaCategoria table-responsive" style="height: 300px; overflow-y: scroll; overflow-x: hidden; display: none;">
                             <table class="table tabela-categorias table-striped table-hover">
                                 <thead>
                                     <tr>

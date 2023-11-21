@@ -1,4 +1,7 @@
 function listar() {
+    $(".tabela-produtos").hide();
+    $(".spinner-loading-produtos").show();
+
     let formData = new FormData();
     formData.append("route", "listar-produtos");
 
@@ -47,6 +50,9 @@ function listar() {
                     `
                 );
             }
+
+            $(".spinner-loading-produtos").hide();
+            $(".tabela-produtos").show();
         },
         "",
         function () {

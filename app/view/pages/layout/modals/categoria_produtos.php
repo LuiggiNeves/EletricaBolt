@@ -18,7 +18,13 @@
 
                 <div class="row mb-3">
                     <div class="col-sm-12 col-md-12">
-                        <div class="table-responsive">
+                        <div class="spinner-loading-produtos-da-categoria">
+                            <div class="spinner-border text-primary mt-5" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+
+                        <div class="divProdutosDaCategoria table-responsive">
                             <table class="table table-sm table-hover table-striped" id="produtosDaCategoria">
                                 <thead>
                                     <tr>
