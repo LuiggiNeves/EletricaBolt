@@ -8,7 +8,7 @@ include('../../layout/auth.php');
 
 </head>
 
-<body class="bg-light">
+<body>
 
     <?php
     include('../../layout/navbar_usuario.php');
@@ -23,7 +23,7 @@ include('../../layout/auth.php');
                 </span>
             </div>
 
-            <div class="col-sm-12 col-md-10 rounded bg-white border shadow-sm" style="height: 800px;">
+            <div class="col-sm-12 col-md-10 rounded bg-white shadow-sm" style="height: 450px;">
                 <div class="row p-4">
                     <div class="col-sm-12 col-md-12">
                         <h3>
@@ -35,18 +35,16 @@ include('../../layout/auth.php');
                     <div class="col-sm-12 col-md-12 mb-2">
                         <div class="row mt-4">
                             <div class="col-sm-12 col-md-3">
-                                <button class="btn btn-sm w-100 backgroundTema text-white" id="modalNovoProduto">Novo produto</button>
+                                <button class="btn btn-sm btn-primary w-100 text-white" id="modalNovoProduto">Novo produto</button>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-12 mb-2 mt-4">
-                        <div class="alert alert-success" role="alert" id="qtdProdutos">
-                            
-                        </div>
+                    <div class="col-sm-12 col-md-12 mb-4 mt-4">
+                        <h5 id="qtdProdutos"></h5>
                     </div>
 
-                    <div class="col-sm-12 col-md-12 mb-2">
+                    <div class="col-sm-12 col-md-12 mb-2" style="height: 230px; overflow-y: scroll;">
                         <div class="tabela-produtos row">
                         </div>
                     </div>

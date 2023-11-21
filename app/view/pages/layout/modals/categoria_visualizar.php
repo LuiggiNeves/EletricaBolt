@@ -9,14 +9,14 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-12 mb-2">
                         <label class="mb-1">Nome da categoria: </label>
-                        <input class="form-control w-100" id="nomeCategoriaVisualizada" />
+                        <input class="form-control form-control-sm w-100" id="nomeCategoriaVisualizada" />
                     </div>
                 </div>
 
                 <input type="hidden" id="idCategoriaAtual" />
             </div>
             <div class="modal-footer">
-                <button class="btn btn-success" id="alterarCategoria">
+                <button class="btn btn-sm btn-success" id="alterarCategoria">
                     Salvar
                 </button>
             </div>

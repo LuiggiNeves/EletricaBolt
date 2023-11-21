@@ -15,19 +15,19 @@ function listar() {
                 $(".tabela-categorias tbody").append(
                     `
                         <tr class="categoriaEncontrada" id_categoria=`+ categorias[i]["id"] + `>
-                            <td style="width: 80%">
+                            <td style="width: 70%">
                                 `+ categorias[i]["nome"] + `
                             </td>
 
-                            <td style="width: 20%">
+                            <td style="width: 30%">
                                 <div class="row">
-                                    <div class="col-sm-12 col-md-12 mb-2">
-                                        <button class="btn btn-sm backgroundTema text-white w-100 visualizarCategoria">
+                                    <div class="col-sm-12 col-md-6 mb-2">
+                                        <button class="btn btn-sm btn-primary text-white w-100 visualizarCategoria">
                                             Visualizar
                                         </button>
                                     </div>
-                                    <div class="col-sm-12 col-md-12 mb-2">
-                                        <button class="btn btn-sm backgroundTema text-white w-100 btnProdutosDaCategoria">
+                                    <div class="col-sm-12 col-md-6 mb-2">
+                                        <button class="btn btn-sm btn-primary text-white w-100 btnProdutosDaCategoria">
                                             Produtos
                                         </button>
                                     </div>
@@ -159,7 +159,7 @@ function listarProdutoPorCategoria(id_categoria) {
             $("#produtosDaCategoria tbody tr").remove();
 
             for (let i = 0; i < produtos.length; i++) {
-                $("#produtosDaCategoria").append(
+                $("#produtosDaCategoria tbody").append(
                     `
                         <tr id_produto='`+ produtos[i]["id"] + `'>
                             <td class='col-9'>

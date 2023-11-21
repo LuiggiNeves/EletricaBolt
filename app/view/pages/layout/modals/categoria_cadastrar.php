@@ -9,12 +9,12 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-12 mb-2">
                         <label class="mb-1">Nome da categoria: </label>
-                        <input class="form-control w-100" id="nomeCategoria" />
+                        <input class="form-control form-control-sm w-100" id="nomeCategoria" />
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-success" id="criarCategoria">
+                <button class="btn btn-sm btn-success" id="criarCategoria">
                     Cadastrar
                 </button>
             </div>

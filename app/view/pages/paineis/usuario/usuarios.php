@@ -8,7 +8,7 @@ include('../../layout/auth.php');
 
 </head>
 
-<body class="bg-light">
+<body>
 
     <?php
     include('../../layout/navbar_usuario.php');
@@ -23,7 +23,7 @@ include('../../layout/auth.php');
                 </span>
             </div>
 
-            <div class="col-sm-12 col-md-10 rounded bg-white border shadow-sm" style="height: 400px;">
+            <div class="col-sm-12 col-md-10 rounded bg-white shadow-sm" style="height: 450px;">
                 <div class="row p-4">
                     <div class="col-sm-12 col-md-12">
                         <h3>

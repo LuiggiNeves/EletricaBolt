@@ -27,15 +27,21 @@ function listar() {
             for (let i = 0; i < produtos.length; i++) {
                 $(".tabela-produtos").append(
                     `
-                        <div class='produto-encontrado mx-2 mb-1 col-sm-10 col-md-2 border p-3' id_produto='`+ produtos[i]["id"] + `'>
-                            <div class='col-sm-12 col-md-12 p-3 mb-1'>
-                                <img src='../app/files/entities/`+ produtos[i]["imagem_path"] + `' class='w-100 rounded' height='120px'/>
-                            </div>
-                            <div class='col-sm-12 col-md-10 mb-1'>
-                                <b>`+ produtos[i]["nome"] + `</b>
-                            </div>
-                            <div class='col-sm-12 col-md-12'>
-                                <button class='btn btn-sm backgroundTema text-white w-100 btn-visualizar-produto'>Visualizar</button>
+                        <div class='produto-encontrado mb-1 col-sm-12 col-md-12 border' id_produto='`+ produtos[i]["id"] + `'>
+                            <div class='row'>
+                                <div class='col-sm-12 col-md-1 p-3'>
+                                    <img src='../app/files/entities/`+ produtos[i]["imagem_path"] + `' class='w-100 rounded' height='60px'/>
+                                </div>
+                                <div class='col-sm-12 col-md-10'>
+                                    <div class='row mt-4'>
+                                        <div class='col-sm-12 col-md-10 mb-2'>
+                                            <b>`+ produtos[i]["nome"] + `</b>
+                                        </div>
+                                        <div class='col-sm-12 col-md-2 mb-2'>
+                                            <button class='btn btn-sm btn-primary text-white btn-visualizar-produto'>Visualizar</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     `
