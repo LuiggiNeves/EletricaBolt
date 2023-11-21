@@ -32,9 +32,9 @@ class CategoriaProdutoRepository
     public function listarProdutosPorCategoria(int $categoria_id): array
     {
         $sql = "SELECT 
-                    produto.*
+                    produtos.*
                 FROM categoria_produtos
-                INNER JOIN produto ON produto.id = categoria_produtos.produto_id
+                INNER JOIN produtos ON produtos.id = categoria_produtos.produto_id
                 WHERE categoria_produtos.categoria_id = :categoria_id";
         $stmt = Conexao::getConexao()->prepare($sql);
         $stmt->bindValue(':categoria_id', $categoria_id);

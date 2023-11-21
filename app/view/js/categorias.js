@@ -144,6 +144,44 @@ function listarProdutosSemCategoria() {
     );
 }
 
+function listarProdutoPorCategoria(id_categoria) {
+    let formData = new FormData();
+    formData.append("route", "listar-produtos-por-categoria");
+    formData.append("id_categoria", id_categoria);
+
+    post("../app/controller/http/controller.php", formData,
+        function (response) {
+            let dados = response["dados"];
+            let mensagem = response["mensagem"];
+
+            let produtos = dados["produtos"];
+
+            $("#produtosDaCategoria tbody tr").remove();
+
+            for (let i = 0; i < produtos.length; i++) {
+                $("#produtosDaCategoria").append(
+                    `
+                        <tr id_produto='`+ produtos[i]["id"] + `'>
+                            <td class='col-9'>
+                                <small class='fw-bold'>`+ produtos[i]["nome"] + `</small>
+                            </td>
+                            <td>
+                                <button class='btn btn-danger btn-sm removerProduto'>
+                                    <i class='bi bi-trash'></i>
+                                </button>
+                            </td>
+                        </tr>
+                    `
+                );
+            }
+        },
+        "",
+        function () {
+
+        }
+    );
+}
+
 function inserirProdutoEmCategoria(id_categoria, id_produto) {
     let formData = new FormData();
     formData.append("route", "criar-categoria-produto");
@@ -163,6 +201,38 @@ function inserirProdutoEmCategoria(id_categoria, id_produto) {
                 icon: "success"
             })
                 .then((btnOkWasPressed) => {
+                    listarProdutosSemCategoria();
+                    $("#visualizarCategoriaProdutosModal").modal("show");
+                });
+        },
+        "",
+        function () {
+
+        }
+    );
+}
+
+function removeProdutoEmCategoria(id_categoria, id_produto) {
+    let formData = new FormData();
+    formData.append("route", "remove-produto-de-categoria");
+    formData.append("id_categoria", id_categoria);
+    formData.append("id_produto", id_produto);
+
+    post("../app/controller/http/controller.php", formData,
+        function (response) {
+            let dados = response["dados"];
+            let mensagem = response["mensagem"];
+
+            $(".modal").modal("hide");
+
+            swal({
+                title: mensagem,
+                text: "",
+                icon: "success"
+            })
+                .then((btnOkWasPressed) => {
+                    $("tr[id_produto='" + id_produto + "']").remove();
+
                     listarProdutosSemCategoria();
                     $("#visualizarCategoriaProdutosModal").modal("show");
                 });
@@ -203,14 +273,23 @@ $(document).ready(function () {
         let id_categoria = $(this).parents("tr.categoriaEncontrada").attr("id_categoria");
         $("#categoriaSelecionada").val(id_categoria);
 
+        listarProdutoPorCategoria(id_categoria);
+
         $("#visualizarCategoriaProdutosModal").modal("show");
     });
 
     $("#btnAdicionarProdutoACategoria").on("click", function () {
         let id_produto = $("#produtosSemCategoria").val();
-        let id_categoria = $("#produtosSemCategoria").val();
+        let id_categoria = $("#categoriaSelecionada").val();
 
         inserirProdutoEmCategoria(id_categoria, id_produto);
+    });
+
+    $(document).on("click", ".removerProduto", function () {
+        let id_produto = $(this).parents("tr").attr("id_produto");
+        let id_categoria = $("#categoriaSelecionada").val();
+
+        removeProdutoEmCategoria(id_categoria, id_produto);
     });
 
 });

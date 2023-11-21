@@ -16,8 +16,19 @@
                     </div>
                 </div>
 
-                <div class="row mb-3" id="produtosDaCategoria">
-
+                <div class="row mb-3">
+                    <div class="col-sm-12 col-md-12">
+                        <table class="table" id="produtosDaCategoria">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Produto</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <input type="hidden" id="categoriaSelecionada" />
