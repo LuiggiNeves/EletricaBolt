@@ -6,7 +6,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^/(.*)$ index.php?url=$1 [NC,L]
 RewriteRule ^login/(.*)$ app/view/pages/login.php?url=$1 [NC,L]
 
-RewriteRule ^painel/(.*)$ app/view/pages/paineis/usuario/painel.php?url=$1 [NC,L]
-RewriteRule ^categorias/(.*)$ app/view/pages/paineis/usuario/categorias.php?url=$1 [NC,L]
-RewriteRule ^produtos/(.*)$ app/view/pages/paineis/usuario/produtos.php?url=$1 [NC,L]
-RewriteRule ^usuarios/(.*)$ app/view/pages/paineis/usuario/usuarios.php?url=$1 [NC,L]
+RewriteRule ^painel/(.*)$ app/view/pages/paineis/admin/painel.php?url=$1 [NC,L]
+RewriteRule ^categorias/(.*)$ app/view/pages/paineis/admin/categorias.php?url=$1 [NC,L]
+RewriteRule ^produtos/(.*)$ app/view/pages/paineis/admin/produtos.php?url=$1 [NC,L]
+RewriteRule ^usuarios/(.*)$ app/view/pages/paineis/admin/usuarios.php?url=$1 [NC,L]
