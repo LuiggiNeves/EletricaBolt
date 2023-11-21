@@ -1,9 +1,10 @@
-function listar() {
+function listar(dados_de_pesquisa) {
     $(".tabela-produtos").hide();
     $(".spinner-loading-produtos").show();
 
     let formData = new FormData();
     formData.append("route", "listar-produtos");
+    formData.append("dados-de-pesquisa", dados_de_pesquisa);
 
     post("../app/controller/http/controller.php", formData,
         function (response) {
@@ -20,7 +21,7 @@ function listar() {
             } else if (produtos.length == 1) {
                 textoQtdProdutos = "<b>1</b> produto encontrado";
             } else {
-                textoQtdProdutos = "<b>" + produtos.length + "</b> produtos encontrado";
+                textoQtdProdutos = "<b>" + produtos.length + "</b> produtos encontrados";
             }
 
             $("#qtdProdutos").html(
@@ -111,6 +112,14 @@ $(document).ready(function () {
             $("#precoDoProduto").val(),
             $("#descricaoDoProduto").val(),
             $("#imagemDoProduto")[0].files[0]
+        );
+    });
+
+    $("#btnPesquisarProdutos").on("click", function () {
+        $(".divConteudoProdutos").show();
+
+        listar(
+            JSON.stringify({ nome: $("#pesquisarNomeProduto").val() })
         );
     });
 

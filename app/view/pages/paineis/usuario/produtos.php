@@ -23,7 +23,7 @@ include('../../layout/auth.php');
                 </span>
             </div>
 
-            <div class="col-sm-12 col-md-10 rounded bg-white shadow-sm" style="height: 450px;">
+            <div class="col-sm-12 col-md-10 rounded bg-white shadow-sm mb-3" style="height: 850px;">
                 <div class="row p-4">
                     <div class="col-sm-12 col-md-12">
                         <h3>
@@ -32,7 +32,7 @@ include('../../layout/auth.php');
                         </h3>
                     </div>
 
-                    <div class="col-sm-12 col-md-12 mb-2">
+                    <div class="col-sm-12 col-md-12 mb-5">
                         <div class="row mt-4">
                             <div class="col-sm-12 col-md-3">
                                 <button class="btn btn-sm btn-primary w-100 text-white" id="modalNovoProduto">Novo produto</button>
@@ -40,18 +40,22 @@ include('../../layout/auth.php');
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-12 mb-4 mt-4">
-                        <h5 id="qtdProdutos"></h5>
+                    <div class="col-sm-12 col-md-12 mb-2">
+                        <?php include '../../layout/formularios/pesquisa_produtos.php'; ?>
                     </div>
 
-                    <div class="col-sm-12 col-md-12 mb-2" style="height: 230px; overflow-y: scroll;">
+                    <div class="col-sm-12 col-md-12 mb-4 mt-4">
+                        <h4 id="qtdProdutos"></h4>
+                    </div>
+
+                    <div class="divConteudoProdutos col-sm-12 col-md-12 mb-2" style="height: 380px; overflow-y: scroll; display: none;">
                         <div class="spinner-loading-produtos" style="display: none;">
                             <div class="spinner-border text-primary mt-5" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
                         </div>
 
-                        <div class="tabela-produtos row" style="display: none;">
+                        <div class="tabela-produtos row mx-1" style="display: none;">
                         </div>
                     </div>
                 </div>
@@ -73,8 +77,6 @@ include('../../layout/auth.php');
 
     <script>
         $(".divProdutos").addClass("btn-item-navbar-selecionado");
-
-        listar();
     </script>
 
 </body>
