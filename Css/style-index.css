@@ -1009,7 +1009,7 @@ footer{
 /*Menu responsivo celular*/
 
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1000px){
     .container-header-two, .main-anuncios-box, .hr-two, .social-ico-img, .social-name-partnes,.anuncios-box_two,
     .main-block-anuncios, .main-block-pc {
         display: none;
