@@ -49,7 +49,7 @@ include('../../layout/auth.php');
                     </div>
 
                     <div class="divConteudoProdutos col-sm-12 col-md-12 mb-2" style="height: 380px; overflow-y: scroll; display: none;">
-                        <div class="spinner-loading-produtos" style="display: none;">
+                        <div class="spinner-loading-produtos text-center" style="display: none;">
                             <div class="spinner-border text-primary mt-5" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>

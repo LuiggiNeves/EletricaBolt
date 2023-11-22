@@ -3,7 +3,7 @@ function listar(dados_de_pesquisa) {
     $(".spinner-loading-produtos").show();
 
     let formData = new FormData();
-    formData.append("route", "listar-produtos");
+    formData.append("route", "pesquisa-produtos");
     formData.append("dados-de-pesquisa", dados_de_pesquisa);
 
     post("../app/controller/http/controller.php", formData,

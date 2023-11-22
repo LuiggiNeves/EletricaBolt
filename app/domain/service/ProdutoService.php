@@ -51,4 +51,9 @@ class ProdutoService extends ServiceAbstract
     {
         return $this->produtoRepository->listarSemCategoria();
     }
+
+    public function executaQueryEBuscaTudo(string $query): array
+    {
+        return $this->produtoRepository->executaQueryEBuscaTudo($query);
+    }
 }
