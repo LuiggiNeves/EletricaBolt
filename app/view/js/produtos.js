@@ -29,12 +29,14 @@ function listar(dados_de_pesquisa) {
             );
 
             for (let i = 0; i < produtos.length; i++) {
+                let path_imagem = produtos[i]["imagem_path"] != null ? `../app/files/entities/` + produtos[i]["imagem_path"] + `` : `../app/view/images/produto.png`;
+
                 $(".tabela-produtos").append(
                     `
                         <div class='produto-encontrado mb-1 col-sm-12 col-md-12 border' id_produto='`+ produtos[i]["id"] + `'>
                             <div class='row'>
                                 <div class='col-sm-12 col-md-1 p-3'>
-                                    <img src='../app/files/entities/`+ produtos[i]["imagem_path"] + `' class='w-100 rounded' height='60px'/>
+                                    <img src='`+ path_imagem + `' class='w-100 rounded' height='60px'/>
                                 </div>
                                 <div class='col-sm-12 col-md-10'>
                                     <div class='row mt-4'>
@@ -169,26 +171,48 @@ $(document).ready(function () {
     });
 
     $("#criarProduto").on("click", function () {
-        criar(
-            $("#nomeDoProduto").val(),
-            $("#precoDoProduto").val(),
-            $("#descricaoDoProduto").val(),
-            $("#imagemDoProduto")[0].files[0]
-        );
+        let formularioEstaValido = true;
+        let form = $("#formularioCadastrarProduto")[0];
+        if (!form.checkValidity()) {
+            form.classList.add('was-validated');
+            formularioEstaValido = false;
+        }
+
+        if (formularioEstaValido) {
+            let imagem = $("#imagemDoProduto")[0].files[0];
+            imagem = imagem == undefined ? null : imagem;
+
+            criar(
+                $("#nomeDoProduto").val(),
+                $("#precoDoProduto").val(),
+                $("#descricaoDoProduto").val(),
+                imagem
+            );
+            $("#formularioCadastrarProduto").removeClass("was-validated");
+        }
     });
 
     $("#alterarProduto").on("click", function () {
+        let formularioEstaValido = true;
+        let form = $("#formularioAlterarProduto")[0];
+        if (!form.checkValidity()) {
+            form.classList.add('was-validated');
+            formularioEstaValido = false;
+        }
 
-        let imagem = $("#alterarImagemDoProduto")[0].files[0];
-        imagem = imagem == undefined ? null : imagem;
+        if (formularioEstaValido) {
+            let imagem = $("#alterarImagemDoProduto")[0].files[0];
+            imagem = imagem == undefined ? null : imagem;
 
-        alterar(
-            $("#idDoProdutoSelecionado").val(),
-            $("#alterarNomeDoProduto").val(),
-            $("#alterarPrecoDoProduto").val(),
-            $("#alterarDescricaoDoProduto").val(),
-            imagem
-        );
+            alterar(
+                $("#idDoProdutoSelecionado").val(),
+                $("#alterarNomeDoProduto").val(),
+                $("#alterarPrecoDoProduto").val(),
+                $("#alterarDescricaoDoProduto").val(),
+                imagem
+            );
+            $("#formularioAlterarProduto").removeClass("was-validated");
+        }
     });
 
     $("#btnPesquisarProdutos").on("click", function () {

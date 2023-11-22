@@ -4,6 +4,7 @@ namespace app\domain\repository;
 
 use app\database\Conexao;
 use app\domain\model\Produto;
+use PDO;
 
 class ProdutoRepository
 {
@@ -16,7 +17,13 @@ class ProdutoRepository
         $stmt = Conexao::getConexao()->prepare($sql);
         $stmt->bindValue(':nome', $produto->getNome());
         $stmt->bindValue(':descricao', $produto->getDescricao());
-        $stmt->bindValue(':imagem_path', $produto->getImagem_path());
+
+        if ($produto->getImagem_path() == null) {
+            $stmt->bindValue(':imagem_path', $produto->getImagem_path(), PDO::PARAM_NULL);
+        } else {
+            $stmt->bindValue(':imagem_path', $produto->getImagem_path());
+        }
+
         $stmt->bindValue(':preco', $produto->getPreco());
         $result = $stmt->execute();
 
@@ -131,7 +138,13 @@ class ProdutoRepository
         $stmt = Conexao::getConexao()->prepare($sql);
         $stmt->bindValue(':nome', $produto->getNome());
         $stmt->bindValue(':descricao', $produto->getDescricao());
-        $stmt->bindValue(':imagem_path', $produto->getImagem_path());
+
+        if ($produto->getImagem_path() == null) {
+            $stmt->bindValue(':imagem_path', $produto->getImagem_path(), PDO::PARAM_NULL);
+        } else {
+            $stmt->bindValue(':imagem_path', $produto->getImagem_path());
+        }
+
         $stmt->bindValue(':preco', $produto->getPreco());
         $stmt->bindValue(':id', $produto->getId());
         $result = $stmt->execute();

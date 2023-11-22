@@ -22,8 +22,11 @@ class ProdutoService extends ServiceAbstract
 
     public function criar(array $dados): array
     {
-        $dadosDoArquivo = $dados["arquivo"];
-        $local_arquivo = $this->fileUtil->insereArquivo($dadosDoArquivo, dirname(__FILE__) . "/../../files/entities/");
+        $local_arquivo = null;
+        if (isset($dados["arquivo"]) && $dados["arquivo"] != "null") {
+            $dadosDoArquivo = $dados["arquivo"];
+            $local_arquivo = $this->fileUtil->insereArquivo($dadosDoArquivo, dirname(__FILE__) . "/../../files/entities/");
+        }
 
         if ($this->lePorNome($dados["nome"]) != null) {
             throw new DomainHttpException("Nome de produto já está em uso.", 409);

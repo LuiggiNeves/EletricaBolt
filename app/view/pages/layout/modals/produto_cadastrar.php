@@ -6,36 +6,38 @@
                 <button type="button" class="btn-close btnFecharModal" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" style="min-height: 400px;">
-                <div class="row justify-content-center">
-                    <div class="col-sm-12 col-md-8">
-                        <div class="col-sm-12 col-md-12 mb-2">
-                            <label class="mb-1">Nome: </label>
-                            <input type="text" class="form-control form-control-sm w-100" id="nomeDoProduto" />
-                        </div>
+                <form class="naoEnvia" id="formularioCadastrarProduto" novalidate>
+                    <div class="row justify-content-center">
+                        <div class="col-sm-12 col-md-10">
+                            <div class="col-sm-12 col-md-12 mb-4">
+                                <label class="mb-1">Nome: </label>
+                                <input type="text" class="form-control form-control-sm w-100" id="nomeDoProduto" required />
+                            </div>
 
-                        <div class="col-sm-12 col-md-12 mb-2">
-                            <label class="mb-1">Descrição: </label>
-                            <textarea class="form-control form-control-sm w-100" id="descricaoDoProduto"></textarea>
-                        </div>
+                            <div class="col-sm-12 col-md-12 mb-4">
+                                <label class="mb-1">Descrição: </label>
+                                <textarea class="form-control form-control-sm w-100" id="descricaoDoProduto" required></textarea>
+                            </div>
 
-                        <div class="col-sm-12 col-md-12 mb-2">
-                            <label class="mb-1">Preço: </label>
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1">R$</span>
-                                <input type="text" class="form-control form-control-sm numero_decimal" id="precoDoProduto" />
+                            <div class="col-sm-12 col-md-12 mb-4">
+                                <label class="mb-1">Preço: </label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon1">R$</span>
+                                    <input type="text" class="form-control form-control-sm numero_decimal" id="precoDoProduto" required />
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 col-md-12 mb-4">
+                                <label class="mb-1">Selecionar imagem para o Produto:</label>
+                                <input type="file" class="form-control form-control-sm w-100" id="imagemDoProduto" onchange="exibirImagem(this, 'imagemContainer')" />
+                            </div>
+
+                            <div class="col-sm-12 col-md-12 my-3 text-center">
+                                <div id="imagemContainer" class="rounded border"></div>
                             </div>
                         </div>
-
-                        <div class="col-sm-12 col-md-12 mb-2">
-                            <label class="mb-1">Selecionar imagem para o Produto:</label>
-                            <input type="file" class="form-control form-control-sm w-100" id="imagemDoProduto" onchange="exibirImagem(this, 'imagemContainer')" />
-                        </div>
-
-                        <div class="col-sm-12 col-md-12 my-3 text-center">
-                            <div id="imagemContainer" class="rounded border"></div>
-                        </div>
                     </div>
-                </div>
+                </form>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-sm btn-success" id="criarProduto">

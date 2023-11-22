@@ -91,4 +91,8 @@ $(document).ready(function () {
 
     inicializaMascarasDoSistema();
 
+    $("form.naoEnvia").submit(function (e) {
+        e.preventDefault();
+    });
+
 });

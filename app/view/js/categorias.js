@@ -273,8 +273,18 @@ $(document).ready(function () {
     });
 
     $("#criarCategoria").on("click", function () {
-        let nome = $("#nomeCategoria").val();
-        criar(nome);
+        let formularioEstaValido = true;
+        let form = $("#formularioCadastrarCategoria")[0];
+        if (!form.checkValidity()) {
+            form.classList.add('was-validated');
+            formularioEstaValido = false;
+        }
+
+        if (formularioEstaValido) {
+            let nome = $("#nomeCategoria").val();
+            criar(nome);
+            $("#formularioCadastrarCategoria").removeClass("was-validated");
+        }
     });
 
     $(document).on("click", ".visualizarCategoria", function () {
@@ -285,10 +295,20 @@ $(document).ready(function () {
     });
 
     $("#alterarCategoria").on("click", function () {
-        let id = $("#idCategoriaAtual").val();
-        let nome = $("#nomeCategoriaVisualizada").val();
+        let formularioEstaValido = true;
+        let form = $("#formularioAlterarCategoria")[0];
+        if (!form.checkValidity()) {
+            form.classList.add('was-validated');
+            formularioEstaValido = false;
+        }
 
-        altera(id, nome);
+        if (formularioEstaValido) {
+            let id = $("#idCategoriaAtual").val();
+            let nome = $("#nomeCategoriaVisualizada").val();
+
+            altera(id, nome);
+            $("#formularioAlterarCategoria").removeClass("was-validated");
+        }
     });
 
     $(document).on("click", ".btnProdutosDaCategoria", function () {
