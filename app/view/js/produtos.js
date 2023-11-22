@@ -62,12 +62,12 @@ function listar(dados_de_pesquisa) {
     );
 }
 
-function exibirImagem(input) {
+function exibirImagem(input, containerId) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
 
         reader.onload = function (e) {
-            var imagemContainer = document.getElementById('imagemContainer');
+            var imagemContainer = document.getElementById(containerId);
             imagemContainer.innerHTML = '<img src="' + e.target.result + '" width="200" height="200" />';
         };
 
@@ -91,12 +91,74 @@ function criar(nome, preco, descricao, arquivo) {
             $("#cadastrarCategoriaModal").modal("hide");
             swal(mensagem, "", "success");
 
-            listar();
+            pesquisar();
         },
         "",
         function () {
 
         }
+    );
+}
+
+function leProdutoPorId(id) {
+    let formData = new FormData();
+    formData.append("route", "le-produto-por-id");
+    formData.append("id", id);
+
+    post("../app/controller/http/controller.php", formData,
+        function (response) {
+            let dados = response["dados"];
+            let mensagem = response["mensagem"];
+
+            let produto = dados["produto"];
+
+            $("#idDoProdutoSelecionado").val(produto["id"]);
+
+            $("#alterarNomeDoProduto").val(produto["nome"]);
+            $("#alterarDescricaoDoProduto").val(produto["descricao"]);
+            $("#alterarPrecoDoProduto").val(produto["preco"]);
+
+            $("#alterarImagemDoProduto").val("");
+            $("#alterarImagemContainer").html("");
+
+            $("#visualizarProdutoModal").modal("show");
+        },
+        "",
+        function () {
+
+        }
+    );
+}
+
+function alterar(id, nome, preco, descricao, arquivo) {
+    let formData = new FormData();
+    formData.append("route", "altera-produto");
+    formData.append("id", id);
+    formData.append("nome", nome);
+    formData.append("preco", preco);
+    formData.append("descricao", descricao);
+    formData.append("arquivo", arquivo);
+
+    post("../app/controller/http/controller.php", formData,
+        function (response) {
+            let dados = response["dados"];
+            let mensagem = response["mensagem"];
+
+            $("#visualizarProdutoModal").modal("hide");
+            swal(mensagem, "", "success");
+
+            pesquisar();
+        },
+        "",
+        function () {
+
+        }
+    );
+}
+
+function pesquisar() {
+    listar(
+        JSON.stringify({ nome: $("#pesquisarNomeProduto").val() })
     );
 }
 
@@ -115,12 +177,30 @@ $(document).ready(function () {
         );
     });
 
+    $("#alterarProduto").on("click", function () {
+
+        let imagem = $("#alterarImagemDoProduto")[0].files[0];
+        imagem = imagem == undefined ? null : imagem;
+
+        alterar(
+            $("#idDoProdutoSelecionado").val(),
+            $("#alterarNomeDoProduto").val(),
+            $("#alterarPrecoDoProduto").val(),
+            $("#alterarDescricaoDoProduto").val(),
+            imagem
+        );
+    });
+
     $("#btnPesquisarProdutos").on("click", function () {
         $(".divConteudoProdutos").show();
 
-        listar(
-            JSON.stringify({ nome: $("#pesquisarNomeProduto").val() })
-        );
+        pesquisar();
+    });
+
+    $(document).on("click", ".btn-visualizar-produto", function () {
+        let id = $(this).parents(".produto-encontrado").attr("id_produto");
+
+        leProdutoPorId(id);
     });
 
 });

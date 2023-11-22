@@ -69,6 +69,28 @@ class ProdutoRepository
             ->setPreco($result["preco"]);
     }
 
+    public function lePorId(int $id): ?Produto
+    {
+        $sql = "SELECT * FROM produtos WHERE id = :id";
+        $stmt = Conexao::getConexao()->prepare($sql);
+        $stmt->bindValue(':id', $id);
+        $stmt->execute();
+        Conexao::desconecta();
+
+        $result = $stmt->fetch();
+
+        if (!$result) {
+            return null;
+        }
+
+        return Produto::create()
+            ->setId($result["id"])
+            ->setNome($result["nome"])
+            ->setDescricao($result["descricao"])
+            ->setImagem_path($result["imagem_path"])
+            ->setPreco($result["preco"]);
+    }
+
     public function listarSemCategoria(): array
     {
         $sql = "SELECT * FROM produtos 
@@ -101,5 +123,24 @@ class ProdutoRepository
         }
 
         return $result;
+    }
+
+    public function altera(Produto $produto): bool
+    {
+        $sql = "UPDATE produtos SET nome = :nome, descricao = :descricao, imagem_path = :imagem_path, preco = :preco WHERE id = :id";
+        $stmt = Conexao::getConexao()->prepare($sql);
+        $stmt->bindValue(':nome', $produto->getNome());
+        $stmt->bindValue(':descricao', $produto->getDescricao());
+        $stmt->bindValue(':imagem_path', $produto->getImagem_path());
+        $stmt->bindValue(':preco', $produto->getPreco());
+        $stmt->bindValue(':id', $produto->getId());
+        $result = $stmt->execute();
+        Conexao::desconecta();
+
+        if (!$result) {
+            return false;
+        }
+
+        return true;
     }
 }

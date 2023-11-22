@@ -37,6 +37,34 @@ class ProdutoService extends ServiceAbstract
         return $produto->setId($this->produtoRepository->criar($produto))->toArray();
     }
 
+    public function altera(int $id, array $dados): bool
+    {
+        $produto = $this->lePorId($id);
+
+        $nome = $dados["nome"];
+        $descricao = $dados["descricao"];
+        $preco = $dados["preco"];
+
+        $produtoEncontradoPorNome = $this->lePorNome($nome);
+        if ($produtoEncontradoPorNome != null && $produtoEncontradoPorNome->getId() != $id) {
+            throw new DomainHttpException("Nome de produto já está em uso.", 409);
+        }
+
+        $produto->setNome($nome)
+            ->setDescricao($descricao)
+            ->setPreco($preco);
+
+        if (isset($dados["arquivo"]) && $dados["arquivo"] != "null") {
+            $this->fileUtil->excluiArquivo(dirname(__FILE__) . "/../../files/entities/" . $produto->getImagem_path());
+
+            $dadosDoArquivo = $dados["arquivo"];
+            $local_arquivo = $this->fileUtil->insereArquivo($dadosDoArquivo, dirname(__FILE__) . "/../../files/entities/");
+            $produto->setImagem_path($local_arquivo);
+        }
+
+        return $this->produtoRepository->altera($produto);
+    }
+
     public function lePorNome(string $nome): ?Produto
     {
         return $this->produtoRepository->lePorNome($nome);
@@ -55,5 +83,20 @@ class ProdutoService extends ServiceAbstract
     public function executaQueryEBuscaTudo(string $query): array
     {
         return $this->produtoRepository->executaQueryEBuscaTudo($query);
+    }
+
+    public function leDadosPorId(int $id): array
+    {
+        $produto = $this->produtoRepository->lePorId($id);
+        if ($produto == null) {
+            throw new DomainHttpException("Produto não encontrado", 404);
+        }
+
+        return $produto->toArray();
+    }
+
+    public function lePorId(int $id): ?Produto
+    {
+        return $this->produtoRepository->lePorId($id);
     }
 }

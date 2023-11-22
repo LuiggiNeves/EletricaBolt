@@ -63,9 +63,14 @@ include('../../layout/auth.php');
         </div>
     </div>
 
-    <!-- Modal para visualizar ranking de unidade -->
+    <!-- Modal para cadastrar produto -->
     <?php
     include('../../layout/modals/produto_cadastrar.php');
+    ?>
+
+    <!-- Modal para visualizar e alterar produto -->
+    <?php
+    include('../../layout/modals/produto_visualizar.php');
     ?>
 
     <?php

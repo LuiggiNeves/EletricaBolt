@@ -76,4 +76,34 @@ class ProdutoController extends ControllerAbstract
             200
         );
     }
+
+    public function lePorId($dados)
+    {
+        $id = intval($dados["id"]);
+
+        return $this->respondeComDados(
+            [
+                "dados" => [
+                    "produto" => $this->produtoService->leDadosPorId($id)
+                ],
+                "mensagem" => ""
+            ],
+            200
+        );
+    }
+
+    public function altera($dados)
+    {
+        $id = intval($dados["id"]);
+
+        return $this->respondeComDados(
+            [
+                "dados" => [
+                    "produto" => $this->produtoService->altera($id, $dados)
+                ],
+                "mensagem" => "Produto alterado com sucesso!"
+            ],
+            200
+        );
+    }
 }
