@@ -504,12 +504,14 @@ main a {
 }
 
 .card-img {
+    overflow: hidden;
     width: 260px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .card-body {
+    overflow: hidden;
     padding: 15px;
 }
 

@@ -102,4 +102,14 @@ class ProdutoService extends ServiceAbstract
     {
         return $this->produtoRepository->lePorId($id);
     }
+
+    public function quantidadeDeAcessoAProdutos(): int
+    {
+        return $this->produtoRepository->quantidadeDeAcessoAProdutos();
+    }
+
+    public function listaProdutosMaisAcessados(int $qtd = 5): array
+    {
+        return $this->produtoRepository->listaProdutosMaisAcessados($qtd);
+    }
 }

@@ -33,12 +33,13 @@ class ControllerRoutes extends ControllerAbstract
         $this->addRoute("pesquisa-produtos", "app\\controller\\http\\API\\ProdutoController", "pesquisaProdutos", true, false, null);
         $this->addRoute("le-produto-por-id", "app\\controller\\http\\API\\ProdutoController", "lePorId", true, false, null);
         $this->addRoute("altera-produto", "app\\controller\\http\\API\\ProdutoController", "altera", true, false, null);
+        $this->addRoute("qtd-acesso-produtos", "app\\controller\\http\\API\\ProdutoController", "quantidadeDeAcessoAProdutos", true, false, null);
+        $this->addRoute("produtos-mais-acessados", "app\\controller\\http\\API\\ProdutoController", "listaProdutosMaisAcessados", true, false, null);
 
         // Categoria Produtos
         $this->addRoute("criar-categoria-produto", "app\\controller\\http\\API\\CategoriaProdutoController", "criar", true, false, null);
         $this->addRoute("listar-produtos-por-categoria", "app\\controller\\http\\API\\CategoriaProdutoController", "listarProdutosPorCategoria", true, false, null);
         $this->addRoute("remove-produto-de-categoria", "app\\controller\\http\\API\\CategoriaProdutoController", "removeProdutoDeCategoria", true, false, null);
-
     }
 
     public function addRoute($route, $class, $method, $needsAuth, $needsPermission, $codePermission = null)
@@ -79,8 +80,6 @@ class ControllerRoutes extends ControllerAbstract
                         500
                     );
                 } catch (Exception $exception) {
-                    var_dump($exception->getMessage());die();
-
                     return $this->respondeComDados(
                         "Houve um erro durante a operação. Contate o administrador do sistema.",
                         500

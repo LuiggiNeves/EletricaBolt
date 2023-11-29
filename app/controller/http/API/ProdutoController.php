@@ -106,4 +106,32 @@ class ProdutoController extends ControllerAbstract
             200
         );
     }
+
+    public function quantidadeDeAcessoAProdutos($dados)
+    {
+        return $this->respondeComDados(
+            [
+                "dados" => [
+                    "qtd" => $this->produtoService->quantidadeDeAcessoAProdutos()
+                ],
+                "mensagem" => ""
+            ],
+            200
+        );
+    }
+
+    public function listaProdutosMaisAcessados($dados)
+    {
+        $qtd = isset($dados["qtd"]) ? intval($dados["qtd"]) : 5;
+
+        return $this->respondeComDados(
+            [
+                "dados" => [
+                    "produtos" => $this->produtoService->listaProdutosMaisAcessados($qtd)
+                ],
+                "mensagem" => ""
+            ],
+            200
+        );
+    }
 }
