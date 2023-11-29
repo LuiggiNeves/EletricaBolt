@@ -178,32 +178,7 @@ include('layout/head.php');
             <div class="main-product">
                 <div class="main-product-container">
                     <div class="catalago-box-container">
-                        <div class="catalago-box">
-
-                            <div class="catalago-product-base">
-                                <div class="card">
-                                    <div class="card-img">
-                                        <p><img src="<?php echo HOST_APP; ?>/app/view/images/wago img teste.jpg" alt="Nome do Produto"></p>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="product-title" a href="#" onclick="openProductView()">Wago 2p 6mm²</a></div>
-                                        <div class="product-price">R$--,--</div>
-                                        <div class="product-quantity">
-                                            <div class="quantity-block-product">
-                                                <div class="quantity-button" onclick="decreaseQuantity()">
-                                                    <p>-</p>
-                                                </div>
-                                                <div class="quantity-input-style"><input type="text" class="quantity-input" id="quantity" value="1" minlength="1"></div>
-                                                <div class="quantity-button" onclick="increaseQuantity()">
-                                                    <p>+</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button class="add-to-cart" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
-                                        <button class="add-to-cart" onclick="Preço()">Preço</button>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="catalago-box" id="produtosEncontrados">
                         </div>
                     </div>
                 </div>
@@ -397,7 +372,18 @@ include('layout/head.php');
         </div>
     </div>
 
+    <?php
+    include('layout/footer.php');
+    ?>
+
+    <!-- Arquivos JS -->
+    <script src="<?php echo HOST_APP; ?>/app/view/js/inicio.js?v=<?php echo VERSION; ?>"></script>
+
     <script>
+        $(document).ready(function() {
+            pesquisar();
+        });
+
         document.getElementById("search-button").addEventListener("click", function() {
             window.location.href = "html/product-search.html";
         });
@@ -520,5 +506,3 @@ include('layout/head.php');
         }
     </script>
 </body>
-
-</html>
