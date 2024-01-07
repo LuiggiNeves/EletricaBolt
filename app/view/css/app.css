@@ -1,0 +1,49 @@
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: rgb(241, 245, 245) !important;
+}
+
+.btn-selecionar-item-navbar{
+    color: black;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.btn-selecionar-item-navbar:hover {
+    background-color: #dadada;
+    color: black;
+    transition: 0.3s;
+}
+
+.btn-item-navbar-selecionado {
+    background-color: rgb(64, 78, 102);
+    border: 2px solid rgb(64, 78, 102);
+    color: white;
+}
+
+.btn-item-navbar-selecionado:hover{
+    background-color: rgb(55, 65, 82);
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+}
+
+/* Estilização de Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #e7e7e7;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #cacaca;
+    border-radius: 8px;
+}
