@@ -59,12 +59,38 @@ class CategoriaProdutoRepository
         $stmt->execute();
         Conexao::desconecta();
 
+        return true;
+    }
+
+    public function removeTodasCategoriasDoProduto(int $produto_id): bool
+    {
+        $sql = "DELETE FROM categoria_produtos WHERE produto_id = :produto_id";
+        $stmt = Conexao::getConexao()->prepare($sql);
+        $stmt->bindValue(':produto_id', $produto_id);
+        $stmt->execute();
+        Conexao::desconecta();
+
+        return true;
+    }
+
+    public function lePrimeiraCategoriaPorProduto(int $produto_id): array
+    {
+        $sql = "SELECT 
+                    categorias.*
+                FROM categoria_produtos
+                INNER JOIN categorias ON categorias.id = categoria_produtos.categoria_id
+                WHERE categoria_produtos.produto_id = :produto_id LIMIT 1";
+        $stmt = Conexao::getConexao()->prepare($sql);
+        $stmt->bindValue(':produto_id', $produto_id);
+        $stmt->execute();
+        Conexao::desconecta();
+
         $result = $stmt->fetch();
 
         if (!$result) {
-            return false;
+            return [];
         }
 
-        return true;
+        return $result;
     }
 }

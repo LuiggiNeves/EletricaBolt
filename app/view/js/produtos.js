@@ -77,13 +77,14 @@ function exibirImagem(input, containerId) {
     }
 }
 
-function criar(nome, preco, descricao, arquivo) {
+function criar(nome, preco, descricao, arquivo, id_categoria) {
     let formData = new FormData();
     formData.append("route", "criar-produto");
     formData.append("nome", nome);
     formData.append("preco", preco);
     formData.append("descricao", descricao);
     formData.append("arquivo", arquivo);
+    formData.append("categoria_id", id_categoria);
 
     post("../app/controller/http/controller.php", formData,
         function (response) {
@@ -126,6 +127,12 @@ function leProdutoPorId(id) {
             $("#alterarDescricaoDoProduto").val(produto["descricao"]);
             $("#alterarPrecoDoProduto").val(produto["preco"]);
 
+            if (produto["categoria"].length != 0) {
+                $("#alterarCategoriaDoProduto").val(produto["categoria"]["id"]);
+            } else {
+                $("#alterarCategoriaDoProduto").val("0");
+            }
+
             $("#alterarImagemDoProduto").val("");
             $("#alterarImagemContainer").html("");
 
@@ -138,7 +145,7 @@ function leProdutoPorId(id) {
     );
 }
 
-function alterar(id, nome, preco, descricao, arquivo) {
+function alterar(id, nome, preco, descricao, arquivo, id_categoria) {
     let formData = new FormData();
     formData.append("route", "altera-produto");
     formData.append("id", id);
@@ -146,6 +153,7 @@ function alterar(id, nome, preco, descricao, arquivo) {
     formData.append("preco", preco);
     formData.append("descricao", descricao);
     formData.append("arquivo", arquivo);
+    formData.append("categoria_id", id_categoria);
 
     post("../app/controller/http/controller.php", formData,
         function (response) {
@@ -184,7 +192,48 @@ function resetaFormularioParaCadastro() {
     $("#descricaoDoProduto").val("");
     $("#precoDoProduto").val("");
     $("#imagemDoProduto").val("");
+    $(".categoriaDoProduto").val(
+        $(".categoriaDoProduto option:first").attr("value")
+    );
     $("#imagemContainer").html("");
+}
+
+function listarCategorias() {
+    let formData = new FormData();
+    formData.append("route", "listar-categorias");
+
+    post("../app/controller/http/controller.php", formData,
+        function (response) {
+            let dados = response["dados"];
+            let mensagem = response["mensagem"];
+
+            let categorias = dados["categorias"];
+
+            $(".categoriaDoProduto option").remove();
+
+            for (let i = 0; i < categorias.length; i++) {
+                $(".categoriaDoProduto").append(
+                    `
+                        <option value="`+ categorias[i]["id"] + `">
+                            `+ categorias[i]["nome"] + `
+                        </option>  
+                    `
+                );
+            }
+
+            $(".categoriaDoProduto").prepend(
+                `
+                    <option value="0" selected>
+                        Nenhuma categoria
+                    </option>
+                `
+            );
+        },
+        "",
+        function () {
+
+        }
+    );
 }
 
 $(document).ready(function () {
@@ -209,7 +258,8 @@ $(document).ready(function () {
                 $("#nomeDoProduto").val(),
                 $("#precoDoProduto").val(),
                 $("#descricaoDoProduto").val(),
-                imagem
+                imagem,
+                $("#categoriaDoProduto").val()
             );
             $("#formularioCadastrarProduto").removeClass("was-validated");
         }
@@ -232,7 +282,8 @@ $(document).ready(function () {
                 $("#alterarNomeDoProduto").val(),
                 $("#alterarPrecoDoProduto").val(),
                 $("#alterarDescricaoDoProduto").val(),
-                imagem
+                imagem,
+                $("#alterarCategoriaDoProduto").val()
             );
             $("#formularioAlterarProduto").removeClass("was-validated");
         }

@@ -15,6 +15,12 @@
                             </div>
 
                             <div class="col-sm-12 col-md-12 mb-4">
+                                <label class="mb-1">Categoria: </label>
+                                <select class="form-control form-control-sm w-100 categoriaDoProduto" id="categoriaDoProduto" required>
+                                </select>
+                            </div>
+
+                            <div class="col-sm-12 col-md-12 mb-4">
                                 <label class="mb-1">Descrição: </label>
                                 <textarea class="form-control form-control-sm w-100" id="descricaoDoProduto" required></textarea>
                             </div>

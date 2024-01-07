@@ -10,13 +10,22 @@ use app\util\FileUtil;
 class ProdutoService extends ServiceAbstract
 {
     private $produtoRepository;
+
+    private $categoriaProdutoService;
+
     private $fileUtil;
 
     public function __construct(
         ProdutoRepository $produtoRepository,
+
+        CategoriaProdutoService $categoriaProdutoService,
+
         FileUtil $fileUtil
     ) {
         $this->produtoRepository = $produtoRepository;
+
+        $this->categoriaProdutoService = $categoriaProdutoService;
+
         $this->fileUtil = $fileUtil;
     }
 
@@ -37,7 +46,18 @@ class ProdutoService extends ServiceAbstract
             ->setDescricao($dados["descricao"])
             ->setImagem_path($local_arquivo);
 
-        return $produto->setId($this->produtoRepository->criar($produto))->toArray();
+        $produtoArray = $produto->setId($this->produtoRepository->criar($produto))->toArray();
+
+        if (isset($dados["categoria_id"])) {
+            if (intval($dados["categoria_id"]) != 0) {
+                $this->categoriaProdutoService->criar(
+                    $dados["categoria_id"],
+                    $produto->getId()
+                );
+            }
+        }
+
+        return $produtoArray;
     }
 
     public function altera(int $id, array $dados): bool
@@ -63,6 +83,17 @@ class ProdutoService extends ServiceAbstract
             $dadosDoArquivo = $dados["arquivo"];
             $local_arquivo = $this->fileUtil->insereArquivo($dadosDoArquivo, dirname(__FILE__) . "/../../files/entities/");
             $produto->setImagem_path($local_arquivo);
+        }
+
+        if (isset($dados["categoria_id"])) {
+            if (intval($dados["categoria_id"]) != 0) {
+                $this->categoriaProdutoService->alterarCategoriaDeProduto(
+                    $dados["categoria_id"],
+                    $produto->getId()
+                );
+            } else {
+                $this->categoriaProdutoService->removeTodasCategoriasDoProduto($produto->getId());
+            }
         }
 
         return $this->produtoRepository->altera($produto);
@@ -95,7 +126,10 @@ class ProdutoService extends ServiceAbstract
             throw new DomainHttpException("Produto não encontrado", 404);
         }
 
-        return $produto->toArray();
+        $produtoArray = $produto->toArray();
+        $produtoArray["categoria"] = $this->categoriaProdutoService->lePrimeiraCategoriaPorProduto($id);
+
+        return $produtoArray;
     }
 
     public function lePorId(int $id): ?Produto

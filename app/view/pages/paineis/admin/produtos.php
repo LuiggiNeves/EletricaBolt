@@ -82,6 +82,8 @@ include('../../layout/auth.php');
 
     <script>
         $(".divProdutos").addClass("btn-item-navbar-selecionado");
+
+        listarCategorias();
     </script>
 
 </body>
