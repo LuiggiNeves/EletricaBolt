@@ -90,10 +90,16 @@ function criar(nome, preco, descricao, arquivo) {
             let dados = response["dados"];
             let mensagem = response["mensagem"];
 
-            $("#cadastrarCategoriaModal").modal("hide");
-            swal(mensagem, "", "success");
-
-            pesquisar();
+            $(".modal").modal("hide");
+            swal({
+                title: mensagem,
+                text: "",
+                icon: "success"
+            })
+                .then((btnOkWasPressed) => {
+                    resetaFormularioParaCadastro();
+                    pesquisar();
+                });
         },
         "",
         function () {
@@ -146,10 +152,17 @@ function alterar(id, nome, preco, descricao, arquivo) {
             let dados = response["dados"];
             let mensagem = response["mensagem"];
 
-            $("#visualizarProdutoModal").modal("hide");
-            swal(mensagem, "", "success");
+            $(".modal").modal("hide");
+            swal({
+                title: mensagem,
+                text: "",
+                icon: "success"
+            })
+                .then((btnOkWasPressed) => {
+                    pesquisar();
+                });
 
-            pesquisar();
+
         },
         "",
         function () {
@@ -159,9 +172,19 @@ function alterar(id, nome, preco, descricao, arquivo) {
 }
 
 function pesquisar() {
+    $(".divConteudoProdutos").show();
+
     listar(
         JSON.stringify({ nome: $("#pesquisarNomeProduto").val() })
     );
+}
+
+function resetaFormularioParaCadastro() {
+    $("#nomeDoProduto").val("");
+    $("#descricaoDoProduto").val("");
+    $("#precoDoProduto").val("");
+    $("#imagemDoProduto").val("");
+    $("#imagemContainer").html("");
 }
 
 $(document).ready(function () {
@@ -216,8 +239,6 @@ $(document).ready(function () {
     });
 
     $("#btnPesquisarProdutos").on("click", function () {
-        $(".divConteudoProdutos").show();
-
         pesquisar();
     });
 
