@@ -21,6 +21,11 @@
                             </div>
 
                             <div class="col-sm-12 col-md-12 mb-4">
+                                <label class="mb-1">Código de referência: </label>
+                                <input type="text" class="form-control form-control-sm w-100" id="alterarCodigoDeReferenciaDoProduto" />
+                            </div>
+
+                            <div class="col-sm-12 col-md-12 mb-4">
                                 <label class="mb-1">Descrição: </label>
                                 <textarea class="form-control form-control-sm w-100" id="alterarDescricaoDoProduto" required></textarea>
                             </div>

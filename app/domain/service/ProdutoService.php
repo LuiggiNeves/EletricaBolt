@@ -44,7 +44,8 @@ class ProdutoService extends ServiceAbstract
         $produto = Produto::create()->setNome($dados["nome"])
             ->setPreco($dados["preco"])
             ->setDescricao($dados["descricao"])
-            ->setImagem_path($local_arquivo);
+            ->setImagem_path($local_arquivo)
+            ->setCodigo_referencia($dados["codigo_referencia"]);
 
         $produtoArray = $produto->setId($this->produtoRepository->criar($produto))->toArray();
 
@@ -67,6 +68,7 @@ class ProdutoService extends ServiceAbstract
         $nome = $dados["nome"];
         $descricao = $dados["descricao"];
         $preco = $dados["preco"];
+        $codigo_referencia = $dados["codigo_referencia"];
 
         $produtoEncontradoPorNome = $this->lePorNome($nome);
         if ($produtoEncontradoPorNome != null && $produtoEncontradoPorNome->getId() != $id) {
@@ -75,7 +77,8 @@ class ProdutoService extends ServiceAbstract
 
         $produto->setNome($nome)
             ->setDescricao($descricao)
-            ->setPreco($preco);
+            ->setPreco($preco)
+            ->setCodigo_referencia($codigo_referencia);
 
         if (isset($dados["arquivo"]) && $dados["arquivo"] != "null") {
             $this->fileUtil->excluiArquivo(dirname(__FILE__) . "/../../files/entities/" . $produto->getImagem_path());

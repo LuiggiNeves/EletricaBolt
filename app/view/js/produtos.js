@@ -77,7 +77,7 @@ function exibirImagem(input, containerId) {
     }
 }
 
-function criar(nome, preco, descricao, arquivo, id_categoria) {
+function criar(nome, preco, descricao, arquivo, id_categoria, codigo_referencia) {
     let formData = new FormData();
     formData.append("route", "criar-produto");
     formData.append("nome", nome);
@@ -85,6 +85,7 @@ function criar(nome, preco, descricao, arquivo, id_categoria) {
     formData.append("descricao", descricao);
     formData.append("arquivo", arquivo);
     formData.append("categoria_id", id_categoria);
+    formData.append("codigo_referencia", codigo_referencia);
 
     post("../app/controller/http/controller.php", formData,
         function (response) {
@@ -126,6 +127,7 @@ function leProdutoPorId(id) {
             $("#alterarNomeDoProduto").val(produto["nome"]);
             $("#alterarDescricaoDoProduto").val(produto["descricao"]);
             $("#alterarPrecoDoProduto").val(produto["preco"]);
+            $("#alterarCodigoDeReferenciaDoProduto").val(produto["codigo_referencia"]);
 
             if (produto["categoria"].length != 0) {
                 $("#alterarCategoriaDoProduto").val(produto["categoria"]["id"]);
@@ -145,7 +147,7 @@ function leProdutoPorId(id) {
     );
 }
 
-function alterar(id, nome, preco, descricao, arquivo, id_categoria) {
+function alterar(id, nome, preco, descricao, arquivo, id_categoria, codigo_referencia) {
     let formData = new FormData();
     formData.append("route", "altera-produto");
     formData.append("id", id);
@@ -154,6 +156,7 @@ function alterar(id, nome, preco, descricao, arquivo, id_categoria) {
     formData.append("descricao", descricao);
     formData.append("arquivo", arquivo);
     formData.append("categoria_id", id_categoria);
+    formData.append("codigo_referencia", codigo_referencia);
 
     post("../app/controller/http/controller.php", formData,
         function (response) {
@@ -259,7 +262,8 @@ $(document).ready(function () {
                 $("#precoDoProduto").val(),
                 $("#descricaoDoProduto").val(),
                 imagem,
-                $("#categoriaDoProduto").val()
+                $("#categoriaDoProduto").val(),
+                $("#codigoDeReferenciaDoProduto").val()
             );
             $("#formularioCadastrarProduto").removeClass("was-validated");
         }
@@ -283,7 +287,8 @@ $(document).ready(function () {
                 $("#alterarPrecoDoProduto").val(),
                 $("#alterarDescricaoDoProduto").val(),
                 imagem,
-                $("#alterarCategoriaDoProduto").val()
+                $("#alterarCategoriaDoProduto").val(),
+                $("#alterarCodigoDeReferenciaDoProduto").val()
             );
             $("#formularioAlterarProduto").removeClass("was-validated");
         }

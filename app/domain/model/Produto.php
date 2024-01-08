@@ -10,6 +10,7 @@ class Produto extends ModelAbstract
     private $descricao;
     private $imagem_path;
     private $preco;
+    private $codigo_referencia;
 
     public static function create()
     {
@@ -71,6 +72,17 @@ class Produto extends ModelAbstract
         return $this;
     }
 
+    public function getCodigo_referencia()
+    {
+        return $this->codigo_referencia;
+    }
+
+    public function setCodigo_referencia($codigo_referencia)
+    {
+        $this->codigo_referencia = $codigo_referencia;
+        return $this;
+    }
+
     public function toArrayData()
     {
         return [
@@ -78,7 +90,8 @@ class Produto extends ModelAbstract
             "nome" => $this->nome,
             "descricao" => $this->descricao,
             "imagem_path" => $this->imagem_path,
-            "preco" => $this->preco
+            "preco" => $this->preco,
+            "codigo_referencia" => $this->codigo_referencia
         ];
     }
 }
