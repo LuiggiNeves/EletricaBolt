@@ -89,11 +89,6 @@ include('../../layout/auth.php');
     include('../../layout/modals/produto_cadastrar.php');
     ?>
 
-    <!-- Modal para visualizar e alterar produto -->
-    <?php
-    include('../../layout/modals/produto_visualizar.php');
-    ?>
-
     <?php
     include('../../layout/footer.php');
     ?>

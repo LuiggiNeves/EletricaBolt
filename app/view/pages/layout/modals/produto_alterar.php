@@ -50,8 +50,6 @@
                                 <div id="alterarImagemContainer" class="rounded border"></div>
                             </div>
                         </div>
-
-                        <input type="hidden" id="idDoProdutoSelecionado" />
                     </div>
                 </form>
             </div>

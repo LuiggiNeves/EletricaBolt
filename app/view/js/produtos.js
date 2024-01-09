@@ -51,7 +51,7 @@ function listar(dados_de_pesquisa) {
                                             <b>`+ produtos[i]["nome"] + `</b>
                                         </div>
                                         <div class='col-sm-12 col-md-2 mb-2'>
-                                            <button class='btn btn-sm btn-primary text-white btn-visualizar-produto'>Visualizar</button>
+                                            <a href='../produtos-visualizar/`+ produtos[i]["id"] + `' class='btn btn-sm btn-primary text-white btn-visualizar-produto'>Visualizar</a>
                                         </div>
                                     </div>
                                 </div>
@@ -133,27 +133,23 @@ function leProdutoPorId(id) {
 
             $("#idDoProdutoSelecionado").val(produto["id"]);
 
-            $("#alterarNomeDoProduto").val(produto["nome"]);
-            $("#alterarDescricaoDoProduto").val(produto["descricao"]);
-            $("#alterarPrecoDoProduto").val(produto["preco"]);
-            $("#alterarCodigoDeReferenciaDoProduto").val(produto["codigo_referencia"]);
-
-            if (produto["categoria"].length != 0) {
-                $("#alterarCategoriaDoProduto").val(produto["categoria"]["id"]);
-            } else {
-                $("#alterarCategoriaDoProduto").val("0");
-            }
-
-            $("#alterarImagemDoProduto").val("");
-
-            let path_imagem = produto["imagem_path"] != null ? `../app/files/entities/` + produto["imagem_path"] + `` : `../app/view/images/produto.png`;
-            $("#alterarImagemContainer").html(
-                `
-                    <img src="`+ path_imagem + `" width="200" height="200" />
-                `
+            carregaFormAlterarProduto(
+                produto["nome"],
+                produto["categoria"]["id"] != null ? produto["categoria"]["id"] : "0",
+                produto["descricao"],
+                produto["preco"],
+                produto["codigo_referencia"],
+                produto["imagem_path"]
             );
 
-            $("#visualizarProdutoModal").modal("show");
+            carregaViewAlterarProduto(
+                produto["nome"],
+                produto["categoria"] != null ? produto["categoria"]["nome"] : "",
+                produto["descricao"],
+                produto["preco"],
+                produto["codigo_referencia"],
+                produto["imagem_path"]
+            );
         },
         "",
         function () {
@@ -185,7 +181,7 @@ function alterar(id, nome, preco, descricao, arquivo, id_categoria, codigo_refer
                 icon: "success"
             })
                 .then((btnOkWasPressed) => {
-                    pesquisar();
+                    leProdutoPorId(id);
                 });
 
 
@@ -301,6 +297,44 @@ function proximaPagina() {
     }
 }
 
+function carregaFormAlterarProduto(
+    nome, id_categoria, descricao, preco, codigo_de_referencia, imagem_path
+) {
+    $("#alterarNomeDoProduto").val(nome);
+    $("#alterarDescricaoDoProduto").val(descricao);
+    $("#alterarPrecoDoProduto").val(preco);
+    $("#alterarCodigoDeReferenciaDoProduto").val(codigo_de_referencia);
+
+    $("#alterarCategoriaDoProduto").val(id_categoria);
+
+    $("#alterarImagemDoProduto").val("");
+    let path_imagem = imagem_path != null ? `../app/files/entities/` + imagem_path + `` : `../app/view/images/produto.png`;
+    $("#alterarImagemContainer").html(
+        `
+            <img src="`+ path_imagem + `" width="200" height="200" />
+        `
+    );
+}
+
+function carregaViewAlterarProduto(
+    nome, categoria, descricao, preco, codigo_de_referencia, imagem_path
+) {
+    $("#nomeDoProduto").text(nome);
+    $("#descricaoDoProduto").text(descricao);
+    $("#precoDoProduto").text(preco);
+    $("#codigoDeReferenciaDoProduto").text(codigo_de_referencia);
+
+    $("#categoriaDoProduto").text(categoria);
+
+    $("#imagemContainer").text("");
+    let path_imagem = imagem_path != null ? `../app/files/entities/` + imagem_path + `` : `../app/view/images/produto.png`;
+    $("#imagemContainer").html(
+        `
+            <img src="`+ path_imagem + `" width="150px" height="150px" />
+        `
+    );
+}
+
 $(document).ready(function () {
 
     $("#modalNovoProduto").on("click", function () {
@@ -360,10 +394,7 @@ $(document).ready(function () {
         pesquisar();
     });
 
-    $(document).on("click", ".btn-visualizar-produto", function () {
-        let id = $(this).parents(".produto-encontrado").attr("id_produto");
-
-        leProdutoPorId(id);
+    $("#btnAbrirModalAlterarProduto").on("click", function(){
+        $("#visualizarProdutoModal").modal("show");
     });
-
 });
