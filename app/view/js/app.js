@@ -87,6 +87,22 @@ function inicializaMascarasDoSistema() {
     $('.numero').mask("#");
 }
 
+function setSpinner($component) {
+    $($component).html(
+        `
+            <div class="spinner-border text-light" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        `
+    );
+    $($component).attr("disabled", "disabled");
+}
+
+function removeSpinner($component, text) {
+    $($component).html(text);
+    $($component).removeAttr("disabled");
+}
+
 $(document).ready(function () {
 
     inicializaMascarasDoSistema();

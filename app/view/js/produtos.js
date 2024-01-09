@@ -63,6 +63,8 @@ function listar(dados_de_pesquisa) {
 
             atualizarPaginacao();
 
+            removeSpinner($("#btnPesquisarProdutos"), "Pesquisar");
+
             $(".spinner-loading-produtos").hide();
             $(".tabela-produtos").show();
         },
@@ -108,6 +110,7 @@ function criar(nome, preco, descricao, arquivo, id_categoria, codigo_referencia)
                 icon: "success"
             })
                 .then((btnOkWasPressed) => {
+                    removeSpinner($("#criarProduto"), "Cadastrar");
                     resetaFormularioParaCadastro();
                     pesquisar();
                 });
@@ -185,6 +188,7 @@ function alterar(id, nome, preco, descricao, arquivo, id_categoria, codigo_refer
                 icon: "success"
             })
                 .then((btnOkWasPressed) => {
+                    removeSpinner($("#alterarProduto"), "Alterar");
                     leProdutoPorId(id);
                 });
 
@@ -363,6 +367,8 @@ $(document).ready(function () {
             let imagem = $("#imagemDoProduto")[0].files[0];
             imagem = imagem == undefined ? null : imagem;
 
+            setSpinner($("#criarProduto"));
+
             criar(
                 $("#nomeDoProduto").val(),
                 $("#precoDoProduto").val(),
@@ -387,6 +393,8 @@ $(document).ready(function () {
             let imagem = $("#alterarImagemDoProduto")[0].files[0];
             imagem = imagem == undefined ? null : imagem;
 
+            setSpinner($("#alterarProduto"));
+
             alterar(
                 $("#idDoProdutoSelecionado").val(),
                 $("#alterarNomeDoProduto").val(),
@@ -401,6 +409,8 @@ $(document).ready(function () {
     });
 
     $("#btnPesquisarProdutos").on("click", function () {
+        setSpinner($("#btnPesquisarProdutos"));
+
         pesquisar();
     });
 

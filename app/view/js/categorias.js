@@ -64,6 +64,8 @@ function pesquisarCategorias(dados_de_pesquisa) {
 
             atualizarPaginacao();
 
+            removeSpinner($("#btnPesquisarCategorias"), "Pesquisar");
+
             $(".spinner-loading-categorias").hide();
             $(".divTabelaCategoria").show();
         },
@@ -96,7 +98,7 @@ function criar(nome) {
     );
 }
 
-function lerPorId(id) {
+function lerPorId(id, $btn = null) {
     let formData = new FormData();
     formData.append("route", "le-categoria-por-id");
     formData.append("id", id);
@@ -112,6 +114,10 @@ function lerPorId(id) {
             $("#nomeCategoriaVisualizada").val(categoria["nome"]);
 
             $("#visualizarCategoriaModal").modal("show");
+
+            if ($btn != null) {
+                removeSpinner($btn, "Visualizar");
+            }
         },
         "",
         function () {
@@ -131,10 +137,12 @@ function altera(id, nome) {
             let dados = response["dados"];
             let mensagem = response["mensagem"];
 
-            listar();
+            pesquisar();
             $(".modal").modal("hide");
 
             swal(mensagem, "", "success");
+
+            removeSpinner($("#alterarCategoria"), "Salvar");
         },
         "",
         function () {
@@ -183,7 +191,7 @@ function listarProdutosSemCategoria() {
     );
 }
 
-function listarProdutoPorCategoria(id_categoria) {
+function listarProdutoPorCategoria(id_categoria, $btn = null) {
     $(".divProdutosDaCategoria").hide();
     $(".spinner-loading-produtos-da-categoria").show();
 
@@ -217,6 +225,10 @@ function listarProdutoPorCategoria(id_categoria) {
                 );
             }
 
+            if ($btn != null) {
+                removeSpinner($($btn), "Produtos");
+            }
+
             $(".spinner-loading-produtos-da-categoria").hide();
             $(".divProdutosDaCategoria").show();
         },
@@ -246,6 +258,8 @@ function inserirProdutoEmCategoria(id_categoria, id_produto) {
                 icon: "success"
             })
                 .then((btnOkWasPressed) => {
+                    removeSpinner($("#btnAdicionarProdutoACategoria"), "Adicionar");
+
                     listarProdutosSemCategoria();
                     listarProdutoPorCategoria($("#categoriaSelecionada").val());
                     $("#visualizarCategoriaProdutosModal").modal("show");
@@ -258,7 +272,7 @@ function inserirProdutoEmCategoria(id_categoria, id_produto) {
     );
 }
 
-function removeProdutoEmCategoria(id_categoria, id_produto) {
+function removeProdutoEmCategoria(id_categoria, id_produto, $btn = null) {
     let formData = new FormData();
     formData.append("route", "remove-produto-de-categoria");
     formData.append("id_categoria", id_categoria);
@@ -277,6 +291,14 @@ function removeProdutoEmCategoria(id_categoria, id_produto) {
                 icon: "success"
             })
                 .then((btnOkWasPressed) => {
+                    if ($btn != null) {
+                        removeSpinner($btn,
+                            `
+                            <i class='bi bi-trash'></i>
+                            `
+                        );
+                    }
+
                     listarProdutosSemCategoria();
                     listarProdutoPorCategoria($("#categoriaSelecionada").val());
                     $("#visualizarCategoriaProdutosModal").modal("show");
@@ -357,7 +379,9 @@ $(document).ready(function () {
         let id_categoria = $(this).parents("tr.categoriaEncontrada").attr("id_categoria");
         $("#categoriaSelecionada").val(id_categoria);
 
-        lerPorId(id_categoria);
+        setSpinner($(this));
+
+        lerPorId(id_categoria, $(this));
     });
 
     $("#alterarCategoria").on("click", function () {
@@ -372,6 +396,8 @@ $(document).ready(function () {
             let id = $("#idCategoriaAtual").val();
             let nome = $("#nomeCategoriaVisualizada").val();
 
+            setSpinner($("#alterarCategoria"));
+
             altera(id, nome);
             $("#formularioAlterarCategoria").removeClass("was-validated");
         }
@@ -381,7 +407,9 @@ $(document).ready(function () {
         let id_categoria = $(this).parents("tr.categoriaEncontrada").attr("id_categoria");
         $("#categoriaSelecionada").val(id_categoria);
 
-        listarProdutoPorCategoria(id_categoria);
+        setSpinner($(this));
+
+        listarProdutoPorCategoria(id_categoria, $(this));
 
         $("#visualizarCategoriaProdutosModal").modal("show");
     });
@@ -390,6 +418,8 @@ $(document).ready(function () {
         let id_produto = $("#produtosSemCategoria").val();
         let id_categoria = $("#categoriaSelecionada").val();
 
+        setSpinner($("#btnAdicionarProdutoACategoria"));
+
         inserirProdutoEmCategoria(id_categoria, id_produto);
     });
 
@@ -397,10 +427,14 @@ $(document).ready(function () {
         let id_produto = $(this).parents("tr").attr("id_produto");
         let id_categoria = $("#categoriaSelecionada").val();
 
+        setSpinner($(this));
+
         removeProdutoEmCategoria(id_categoria, id_produto);
     });
 
     $("#btnPesquisarCategorias").on("click", function () {
+        setSpinner($("#btnPesquisarCategorias"));
+
         pesquisar();
     });
 

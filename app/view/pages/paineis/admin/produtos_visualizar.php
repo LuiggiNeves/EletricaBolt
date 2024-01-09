@@ -17,6 +17,15 @@ include('../../layout/auth.php');
     <div class="container-fluid mt-3">
         <div class="row justify-content-center">
             <div class="col-sm-12 col-md-10 my-1">
+                <div class="row">
+                    <div class="col-sm-12 col-md-3 my-3">
+                        <button class="btn btn-sm btn-primary w-100" onclick="window.history.back()">Voltar</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-12 col-md-10 my-1">
                 <span class="text-muted">
                     <i class="bi bi-person-fill"></i>
                     <?= unserialize($_SESSION["usuario_logado"])->getNome(); ?>
