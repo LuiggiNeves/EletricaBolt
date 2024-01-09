@@ -44,8 +44,14 @@ include('../../layout/auth.php');
                         <?php include '../../layout/formularios/pesquisa_produtos.php'; ?>
                     </div>
 
-                    <div class="col-sm-12 col-md-12 mb-4 mt-4">
-                        <h4 id="qtdProdutos"></h4>
+                    <div class="col-sm-12 col-md-12 mb-4 mt-4" >
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12">
+                                <div class=" alert alert-success" id="alertQtdProdutos" style="display: none;">
+                                    <span id="qtdProdutos"></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="divConteudoProdutos col-sm-12 col-md-12 mb-2" style="display: none;">

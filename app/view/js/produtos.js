@@ -27,6 +27,7 @@ function listar(dados_de_pesquisa) {
             $("#qtdProdutos").html(
                 textoQtdProdutos
             );
+            $("#alertQtdProdutos").show();
 
             for (let i = 0; i < produtos.length; i++) {
                 let path_imagem = produtos[i]["imagem_path"] != null ? `../app/files/entities/` + produtos[i]["imagem_path"] + `` : `../app/view/images/produto.png`;
@@ -134,7 +135,7 @@ function leProdutoPorId(id) {
             } else {
                 $("#alterarCategoriaDoProduto").val("0");
             }
-        
+
             $("#alterarImagemDoProduto").val("");
 
             let path_imagem = produto["imagem_path"] != null ? `../app/files/entities/` + produto["imagem_path"] + `` : `../app/view/images/produto.png`;
@@ -192,7 +193,13 @@ function pesquisar() {
     $(".divConteudoProdutos").show();
 
     listar(
-        JSON.stringify({ nome: $("#pesquisarNomeProduto").val() })
+        JSON.stringify(
+            {
+                nome: $("#pesquisarNomeProduto").val(),
+                categoria: $("#pesquisarCategoriaProduto").val(),
+                codigo_de_referencia: $("#pesquisarCodigoDeReferenciaProduto").val()
+            }
+        )
     );
 }
 
@@ -230,10 +237,18 @@ function listarCategorias() {
                 );
             }
 
-            $(".categoriaDoProduto").prepend(
+            $(".categoriaDoProduto:not(.inputDePesquisa").prepend(
                 `
                     <option value="0" selected>
                         Nenhuma categoria
+                    </option>
+                `
+            );
+
+            $(".inputDePesquisa").prepend(
+                `
+                    <option value="" selected>
+                        Qualquer categoria
                     </option>
                 `
             );
