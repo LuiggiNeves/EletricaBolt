@@ -1,0 +1,120 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+
+
+/*Modal Content (.modal-content): Contém todo o conteúdo da modal.*/
+.modal-content {
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.close-btn {
+
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/*Container Modal (.container-modal): Um contêiner que limita a largura do conteúdo modal.*/
+.container-modal {
+    overflow: hidden;
+    width: 550px;
+}
+
+/*Modal Title (.modal-title): A área do título da modal, que inclui a imagem, o título e o botão de fechar.*/
+.modal-title {
+    width: 100%;
+    
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    
+    
+}
+
+.title-generic-modal{
+    margin: 5px;
+}
+
+/*Modal Title Image (.modal-title img): A área que contém a imagem do título.*/
+.modal-title img {
+    width: 50px;
+
+}
+.modal-title-img{
+    display: flex;
+}
+
+/*Modal Title Heading (.modal-title-h2): A área que contém o título da modal.*/
+.modal-title-h2 {
+    overflow: hidden;
+    width: auto;
+
+}
+.modal-title-h2 h2{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+/*Modal Title Close Button (.modal-title-close): A área que contém o botão de fechar a modal.*/
+.modal-title-close {
+    margin-right: 10px;
+}
+
+
+/*Modal Product Display Area (.modal-product): A área onde os produtos no carrinho seriam exibidos.*/
+.modal-product {
+    height: 450px;
+}
+
+/*Modal Buttons Area (.modal-btn): A área que contém o botão para solicitar um orçamento.*/
+.modal-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.input-modal-btn{
+    margin: auto;
+
+}
+
+/*Botão para Solicitar Orçamento (<input type="button" value="Solicitar Orçamento">): O botão na modal para realizar uma ação específica (solicitar orçamento, neste caso).*/
+.modal-btn input {
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--color-btn-product);
+    color: rgb(30, 30, 30);
+}
+
+/*Hover do botão orçamento*/
+.modal-btn input:hover {
+    background-color: var(--color-btn-product-hv);
+}
+
+@media screen and (max-width: 800px) {
+
+
+
+}

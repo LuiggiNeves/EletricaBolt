@@ -4,6 +4,8 @@ include('layout/head.php');
 
 <link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/pagina_incial_base.css">
 <link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/pagina_incial.css">
+<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/produto-layout.css">
+<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/carrinho-layout.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
@@ -89,7 +91,7 @@ include('layout/head.php');
                 <div class="nav-container">
                     <div class="nav-box dropdown_div nav_position">
                         <div class="nav-item-one nav-item-generic dropdown">
-                            <p>Cabos</p>
+                            <p>Inserir aqui</p>
                             <div class="dropdown-content">
                                 
                             </div>
@@ -134,6 +136,39 @@ include('layout/head.php');
 
     <main>
         <div class="main-container">
+                
+
+                <div class="carrosel-container">
+                    <div class="slideshow-container">
+
+                        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="1000">
+                                <img src="<?php echo HOST_APP; ?>/app/view/images/banner-2.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item " data-bs-interval="1000">
+                                <img src="<?php echo HOST_APP; ?>/app/view/images/banner-1.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item " data-bs-interval="1000">
+                                <img src="<?php echo HOST_APP; ?>/app/view/images/banner-2.png" class="d-block w-100" alt="...">
+                            </div>
+
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                        </div>
+
+
+                    </div>
+                </div>
+
                 <div class="main-block-anuncios main-block-anuncios-smart">
                     <div class="container-block">
                         <div class="block-box">
@@ -152,35 +187,9 @@ include('layout/head.php');
                     </div>
                 </div>
 
-                <div class="carrosel-container">
-                    <div class="slideshow-container">
-
-                        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active" data-bs-interval="3000">
-                                <img src="<?php echo HOST_APP; ?>/app/view/images/banner-2.png" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item" data-bs-interval="3000">
-                                <img src="<?php echo HOST_APP; ?>/app/view/images/banner-1.png" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="<?php echo HOST_APP; ?>/app/view/images/banner-2.png" class="d-block w-100" alt="...">
-                            </div>
-                        </div>
-
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                        </div>
 
 
-                    </div>
-                </div>
+
 
 
            
@@ -202,6 +211,35 @@ include('layout/head.php');
                 <div class="main-product-container">
                     <div class="catalago-box-container">
                         <div class="catalago-box" id="produtosEncontrados">
+
+
+<!--=
+                                <div id="carouselExample" class="carousel slide">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="..." class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="..." class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="..." class="d-block w-100" alt="...">
+                                        </div>
+                                    </div>
+
+
+
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                -->
+
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -283,7 +321,7 @@ include('layout/head.php');
                 <div class="footer-contato">
                     <h2>Contato</h2>
                     <div class="img-text-generic"><a href="#"><img src="<?php echo HOST_APP; ?>/app/view/images/gmail.png" alt=""></a>
-                        <p>EletricaBoltLimeira@gmail.com</p>
+                        <p>eletricaboltLimeira@gmail.com</p>
                     </div>
                     <div class="img-text-generic"><a href="#"><img src="<?php echo HOST_APP; ?>/app/view/images/tell.png" alt=""></a>
                         <p>(19)3441-9868</p>
@@ -308,7 +346,10 @@ include('layout/head.php');
                             <div class="footer-des-h2">
                                 <h2>Desenvolvedor</h2>
                             </div>
-                            <div class="container-nive-sistemas"><a href="#" class="nive-sistemas">Nive Sistemas</a></div>
+                            <div class="container-nive-sistemas">
+                                <img src="<?php echo HOST_APP; ?>/app/view/images/nive.png" alt="">
+                                <a href="https://nivesistemas.com.br/" class="nive-sistemas" target="_blank">Nive Sistemas</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -385,10 +426,8 @@ include('layout/head.php');
             <div class="modal-content">
                 <div>
                     <div class="modal-title">
-                        <div class="modal-title-img">
+                        <div class="modal-title-img modal-title-h2 title-generic-modal">
                             <img src="<?php echo HOST_APP; ?>/app/view/images/bag-ico.png" alt="">
-                        </div>
-                        <div class="modal-title-h2">
                             <h2>Carrinho</h2>
                         </div>
                         <div class="modal-title-close">
@@ -399,7 +438,7 @@ include('layout/head.php');
 
                     </div>
                     <div class="modal-btn">
-                        <input type="button" value="Solicitar Orçamento">
+                        <input type="button" value="Solicitar Orçamento" id="input-modal-btn">
                     </div>
                 </div>
             </div>
