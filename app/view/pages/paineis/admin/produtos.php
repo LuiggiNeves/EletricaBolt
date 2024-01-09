@@ -23,7 +23,7 @@ include('../../layout/auth.php');
                 </span>
             </div>
 
-            <div class="col-sm-12 col-md-10 rounded bg-white shadow-sm mb-3" style="height: 850px;">
+            <div class="col-sm-12 col-md-10 rounded bg-white shadow-sm mb-3" style="min-height: 850px;">
                 <div class="row p-4">
                     <div class="col-sm-12 col-md-12">
                         <h3>
@@ -48,7 +48,7 @@ include('../../layout/auth.php');
                         <h4 id="qtdProdutos"></h4>
                     </div>
 
-                    <div class="divConteudoProdutos col-sm-12 col-md-12 mb-2" style="height: 380px; overflow-y: scroll; display: none;">
+                    <div class="divConteudoProdutos col-sm-12 col-md-12 mb-2" style="display: none;">
                         <div class="spinner-loading-produtos text-center" style="display: none;">
                             <div class="spinner-border text-primary mt-5" role="status">
                                 <span class="visually-hidden">Loading...</span>

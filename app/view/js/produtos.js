@@ -134,9 +134,15 @@ function leProdutoPorId(id) {
             } else {
                 $("#alterarCategoriaDoProduto").val("0");
             }
-
+        
             $("#alterarImagemDoProduto").val("");
-            $("#alterarImagemContainer").html("");
+
+            let path_imagem = produto["imagem_path"] != null ? `../app/files/entities/` + produto["imagem_path"] + `` : `../app/view/images/produto.png`;
+            $("#alterarImagemContainer").html(
+                `
+                    <img src="`+ path_imagem + `" width="200" height="200" />
+                `
+            );
 
             $("#visualizarProdutoModal").modal("show");
         },

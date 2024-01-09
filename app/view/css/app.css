@@ -8,7 +8,7 @@ body {
     background-color: rgb(241, 245, 245) !important;
 }
 
-.btn-selecionar-item-navbar{
+.btn-selecionar-item-navbar {
     color: black;
     cursor: pointer;
     border-radius: 20px;
@@ -26,12 +26,33 @@ body {
     color: white;
 }
 
-.btn-item-navbar-selecionado:hover{
+.btn-item-navbar-selecionado:hover {
     background-color: rgb(55, 65, 82);
     cursor: pointer;
     transition: 0.3s;
     color: white;
 }
+
+.asteriscoObrigatorio {
+    color: red;
+}
+
+
+/* Estilização de produtos */
+.divDadosDoProduto {
+    height: 360px;
+    overflow-y: scroll;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .divDadosDoProduto {
+        max-height: 1000px;
+        overflow-y: hidden;
+    }
+}
+
+
 
 /* Estilização de Scrollbar */
 ::-webkit-scrollbar {
