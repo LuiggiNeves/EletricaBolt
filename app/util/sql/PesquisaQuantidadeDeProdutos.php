@@ -2,17 +2,17 @@
 
 namespace app\util\sql;
 
-class PesquisaDeProdutos extends SqlUtil
+class PesquisaQuantidadeDeProdutos extends SqlUtil
 {
 
-    public function PesquisaDeProdutos()
+    public function PesquisaQuantidadeDeProdutos()
     {
     }
 
     public function montaQuery($params)
     {
         $this->select = "SELECT
-                            produtos.*
+                            COUNT(DISTINCT produtos.id)
                          FROM produtos";
         $this->join = "";
         $this->join_tables = array();
@@ -31,17 +31,6 @@ class PesquisaDeProdutos extends SqlUtil
             $this->searchQuery .= "  AND produtos.codigo_referencia LIKE '%" . $params["codigo_de_referencia"] . "%' ";
         }
 
-        $limit = 10;
-        $offset = 0;
-
-        if (isset($params["limit"])) {
-            $limit = $params["limit"];
-        }
-
-        if (isset($params["offset"])) {
-            $offset = $params["offset"];
-        }
-
-        return $this->select . $this->join . $this->searchQuery . " LIMIT " . $limit . " OFFSET " . $offset;
+        return $this->select . $this->join . $this->searchQuery;
     }
 }

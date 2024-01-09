@@ -44,7 +44,7 @@ include('../../layout/auth.php');
                         <?php include '../../layout/formularios/pesquisa_produtos.php'; ?>
                     </div>
 
-                    <div class="col-sm-12 col-md-12 mb-4 mt-4" >
+                    <div class="col-sm-12 col-md-12 mb-4 mt-4">
                         <div class="row">
                             <div class="col-sm-12 col-md-12">
                                 <div class=" alert alert-success" id="alertQtdProdutos" style="display: none;">
@@ -61,8 +61,23 @@ include('../../layout/auth.php');
                             </div>
                         </div>
 
-                        <div class="tabela-produtos row mx-1" style="display: none;">
+                        <div class="tabela-produtos row mx-1" style="display: none; height: 300px; overflow-y: scroll;">
                         </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-12 mt-3" id="divPaginacao" style="display: none;">
+                        <button class="btn btn-outline-primary btn-sm btn-anterior" onclick="paginaAnterior()">
+                            Anterior
+                        </button>
+                        <span class="paginacao-info mx-3">
+                            Página
+                            <span id="paginaAtual"></span>
+                            de
+                            <span id="totalPaginas"></span>
+                        </span>
+                        <button class="btn btn-outline-primary btn-sm btn-proximo" onclick="proximaPagina()">
+                            Próximo
+                        </button>
                     </div>
                 </div>
             </div>

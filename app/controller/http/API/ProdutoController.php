@@ -5,6 +5,7 @@ namespace app\controller\http\API;
 use app\controller\http\ControllerAbstract;
 use app\domain\service\ProdutoService;
 use app\util\sql\PesquisaDeProdutos;
+use app\util\sql\PesquisaQuantidadeDeProdutos;
 
 require_once '../../../vendor/autoload.php';
 
@@ -13,13 +14,16 @@ class ProdutoController extends ControllerAbstract
     private $produtoService;
 
     private $pesquisaDeProdutos;
+    private $pesquisaQuantidadeDeProdutos;
 
     public function __construct(
         ProdutoService $produtoService,
-        PesquisaDeProdutos $pesquisaDeProdutos
+        PesquisaDeProdutos $pesquisaDeProdutos,
+        PesquisaQuantidadeDeProdutos $pesquisaQuantidadeDeProdutos
     ) {
         $this->produtoService = $produtoService;
         $this->pesquisaDeProdutos = $pesquisaDeProdutos;
+        $this->pesquisaQuantidadeDeProdutos = $pesquisaQuantidadeDeProdutos;
     }
 
     public function criar($dados)
@@ -64,12 +68,15 @@ class ProdutoController extends ControllerAbstract
     public function pesquisaProdutos($dados)
     {
         $dados_de_pesquisa = json_decode($dados["dados-de-pesquisa"], true);
+
         $query = $this->pesquisaDeProdutos->montaQuery($dados_de_pesquisa);
+        $queryQtd = $this->pesquisaQuantidadeDeProdutos->montaQuery($dados_de_pesquisa);
 
         return $this->respondeComDados(
             [
                 "dados" => [
-                    "produtos" => $this->produtoService->executaQueryEBuscaTudo($query)
+                    "produtos" => $this->produtoService->executaQueryEBuscaTudo($query),
+                    "qtd_produtos" => $this->produtoService->executaQueryEBuscaTudo($queryQtd)[0][0]
                 ],
                 "mensagem" => ""
             ],

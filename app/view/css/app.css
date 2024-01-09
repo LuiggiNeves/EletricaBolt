@@ -44,6 +44,13 @@ body {
     overflow-y: scroll;
 }
 
+.produto-encontrado {
+    height: 100px;
+}
+
+.produto-encontrado img {
+    height: 60px;
+}
 
 @media screen and (max-width: 1000px) {
     .divDadosDoProduto {

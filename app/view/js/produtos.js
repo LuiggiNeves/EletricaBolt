@@ -1,3 +1,6 @@
+var paginaAtual = 1;
+var totalPaginas = 1;
+
 function listar(dados_de_pesquisa) {
     $(".tabela-produtos").hide();
     $(".spinner-loading-produtos").show();
@@ -12,16 +15,19 @@ function listar(dados_de_pesquisa) {
             let mensagem = response["mensagem"];
 
             let produtos = dados["produtos"];
+            let qtd_produtos = parseInt(dados["qtd_produtos"]);
+
+            totalPaginas = Math.ceil(qtd_produtos / 10);
 
             $(".tabela-produtos .produto-encontrado").remove();
 
             let textoQtdProdutos = "";
-            if (produtos.length == 0) {
+            if (qtd_produtos == 0) {
                 textoQtdProdutos = "Nenhum produto encontrado";
-            } else if (produtos.length == 1) {
+            } else if (qtd_produtos == 1) {
                 textoQtdProdutos = "<b>1</b> produto encontrado";
             } else {
-                textoQtdProdutos = "<b>" + produtos.length + "</b> produtos encontrados";
+                textoQtdProdutos = "<b>" + qtd_produtos + "</b> produtos encontrados";
             }
 
             $("#qtdProdutos").html(
@@ -34,10 +40,10 @@ function listar(dados_de_pesquisa) {
 
                 $(".tabela-produtos").append(
                     `
-                        <div class='produto-encontrado mb-1 col-sm-12 col-md-12 border' id_produto='`+ produtos[i]["id"] + `'>
+                        <div class='produto-encontrado col-sm-12 col-md-12 border mb-1' id_produto='`+ produtos[i]["id"] + `'>
                             <div class='row'>
                                 <div class='col-sm-12 col-md-1 p-3'>
-                                    <img src='`+ path_imagem + `' class='w-100 rounded' height='60px'/>
+                                    <img src='`+ path_imagem + `' class='w-100 rounded'/>
                                 </div>
                                 <div class='col-sm-12 col-md-10'>
                                     <div class='row mt-4'>
@@ -54,6 +60,8 @@ function listar(dados_de_pesquisa) {
                     `
                 );
             }
+
+            atualizarPaginacao();
 
             $(".spinner-loading-produtos").hide();
             $(".tabela-produtos").show();
@@ -192,12 +200,17 @@ function alterar(id, nome, preco, descricao, arquivo, id_categoria, codigo_refer
 function pesquisar() {
     $(".divConteudoProdutos").show();
 
+    const limit = 10;
+    const offset = (paginaAtual - 1) * limit;
+
     listar(
         JSON.stringify(
             {
                 nome: $("#pesquisarNomeProduto").val(),
                 categoria: $("#pesquisarCategoriaProduto").val(),
-                codigo_de_referencia: $("#pesquisarCodigoDeReferenciaProduto").val()
+                codigo_de_referencia: $("#pesquisarCodigoDeReferenciaProduto").val(),
+                limit: limit,
+                offset: offset
             }
         )
     );
@@ -258,6 +271,34 @@ function listarCategorias() {
 
         }
     );
+}
+
+function atualizarEstadoBotoes() {
+    $(".btn-anterior").prop("disabled", paginaAtual <= 1);
+    $(".btn-proximo").prop("disabled", paginaAtual >= totalPaginas);
+}
+
+
+function atualizarPaginacao() {
+    $("#paginaAtual").text(paginaAtual);
+    $("#totalPaginas").text(totalPaginas);
+    atualizarEstadoBotoes();
+
+    $("#divPaginacao").show();
+}
+
+function paginaAnterior() {
+    if (paginaAtual > 1) {
+        paginaAtual--;
+        pesquisar();
+    }
+}
+
+function proximaPagina() {
+    if (paginaAtual < totalPaginas) {
+        paginaAtual++;
+        pesquisar();
+    }
 }
 
 $(document).ready(function () {
