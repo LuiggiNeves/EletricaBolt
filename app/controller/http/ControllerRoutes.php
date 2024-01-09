@@ -25,6 +25,7 @@ class ControllerRoutes extends ControllerAbstract
         $this->addRoute("criar-categoria", "app\\controller\\http\\API\\CategoriaController", "criar", true, false, null);
         $this->addRoute("le-categoria-por-id", "app\\controller\\http\\API\\CategoriaController", "lePorId", true, false, null);
         $this->addRoute("altera-categoria", "app\\controller\\http\\API\\CategoriaController", "altera", true, false, null);
+        $this->addRoute("pesquisa-categorias", "app\\controller\\http\\API\\CategoriaController", "pesquisaCategorias", true, false, null);
 
         // Produtos
         $this->addRoute("listar-produtos", "app\\controller\\http\\API\\ProdutoController", "listar", true, false, null);

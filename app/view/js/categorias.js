@@ -1,9 +1,13 @@
-function listar() {
+var paginaAtual = 1;
+var totalPaginas = 1;
+
+function pesquisarCategorias(dados_de_pesquisa) {
     $(".divTabelaCategoria").hide();
     $(".spinner-loading-categorias").show();
 
     let formData = new FormData();
-    formData.append("route", "listar-categorias");
+    formData.append("route", "pesquisa-categorias");
+    formData.append("dados-de-pesquisa", dados_de_pesquisa);
 
     post("../app/controller/http/controller.php", formData,
         function (response) {
@@ -11,6 +15,23 @@ function listar() {
             let mensagem = response["mensagem"];
 
             let categorias = dados["categorias"];
+            let qtd_categorias = parseInt(dados["qtd_categorias"]);
+
+            totalPaginas = Math.ceil(qtd_categorias / 10);
+
+            let textoQtdCategorias = "";
+            if (qtd_categorias == 0) {
+                textoQtdCategorias = "Nenhuma encontrada";
+            } else if (qtd_categorias == 1) {
+                textoQtdCategorias = "<b>1</b> categoria encontrada";
+            } else {
+                textoQtdCategorias = "<b>" + qtd_categorias + "</b> categorias encontradas";
+            }
+
+            $("#qtdCategorias").html(
+                textoQtdCategorias
+            );
+            $("#alertQtdCategorias").show();
 
             $(".tabela-categorias tbody tr").remove();
 
@@ -40,6 +61,8 @@ function listar() {
                     `
                 );
             }
+
+            atualizarPaginacao();
 
             $(".spinner-loading-categorias").hide();
             $(".divTabelaCategoria").show();
@@ -266,6 +289,49 @@ function removeProdutoEmCategoria(id_categoria, id_produto) {
     );
 }
 
+function pesquisar() {
+    const limit = 10;
+    const offset = (paginaAtual - 1) * limit;
+
+    pesquisarCategorias(
+        JSON.stringify(
+            {
+                nome: $("#pesquisarNomeCategoria").val(),
+                limit: limit,
+                offset: offset
+            }
+        )
+    );
+}
+
+function atualizarEstadoBotoes() {
+    $(".btn-anterior").prop("disabled", paginaAtual <= 1);
+    $(".btn-proximo").prop("disabled", paginaAtual >= totalPaginas);
+}
+
+
+function atualizarPaginacao() {
+    $("#paginaAtual").text(paginaAtual);
+    $("#totalPaginas").text(totalPaginas);
+    atualizarEstadoBotoes();
+
+    $("#divPaginacao").show();
+}
+
+function paginaAnterior() {
+    if (paginaAtual > 1) {
+        paginaAtual--;
+        pesquisar();
+    }
+}
+
+function proximaPagina() {
+    if (paginaAtual < totalPaginas) {
+        paginaAtual++;
+        pesquisar();
+    }
+}
+
 $(document).ready(function () {
 
     $("#modalNovaCategoria").on("click", function () {
@@ -332,6 +398,10 @@ $(document).ready(function () {
         let id_categoria = $("#categoriaSelecionada").val();
 
         removeProdutoEmCategoria(id_categoria, id_produto);
+    });
+
+    $("#btnPesquisarCategorias").on("click", function () {
+        pesquisar();
     });
 
 });

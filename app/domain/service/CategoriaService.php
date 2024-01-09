@@ -67,4 +67,9 @@ class CategoriaService extends ServiceAbstract
     {
         return $this->categoriaRepository->lePorId($id);
     }
+
+    public function executaQueryEBuscaTudo(string $query): array
+    {
+        return $this->categoriaRepository->executaQueryEBuscaTudo($query);
+    }
 }

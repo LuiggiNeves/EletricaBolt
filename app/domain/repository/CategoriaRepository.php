@@ -97,4 +97,21 @@ class CategoriaRepository
 
         return true;
     }
+
+    public function executaQueryEBuscaTudo($query): array
+    {
+        $sql = $query;
+        $stmt = Conexao::getConexao()->prepare($sql);
+        $stmt->execute();
+        Conexao::desconecta();
+
+        $result = $stmt->fetchAll();
+
+        if (!$result) {
+            return [];
+        }
+
+        return $result;
+    }
+
 }

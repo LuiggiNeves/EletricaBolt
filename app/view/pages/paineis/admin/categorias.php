@@ -23,7 +23,7 @@ include('../../layout/auth.php');
                 </span>
             </div>
 
-            <div class="col-sm-12 col-md-10 rounded bg-white shadow-sm" style="height: 450px;">
+            <div class="col-sm-12 col-md-10 rounded bg-white shadow-sm" style="min-height: 850px;">
                 <div class="row p-4">
                     <div class="col-sm-12 col-md-12 mb-2">
                         <h3>
@@ -32,10 +32,24 @@ include('../../layout/auth.php');
                         </h3>
                     </div>
 
-                    <div class="col-sm-12 col-md-12 mb-2">
+                    <div class="col-sm-12 col-md-12 mb-5">
                         <div class="row mt-4">
                             <div class="col-sm-12 col-md-3">
                                 <button class="btn btn-sm btn-primary w-100 text-white" id="modalNovaCategoria">Nova categoria</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-12 mb-2">
+                        <?php include '../../layout/formularios/pesquisa_categorias.php'; ?>
+                    </div>
+
+                    <div class="col-sm-12 col-md-12 mb-4 mt-4">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12">
+                                <div class=" alert alert-success" id="alertQtdCategorias" style="display: none;">
+                                    <span id="qtdCategorias"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -60,6 +74,21 @@ include('../../layout/auth.php');
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-12 mt-3" id="divPaginacao" style="display: none;">
+                        <button class="btn btn-outline-primary btn-sm btn-anterior" onclick="paginaAnterior()">
+                            Anterior
+                        </button>
+                        <span class="paginacao-info mx-3">
+                            Página
+                            <span id="paginaAtual"></span>
+                            de
+                            <span id="totalPaginas"></span>
+                        </span>
+                        <button class="btn btn-outline-primary btn-sm btn-proximo" onclick="proximaPagina()">
+                            Próximo
+                        </button>
                     </div>
                 </div>
             </div>
@@ -91,7 +120,6 @@ include('../../layout/auth.php');
     <script>
         $(".divCategorias").addClass("btn-item-navbar-selecionado");
 
-        listar();
         listarProdutosSemCategoria();
     </script>
 
