@@ -150,6 +150,10 @@ function leProdutoPorId(id) {
                 produto["codigo_referencia"],
                 produto["imagem_path"]
             );
+
+            carregaMetricasProduto(
+                produto["metricas"]["qtd_acessos"]
+            );
         },
         "",
         function () {
@@ -335,6 +339,12 @@ function carregaViewAlterarProduto(
     );
 }
 
+function carregaMetricasProduto(
+    qtd_acessos
+) {
+    $("#qtd_acessos_ao_produto").text(qtd_acessos);
+}
+
 $(document).ready(function () {
 
     $("#modalNovoProduto").on("click", function () {
@@ -394,7 +404,7 @@ $(document).ready(function () {
         pesquisar();
     });
 
-    $("#btnAbrirModalAlterarProduto").on("click", function(){
+    $("#btnAbrirModalAlterarProduto").on("click", function () {
         $("#visualizarProdutoModal").modal("show");
     });
 });

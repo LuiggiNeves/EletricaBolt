@@ -69,6 +69,32 @@ include('../../layout/auth.php');
                     </div>
                 </div>
             </div>
+
+            <div class="col-sm-12 col-md-10 rounded bg-white shadow-sm mb-3">
+                <div class="row p-4">
+                    <div class="row mb-3">
+                        <div class="col-sm-12 col-md-12">
+                            <div class="row g-3 mb-4">
+                                <div class="col-sm-12 col-md-12">
+                                    <h3 class="">
+                                        <i class="bi bi-bar-chart"></i>
+                                        <span class="">Métricas</span>
+                                    </h3>
+                                </div>
+
+                                <div class="col">
+                                    <div class="bg-white justify-content-around align-items-center rounded">
+                                        <div>
+                                            <h3 class="fs-2 text-primary" id="qtd_acessos_ao_produto"></h3>
+                                            <p class="fs-5 labelEstatisticaProduto">Qtd. de acessos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

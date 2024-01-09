@@ -12,6 +12,7 @@ class ProdutoService extends ServiceAbstract
     private $produtoRepository;
 
     private $categoriaProdutoService;
+    private $historicoProdutoService;
 
     private $fileUtil;
 
@@ -19,12 +20,14 @@ class ProdutoService extends ServiceAbstract
         ProdutoRepository $produtoRepository,
 
         CategoriaProdutoService $categoriaProdutoService,
+        HistoricoProdutoService $historicoProdutoService,
 
         FileUtil $fileUtil
     ) {
         $this->produtoRepository = $produtoRepository;
 
         $this->categoriaProdutoService = $categoriaProdutoService;
+        $this->historicoProdutoService = $historicoProdutoService;
 
         $this->fileUtil = $fileUtil;
     }
@@ -131,6 +134,9 @@ class ProdutoService extends ServiceAbstract
 
         $produtoArray = $produto->toArray();
         $produtoArray["categoria"] = $this->categoriaProdutoService->lePrimeiraCategoriaPorProduto($id);
+
+        $qtd_acessos = $this->historicoProdutoService->quantidadeDeAcessoPorProduto($id);
+        $produtoArray["metricas"]["qtd_acessos"] = $qtd_acessos;
 
         return $produtoArray;
     }

@@ -26,4 +26,25 @@ class HistoricoProdutoRepository
         Conexao::desconecta();
         return $id;
     }
+
+    public function quantidadeDeAcessoPorProduto(int $produto_id): int
+    {
+        $sql = "SELECT 
+                    COUNT(DISTINCT historico_produto.id) AS qtd
+                FROM historico_produto 
+                INNER JOIN historico_utilizacao ON historico_utilizacao.id = historico_produto.historico_utilizacao_id
+                WHERE historico_produto.produto_id = :produto_id AND historico_utilizacao.mensagem LIKE '%Produto visualizado%'";
+        $stmt = Conexao::getConexao()->prepare($sql);
+        $stmt->bindValue(':produto_id', $produto_id);
+        $result = $stmt->execute();
+        Conexao::desconecta();
+
+        $result = $stmt->fetch();
+
+        if (!$result) {
+            return 0;
+        }
+
+        return intval($result["qtd"]);
+    }
 }

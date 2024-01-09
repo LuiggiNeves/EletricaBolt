@@ -33,4 +33,9 @@ class HistoricoProdutoService
     {
         return $this->historicoProdutoRepository->criar($historicoProduto);
     }
+
+    public function quantidadeDeAcessoPorProduto(int $produto_id): int
+    {
+        return $this->historicoProdutoRepository->quantidadeDeAcessoPorProduto($produto_id);
+    }
 }
