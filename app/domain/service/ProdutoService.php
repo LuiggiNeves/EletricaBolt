@@ -13,6 +13,7 @@ class ProdutoService extends ServiceAbstract
 
     private $categoriaProdutoService;
     private $historicoProdutoService;
+    private $produtoImagemService;
 
     private $fileUtil;
 
@@ -21,6 +22,7 @@ class ProdutoService extends ServiceAbstract
 
         CategoriaProdutoService $categoriaProdutoService,
         HistoricoProdutoService $historicoProdutoService,
+        ProdutoImagemService $produtoImagemService,
 
         FileUtil $fileUtil
     ) {
@@ -28,6 +30,7 @@ class ProdutoService extends ServiceAbstract
 
         $this->categoriaProdutoService = $categoriaProdutoService;
         $this->historicoProdutoService = $historicoProdutoService;
+        $this->produtoImagemService = $produtoImagemService;
 
         $this->fileUtil = $fileUtil;
     }
@@ -137,6 +140,8 @@ class ProdutoService extends ServiceAbstract
 
         $qtd_acessos = $this->historicoProdutoService->quantidadeDeAcessoPorProduto($id);
         $produtoArray["metricas"]["qtd_acessos"] = $qtd_acessos;
+
+        $produtoArray["imagens"] = $this->produtoImagemService->listarPorProduto($id);
 
         return $produtoArray;
     }
