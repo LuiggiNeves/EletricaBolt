@@ -103,11 +103,11 @@
     display: block;
     width: 100%;
     margin-top: 10px;
-    transition: var(--color-btn-product-hover) 0.3s ease; /* Adição de transição para a cor de fundo */
+    transition: var(--color-btn-product-hv) 0.3s ease; /* Adição de transição para a cor de fundo */
 }
 
 .add-to-cart:hover {
-    background-color: var(--color-btn-product-hover);
+    background-color: var(--color-btn-product-hv);
 }
 
 /* Botão de Pesquisa */

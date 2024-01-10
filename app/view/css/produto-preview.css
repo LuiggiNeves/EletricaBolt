@@ -1,0 +1,136 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+*{
+
+}
+
+body{
+    background-color: rgb(241, 245, 245);
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    background-color: rgb(241, 245, 245);
+}
+
+.container-main-preview{
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    /*background-color: rgb(13, 59, 160);*/
+}
+
+.main-preview-layout{
+    width: var(--lateral-site);
+    padding: 10px;
+    background-color: #fff;
+    /*background-color: chartreuse;*/
+}
+
+.container-content{
+    display: inline-flex;
+    margin-bottom: 50px;
+    background-color: #fff;
+}
+
+.product-preview-img{
+    width: 1000px;
+    background-color: #fff;
+    display: inline-flex;
+
+   /*background-color: brown;*/
+}
+
+.product-preview-img > .active-img-container{
+    display: flex;
+    justify-content: flex-start ;
+}
+
+.multiple-imgs{
+    width: 150px;
+    display: inline-flex;
+    margin-right: 30px;
+    flex-direction: column;
+    /*background-color: blueviolet;*/
+}
+
+.multiple-imgs img{
+    width: 100px;
+    height: 100px;
+}
+
+.active-img-container{
+    /*background-color: rgb(100, 79, 27);*/
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+}
+
+.active-img{
+
+}
+
+.active-img img{
+
+    width: 350px;
+    height: 350px;
+    padding: 5px;
+    object-fit: cover;
+}
+
+.product-preview-info-container{
+    width: 100%;
+}
+.product-preview-info > h2{
+    margin-bottom: 30px ;
+    overflow: hidden;
+}
+
+.product-preview-container-btn{
+    width: 600px;
+    height: 30%;
+
+    display: inline-flex;
+    align-items: end;
+    
+}
+
+.product-preview-btn{
+    margin-right: 50px;
+}
+
+.product-preview-btn input{
+    background-color: var(--color-btn-product);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+
+    width: 100%;
+    margin-top: 10px;
+    transition: var(--color-btn-product-hv) 0.3s ease; /* Adição de transição para a cor de fundo */
+}
+
+.product-preview-btn input:hover {
+    background-color: var(--color-btn-product-hv);
+}
+
+.product-preview-descricao{
+    margin-left: 50px;
+    height: 200px;
+}
+
+.product-preview-descricao h3{
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+

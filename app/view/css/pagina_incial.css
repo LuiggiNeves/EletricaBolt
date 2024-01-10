@@ -546,7 +546,8 @@ footer *{
 
 
 footer {
-    
+    display: block;
+    align-items: end;
 
 }
 

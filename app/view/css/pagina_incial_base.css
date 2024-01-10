@@ -26,8 +26,10 @@
     --color-border-div: rgb(144, 144, 144);
 
     --font-pc-bigger: 35px;
+    --font-pc-bigger-title: 24px;
     --font-pc-big: 20px;
     --font-pc-medio: 16px;
+    --font-pc-medio-medio: 18px;
     --font-pc-small: 13px;
 
     --font-smart-big: 16px;
@@ -35,4 +37,6 @@
     --font-smart-small: 10px;
 
     --lateral-site: 1300px;
+
+    --overflow: hidden;
 }

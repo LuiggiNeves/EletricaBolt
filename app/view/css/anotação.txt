@@ -97,3 +97,143 @@
         background-color: var(--color-btn-product-hv);
     }
 só para me me lembrar de algumas partes da responsividade do Modal, irei apagar amanha ou quarta
+
+
+
+
+
+
+/*
+main{
+   width:100%;
+   height: 100%;
+}
+
+main *{
+    overflow: var(--overflow);
+    
+}
+
+.container-main-preview{
+    width:100%;
+    height: 100%;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+
+}
+
+.main-preview-layout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--lateral-site);
+    height: 700px;
+
+    padding: 10px;
+}
+
+.product-preview-title{
+    width: 100%;
+    height: 50px;
+}
+
+.product-preview-title h1{
+    font-size: var(--font-pc-bigger-title);
+    text-align: justify;
+}
+
+.container-content{
+    width: 100%;
+    height: 90%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.product-preview-img{
+    display: inline-flex;
+    width: 570px;
+}
+
+.multiple-imgs{
+    width: 110px;
+    height: 90%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    margin-right: 20px;
+    
+}
+
+.multiple-imgs img{
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    object-fit: cover;
+}
+
+.product-preview-img > .active-img{
+    display: flex;
+    margin: auto;
+}
+
+.active-img-container{
+    width: 450px;
+    height: 400px;
+
+    display: flex;
+    justify-content: center;
+    align-items: top;
+
+    background-color: rgb(37, 37, 70);
+
+}
+
+.active-img{
+
+    border: 1px solid black;
+    width: 350px;
+    height: 350px;
+
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.active-img img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.product-preview-desc{
+
+    width:450px;
+    height: 100%;
+}
+
+.product-preview-info{
+
+
+}
+.product-preview-info p{
+    padding: 3px;
+    font-size: var(--font-pc-medio-medio);
+
+}
+
+.product-preview-descricao{
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+}
+.product-preview-img  .product-preview-descricao{
+    display: flex;
+    margin-bottom: 300px;
+}
+
+*/
