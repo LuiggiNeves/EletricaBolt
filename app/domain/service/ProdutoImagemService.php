@@ -46,6 +46,7 @@ class ProdutoImagemService extends ServiceAbstract
         $produtoImagem = $this->produtoImagemRepository->lePorId($id);
 
         $this->fileUtil->excluiArquivo(dirname(__FILE__) . "/../../files/entities/" . $produtoImagem->getImagem_path());
+        $this->produtoImagemRepository->deletaPorId($id);
 
         return true;
     }

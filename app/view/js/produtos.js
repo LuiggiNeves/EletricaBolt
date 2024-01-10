@@ -372,14 +372,14 @@ function carregaMetricasProduto(
 function carregaImagensDoProduto(
     imagens
 ) {
-    $(".imagemEncontrada").remove();
+    $(".divImagemEncontrada").remove();
 
     for (let i = 0; i < imagens.length; i++) {
         let path_imagem = imagens[i]["imagem_path"] != null ? `../app/files/entities/` + imagens[i]["imagem_path"] + `` : `../app/view/images/produto.png`;
 
         $(".imagensDoProduto").append(
             `
-                <div class="col-sm-12 col-md-3 border rounded divImagemEncontrada mx-1 mb-2">
+                <div class="col-sm-12 col-md-3 border rounded divImagemEncontrada mx-1 mb-2" id_imagem="`+ imagens[i]["id"] + `">
                     <img src="`+ path_imagem + `" class="w-100" />
                 </div>
             `
@@ -405,6 +405,34 @@ function criarNovaImagem(produto_id, arquivo) {
             })
                 .then((btnOkWasPressed) => {
                     leProdutoPorId(produto_id);
+                });
+        },
+        "",
+        function () {
+
+        }
+    );
+}
+
+function removeImagem(id) {
+    let formData = new FormData();
+    formData.append("route", "remove-produto-imagem");
+    formData.append("id", id);
+
+    post("../app/controller/http/controller.php", formData,
+        function (response) {
+            let dados = response["dados"];
+            let mensagem = response["mensagem"];
+
+            swal({
+                title: "Imagem removida com sucesso!",
+                text: "",
+                icon: "success"
+            })
+                .then((btnOkWasPressed) => {
+                    leProdutoPorId(
+                        $("#idDoProdutoSelecionado").val()
+                    );
                 });
         },
         "",
@@ -495,5 +523,22 @@ $(document).ready(function () {
             $("#idDoProdutoSelecionado").val(),
             imagem
         );
+    })
+
+    $(document).on("click", ".divImagemEncontrada", function () {
+        let id = $(this).attr("id_imagem");
+
+        swal({
+            title: "",
+            text: "Deseja remover a imagem?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true
+        })
+            .then((btnOkWasPressed) => {
+                if (btnOkWasPressed) {
+                    removeImagem(id);
+                }
+            });
     })
 });
