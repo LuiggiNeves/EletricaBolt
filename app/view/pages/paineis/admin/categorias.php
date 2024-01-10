@@ -54,7 +54,7 @@ include('../../layout/auth.php');
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-12 mb-2">
+                    <div class="col-sm-12 col-md-12">
                         <div class="spinner-loading-categorias w-100 text-center" style="display: none;">
                             <div class="spinner-border text-primary mt-5" role="status">
                                 <span class="visually-hidden">Loading...</span>

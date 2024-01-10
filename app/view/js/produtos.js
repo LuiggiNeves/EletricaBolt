@@ -19,8 +19,6 @@ function listar(dados_de_pesquisa) {
 
             totalPaginas = Math.ceil(qtd_produtos / 10);
 
-            $(".tabela-produtos .produto-encontrado").remove();
-
             let textoQtdProdutos = "";
             if (qtd_produtos == 0) {
                 textoQtdProdutos = "Nenhum produto encontrado";
@@ -35,28 +33,26 @@ function listar(dados_de_pesquisa) {
             );
             $("#alertQtdProdutos").show();
 
-            for (let i = 0; i < produtos.length; i++) {
-                let path_imagem = produtos[i]["imagem_path"] != null ? `../app/files/entities/` + produtos[i]["imagem_path"] + `` : `../app/view/images/produto.png`;
+            $(".tabela-produtos tbody tr").remove();
 
-                $(".tabela-produtos").append(
+            for (let i = 0; i < produtos.length; i++) {
+                $(".tabela-produtos tbody").append(
                     `
-                        <div class='produto-encontrado col-sm-12 col-md-12 border mb-1' id_produto='`+ produtos[i]["id"] + `'>
-                            <div class='row'>
-                                <div class='col-sm-12 col-md-1 p-3'>
-                                    <img src='`+ path_imagem + `' class='w-100 rounded'/>
-                                </div>
-                                <div class='col-sm-12 col-md-10'>
-                                    <div class='row mt-4'>
-                                        <div class='col-sm-12 col-md-10 mb-2'>
-                                            <b>`+ produtos[i]["nome"] + `</b>
-                                        </div>
-                                        <div class='col-sm-12 col-md-2 mb-2'>
-                                            <a href='../produtos-visualizar/`+ produtos[i]["id"] + `' class='btn btn-sm btn-primary text-white btn-visualizar-produto'>Visualizar</a>
-                                        </div>
+                        <tr class="produtoEncontrado" id_produto=`+ produtos[i]["id"] + `>
+                            <td style="width: 80%">
+                                `+ produtos[i]["nome"] + `
+                            </td>
+
+                            <td style="width: 20%">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-12 mb-2">
+                                        <a href='../produtos-visualizar/`+ produtos[i]["id"] + `' class='btn btn-sm btn-primary text-white btn-visualizar-produto'>
+                                            Visualizar
+                                        </a>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </td>
+                        </tr>
                     `
                 );
             }
@@ -66,6 +62,7 @@ function listar(dados_de_pesquisa) {
             removeSpinner($("#btnPesquisarProdutos"), "Pesquisar");
 
             $(".spinner-loading-produtos").hide();
+            $(".divTabelaProdutos").show();
             $(".tabela-produtos").show();
         },
         "",
