@@ -104,13 +104,12 @@ function exibirImagemEmComponente(input, $componente) {
     }
 }
 
-function criar(nome, preco, descricao, arquivo, id_categoria, codigo_referencia) {
+function criar(nome, preco, descricao, id_categoria, codigo_referencia) {
     let formData = new FormData();
     formData.append("route", "criar-produto");
     formData.append("nome", nome);
     formData.append("preco", preco);
     formData.append("descricao", descricao);
-    formData.append("arquivo", arquivo);
     formData.append("categoria_id", id_categoria);
     formData.append("codigo_referencia", codigo_referencia);
 
@@ -157,8 +156,7 @@ function leProdutoPorId(id) {
                 produto["categoria"]["id"] != null ? produto["categoria"]["id"] : "0",
                 produto["descricao"],
                 produto["preco"],
-                produto["codigo_referencia"],
-                produto["imagem_path"]
+                produto["codigo_referencia"]
             );
 
             carregaViewAlterarProduto(
@@ -166,8 +164,7 @@ function leProdutoPorId(id) {
                 produto["categoria"] != null ? produto["categoria"]["nome"] : "",
                 produto["descricao"],
                 produto["preco"],
-                produto["codigo_referencia"],
-                produto["imagem_path"]
+                produto["codigo_referencia"]
             );
 
             carregaMetricasProduto(
@@ -185,14 +182,13 @@ function leProdutoPorId(id) {
     );
 }
 
-function alterar(id, nome, preco, descricao, arquivo, id_categoria, codigo_referencia) {
+function alterar(id, nome, preco, descricao, id_categoria, codigo_referencia) {
     let formData = new FormData();
     formData.append("route", "altera-produto");
     formData.append("id", id);
     formData.append("nome", nome);
     formData.append("preco", preco);
     formData.append("descricao", descricao);
-    formData.append("arquivo", arquivo);
     formData.append("categoria_id", id_categoria);
     formData.append("codigo_referencia", codigo_referencia);
 
@@ -326,7 +322,7 @@ function proximaPagina() {
 }
 
 function carregaFormAlterarProduto(
-    nome, id_categoria, descricao, preco, codigo_de_referencia, imagem_path
+    nome, id_categoria, descricao, preco, codigo_de_referencia
 ) {
     $("#alterarNomeDoProduto").val(nome);
     $("#alterarDescricaoDoProduto").val(descricao);
@@ -334,18 +330,10 @@ function carregaFormAlterarProduto(
     $("#alterarCodigoDeReferenciaDoProduto").val(codigo_de_referencia);
 
     $("#alterarCategoriaDoProduto").val(id_categoria);
-
-    $("#alterarImagemDoProduto").val("");
-    let path_imagem = imagem_path != null ? `../app/files/entities/` + imagem_path + `` : `../app/view/images/produto.png`;
-    $("#alterarImagemContainer").html(
-        `
-            <img src="`+ path_imagem + `" width="200" height="200" />
-        `
-    );
 }
 
 function carregaViewAlterarProduto(
-    nome, categoria, descricao, preco, codigo_de_referencia, imagem_path
+    nome, categoria, descricao, preco, codigo_de_referencia
 ) {
     $("#nomeDoProduto").text(nome);
     $("#descricaoDoProduto").text(descricao);
@@ -353,14 +341,6 @@ function carregaViewAlterarProduto(
     $("#codigoDeReferenciaDoProduto").text(codigo_de_referencia);
 
     $("#categoriaDoProduto").text(categoria);
-
-    $("#imagemContainer").text("");
-    let path_imagem = imagem_path != null ? `../app/files/entities/` + imagem_path + `` : `../app/view/images/produto.png`;
-    $("#imagemContainer").html(
-        `
-            <img src="`+ path_imagem + `" width="150px" height="150px" />
-        `
-    );
 }
 
 function carregaMetricasProduto(
@@ -457,16 +437,12 @@ $(document).ready(function () {
         }
 
         if (formularioEstaValido) {
-            let imagem = $("#imagemDoProduto")[0].files[0];
-            imagem = imagem == undefined ? null : imagem;
-
             setSpinner($("#criarProduto"));
 
             criar(
                 $("#nomeDoProduto").val(),
                 $("#precoDoProduto").val(),
                 $("#descricaoDoProduto").val(),
-                imagem,
                 $("#categoriaDoProduto").val(),
                 $("#codigoDeReferenciaDoProduto").val()
             );
@@ -483,9 +459,6 @@ $(document).ready(function () {
         }
 
         if (formularioEstaValido) {
-            let imagem = $("#alterarImagemDoProduto")[0].files[0];
-            imagem = imagem == undefined ? null : imagem;
-
             setSpinner($("#alterarProduto"));
 
             alterar(
@@ -493,7 +466,6 @@ $(document).ready(function () {
                 $("#alterarNomeDoProduto").val(),
                 $("#alterarPrecoDoProduto").val(),
                 $("#alterarDescricaoDoProduto").val(),
-                imagem,
                 $("#alterarCategoriaDoProduto").val(),
                 $("#alterarCodigoDeReferenciaDoProduto").val()
             );

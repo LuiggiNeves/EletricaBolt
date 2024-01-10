@@ -11,19 +11,12 @@ class ProdutoRepository
     public function criar(Produto $produto): int
     {
         $sql = "INSERT INTO produtos 
-                (nome, descricao, imagem_path, preco, codigo_referencia)
+                (nome, descricao, preco, codigo_referencia)
                 VALUES
-                (:nome, :descricao, :imagem_path, :preco, :codigo_referencia)";
+                (:nome, :descricao, :preco, :codigo_referencia)";
         $stmt = Conexao::getConexao()->prepare($sql);
         $stmt->bindValue(':nome', $produto->getNome());
         $stmt->bindValue(':descricao', $produto->getDescricao());
-
-        if ($produto->getImagem_path() == null) {
-            $stmt->bindValue(':imagem_path', $produto->getImagem_path(), PDO::PARAM_NULL);
-        } else {
-            $stmt->bindValue(':imagem_path', $produto->getImagem_path());
-        }
-
         $stmt->bindValue(':preco', $produto->getPreco());
         $stmt->bindValue(':codigo_referencia', $produto->getCodigo_referencia());
         $result = $stmt->execute();
@@ -73,7 +66,6 @@ class ProdutoRepository
             ->setId($result["id"])
             ->setNome($result["nome"])
             ->setDescricao($result["descricao"])
-            ->setImagem_path($result["imagem_path"])
             ->setPreco($result["preco"])
             ->setCodigo_referencia($result["codigo_referencia"]);
     }
@@ -96,7 +88,6 @@ class ProdutoRepository
             ->setId($result["id"])
             ->setNome($result["nome"])
             ->setDescricao($result["descricao"])
-            ->setImagem_path($result["imagem_path"])
             ->setPreco($result["preco"])
             ->setCodigo_referencia($result["codigo_referencia"]);
     }
@@ -138,18 +129,11 @@ class ProdutoRepository
     public function altera(Produto $produto): bool
     {
         $sql = "UPDATE produtos SET 
-                nome = :nome, descricao = :descricao, imagem_path = :imagem_path, preco = :preco, codigo_referencia = :codigo_referencia
+                nome = :nome, descricao = :descricao, preco = :preco, codigo_referencia = :codigo_referencia
                 WHERE id = :id";
         $stmt = Conexao::getConexao()->prepare($sql);
         $stmt->bindValue(':nome', $produto->getNome());
         $stmt->bindValue(':descricao', $produto->getDescricao());
-
-        if ($produto->getImagem_path() == null) {
-            $stmt->bindValue(':imagem_path', $produto->getImagem_path(), PDO::PARAM_NULL);
-        } else {
-            $stmt->bindValue(':imagem_path', $produto->getImagem_path());
-        }
-
         $stmt->bindValue(':preco', $produto->getPreco());
         $stmt->bindValue(':codigo_referencia', $produto->getCodigo_referencia());
         $stmt->bindValue(':id', $produto->getId());

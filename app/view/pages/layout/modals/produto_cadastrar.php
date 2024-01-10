@@ -8,7 +8,7 @@
             <div class="modal-body" style="min-height: 400px;">
                 <form class="naoEnvia" id="formularioCadastrarProduto" novalidate>
                     <div class="row justify-content-center">
-                        <div class="col-sm-12 col-md-8">
+                        <div class="col-sm-12 col-md-12">
                             <div class="row divDadosDoProduto mb-4">
                                 <div class="col-sm-12 col-md-12 mb-4">
                                     <small class="mb-1"><b>Nome: <span class="asteriscoObrigatorio">*</span></b></small>
@@ -37,18 +37,6 @@
                                 <div class="col-sm-12 col-md-12 mb-4">
                                     <small class="mb-1"><b>Código de referência:</b></small>
                                     <input type="text" class="form-control form-control-sm w-100" id="codigoDeReferenciaDoProduto" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4">
-                            <div class="row">
-                                <div class="col-sm-12 col-md-12 mb-4">
-                                    <small class="mb-1"><b>Selecionar imagem para o Produto: </b></small>
-                                    <input type="file" class="form-control form-control-sm w-100" id="imagemDoProduto" onchange="exibirImagem(this, 'imagemContainer')" />
-                                </div>
-
-                                <div class="col-sm-12 col-md-12 my-3 text-center">
-                                    <div id="imagemContainer" class="rounded border"></div>
                                 </div>
                             </div>
                         </div>

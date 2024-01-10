@@ -37,6 +37,15 @@ body {
     color: red;
 }
 
+.editarDados {
+    color: rgb(71, 130, 238);
+    cursor: pointer;
+    font-size: 14pt;
+}
+
+.editarDados:hover {
+    text-decoration: underline;
+}
 
 /* Estilização de produtos */
 .divDadosDoProduto {

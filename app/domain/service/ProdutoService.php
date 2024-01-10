@@ -5,7 +5,6 @@ namespace app\domain\service;
 use app\domain\exception\http\DomainHttpException;
 use app\domain\model\Produto;
 use app\domain\repository\ProdutoRepository;
-use app\util\FileUtil;
 
 class ProdutoService extends ServiceAbstract
 {
@@ -15,34 +14,22 @@ class ProdutoService extends ServiceAbstract
     private $historicoProdutoService;
     private $produtoImagemService;
 
-    private $fileUtil;
-
     public function __construct(
         ProdutoRepository $produtoRepository,
 
         CategoriaProdutoService $categoriaProdutoService,
         HistoricoProdutoService $historicoProdutoService,
-        ProdutoImagemService $produtoImagemService,
-
-        FileUtil $fileUtil
+        ProdutoImagemService $produtoImagemService
     ) {
         $this->produtoRepository = $produtoRepository;
 
         $this->categoriaProdutoService = $categoriaProdutoService;
         $this->historicoProdutoService = $historicoProdutoService;
         $this->produtoImagemService = $produtoImagemService;
-
-        $this->fileUtil = $fileUtil;
     }
 
     public function criar(array $dados): array
     {
-        $local_arquivo = null;
-        if (isset($dados["arquivo"]) && $dados["arquivo"] != "null") {
-            $dadosDoArquivo = $dados["arquivo"];
-            $local_arquivo = $this->fileUtil->insereArquivo($dadosDoArquivo, dirname(__FILE__) . "/../../files/entities/");
-        }
-
         if ($this->lePorNome($dados["nome"]) != null) {
             throw new DomainHttpException("Nome de produto já está em uso.", 409);
         }
@@ -50,7 +37,6 @@ class ProdutoService extends ServiceAbstract
         $produto = Produto::create()->setNome($dados["nome"])
             ->setPreco($dados["preco"])
             ->setDescricao($dados["descricao"])
-            ->setImagem_path($local_arquivo)
             ->setCodigo_referencia($dados["codigo_referencia"]);
 
         $produtoArray = $produto->setId($this->produtoRepository->criar($produto))->toArray();
@@ -85,14 +71,6 @@ class ProdutoService extends ServiceAbstract
             ->setDescricao($descricao)
             ->setPreco($preco)
             ->setCodigo_referencia($codigo_referencia);
-
-        if (isset($dados["arquivo"]) && $dados["arquivo"] != "null") {
-            $this->fileUtil->excluiArquivo(dirname(__FILE__) . "/../../files/entities/" . $produto->getImagem_path());
-
-            $dadosDoArquivo = $dados["arquivo"];
-            $local_arquivo = $this->fileUtil->insereArquivo($dadosDoArquivo, dirname(__FILE__) . "/../../files/entities/");
-            $produto->setImagem_path($local_arquivo);
-        }
 
         if (isset($dados["categoria_id"])) {
             if (intval($dados["categoria_id"]) != 0) {

@@ -8,7 +8,6 @@ class Produto extends ModelAbstract
     private $id;
     private $nome;
     private $descricao;
-    private $imagem_path;
     private $preco;
     private $codigo_referencia;
 
@@ -50,17 +49,6 @@ class Produto extends ModelAbstract
         return $this;
     }
 
-    public function getImagem_path()
-    {
-        return $this->imagem_path;
-    }
-
-    public function setImagem_path($imagem_path)
-    {
-        $this->imagem_path = $imagem_path;
-        return $this;
-    }
-
     public function getPreco()
     {
         return $this->preco;
@@ -89,7 +77,6 @@ class Produto extends ModelAbstract
             "id" => $this->id,
             "nome" => $this->nome,
             "descricao" => $this->descricao,
-            "imagem_path" => $this->imagem_path,
             "preco" => $this->preco,
             "codigo_referencia" => $this->codigo_referencia
         ];
