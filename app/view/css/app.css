@@ -52,6 +52,26 @@ body {
     height: 60px;
 }
 
+#btnAdicionarNovaImagem {
+    cursor: pointer;
+}
+
+.divImagemEncontrada {
+    display: flex;
+    align-items: center;
+    height: 200px;
+    cursor: pointer;
+}
+
+#btnAdicionarNovaImagem:hover, .divImagemEncontrada:hover {
+    background-color: #e4e4e4 !important;
+    transition: 1s;
+}
+
+.divImagemEncontrada img {
+    max-height: 190px;
+}
+
 @media screen and (max-width: 1000px) {
     .divDadosDoProduto {
         max-height: 1000px;

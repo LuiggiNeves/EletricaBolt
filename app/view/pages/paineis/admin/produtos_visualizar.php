@@ -6,6 +6,15 @@ include('../../layout/head.php');
 include('../../layout/auth.php');
 ?>
 
+<style>
+    .center-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+</style>
+
 </head>
 
 <body>
@@ -81,6 +90,27 @@ include('../../layout/auth.php');
 
             <div class="col-sm-12 col-md-10 rounded bg-white shadow-sm mb-3">
                 <div class="row p-4">
+                    <div class="col-sm-12 col-md-12">
+                        <h3>
+                            <i class="bi bi-images"></i>
+                            Imagens
+                        </h3>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-sm-12 col-md-12">
+                            <div class="row imagensDoProduto">
+                                <div class="col-sm-12 col-md-3 border rounded bg-light center-content mx-1 mb-2" style="height: 200px;" id="btnAdicionarNovaImagem">
+                                    <small class="text-muted">Adicione uma imagem</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-10 rounded bg-white shadow-sm mb-3">
+                <div class="row p-4">
                     <div class="row mb-3">
                         <div class="col-sm-12 col-md-12">
                             <div class="row g-3 mb-4">
@@ -106,6 +136,8 @@ include('../../layout/auth.php');
             </div>
         </div>
     </div>
+
+    <input type="file" id="novaImagemDoProduto" style="display: none;"/>
 
     <!-- Modal para alterar produto -->
     <?php
