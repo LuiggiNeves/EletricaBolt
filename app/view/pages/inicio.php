@@ -20,14 +20,14 @@ include('layout/head.php');
 
                         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="carousel-item active" data-bs-interval="1000">
-                                <img src="<?php echo HOST_APP; ?>/app/view/images/banner-2.png" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item " data-bs-interval="1000">
+                            <div class="carousel-item active" data-bs-interval="2000">
                                 <img src="<?php echo HOST_APP; ?>/app/view/images/banner-1.png" class="d-block w-100" alt="...">
                             </div>
-                            <div class="carousel-item " data-bs-interval="1000">
+                            <div class="carousel-item " data-bs-interval="2000">
                                 <img src="<?php echo HOST_APP; ?>/app/view/images/banner-2.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item " data-bs-interval="2000">
+                                <img src="<?php echo HOST_APP; ?>/app/view/images/banner-3.png" class="d-block w-100" alt="...">
                             </div>
 
                         </div>
@@ -65,7 +65,54 @@ include('layout/head.php');
                 </div>
 
 
+                <!--Só aparece na responsividade-->
+                <div class="carrosel-responsive">
+                    <div class="carrosel-container-responsive">
+                        <!-- Primeiro Carrossel -->
+                        <div id="carouselExampleInterval1" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" data-bs-interval="2000">
+                                    <img src="<?php echo HOST_APP; ?>/app/view/images/banner-2.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item" data-bs-interval="2000">
+                                    <img src="<?php echo HOST_APP; ?>/app/view/images/banner-responsive-3.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item" data-bs-interval="2000">
+                                    <img src="<?php echo HOST_APP; ?>/app/view/images/banner-responsive-2.png" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval1" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval1" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
 
+                        <!-- Segundo Carrossel -->
+                        <div id="carouselExampleInterval2" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <!-- Adicione os itens do segundo carrossel aqui -->
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval2" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval2" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                        
+                        </div>
+                    </div>
+                </div>
 
 
 

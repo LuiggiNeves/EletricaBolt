@@ -74,7 +74,9 @@ main{
 }
 
 .active-img{
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .active-img img{
@@ -134,3 +136,9 @@ main{
     overflow: hidden;
 }
 
+/*RESPONSIVIDADE*/
+
+@media screen and (max-width: var()) {
+
+
+}
