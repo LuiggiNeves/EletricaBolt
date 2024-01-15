@@ -3,6 +3,7 @@
 namespace app\controller\http\API;
 
 use app\controller\http\ControllerAbstract;
+use app\domain\service\HistoricoProdutoService;
 use app\domain\service\ProdutoService;
 use app\util\sql\PesquisaDeProdutos;
 use app\util\sql\PesquisaQuantidadeDeProdutos;
@@ -12,16 +13,21 @@ require_once '../../../vendor/autoload.php';
 class ProdutoController extends ControllerAbstract
 {
     private $produtoService;
+    private $historicoProdutoService;
 
     private $pesquisaDeProdutos;
     private $pesquisaQuantidadeDeProdutos;
 
     public function __construct(
         ProdutoService $produtoService,
+        HistoricoProdutoService $historicoProdutoService,
+
         PesquisaDeProdutos $pesquisaDeProdutos,
         PesquisaQuantidadeDeProdutos $pesquisaQuantidadeDeProdutos
     ) {
         $this->produtoService = $produtoService;
+        $this->historicoProdutoService = $historicoProdutoService;
+
         $this->pesquisaDeProdutos = $pesquisaDeProdutos;
         $this->pesquisaQuantidadeDeProdutos = $pesquisaQuantidadeDeProdutos;
     }
@@ -135,6 +141,23 @@ class ProdutoController extends ControllerAbstract
             [
                 "dados" => [
                     "produtos" => $this->produtoService->listaProdutosMaisAcessados($qtd)
+                ],
+                "mensagem" => ""
+            ],
+            200
+        );
+    }
+
+    public function visualizarProduto($dados)
+    {
+        return $this->respondeComDados(
+            [
+                "dados" => [
+                    "produto" => $this->historicoProdutoService->inserir(
+                        "Produto visualizado",
+                        "[ SISTEMA ]",
+                        $dados["id"]
+                    )
                 ],
                 "mensagem" => ""
             ],

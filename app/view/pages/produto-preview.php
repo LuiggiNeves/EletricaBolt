@@ -80,9 +80,9 @@ include('layout/head.php');
 
     <script>
         const id = $(location).attr('pathname').split("/")[4];
-        console.log(id);
 
         leDadosDoProdutoPorId(id);
+        visualizarProduto(id);
     </script>
 
 </body>

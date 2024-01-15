@@ -10,9 +10,9 @@ class HistoricoProdutoRepository
 {
     public function criar(HistoricoProduto $historicoProduto): int
     {
-        $sql = "INSERT INTO historico_produto (id_historico_utilizacao, produto_id) VALUES (:id_historico_utilizacao, :produto_id);";
+        $sql = "INSERT INTO historico_produto (historico_utilizacao_id, produto_id) VALUES (:historico_utilizacao_id, :produto_id);";
         $stmt = Conexao::getConexao()->prepare($sql);
-        $stmt->bindValue(':id_historico_utilizacao', $historicoProduto->getHistorico_utilizacao_id());
+        $stmt->bindValue(':historico_utilizacao_id', $historicoProduto->getHistorico_utilizacao_id());
         $stmt->bindValue(':produto_id', $historicoProduto->getProduto_id());
         $result = $stmt->execute();
 

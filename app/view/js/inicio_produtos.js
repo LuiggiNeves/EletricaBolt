@@ -13,7 +13,7 @@ function leDadosDoProdutoPorId(id) {
             carregaViewDoProduto(
                 produto["nome"],
                 produto["preco"],
-                produto["categoria"],
+                produto["categoria"]["nome"],
                 produto["codigo_referencia"],
                 produto["descricao"]
             );
@@ -36,7 +36,7 @@ function carregaViewDoProduto(nome, preco, categoria, codigo_de_referencia, desc
     if (categoria == null) {
         $("#divCategoriaDoProduto").hide();
     } else {
-        $("#divCategoriaDoProduto").text(categoria);
+        $("#categoriaDoProduto").text(categoria);
     }
 
     $("#codigoDeReferenciaDoProduto").text(codigo_de_referencia);
@@ -63,6 +63,24 @@ function carregaImagensDoProduto(imagens) {
     $("#imagemDoProduto").attr("src", imagem_padrao);
 }
 
+function visualizarProduto(id) {
+    let formData = new FormData();
+    formData.append("route", "visualizar-produto");
+    formData.append("id", id);
+
+    post("../../app/controller/http/controller.php", formData,
+        function (response) {
+            let dados = response["dados"];
+            let mensagem = response["mensagem"];
+
+            console.log(dados);
+        },
+        "",
+        function () {
+
+        }
+    );
+}
 
 $(document).ready(function () {
 

@@ -16,7 +16,7 @@ class HistoricoProdutoService
         $this->historicoUtilizacaoService = $historicoUtilizacaoService;
     }
 
-    public function inserir(string $mensagem, string $responsavel, int $produto_id): bool
+    public function inserir(string $mensagem, string $responsavel, int $produto_id): int
     {
         $id_historico_utilizacao = $this->historicoUtilizacaoService->inserir($mensagem, $responsavel);
         $historicoProduto = HistoricoProduto::create()
