@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
 
 /**/
@@ -13,7 +14,7 @@
 :root {
     --color-uni-br: #fff;
 
-    --color-input: #e1e1e1;
+    --color-input: #f7f7f7;
 
     --font-color-two: rgb(87, 87, 87);
     --font-color-tree: rgba(87, 87, 87, 0.729);
@@ -25,13 +26,18 @@
     --color-border-div: rgb(144, 144, 144);
 
     --font-pc-bigger: 35px;
+    --font-pc-bigger-title: 24px;
     --font-pc-big: 20px;
     --font-pc-medio: 16px;
+    --font-pc-medio-medio: 18px;
     --font-pc-small: 13px;
 
     --font-smart-big: 16px;
     --font-smart-medio: 13px;
     --font-smart-small: 10px;
 
-    --lateral-site: 1200px;
+    --lateral-site: 1300px;
+    --responsive:1000px
+
+    --overflow: hidden;
 }

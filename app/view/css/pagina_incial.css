@@ -398,6 +398,13 @@ main a {
 
 
 /*Fim carrosel*/
+
+
+/*carrosel responsive*/
+.carrosel-responsive{
+    display: none;
+}
+
 .title-main-product h1 {
     text-align: center;
     margin-bottom: 25px;
@@ -1079,7 +1086,7 @@ footer {
 /*Menu responsivo celular*/
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1030px) {
 
     .container-header-two,
     .main-anuncios-box,
@@ -1109,12 +1116,36 @@ footer {
     .ico-user-container {
         width: 100%;
         justify-content: space-around;
+        margin-top: 10px;
         margin-left: 10px;
         margin-right: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--color-border-div);
+        
     }
 
 
 
+    .carrosel-container{
+        display: none;
+    }
+
+    .carrosel-responsive{
+        display: block;
+    }
+    
+    .carrosel-responsive{
+        width: 100%;
+        height: 400px;
+    }
+
+
+
+    .carousel-item img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
 
     .img-logo {
@@ -1129,6 +1160,13 @@ footer {
 
     .search-bar-header {
         width: 100%;
+        height: 40px;
+    }
+
+    .search-bar-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .search-container {
