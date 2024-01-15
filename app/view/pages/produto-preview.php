@@ -18,6 +18,14 @@ include('layout/head.php');
 
 <main>
 
+    <div class="container-loc-page">
+        <div class="loc-page">
+            <div class="loc-page-path">
+                <p><a href="#">home </a> > <a href="#">NomePathDoSite</a></p>
+            </div>
+        </div>
+    </div>
+
     <div class="container-main-preview ">
         <div class="main-preview-layout border">
             
