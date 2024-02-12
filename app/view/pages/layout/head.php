@@ -16,6 +16,7 @@ require dirname(__FILE__) . '/../../../../vendor/autoload.php';
     <title>Elétrica Bolt</title>
 
     <!-- icone -->
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo HOST_APP; ?>/app/view/images/bolt-192x192.png" />
 
     <!-- Bootstrap 5.0.0-beta1 -->
     <link href="<?php echo HOST_APP; ?>/app/view/css/libs/bootstrap/bootstrap.min.css" rel="stylesheet">
