@@ -230,6 +230,7 @@ function pesquisar() {
                 nome: $("#pesquisarNomeProduto").val(),
                 categoria: $("#pesquisarCategoriaProduto").val(),
                 codigo_de_referencia: $("#pesquisarCodigoDeReferenciaProduto").val(),
+                codigo_de_barras: $("#pesquisarCodigoDeBarrasProduto").val(),
                 limit: limit,
                 offset: offset
             }

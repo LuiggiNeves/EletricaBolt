@@ -31,6 +31,10 @@ class PesquisaQuantidadeDeProdutos extends SqlUtil
             $this->searchQuery .= "  AND produtos.codigo_referencia LIKE '%" . $params["codigo_de_referencia"] . "%' ";
         }
 
+        if (isset($params["codigo_de_barras"])) {
+            $this->searchQuery .= "  AND produtos.codigo_barras LIKE '%" . $params["codigo_de_barras"] . "%' ";
+        }
+
         return $this->select . $this->join . $this->searchQuery;
     }
 }

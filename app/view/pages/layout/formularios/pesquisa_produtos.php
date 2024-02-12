@@ -4,15 +4,20 @@
         <input type="text" class="form-control form-control-sm w-100" id="pesquisarNomeProduto" />
     </div>
 
-    <div class="col-sm-12 col-md-8 mb-3">
+    <div class="col-sm-12 col-md-12 mb-3">
         <label class="mb-1">Categoria: </label>
         <select type="text" class="form-control form-control-sm w-100 categoriaDoProduto inputDePesquisa" id="pesquisarCategoriaProduto">
         </select>
     </div>
 
-    <div class="col-sm-12 col-md-4 mb-3">
+    <div class="col-sm-12 col-md-6 mb-3">
         <label class="mb-1">Código de referência: </label>
         <input type="text" class="form-control form-control-sm w-100" id="pesquisarCodigoDeReferenciaProduto" />
+    </div>
+
+    <div class="col-sm-12 col-md-6 mb-3">
+        <label class="mb-1">Código de barras: </label>
+        <input type="text" class="form-control form-control-sm w-100" id="pesquisarCodigoDeBarrasProduto" />
     </div>
 </div>
 
