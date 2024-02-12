@@ -25,7 +25,7 @@ include('../../layout/auth.php');
 
     <div class="container-fluid mt-3">
         <div class="row justify-content-center">
-            <div class="col-sm-12 col-md-10 my-1">
+            <div class="col-sm-12 col-md-12 my-1">
                 <div class="row">
                     <div class="col-sm-12 col-md-3 my-3">
                         <button class="btn btn-sm btn-primary w-100" onclick="window.history.back()">Voltar</button>
@@ -33,15 +33,14 @@ include('../../layout/auth.php');
                 </div>
             </div>
 
-
-            <div class="col-sm-12 col-md-10 my-1">
+            <div class="col-sm-12 col-md-12 my-1">
                 <span class="text-muted">
                     <i class="bi bi-person-fill"></i>
                     <?= unserialize($_SESSION["usuario_logado"])->getNome(); ?>
                 </span>
             </div>
 
-            <div class="col-sm-12 col-md-10 rounded bg-white shadow-sm mb-3">
+            <div class="col-sm-12 col-md-12 rounded bg-white border mb-3">
                 <div class="row p-4">
                     <div class="col-sm-12 col-md-12">
                         <h3>
@@ -87,7 +86,7 @@ include('../../layout/auth.php');
                 </div>
             </div>
 
-            <div class="col-sm-12 col-md-10 rounded bg-white shadow-sm mb-3">
+            <div class="col-sm-12 col-md-12 rounded bg-white border mb-3">
                 <div class="row p-4">
                     <div class="col-sm-12 col-md-12">
                         <h3>
@@ -108,7 +107,7 @@ include('../../layout/auth.php');
                 </div>
             </div>
 
-            <div class="col-sm-12 col-md-10 rounded bg-white shadow-sm mb-3">
+            <div class="col-sm-12 col-md-12 rounded bg-white border mb-3">
                 <div class="row p-4">
                     <div class="row mb-3">
                         <div class="col-sm-12 col-md-12">

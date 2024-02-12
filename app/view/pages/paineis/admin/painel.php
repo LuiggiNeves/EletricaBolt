@@ -21,14 +21,14 @@ include('../../layout/auth.php');
 
     <div class="container-fluid mt-3">
         <div class="row justify-content-center">
-            <div class="col-sm-12 col-md-10 my-1">
+            <div class="col-sm-12 col-md-12 my-1">
                 <span class="text-muted">
                     <i class="bi bi-person-fill"></i>
                     <?= unserialize($_SESSION["usuario_logado"])->getNome(); ?>
                 </span>
             </div>
 
-            <div class="col-sm-12 col-md-10 rounded bg-white shadow-sm p-4" style="height: 450px;">
+            <div class="col-sm-12 col-md-12 rounded bg-white border p-4" style="height: 450px;">
                 <div class="row mb-3">
                     <div class="col-sm-12 col-md-12">
                         <div class="row g-3 mb-4">
