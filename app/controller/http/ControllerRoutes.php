@@ -76,16 +76,22 @@ class ControllerRoutes extends ControllerAbstract
                 try {
                     return $container->call([self::$routes[$route]->getClass(), self::$routes[$route]->getMethod()], array($post));
                 } catch (DomainHttpException $domainHttpException) {
+                    $container->call(["app\\domain\\service\\HistoricoUtilizacaoService", "inserir"], [$domainHttpException->getMessage(), "[ SISTEMA LOG ]"]);
+
                     return $this->respondeComDados(
                         $domainHttpException->getMessage(),
                         $domainHttpException->getHttpStatusCode()
                     );
                 } catch (DomainException $domainException) {
+                    $container->call(["app\\domain\\service\\HistoricoUtilizacaoService", "inserir"], [$domainException->getMessage(), "[ SISTEMA LOG ]"]);
+
                     return $this->respondeComDados(
                         $domainException->getMessage(),
                         500
                     );
                 } catch (Exception $exception) {
+                    $container->call(["app\\domain\\service\\HistoricoUtilizacaoService", "inserir"], [$exception->getMessage(), "[ SISTEMA LOG ]"]);
+                    
                     return $this->respondeComDados(
                         "Houve um erro durante a operação. Contate o administrador do sistema.",
                         500
