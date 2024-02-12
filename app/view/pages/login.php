@@ -20,7 +20,7 @@ include('layout/head.php');
                     <div class="card-wrapper mt-5">
                         <div class="row justify-content-center">
                             <div class="col-sm-12 col-md-3 mb-3">
-                                <img src="<?php echo HOST_APP; ?>/app/view/images/logo.png" class="w-100">
+                                <img src="<?php echo HOST_APP; ?>/app/view/images/bolt-192x192.png" class="w-100">
                             </div>
                         </div>
                         <div class="card fat" style="background-color: white !important;">
@@ -34,10 +34,6 @@ include('layout/head.php');
 
                                     <div class="form-group mt-3">
                                         <label for="senha" class="float-start">Senha</label>
-
-                                        <a href="../esqueci-senha/" class="float-end" style="text-decoration: none;">
-                                            Esqueci minha senha
-                                        </a>
                                         <input id="senha" type="password" class="form-control mt-2" name="senha" required data-eye>
                                     </div>
 
