@@ -47,6 +47,7 @@ function listar(dados_de_pesquisa) {
                                         </div>
                                     </div>
                                 </div>
+                                <a class="add-to-cart" href="eb/produtos-visualizar/`+ produtos[i]["id"] + `">Visualizar produto</a>
                                 <button class="add-to-cart" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
                             </div>
                         </div>
@@ -67,7 +68,7 @@ function listar(dados_de_pesquisa) {
 
 function pesquisar() {
     listar(
-        JSON.stringify({ })
+        JSON.stringify({})
     );
 }
 

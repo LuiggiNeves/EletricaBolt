@@ -12,7 +12,17 @@ class PesquisaDeProdutos extends SqlUtil
     public function montaQuery($params)
     {
         $this->select = "SELECT
-                            produtos.*
+                            produtos.*,
+                            (
+                                SELECT 
+                                    imagem_path 
+                                FROM 
+                                    produto_imagens 
+                                WHERE 
+                                    produto_imagens.produto_id = produtos.id 
+                                ORDER BY produto_imagens.id ASC
+                                LIMIT 1
+                            ) AS imagem_path
                          FROM produtos";
         $this->join = "";
         $this->join_tables = array();
