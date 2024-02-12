@@ -101,7 +101,7 @@ function exibirImagemEmComponente(input, $componente) {
     }
 }
 
-function criar(nome, preco, descricao, id_categoria, codigo_referencia) {
+function criar(nome, preco, descricao, id_categoria, codigo_referencia, codigo_barras) {
     let formData = new FormData();
     formData.append("route", "criar-produto");
     formData.append("nome", nome);
@@ -109,6 +109,7 @@ function criar(nome, preco, descricao, id_categoria, codigo_referencia) {
     formData.append("descricao", descricao);
     formData.append("categoria_id", id_categoria);
     formData.append("codigo_referencia", codigo_referencia);
+    formData.append("codigo_barras", codigo_barras);
 
     post("../app/controller/http/controller.php", formData,
         function (response) {
@@ -153,7 +154,8 @@ function leProdutoPorId(id) {
                 produto["categoria"]["id"] != null ? produto["categoria"]["id"] : "0",
                 produto["descricao"],
                 produto["preco"],
-                produto["codigo_referencia"]
+                produto["codigo_referencia"],
+                produto["codigo_barras"]
             );
 
             carregaViewAlterarProduto(
@@ -161,7 +163,8 @@ function leProdutoPorId(id) {
                 produto["categoria"] != null ? produto["categoria"]["nome"] : "",
                 produto["descricao"],
                 produto["preco"],
-                produto["codigo_referencia"]
+                produto["codigo_referencia"],
+                produto["codigo_barras"]
             );
 
             carregaMetricasProduto(
@@ -179,7 +182,7 @@ function leProdutoPorId(id) {
     );
 }
 
-function alterar(id, nome, preco, descricao, id_categoria, codigo_referencia) {
+function alterar(id, nome, preco, descricao, id_categoria, codigo_referencia, codigo_barras) {
     let formData = new FormData();
     formData.append("route", "altera-produto");
     formData.append("id", id);
@@ -188,6 +191,7 @@ function alterar(id, nome, preco, descricao, id_categoria, codigo_referencia) {
     formData.append("descricao", descricao);
     formData.append("categoria_id", id_categoria);
     formData.append("codigo_referencia", codigo_referencia);
+    formData.append("codigo_barras", codigo_barras);
 
     post("../app/controller/http/controller.php", formData,
         function (response) {
@@ -319,23 +323,25 @@ function proximaPagina() {
 }
 
 function carregaFormAlterarProduto(
-    nome, id_categoria, descricao, preco, codigo_de_referencia
+    nome, id_categoria, descricao, preco, codigo_de_referencia, codigo_de_barras
 ) {
     $("#alterarNomeDoProduto").val(nome);
     $("#alterarDescricaoDoProduto").val(descricao);
     $("#alterarPrecoDoProduto").val(preco);
     $("#alterarCodigoDeReferenciaDoProduto").val(codigo_de_referencia);
+    $("#alterarCodigoDeBarrasDoProduto").val(codigo_de_barras);
 
     $("#alterarCategoriaDoProduto").val(id_categoria);
 }
 
 function carregaViewAlterarProduto(
-    nome, categoria, descricao, preco, codigo_de_referencia
+    nome, categoria, descricao, preco, codigo_de_referencia, codigo_de_barras
 ) {
     $("#nomeDoProduto").text(nome);
     $("#descricaoDoProduto").text(descricao);
     $("#precoDoProduto").text(preco);
     $("#codigoDeReferenciaDoProduto").text(codigo_de_referencia);
+    $("#codigoDeBarrasDoProduto").text(codigo_de_barras);
 
     $("#categoriaDoProduto").text(categoria);
 }
@@ -441,7 +447,8 @@ $(document).ready(function () {
                 $("#precoDoProduto").val(),
                 $("#descricaoDoProduto").val(),
                 $("#categoriaDoProduto").val(),
-                $("#codigoDeReferenciaDoProduto").val()
+                $("#codigoDeReferenciaDoProduto").val(),
+                $("#codigoDeBarrasDoProduto").val()
             );
             $("#formularioCadastrarProduto").removeClass("was-validated");
         }
@@ -464,7 +471,8 @@ $(document).ready(function () {
                 $("#alterarPrecoDoProduto").val(),
                 $("#alterarDescricaoDoProduto").val(),
                 $("#alterarCategoriaDoProduto").val(),
-                $("#alterarCodigoDeReferenciaDoProduto").val()
+                $("#alterarCodigoDeReferenciaDoProduto").val(),
+                $("#alterarCodigoDeBarrasDoProduto").val()
             );
             $("#formularioAlterarProduto").removeClass("was-validated");
         }

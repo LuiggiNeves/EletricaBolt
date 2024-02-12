@@ -68,6 +68,9 @@ include('../../layout/auth.php');
                                 <div class="col-sm-12 col-md-12 mb-1">
                                     <small><b>Código de referência: </b> <span id="codigoDeReferenciaDoProduto"></span></small>
                                 </div>
+                                <div class="col-sm-12 col-md-12 mb-1">
+                                    <small><b>Código de barras: </b> <span id="codigoDeBarrasDoProduto"></span></small>
+                                </div>
                             </div>
                         </div>
 

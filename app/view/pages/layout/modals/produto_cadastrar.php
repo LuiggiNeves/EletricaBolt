@@ -38,6 +38,11 @@
                                     <small class="mb-1"><b>Código de referência:</b></small>
                                     <input type="text" class="form-control form-control-sm w-100" id="codigoDeReferenciaDoProduto" />
                                 </div>
+
+                                <div class="col-sm-12 col-md-12 mb-4">
+                                    <small class="mb-1"><b>Código de barras:</b></small>
+                                    <input type="text" class="form-control form-control-sm w-100" id="codigoDeBarrasDoProduto" />
+                                </div>
                             </div>
                         </div>
                     </div>

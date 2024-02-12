@@ -10,6 +10,7 @@ class Produto extends ModelAbstract
     private $descricao;
     private $preco;
     private $codigo_referencia;
+    private $codigo_barras;
 
     public static function create()
     {
@@ -71,6 +72,17 @@ class Produto extends ModelAbstract
         return $this;
     }
 
+    public function getCodigo_barras()
+    {
+        return $this->codigo_barras;
+    }
+
+    public function setCodigo_barras($codigo_barras)
+    {
+        $this->codigo_barras = $codigo_barras;
+        return $this;
+    }
+
     public function toArrayData()
     {
         return [
@@ -78,7 +90,8 @@ class Produto extends ModelAbstract
             "nome" => $this->nome,
             "descricao" => $this->descricao,
             "preco" => $this->preco,
-            "codigo_referencia" => $this->codigo_referencia
+            "codigo_referencia" => $this->codigo_referencia,
+            "codigo_barras" => $this->codigo_barras
         ];
     }
 }

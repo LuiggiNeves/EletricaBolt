@@ -37,7 +37,8 @@ class ProdutoService extends ServiceAbstract
         $produto = Produto::create()->setNome($dados["nome"])
             ->setPreco($dados["preco"])
             ->setDescricao($dados["descricao"])
-            ->setCodigo_referencia($dados["codigo_referencia"]);
+            ->setCodigo_referencia($dados["codigo_referencia"])
+            ->setCodigo_barras($dados["codigo_barras"]);
 
         $produtoArray = $produto->setId($this->produtoRepository->criar($produto))->toArray();
 
@@ -61,6 +62,7 @@ class ProdutoService extends ServiceAbstract
         $descricao = $dados["descricao"];
         $preco = $dados["preco"];
         $codigo_referencia = $dados["codigo_referencia"];
+        $codigo_barras = $dados["codigo_barras"];
 
         $produtoEncontradoPorNome = $this->lePorNome($nome);
         if ($produtoEncontradoPorNome != null && $produtoEncontradoPorNome->getId() != $id) {
@@ -70,7 +72,8 @@ class ProdutoService extends ServiceAbstract
         $produto->setNome($nome)
             ->setDescricao($descricao)
             ->setPreco($preco)
-            ->setCodigo_referencia($codigo_referencia);
+            ->setCodigo_referencia($codigo_referencia)
+            ->setCodigo_barras($codigo_barras);
 
         if (isset($dados["categoria_id"])) {
             if (intval($dados["categoria_id"]) != 0) {
