@@ -75,6 +75,7 @@ include('layout/head.php');
         const id = $(location).attr('pathname').split("/")[4];
 
         leDadosDoProdutoPorId(id);
+        visualizarProduto(id);
     </script>
 
 </body>
