@@ -135,11 +135,6 @@ include('layout/head.php');
                 <div class="main-product-container">
                     <div class="catalago-box-container">
                         <div class="catalago-box" id="produtosEncontrados">
-
-
-
-
-                                </div>
                         </div>
                     </div>
                 </div>

@@ -25,7 +25,7 @@ function listar(dados_de_pesquisa) {
             }
 
             for (let i = 0; i < produtos.length; i++) {
-                let path_imagem = produtos[i]["imagem_path"] != null ? `app/files/entities/` + produtos[i]["imagem_path"] + `` : `../app/view/images/produto.png`;
+                let path_imagem = produtos[i]["imagem_path"] != null ? `app/files/entities/` + produtos[i]["imagem_path"] + `` : `app/view/images/produto.png`;
 
                 $("#produtosEncontrados").append(
                     `
