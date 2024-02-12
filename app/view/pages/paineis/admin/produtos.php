@@ -61,7 +61,7 @@ include('../../layout/auth.php');
                             </div>
                         </div>
 
-                        <div class="divTabelaProdutos table-responsive" style="height: 300px; overflow-y: scroll; overflow-x: hidden; display: none;">
+                        <div class="divTabelaProdutos table-responsive" style="min-height: 550px; overflow-y: scroll; overflow-x: hidden; display: none;">
                             <table class="table tabela-produtos table-striped table-hover">
                                 <thead>
                                     <tr>
