@@ -243,9 +243,7 @@ function resetaFormularioParaCadastro() {
     $("#descricaoDoProduto").val("");
     $("#precoDoProduto").val("");
     $("#imagemDoProduto").val("");
-    $(".categoriaDoProduto").val(
-        $(".categoriaDoProduto option:first").attr("value")
-    );
+    $(".categoriaDoProduto").val(0);
     $("#imagemContainer").html("");
 }
 
