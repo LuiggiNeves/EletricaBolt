@@ -32,11 +32,11 @@ include('../../layout/auth.php');
                 <div class="row mb-3">
                     <div class="col-sm-12 col-md-12">
                         <div class="row g-3 mb-4">
-                            <div class="col-sm-12 col-md-12">
-                                <h5 class="">
-                                    <i class="bi bi-bar-chart"></i>
-                                    <span class="">Métricas</span>
-                                </h5>
+                            <div class="col-sm-12 col-md-12 mb-3">
+                                <h3 class="">
+                                    <i class="bi bi-speedometer2"></i>
+                                    <span class="">Painel</span>
+                                </h3>
                             </div>
 
                             <div class="col">
@@ -44,24 +44,6 @@ include('../../layout/auth.php');
                                     <div>
                                         <h3 class="fs-2 text-primary" id="qtd_acessos_a_produtos">0</h3>
                                         <p class="fs-5 labelEstatisticaPainelAdmin">Qtd. de acessos a produtos</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row g-3 mb-4">
-                            <div class="col-sm-12 col-md-12">
-                                <h5 class="">
-                                    <i class="bi bi-box"></i>
-                                    <span class="">Produtos mais acessados</span>
-                                </h5>
-                            </div>
-
-                            <div class="col">
-                                <div class="row justify-content-center">
-                                    <div class="col-sm-12 col-md-8">
-                                        <div class="slider produtosMaisAcessados">
-                                        </div>
                                     </div>
                                 </div>
                             </div>
