@@ -8,11 +8,13 @@
     font-size: var(--font-text);
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
+
 }
 
 :root {
     --color-uni-br: #fff;
+
+
 
     --color-input: #f7f7f7;
 

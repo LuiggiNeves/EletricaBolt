@@ -11,6 +11,9 @@ function listar(dados_de_pesquisa) {
             let dados = response["dados"];
             let mensagem = response["mensagem"];
 
+
+
+
             let produtos = dados["produtos"];
 
             $("#produtosEncontrados .catalago-product-base").remove();
@@ -26,7 +29,8 @@ function listar(dados_de_pesquisa) {
 
             for (let i = 0; i < produtos.length; i++) {
                 let path_imagem = produtos[i]["imagem_path"] != null ? `app/files/entities/` + produtos[i]["imagem_path"] + `` : `../app/view/images/produto.png`;
-
+                let quantityId = 'quantity_' + produtos[i].id;
+        
                 $("#produtosEncontrados").append(
                     `
                     <div class="catalago-product-base">
@@ -36,24 +40,28 @@ function listar(dados_de_pesquisa) {
                             </div>
                             <div class="card-body">
                                 <div class="product-title" a href="#" onclick="openProductView()">` + produtos[i]["nome"] + `</a></div>
-                                <div class="product-quantity">
-                                    <div class="quantity-block-product">
-                                        <div class="quantity-button" onclick="decreaseQuantity()">
-                                            <p>-</p>
-                                        </div>
-                                        <div class="quantity-input-style"><input type="text" class="quantity-input" id="quantity" value="1" minlength="1"></div>
-                                        <div class="quantity-button" onclick="increaseQuantity()">
-                                            <p>+</p>
+                                    <div class="product-quantity">
+                                        <div class="quantity-block-product">
+                                            <div class="quantity-button" onclick="diminuirQuantidade('${quantityId}')">
+                                                <p>-</p>
+                                            </div>
+                                            <div class="quantity-input-style"><input type="text" class="quantity-input" id="${quantityId}" value="1" minlength="1"></div>
+                                            <div class="quantity-button" onclick="aumentarQuantidade('${quantityId}')">
+                                                <p>+</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <button class="add-to-cart" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+                                <button class="add-to-cart" onclick="adicionarAoCarrinho(${produtos[i].id}, '${produtos[i].nome}', ${produtos[i].preco}, '${produtos[i].imagem_path}', document.getElementById('${quantityId}').value)">Adicionar ao Carrinho</button>
+
                             </div>
                         </div>
                     </div>
                     `
                 );
             }
+
+            
 
             $(".spinner-loading-produtos").hide();
             $(".tabela-produtos").show();
@@ -73,4 +81,8 @@ function pesquisar() {
 
 $(document).ready(function () {
 
+
+
 });
+
+
