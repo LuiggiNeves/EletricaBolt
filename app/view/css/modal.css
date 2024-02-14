@@ -1,0 +1,36 @@
+
+
+#menuOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+}
+
+#menuContent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+#closeMenu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+#closeMenu{
+    text-decoration: none;
+    color: black;
+}

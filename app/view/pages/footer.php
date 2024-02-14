@@ -1,5 +1,5 @@
 <footer>
-        <hr>
+
 
         <div class="borda"></div>
         <div class="box-footer">
@@ -24,7 +24,7 @@
                 <div class="footer-contato">
                     <h2>Contato</h2>
                     <div class="img-text-generic"><a href="#"><img src="<?php echo HOST_APP; ?>/app/view/images/gmail.png" alt=""></a>
-                        <p>eletricaboltLimeira@gmail.com</p>
+                        <p>eletricaboltlimeira@gmail.com</p>
                     </div>
                     <div class="img-text-generic"><a href="#"><img src="<?php echo HOST_APP; ?>/app/view/images/tell.png" alt=""></a>
                         <p>(19)3441-9868</p>
