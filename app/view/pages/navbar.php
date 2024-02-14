@@ -1,3 +1,20 @@
+<?php
+include('layout/head.php');
+?>
+
+
+<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/pagina_incial_base.css">
+<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/pagina_incial.css">
+<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/produto-layout.css">
+<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/modal.css">
+<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/carrinho.css">
+<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/carrinho.css">
+
+<script>
+    
+</script>
+</head>
+
 <header>
         <div class="header-primary">
             <div class="header-container header-primary-color header-container-primary">
@@ -26,9 +43,9 @@
                 </div>
             </div>
 
-            <hr class="hr-headr">
 
-            <div class="header-container">
+
+            <div class="header-container header-container-second">
                 <div class="menu-search-container">
                     <div class="menu-search">
                         <div class="container-menu-logo">
@@ -62,7 +79,10 @@
                                     <a href="html/login.html"><img src="<?php echo HOST_APP; ?>/app/view/images/person-ico.png" alt=""></a>
                                 </div>
                                 <div class="ico-user-two ico-user-generic">
-                                    <a href="#" onclick="openModal()"><img src="<?php echo HOST_APP; ?>/app/view/images/bag-ico.png" alt=""></a>
+                                <a href="#" class="openMenu"><img src="<?php echo HOST_APP; ?>/app/view/images/bag-ico.png" alt=""></a>
+
+
+
                                 </div>
                             </div>
                         </div>
@@ -71,49 +91,169 @@
             </div>
 
 
+            <div id="menuOverlay">
+                <div id="menuContent">
+                    <a href="#" id="closeMenu">X</a>
+                    <div>
+                        <h1>Carrinho</h1>
+                    </div>
+                    <div class="menu-container">
+                        <div class="menu-carrinho">
+                            <div class="carrinho-container-produto">
+                                <div id="carrinho"><p>Nada ainda!</p></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="container-infos">
+                        <div class="infos-carrinho">
+                            <div>
+                                <p>total de itens</p>
+                            </div>
+
+                            <div>
+                                <p>total preço</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="container-carrinho-buttons">
+                        <div class="carrinho-buttons">
+                            <input type="button" value="Enviar orçamento" onclick="enviarCarrinho()">
+                            <input type="button" value="Apagar Orçamento" onclick="confirmacaoApagar()">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
 
             <div class="header-container container-header-two">
                 <div class="nav-container">
                     <div class="nav-box dropdown_div nav_position">
-                        <div class="nav-item-one nav-item-generic dropdown">
-                            <p>Inserir aqui</p>
+                        <div class="dropdown">
                             <div class="dropdown-content">
-                                
+
                             </div>
                         </div>
 
                         <div class="nav-item-two nav-item-generic dropdown">
-                            <p>Inserir aqui</p>
+                            <div class="nav-item-container-img">
+                                <img src="<?php echo HOST_APP; ?>/app/view/images/assets/util/chuveiro.png" alt="">
+                            </div>
+
                             <div class="dropdown-content">
-                                
+                            <a href="#">Zagonel</a>
+                            <a href="#">Lorenzetti</a>
+                            <a href="#">Hydra</a>
+                            <a href="#">Todos</a>
                             </div>
                         </div>
 
                         <div class="nav-item-tree nav-item-generic dropdown">
-                            <p>Inserir aqui</p>
+                            <div class="nav-item-container-img">
+                                <img src="<?php echo HOST_APP; ?>/app/view/images/assets/util/espelhos-tomadas.png" alt="">
+                            </div>
+
                             <div class="dropdown-content">
+                            <a href="#">Margirius</a>
+                            <a href="#">Tramontina</a>
+                            <a href="#">Schnnaider</a>
+                            <a href="#">Alumbra</a>
+                            <a href="#">Inteligente</a>
+                            <a href="#">Todos</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item-tree nav-item-generic dropdown">
+                            <div class="nav-item-container-img">
+                                <img src="<?php echo HOST_APP; ?>/app/view/images/assets/util/parafuso.png" alt="">
+                            </div>
+
+                            <div class="dropdown-content">
+                                <a href="#">Philips</a>
+                                <a href="#">Gesso</a>
+                                <a href="#">Arruelas</a>
+                                <a href="#">Porcas</a>
+                                <a href="#">Todos</a>
                             </div>
                         </div>
 
                         <div class="nav-item-four nav-item-generic dropdown">
-                            <p>Inserir aqui</p>
+                            <div class="nav-item-container-img">
+                                <img src="<?php echo HOST_APP; ?>/app/view/images/assets/util/ferramentas.png" alt="">                              
+                            </div>
+
                             <div class="dropdown-content">
+                                <a href="#">Chaves</a>
+                                <a href="#">Alicates</a>
+                                <a href="#">Todos</a>
                             </div>
                         </div>
 
                         <div class="nav-item-five nav-item-generic dropdown">
-                            <p>Inserir aqui</p>
+                            <div class="nav-item-container-img">
+                                <img src="<?php echo HOST_APP; ?>/app/view/images/assets/util/fita.png" alt="">                               
+                            </div>
+
                             <div class="dropdown-content">
+                                <a href="#">Adesivas</a>
+                                <a href="#">Isolantes</a>
+                                <a href="#">Dupla Face</a>
+                                <a href="#">Alta Fusão</a>
+                                <a href="#">Todos</a>
                             </div>
                         </div>
 
                         <div class="nav-item-six nav-item-generic dropdown">
-                            <p>Inserir aqui</p>
+                            <div class="nav-item-container-img">
+                                <img src="<?php echo HOST_APP; ?>/app/view/images/assets/util/hidraulica.png" alt="">
+                            </div>
+
                             <div class="dropdown-content">
+                                <a href="#">Torneiras</a>
+                                <a href="#">Lixas</a>
+                                <a href="#">Todos</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item-six nav-item-generic dropdown">
+                            <div class="nav-item-container-img">
+                                <img src="<?php echo HOST_APP; ?>/app/view/images/assets/util/lampada.png" alt="">
+                            </div>
+
+                            <div class="dropdown-content">
+                                <a href="#">Luminarias</a>
+                                <a href="#">Lâmpadas</a>
+                                <a href="#">Plafons</a>
+                                <a href="#">Refletores</a>
+                                <a href="#">Espeto de Jardim</a>
+                                <a href="#">Spots</a>
+                                <a href="#">Todos</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item-six nav-item-generic dropdown">
+                            <div class="nav-item-container-img">
+                                <img src="<?php echo HOST_APP; ?>/app/view/images/assets/util/menu.png" alt="">
+                            </div>
+
+                            <div class="dropdown-content">
+                                <a href="#">Todos os produtos</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+
+        
     </header>
+
+
