@@ -40,9 +40,6 @@ include('layout/head.php');
                             <div id="divCategoriaDoProduto">
                                 <strong>Categoria:</strong> <span id="categoriaDoProduto"></span>
                             </div>
-                            <div id="divCodigoDeReferenciaDoProduto">
-                                <strong>Código de referência:</strong> <span id="codigoDeReferenciaDoProduto"></span>
-                            </div>
                         </div>
 
                         <div class="product-preview-container-btn">

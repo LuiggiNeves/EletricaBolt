@@ -26,3 +26,6 @@ require dirname(__FILE__) . '/../../../../vendor/autoload.php';
 
     <!-- Arquivos CSS -->
     <link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/app.css?v=<?php echo VERSION; ?>" />
+
+    <!-- Ultima URL visitada -->
+    <script src="<?php echo HOST_APP; ?>/app/view/js/ultimaUrlVisitada.js"></script>

@@ -20,15 +20,11 @@ include('layout/head.php');
             <a href="#" class="openMenu flutuante"><img src="<?php echo HOST_APP; ?>/app/view/images/bag-ico.png" alt=""></a>
 
             <a href="#" class="flutuante openMenu">
-            <img src="<?php echo HOST_APP; ?>/app/view/images/bag-ico.png" alt="Texto alternativo">
+                <img src="<?php echo HOST_APP; ?>/app/view/images/bag-ico.png" alt="Texto alternativo">
             </a>
 
-
-
-            <!--Só aparece na responsividade-->
             <div class="carrosel-responsive">
                 <div class="carrosel-container-responsive">
-                    <!-- Primeiro Carrossel -->
                     <div id="carouselExampleInterval1" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="6000">
@@ -67,16 +63,7 @@ include('layout/head.php');
                     </div>
                 </div>
             </div>
-
-
-
         </div>
-        </div>
-        </div>
-
-
-
-
 
         <div class="main-product">
             <div class="container-main-anuncio">
@@ -94,7 +81,6 @@ include('layout/head.php');
 
         <div class="container-slides">
             <div class="slides-primary">
-
                 <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
 
                     <div class="carousel-inner">
@@ -118,28 +104,18 @@ include('layout/head.php');
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-
             </div>
-
-
         </div>
+
         <div class="main-product">
             <div class="main-product-container">
                 <div class="catalago-box-container">
                     <div class="catalago-box" id="produtosEncontrados">
 
-
-
-
                     </div>
                 </div>
             </div>
         </div>
-        </div>
-
-
-
-
 
         <div class="main-block-pc">
             <div class="main-block-anuncios ">
@@ -207,10 +183,6 @@ include('layout/head.php');
     <script src="<?php echo HOST_APP; ?>/app/view/js/carrinho.js"></script>
 
     <script>
-
-;
-
-
         $(document).ready(function() {
             pesquisar();
         });
@@ -220,11 +192,6 @@ include('layout/head.php');
         });
 
         const menuButtons = document.querySelectorAll('.menu-button');
-
-
-
-        
-
 
         const openMenuButtons = document.querySelectorAll('.openMenu');
         const closeMenuButton = document.getElementById('closeMenu');
@@ -278,13 +245,5 @@ include('layout/head.php');
                 quantidadeInput.value = parseInt(quantidadeInput.value) - 1;
             }
         }
-
-
-
-
-
-
-
-
     </script>
 </body>

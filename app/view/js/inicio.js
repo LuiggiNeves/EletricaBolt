@@ -30,7 +30,7 @@ function listar(dados_de_pesquisa) {
             for (let i = 0; i < produtos.length; i++) {
                 let path_imagem = produtos[i]["imagem_path"] != null ? `app/files/entities/` + produtos[i]["imagem_path"] + `` : `../app/view/images/produto.png`;
                 let quantityId = 'quantity_' + produtos[i].id;
-        
+
                 $("#produtosEncontrados").append(
                     `
                     <div class="catalago-product-base">
@@ -52,8 +52,11 @@ function listar(dados_de_pesquisa) {
                                         </div>
                                     </div>
                                 </div>
-                                <button class="add-to-cart" onclick="adicionarAoCarrinho(${produtos[i].id}, '${produtos[i].nome}', ${produtos[i].preco}, '${produtos[i].imagem_path}', document.getElementById('${quantityId}').value)">Adicionar ao Carrinho</button>
+                                <a class="add-to-cart" href="eb/produtos-visualizar/${produtos[i].id}">
+                                    Visualizar produto
+                                </a>
 
+                                <button class="add-to-cart" onclick="adicionarAoCarrinho(${produtos[i].id}, '${produtos[i].nome}', ${produtos[i].preco}, '${produtos[i].imagem_path}', document.getElementById('${quantityId}').value)">Adicionar ao Carrinho</button>
                             </div>
                         </div>
                     </div>
@@ -61,7 +64,7 @@ function listar(dados_de_pesquisa) {
                 );
             }
 
-            
+
 
             $(".spinner-loading-produtos").hide();
             $(".tabela-produtos").show();
@@ -75,7 +78,7 @@ function listar(dados_de_pesquisa) {
 
 function pesquisar() {
     listar(
-        JSON.stringify({ })
+        JSON.stringify({})
     );
 }
 

@@ -56,6 +56,8 @@ function ajaxDinamico(url, tipo, dados, sucesso, token = "", error = null) {
                 error();
             }
 
+            console.log(response);
+
             let mensagem = response["responseJSON"][0];
             $(".modal").modal("hide");
             swal(mensagem, "", "error");
