@@ -1,5 +1,6 @@
 <?php
 include('layout/head.php');
+include('layout/ultimaUrlVisitada.php');
 ?>
 
 <link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/pagina_incial_base.css">

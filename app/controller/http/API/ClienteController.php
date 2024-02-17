@@ -32,7 +32,7 @@ class ClienteController extends ControllerAbstract
 
     public function login($dados)
     {
-        $loginFoiRealizadoComSucesso = $this->clienteService->login($dados["celular"], $dados["senha"]);
+        $loginFoiRealizadoComSucesso = $this->clienteService->login($dados["celular"]);
 
         return $this->respondeComDados(
             [

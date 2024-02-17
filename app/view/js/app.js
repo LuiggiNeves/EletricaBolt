@@ -65,12 +65,12 @@ function ajaxDinamico(url, tipo, dados, sucesso, token = "", error = null) {
     });
 }
 
-function post(url, dados, sucesso, auth = false) {
-    ajaxDinamico(url, "POST", dados, sucesso, (auth ? getToken() : ""));
+function post(url, dados, sucesso, error = null) {
+    ajaxDinamico(url, "POST", dados, sucesso, "", error);
 }
 
-function get(url, dados, sucesso, auth = false) {
-    ajaxDinamico(url, "GET", dados, sucesso, (auth ? getToken() : ""));
+function get(url, dados, sucesso, error = null) {
+    ajaxDinamico(url, "GET", dados, sucesso, "", error);
 }
 
 function gerarStringAleatoria(tamanho) {

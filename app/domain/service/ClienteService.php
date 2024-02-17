@@ -39,11 +39,11 @@ class ClienteService extends ServiceAbstract
         return $cliente->setId($this->clienteRepository->criar($cliente))->toArray();
     }
 
-    public function login(string $celular, string $senha): bool
+    public function login(string $celular): bool
     {
         $cliente = $this->lePorCelular($celular);
-        if ($cliente == null || !password_verify($senha, $cliente->getCelular()) || $cliente->getStatus() == "Inativo") {
-            throw new DomainHttpException("Senha ou e-mail incorretos.");
+        if ($cliente == null || $cliente->getStatus() == "Inativo") {
+            throw new DomainHttpException("Cliente não encontrado.");
         }
 
         $this->authCliente->criar($cliente);
