@@ -35,6 +35,35 @@ function criar(nome, celular) {
     );
 }
 
+function login(celular) {
+    let formData = new FormData();
+    formData.append("route", "login-cliente");
+    formData.append("celular", celular);
+
+    post("../../app/controller/http/controller.php", formData,
+        function (response) {
+            let dados = response["dados"];
+            let mensagem = response["mensagem"];
+
+            sessionStorage.setItem("nomeCliente", dados["cliente"]["nome"]);
+            sessionStorage.setItem("idCliente", dados["cliente"]["id"]);
+
+            $("#loginCliente").html("Entrar");
+            $("#loginCliente").removeAttr("disabled");
+
+            if (sessionStorage.getItem("ultimaUrlVisitada") != null) {
+                window.location = sessionStorage.getItem("ultimaUrlVisitada");
+            } else {
+                window.location = "../../";
+            }
+        },
+        function () {
+            $("#loginCliente").html("Entrar");
+            $("#loginCliente").removeAttr("disabled");
+        }
+    );
+}
+
 $(document).ready(function () {
 
     $("#criarContaCliente").on("click", function () {
@@ -54,6 +83,10 @@ $(document).ready(function () {
             );
             $("#formClienteCriarConta").removeClass("was-validated");
         }
+    });
+
+    $("#loginCliente").on("click", function () {
+        login($("#celularLogin").val());
     });
 
 });

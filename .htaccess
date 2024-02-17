@@ -12,4 +12,5 @@ RewriteRule ^produtos/(.*)$ app/view/pages/paineis/admin/produtos.php?url=$1 [NC
 RewriteRule ^produtos-visualizar/(.*)$ app/view/pages/paineis/admin/produtos_visualizar.php?url=$1 [NC,L]
 
 RewriteRule ^eb/cadastrar/(.*)$ app/view/pages/criar_conta_cliente.php?url=$1 [NC,L]
+RewriteRule ^eb/login/(.*)$ app/view/pages/login_conta_cliente.php?url=$1 [NC,L]
 RewriteRule ^eb/produtos-visualizar/(.*)$ app/view/pages/produto-preview.php?url=$1 [NC,L]

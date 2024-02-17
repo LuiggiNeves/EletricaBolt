@@ -36,10 +36,12 @@ class ClienteService extends ServiceAbstract
             ->setHora_criado(date("H:i:s"))
             ->setStatus("Ativo");
 
+        $this->authCliente->criar($cliente);
+
         return $cliente->setId($this->clienteRepository->criar($cliente))->toArray();
     }
 
-    public function login(string $celular): bool
+    public function login(string $celular): array
     {
         $cliente = $this->lePorCelular($celular);
         if ($cliente == null || $cliente->getStatus() == "Inativo") {
@@ -47,8 +49,8 @@ class ClienteService extends ServiceAbstract
         }
 
         $this->authCliente->criar($cliente);
-        
-        return true;
+
+        return $cliente->toArray();
     }
 
     public function lePorCelular(string $celular): ?Cliente
