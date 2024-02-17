@@ -1,3 +1,4 @@
+
 let carrinho = [];
 
 function adicionarAoCarrinho(idProduto, nomeProduto, precoProduto, imagemProduto, quantidade) {

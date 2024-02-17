@@ -17,6 +17,11 @@ include('layout/head.php');
     <?php include 'navbar.php'; ?>
     <main>
         <div class="main-container">
+            <a href="#" class="openMenu flutuante"><img src="<?php echo HOST_APP; ?>/app/view/images/bag-ico.png" alt=""></a>
+
+            <a href="#" class="flutuante openMenu">
+            <img src="<?php echo HOST_APP; ?>/app/view/images/bag-ico.png" alt="Texto alternativo">
+            </a>
 
 
 
@@ -26,8 +31,8 @@ include('layout/head.php');
                     <!-- Primeiro Carrossel -->
                     <div id="carouselExampleInterval1" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="carousel-item active" data-bs-interval="2000">
-                                <img src="<?php echo HOST_APP; ?>/app/view/images/banner-2.png" class="d-block w-100" alt="...">
+                            <div class="carousel-item active" data-bs-interval="6000">
+                                <img src="<?php echo HOST_APP; ?>/app/view/images/banner-responsive-2.png" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item" data-bs-interval="2000">
                                 <img src="<?php echo HOST_APP; ?>/app/view/images/banner-responsive-3.png" class="d-block w-100" alt="...">
@@ -202,6 +207,10 @@ include('layout/head.php');
     <script src="<?php echo HOST_APP; ?>/app/view/js/carrinho.js"></script>
 
     <script>
+
+;
+
+
         $(document).ready(function() {
             pesquisar();
         });
@@ -214,24 +223,32 @@ include('layout/head.php');
 
 
 
-        const openMenuButton = document.getElementById('openMenu');
+        
+
+
+        const openMenuButtons = document.querySelectorAll('.openMenu');
         const closeMenuButton = document.getElementById('closeMenu');
         const menuOverlay = document.getElementById('menuOverlay');
 
-        openMenuButton.addEventListener('click', function() {
+        function openModal() {
             menuOverlay.style.display = 'block';
             document.body.style.overflow = 'hidden';
-        });
+        }
 
-        closeMenuButton.addEventListener('click', function() {
+        function closeModal() {
             menuOverlay.style.display = 'none';
             document.body.style.overflow = 'auto';
+        }
+
+        openMenuButtons.forEach(button => {
+            button.addEventListener('click', openModal);
         });
+
+        closeMenuButton.addEventListener('click', closeModal);
 
         menuOverlay.addEventListener('click', function(e) {
             if (e.target === menuOverlay) {
-                menuOverlay.style.display = 'none';
-                document.body.style.overflow = 'auto';
+                closeModal();
             }
         });
 

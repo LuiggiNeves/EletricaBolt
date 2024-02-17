@@ -1,3 +1,20 @@
+<?php
+include('layout/head.php');
+?>
+
+
+<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/pagina_incial_base.css">
+<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/pagina_incial.css">
+<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/produto-layout.css">
+<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/modal.css">
+<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/carrinho.css">
+<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/carrinho.css">
+
+<script>
+    
+</script>
+</head>
+
 <header>
         <div class="header-primary">
             <div class="header-container header-primary-color header-container-primary">
@@ -62,7 +79,10 @@
                                     <a href="html/login.html"><img src="<?php echo HOST_APP; ?>/app/view/images/person-ico.png" alt=""></a>
                                 </div>
                                 <div class="ico-user-two ico-user-generic">
-                                    <a href="#" id="openMenu" onclick="openModal()"><img src="<?php echo HOST_APP; ?>/app/view/images/bag-ico.png" alt=""></a>
+                                <a href="#" class="openMenu"><img src="<?php echo HOST_APP; ?>/app/view/images/bag-ico.png" alt=""></a>
+
+
+
                                 </div>
                             </div>
                         </div>
@@ -233,6 +253,7 @@
 
 
 
+        
     </header>
 
 

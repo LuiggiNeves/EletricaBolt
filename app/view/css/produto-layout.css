@@ -125,12 +125,19 @@
 
     .card {
         width: 160px;
-        height: 200px;
+        height: 400px;
         overflow: hidden;
     }
 
     .card-img {
+
         height: 150px;
+    }
+
+    .card-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .catalago-product-base{
