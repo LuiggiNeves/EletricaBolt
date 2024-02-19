@@ -34,7 +34,8 @@ class ClienteService extends ServiceAbstract
             ->setCelular($dados["celular"])
             ->setData_criado(date("Y-m-d"))
             ->setHora_criado(date("H:i:s"))
-            ->setStatus("Ativo");
+            ->setStatus("Ativo")
+            ->setPode_ver_preco("Sim");
 
         $this->authCliente->criar($cliente);
 
@@ -76,6 +77,18 @@ class ClienteService extends ServiceAbstract
         }
 
         $cliente->setStatus($status);
+
+        return $this->clienteRepository->altera($cliente);
+    }
+
+    public function alteraPodeVerPreco(int $id, string $pode_ver_preco): bool
+    {
+        $cliente = $this->lePorId($id);
+        if ($cliente == null) {
+            throw new DomainHttpException("Cliente não encontrado", 404);
+        }
+
+        $cliente->setStatus($pode_ver_preco);
 
         return $this->clienteRepository->altera($cliente);
     }

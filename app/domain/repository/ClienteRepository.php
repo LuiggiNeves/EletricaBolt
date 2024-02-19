@@ -9,14 +9,15 @@ class ClienteRepository
 {
     public function criar(Cliente $cliente): int
     {
-        $sql = "INSERT INTO clientes (nome, celular, data_criado, hora_criado, status)
-                VALUES (:nome, :celular, :data_criado, :hora_criado, :status)";
+        $sql = "INSERT INTO clientes (nome, celular, data_criado, hora_criado, status, pode_ver_preco)
+                VALUES (:nome, :celular, :data_criado, :hora_criado, :status, :pode_ver_preco)";
         $stmt = Conexao::getConexao()->prepare($sql);
         $stmt->bindValue(':nome', $cliente->getNome());
         $stmt->bindValue(':celular', $cliente->getCelular());
         $stmt->bindValue(':data_criado', $cliente->getData_criado());
         $stmt->bindValue(':hora_criado', $cliente->getHora_criado());
         $stmt->bindValue(':status', $cliente->getStatus());
+        $stmt->bindValue(':pode_ver_preco', $cliente->getPode_ver_preco());
         $result = $stmt->execute();
 
         if ($result == 0) {
@@ -50,7 +51,8 @@ class ClienteRepository
             ->setCelular($result["celular"])
             ->setData_criado($result["data_criado"])
             ->setHora_criado($result["hora_criado"])
-            ->setStatus($result["status"]);
+            ->setStatus($result["status"])
+            ->setPode_ver_preco($result["pode_ver_preco"]);
     }
 
     public function lePorId(string $id): ?Cliente
@@ -73,7 +75,8 @@ class ClienteRepository
             ->setCelular($result["celular"])
             ->setData_criado($result["data_criado"])
             ->setHora_criado($result["hora_criado"])
-            ->setStatus($result["status"]);
+            ->setStatus($result["status"])
+            ->setPode_ver_preco($result["pode_ver_preco"]);
     }
 
     public function listar(): array
@@ -94,9 +97,10 @@ class ClienteRepository
 
     public function altera(Cliente $cliente): bool
     {
-        $sql = "UPDATE clientes SET status = :status WHERE id = :id";
+        $sql = "UPDATE clientes SET status = :status, pode_ver_preco = :pode_ver_preco WHERE id = :id";
         $stmt = Conexao::getConexao()->prepare($sql);
         $stmt->bindValue(':status', $cliente->getStatus());
+        $stmt->bindValue(':pode_ver_preco', $cliente->getPode_ver_preco());
         $stmt->bindValue(':id', $cliente->getId());
         $result = $stmt->execute();
         Conexao::desconecta();

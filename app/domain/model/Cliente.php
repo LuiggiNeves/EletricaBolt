@@ -11,6 +11,7 @@ class Cliente extends ModelAbstract
     private $data_criado;
     private $hora_criado;
     private $status;
+    private $pode_ver_preco;
 
     public static function create()
     {
@@ -83,6 +84,17 @@ class Cliente extends ModelAbstract
         return $this;
     }
 
+    public function getPode_ver_preco()
+    {
+        return $this->pode_ver_preco;
+    }
+
+    public function setPode_ver_preco($pode_ver_preco)
+    {
+        $this->pode_ver_preco = $pode_ver_preco;
+        return $this;
+    }
+
     public function toArrayData()
     {
         return [
@@ -91,7 +103,8 @@ class Cliente extends ModelAbstract
             "celular" => $this->celular,
             "data_criado" => $this->data_criado,
             "hora_criado" => $this->hora_criado,
-            "status" => $this->status
+            "status" => $this->status,
+            "pode_ver_preco" => $this->pode_ver_preco
         ];
     }
 }

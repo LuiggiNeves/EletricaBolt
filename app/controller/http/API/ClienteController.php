@@ -73,4 +73,20 @@ class ClienteController extends ControllerAbstract
             200
         );
     }
+
+    public function alteraPodeVerPreco($dados)
+    {
+        $id = $dados["id"];
+        $pode_ver_preco = $dados["pode_ver_preco"];
+
+        return $this->respondeComDados(
+            [
+                "dados" => [
+                    "alterado" => $this->clienteService->alteraPodeVerPreco($id, $pode_ver_preco)
+                ],
+                "mensagem" => ""
+            ],
+            200
+        );
+    }
 }
