@@ -101,6 +101,10 @@ include('../../layout/auth.php');
     ?>
 
     <?php
+    include('../../layout/modals/altera_acesso_produtos.php');
+    ?>
+
+    <?php
     include('../../layout/footer.php');
     ?>
 

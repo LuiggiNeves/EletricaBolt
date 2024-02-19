@@ -88,7 +88,7 @@ class ClienteService extends ServiceAbstract
             throw new DomainHttpException("Cliente não encontrado", 404);
         }
 
-        $cliente->setStatus($pode_ver_preco);
+        $cliente->setPode_ver_preco($pode_ver_preco);
 
         return $this->clienteRepository->altera($cliente);
     }

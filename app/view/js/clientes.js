@@ -86,20 +86,30 @@ function listarTodosOsClientes() {
 
                 $(".tabela-clientes tbody").append(
                     `
-                        <tr class="`+ bgTd + `" id_cliente="` + clientes[i]["id"] + `" status="` + clientes[i]["status"] + `">
-                            <td class="col-3">
+                        <tr class="`+ bgTd + `" id_cliente="` + clientes[i]["id"] + `" status="` + clientes[i]["status"] + `" pode_ver_preco="` + clientes[i]["pode_ver_preco"] + `">
+                            <td class="col-2">
                                 `+ clientes[i]["nome"] + `
                             </td>
-                            <td class="col-3">
+                            <td class="col-2">
                                 `+ clientes[i]["celular"] + `
                             </td>
-                            <td class="col-3">
+                            <td class="col-2">
                                 `+ clientes[i]["status"] + `
                             </td>
-                            <td class="col-3">
-                                <button class="btn btn-primary btn-sm w-100 alterarStatus">
-                                    Alterar status
-                                </button>
+                            <td class="col-6">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-6 mb-2">
+                                        <button class="btn btn-primary btn-sm w-100 alterarStatus">
+                                            Alterar status
+                                        </button>
+                                    </div>
+
+                                    <div class="col-sm-12 col-md-6 mb-2">
+                                        <button class="btn btn-primary btn-sm w-100 alteraAcessoProdutos">
+                                            Acesso a produtos
+                                        </button>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                     `
@@ -127,6 +137,27 @@ function alteraStatus(id, status) {
 
             $(".modal").modal("hide");
             swal("Status alterado com sucesso!", "", "success");
+
+            listarTodosOsClientes();
+        },
+        function () {
+        }
+    );
+}
+
+function alteraPodeVerPreco(id, pode_ver_preco) {
+    let formData = new FormData();
+    formData.append("route", "altera-pode-ver-preco-cliente");
+    formData.append("id", id);
+    formData.append("pode_ver_preco", pode_ver_preco);
+
+    post("../app/controller/http/controller.php", formData,
+        function (response) {
+            let dados = response["dados"];
+            let mensagem = response["mensagem"];
+
+            $(".modal").modal("hide");
+            swal("Cliente alterado com sucesso!", "", "success");
 
             listarTodosOsClientes();
         },
@@ -187,6 +218,23 @@ $(document).ready(function () {
         let id = $("#idClienteSelecionadoAtivar").val();
 
         alteraStatus(id, "Ativo");
+    });
+
+    $(document).on("click", ".alteraAcessoProdutos", function () {
+        let id = $(this).parents("tr").attr("id_cliente");
+        let pode_ver_preco = $(this).parents("tr").attr("pode_ver_preco");
+
+        $("#clienteSelecionadoAlterarAcesso").val(id);
+        $("[name='permitirVerProduto'][value='" + pode_ver_preco + "']").prop("checked", true);
+
+        $("#alterarAcessoProduto").modal("show");
+    });
+
+    $("#btnSalvarAcesso").on("click", function () {
+        alteraPodeVerPreco(
+            $("#clienteSelecionadoAlterarAcesso").val(),
+            $("[name='permitirVerProduto']:checked").val()
+        );
     });
 
 });
