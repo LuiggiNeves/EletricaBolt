@@ -57,4 +57,9 @@ class ClienteService extends ServiceAbstract
     {
         return $this->clienteRepository->lePorCelular($celular);
     }
+
+    public function listar(): array
+    {
+        return $this->clienteRepository->listar();
+    }
 }

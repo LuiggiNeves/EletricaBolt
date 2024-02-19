@@ -38,7 +38,14 @@
                         Produtos
                     </div>
                 </a>
-                
+                <a href="../clientes/" class="divClientes py-2 text-decoration-none col-sm-3 col-md-2 mx-1 text-center my-1 btn-selecionar-item-navbar d-flex flex-column align-items-center justify-content-center">
+                    <div>
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <div>
+                        Clientes
+                    </div>
+                </a>
             </div>
         </div>
     </div>

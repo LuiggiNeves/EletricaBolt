@@ -10,6 +10,7 @@ RewriteRule ^painel/(.*)$ app/view/pages/paineis/admin/painel.php?url=$1 [NC,L]
 RewriteRule ^categorias/(.*)$ app/view/pages/paineis/admin/categorias.php?url=$1 [NC,L]
 RewriteRule ^produtos/(.*)$ app/view/pages/paineis/admin/produtos.php?url=$1 [NC,L]
 RewriteRule ^produtos-visualizar/(.*)$ app/view/pages/paineis/admin/produtos_visualizar.php?url=$1 [NC,L]
+RewriteRule ^clientes/(.*)$ app/view/pages/paineis/admin/clientes.php?url=$1 [NC,L]
 
 RewriteRule ^eb/cadastrar/(.*)$ app/view/pages/criar_conta_cliente.php?url=$1 [NC,L]
 RewriteRule ^eb/login/(.*)$ app/view/pages/login_conta_cliente.php?url=$1 [NC,L]

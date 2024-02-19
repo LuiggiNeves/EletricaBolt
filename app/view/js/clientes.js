@@ -64,6 +64,45 @@ function login(celular) {
     );
 }
 
+function listarTodosOsClientes() {
+    $(".divTabelaCategoria").hide();
+    $(".spinner-loading-clientes").show();
+
+    let formData = new FormData();
+    formData.append("route", "listar-clientes");
+
+    post("../app/controller/http/controller.php", formData,
+        function (response) {
+            let dados = response["dados"];
+            let mensagem = response["mensagem"];
+
+            let clientes = dados["clientes"];
+
+            $(".tabela-clientes tbody tr").remove();
+
+            for (let i = 0; i < clientes.length; i++) {
+                $(".tabela-clientes tbody").append(
+                    `
+                        <tr>
+                            <td>
+                                `+ clientes[i]["nome"] + `
+                            </td>
+                            <td>
+                                `+ clientes[i]["celular"] + `
+                            </td>
+                        </tr>
+                    `
+                );
+            }
+
+            $(".spinner-loading-clientes").hide();
+            $(".divTabelaCategoria").show();
+        },
+        function () {
+        }
+    );
+}
+
 $(document).ready(function () {
 
     $("#criarContaCliente").on("click", function () {

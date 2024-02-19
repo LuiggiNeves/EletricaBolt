@@ -44,4 +44,17 @@ class ClienteController extends ControllerAbstract
             200
         );
     }
+
+    public function listar($dados)
+    {
+        return $this->respondeComDados(
+            [
+                "dados" => [
+                    "clientes" => $this->clienteService->listar()
+                ],
+                "mensagem" => ""
+            ],
+            200
+        );
+    }
 }
