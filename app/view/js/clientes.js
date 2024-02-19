@@ -81,16 +81,22 @@ function listarTodosOsClientes() {
             $(".tabela-clientes tbody tr").remove();
 
             for (let i = 0; i < clientes.length; i++) {
+                let status = clientes[i]["status"];
+                let bgTd = status == "Inativo" ? "table-danger" : "";
+
                 $(".tabela-clientes tbody").append(
                     `
-                        <tr id_cliente="`+ clientes[i]["id"] + `" status="` + clientes[i]["status"] + `">
-                            <td class="col-5">
+                        <tr class="`+ bgTd + `" id_cliente="` + clientes[i]["id"] + `" status="` + clientes[i]["status"] + `">
+                            <td class="col-3">
                                 `+ clientes[i]["nome"] + `
                             </td>
-                            <td class="col-5">
+                            <td class="col-3">
                                 `+ clientes[i]["celular"] + `
                             </td>
-                            <td class="col-2">
+                            <td class="col-3">
+                                `+ clientes[i]["status"] + `
+                            </td>
+                            <td class="col-3">
                                 <button class="btn btn-primary btn-sm w-100 alterarStatus">
                                     Alterar status
                                 </button>

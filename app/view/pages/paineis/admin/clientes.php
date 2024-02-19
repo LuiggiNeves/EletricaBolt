@@ -42,7 +42,7 @@ include('../../layout/auth.php');
                         </div>
                     </div>
 
-                    <div class="col-sm-12 col-md-12">
+                    <div class="col-sm-12 col-md-12 mb-4">
                         <div class="spinner-loading-clientes w-100 text-center" style="display: none;">
                             <div class="spinner-border text-primary mt-5" role="status">
                                 <span class="visually-hidden">Loading...</span>
@@ -55,12 +55,36 @@ include('../../layout/auth.php');
                                     <tr>
                                         <th scope="col">Nome</th>
                                         <th scope="col">Celular</th>
+                                        <th scope="col">Status</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-12">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-auto mb-2">
+                                <div class="bg-light border border-2 rounded" style="width: 25px; height: 25px; display: inline-block;">
+                                    &nbsp;
+                                </div>
+                                <div style="display: inline-block;">
+                                    <span style="font-size: 13px;" class="text-muted fw-bold">Cliente ativo</span>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 col-md-auto mb-2">
+                                <div class="bg-danger rounded" style="width: 25px; height: 25px; display: inline-block;">
+                                    &nbsp;
+                                </div>
+                                <div style="display: inline-block;">
+                                    <span style="font-size: 13px;" class="text-muted fw-bold">Cliente inativo</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
