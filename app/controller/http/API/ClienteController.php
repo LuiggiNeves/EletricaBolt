@@ -57,4 +57,20 @@ class ClienteController extends ControllerAbstract
             200
         );
     }
+
+    public function altera($dados)
+    {
+        $id = $dados["id"];
+        $status = $dados["status"];
+
+        return $this->respondeComDados(
+            [
+                "dados" => [
+                    "alterado" => $this->clienteService->altera($id, $status)
+                ],
+                "mensagem" => ""
+            ],
+            200
+        );
+    }
 }

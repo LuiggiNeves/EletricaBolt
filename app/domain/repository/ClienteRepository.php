@@ -92,6 +92,22 @@ class ClienteRepository
         return $result;
     }
 
+    public function altera(Cliente $cliente): bool
+    {
+        $sql = "UPDATE clientes SET status = :status WHERE id = :id";
+        $stmt = Conexao::getConexao()->prepare($sql);
+        $stmt->bindValue(':status', $cliente->getStatus());
+        $stmt->bindValue(':id', $cliente->getId());
+        $result = $stmt->execute();
+        Conexao::desconecta();
+
+        if (!$result) {
+            return false;
+        }
+
+        return true;
+    }
+
     public function executaQueryEBuscaTudo($query): array
     {
         $sql = $query;

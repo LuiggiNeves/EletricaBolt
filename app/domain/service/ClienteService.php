@@ -58,8 +58,25 @@ class ClienteService extends ServiceAbstract
         return $this->clienteRepository->lePorCelular($celular);
     }
 
+    public function lePorId(int $id): ?Cliente
+    {
+        return $this->clienteRepository->lePorId($id);
+    }
+
     public function listar(): array
     {
         return $this->clienteRepository->listar();
+    }
+
+    public function altera(int $id, string $status): bool
+    {
+        $cliente = $this->lePorId($id);
+        if ($cliente == null) {
+            throw new DomainHttpException("Cliente não encontrado", 404);
+        }
+
+        $cliente->setStatus($status);
+
+        return $this->clienteRepository->altera($cliente);
     }
 }

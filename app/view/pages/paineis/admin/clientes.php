@@ -69,6 +69,14 @@ include('../../layout/auth.php');
     </div>
 
     <?php
+    include('../../layout/modals/inativar_cliente.php');
+    ?>
+
+    <?php
+    include('../../layout/modals/ativar_cliente.php');
+    ?>
+
+    <?php
     include('../../layout/footer.php');
     ?>
 

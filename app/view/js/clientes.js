@@ -83,12 +83,17 @@ function listarTodosOsClientes() {
             for (let i = 0; i < clientes.length; i++) {
                 $(".tabela-clientes tbody").append(
                     `
-                        <tr>
-                            <td>
+                        <tr id_cliente="`+ clientes[i]["id"] + `" status="` + clientes[i]["status"] + `">
+                            <td class="col-5">
                                 `+ clientes[i]["nome"] + `
                             </td>
-                            <td>
+                            <td class="col-5">
                                 `+ clientes[i]["celular"] + `
+                            </td>
+                            <td class="col-2">
+                                <button class="btn btn-primary btn-sm w-100 alterarStatus">
+                                    Alterar status
+                                </button>
                             </td>
                         </tr>
                     `
@@ -97,6 +102,27 @@ function listarTodosOsClientes() {
 
             $(".spinner-loading-clientes").hide();
             $(".divTabelaCategoria").show();
+        },
+        function () {
+        }
+    );
+}
+
+function alteraStatus(id, status) {
+    let formData = new FormData();
+    formData.append("route", "altera-status-cliente");
+    formData.append("id", id);
+    formData.append("status", status);
+
+    post("../app/controller/http/controller.php", formData,
+        function (response) {
+            let dados = response["dados"];
+            let mensagem = response["mensagem"];
+
+            $(".modal").modal("hide");
+            swal("Status alterado com sucesso!", "", "success");
+
+            listarTodosOsClientes();
         },
         function () {
         }
@@ -126,6 +152,35 @@ $(document).ready(function () {
 
     $("#loginCliente").on("click", function () {
         login($("#celularLogin").val());
+    });
+
+    $(document).on("click", ".alterarStatus", function () {
+        let status = $(this).parents("tr").attr("status");
+        let id = $(this).parents("tr").attr("id_cliente");
+
+        if (status == "Ativo") {
+            $("#idClienteSelecionadoInativar").val(id);
+
+            $("#inativarClienteModal").modal("show");
+        }
+
+        if (status == "Inativo") {
+            $("#idClienteSelecionadoAtivar").val(id);
+
+            $("#ativarClienteModal").modal("show");
+        }
+    });
+
+    $(document).on("click", ".btnInativarCliente", function () {
+        let id = $("#idClienteSelecionadoInativar").val();
+
+        alteraStatus(id, "Inativo");
+    });
+
+    $(document).on("click", ".btnAtivarCliente", function () {
+        let id = $("#idClienteSelecionadoAtivar").val();
+
+        alteraStatus(id, "Ativo");
     });
 
 });
