@@ -12,7 +12,7 @@ function leDadosDoProdutoPorId(id) {
 
             carregaViewDoProduto(
                 produto["nome"],
-                produto["preco"],
+                formataDinheiro(produto["preco"]),
                 produto["categoria"]["nome"],
                 produto["codigo_referencia"],
                 produto["descricao"]
@@ -72,8 +72,6 @@ function visualizarProduto(id) {
         function (response) {
             let dados = response["dados"];
             let mensagem = response["mensagem"];
-
-            console.log(dados);
         },
         "",
         function () {

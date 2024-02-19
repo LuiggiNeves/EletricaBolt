@@ -105,6 +105,12 @@ function removeSpinner($component, text) {
     $($component).removeAttr("disabled");
 }
 
+function formataDinheiro(number) {
+    number = parseInt(number);
+
+    return number.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
+}
+
 $(document).ready(function () {
 
     inicializaMascarasDoSistema();

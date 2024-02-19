@@ -162,7 +162,7 @@ function leProdutoPorId(id) {
                 produto["nome"],
                 produto["categoria"] != null ? produto["categoria"]["nome"] : "",
                 produto["descricao"],
-                produto["preco"],
+                formataDinheiro(produto["preco"]),
                 produto["codigo_referencia"],
                 produto["codigo_barras"]
             );

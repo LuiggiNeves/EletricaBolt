@@ -33,7 +33,7 @@ function atualizarCarrinho() {
                     <p>Codigo\n${produto.id}</p>
                 </div>
                 <div class="carrinho-preco carrinho-generico">
-                    <p>R$${produto.preco.toFixed(2)}</p>
+                    <p>R$ ${formataDinheiro(produto.preco.toFixed(2))}</p>
                 </div>
                 <div class="carrinho-quantidade carrinho-generico">
                     <p>${produto.quantidade}</p>
@@ -69,7 +69,7 @@ function confirmacaoApagar() {
 }
 
 
-function enviarOrcamento(){
+function enviarOrcamento() {
 
 }
 
@@ -81,14 +81,14 @@ function enviarCarrinho() {
     carrinho.forEach(produto => {
         let subtotal = produto.preco * produto.quantidade;
         mensagem += `*${produto.nome}*\n`;
-        mensagem += `Código: R$ ${produto.id.toFixed(2)}\n`;
-        mensagem += `Preço: R$ ${produto.preco.toFixed(2)}\n`;
+        mensagem += `Código: ${produto.id.toFixed(2)}\n`;
+        mensagem += `Preço: R$ ${formataDinheiro(produto.preco.toFixed(2))}\n`;
         mensagem += `Quantidade: ${produto.quantidade}\n`;
         mensagem += `Subtotal: R$ ${subtotal.toFixed(2)}\n\n\n`;
         total += subtotal;
     });
 
-    mensagem += `Total: R$ ${total.toFixed(2)}`;
+    mensagem += `Total: R$ ${formataDinheiro(total.toFixed(2))}`;
 
     mensagem = encodeURIComponent(mensagem);
 
