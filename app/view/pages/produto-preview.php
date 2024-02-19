@@ -5,7 +5,9 @@ include('layout/ultimaUrlVisitada.php');
 <link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/pagina_incial_base.css">
 <link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/pagina_incial.css">
 <link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/produto-layout.css">
-<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/carrinho-layout.css">
+<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/modal.css">
+<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/carrinho.css">
+<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/carrinho.css">
 <link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/produto-preview.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -34,10 +36,14 @@ include('layout/ultimaUrlVisitada.php');
 
                     <div class="product-preview-info-container">
                         <div class="product-preview-info">
-                            <h2 id="nomeDoProduto"></h2>
-                            <div id="divPrecoDoProduto">
-                                <strong>Preço:</strong> <span id="precoDoProduto"></span>
-                            </div>
+                            <h1 id="nomeDoProduto"></h1>
+
+                            <?php if (isset($_SESSION["pode_ver_preco"]) && $_SESSION["pode_ver_preco"] == 'Sim') : ?>
+                                <div id="divPrecoDoProduto">
+                                    <strong>Preço:</strong> <span id="precoDoProduto"></span>
+                                </div>
+                            <?php endif; ?>
+
                             <div id="divCategoriaDoProduto">
                                 <strong>Categoria:</strong> <span id="categoriaDoProduto"></span>
                             </div>

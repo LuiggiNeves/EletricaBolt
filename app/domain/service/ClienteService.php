@@ -49,6 +49,8 @@ class ClienteService extends ServiceAbstract
             throw new DomainHttpException("Cliente não encontrado.");
         }
 
+        $_SESSION["pode_ver_preco"] = $cliente->getPode_ver_preco();
+
         $this->authCliente->criar($cliente);
 
         return $cliente->toArray();
