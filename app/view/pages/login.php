@@ -19,7 +19,7 @@ include('layout/head.php');
                 <div class="col-md-5 col-sm-12">
                     <div class="card-wrapper mt-5">
                         <div class="row justify-content-center">
-                            <div class="col-sm-12 col-md-3 mb-3">
+                            <div class="col-3 mb-3">
                                 <img src="<?php echo HOST_APP; ?>/app/view/images/bolt-192x192.png" class="w-100">
                             </div>
                         </div>
