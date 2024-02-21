@@ -69,7 +69,6 @@ function pesquisarCategorias(dados_de_pesquisa) {
             $(".spinner-loading-categorias").hide();
             $(".divTabelaCategoria").show();
         },
-        "",
         function () {
 
         }
@@ -91,7 +90,6 @@ function criar(nome) {
 
             listar();
         },
-        "",
         function () {
 
         }
@@ -119,7 +117,6 @@ function lerPorId(id, $btn = null) {
                 removeSpinner($btn, "Visualizar");
             }
         },
-        "",
         function () {
 
         }
@@ -144,7 +141,6 @@ function altera(id, nome) {
 
             removeSpinner($("#alterarCategoria"), "Salvar");
         },
-        "",
         function () {
 
         }
@@ -184,7 +180,6 @@ function listarProdutosSemCategoria() {
                 }
             }
         },
-        "",
         function () {
 
         }
@@ -232,7 +227,6 @@ function listarProdutoPorCategoria(id_categoria, $btn = null) {
             $(".spinner-loading-produtos-da-categoria").hide();
             $(".divProdutosDaCategoria").show();
         },
-        "",
         function () {
 
         }
@@ -265,7 +259,6 @@ function inserirProdutoEmCategoria(id_categoria, id_produto) {
                     $("#visualizarCategoriaProdutosModal").modal("show");
                 });
         },
-        "",
         function () {
 
         }
@@ -304,7 +297,6 @@ function removeProdutoEmCategoria(id_categoria, id_produto, $btn = null) {
                     $("#visualizarCategoriaProdutosModal").modal("show");
                 });
         },
-        "",
         function () {
 
         }

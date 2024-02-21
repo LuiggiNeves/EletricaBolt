@@ -65,7 +65,6 @@ function listar(dados_de_pesquisa) {
             $(".divTabelaProdutos").show();
             $(".tabela-produtos").show();
         },
-        "",
         function () {
 
         }
@@ -128,7 +127,6 @@ function criar(nome, preco, descricao, id_categoria, codigo_referencia, codigo_b
                     pesquisar();
                 });
         },
-        "",
         function () {
 
         }
@@ -175,7 +173,6 @@ function leProdutoPorId(id) {
                 produto["imagens"]
             );
         },
-        "",
         function () {
 
         }
@@ -211,7 +208,6 @@ function alterar(id, nome, preco, descricao, id_categoria, codigo_referencia, co
 
 
         },
-        "",
         function () {
 
         }
@@ -286,7 +282,6 @@ function listarCategorias() {
                 `
             );
         },
-        "",
         function () {
 
         }
@@ -389,7 +384,6 @@ function criarNovaImagem(produto_id, arquivo) {
                     leProdutoPorId(produto_id);
                 });
         },
-        "",
         function () {
 
         }
@@ -417,7 +411,6 @@ function removeImagem(id) {
                     );
                 });
         },
-        "",
         function () {
 
         }

@@ -22,7 +22,6 @@ function leDadosDoProdutoPorId(id) {
                 produto["imagens"]
             );
         },
-        "",
         function () {
 
         }
@@ -73,7 +72,6 @@ function visualizarProduto(id) {
             let dados = response["dados"];
             let mensagem = response["mensagem"];
         },
-        "",
         function () {
 
         }

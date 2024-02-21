@@ -18,7 +18,6 @@ function login(email, senha) {
             $("#realizaLogin").html("Acessar");
             $("#realizaLogin").removeAttr("disabled");
         },
-        "",
         function () {
             $("#realizaLogin").html("Acessar");
             $("#realizaLogin").removeAttr("disabled");
