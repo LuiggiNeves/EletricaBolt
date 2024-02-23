@@ -73,10 +73,10 @@
             </div>
         </div>
 
-
+        
         <div id="menuOverlay">
             <div id="menuContent">
-                <a href="#" id="closeMenu">X</a>
+                <a href="#" id="closeMenu" class="x-ico-close"><img src="<?php echo HOST_APP; ?>/app/view/images/X.png" alt=""></a>
                 <div>
                     <h1>Carrinho</h1>
                 </div>
@@ -114,7 +114,11 @@
 
             </div>
         </div>
+        <a href="#" class="openMenu flutuante"><img src="<?php echo HOST_APP; ?>/app/view/images/bag-ico.png" alt=""></a>
 
+        <a href="#" class="flutuante openMenu">
+            <img src="<?php echo HOST_APP; ?>/app/view/images/bag-ico.png" alt="Texto alternativo">
+        </a>
 
 
         <div class="header-container container-header-two">
@@ -235,4 +239,6 @@
             </div>
         </div>
     </div>
+
 </header>
+<script src="<?php echo HOST_APP; ?>/app/view/js/modal.js"></script>

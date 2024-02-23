@@ -19,6 +19,7 @@
     max-width: 285px;
     height: 400px;
     border: 1px solid #ddd;
+    padding: 10px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombras mais sutis */
