@@ -2,11 +2,7 @@
 include('layout/head.php');
 ?>
 
-<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/pagina_incial_base.css">
-<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/pagina_incial.css">
-<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/produto-layout.css">
-<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/modal.css">
-<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/carrinho.css">
+
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">

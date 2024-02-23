@@ -1,5 +1,15 @@
-
 let carrinho = [];
+
+function carregarCarrinhoDoLocalStorage() {
+    const carrinhoArmazenado = localStorage.getItem('carrinho');
+    if (carrinhoArmazenado) {
+        carrinho = JSON.parse(carrinhoArmazenado);
+    }
+}
+
+function salvarCarrinhoNoLocalStorage() {
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+}
 
 function adicionarAoCarrinho(idProduto, nomeProduto, precoProduto, imagemProduto, quantidade) {
     const produto = {
@@ -12,6 +22,7 @@ function adicionarAoCarrinho(idProduto, nomeProduto, precoProduto, imagemProduto
 
     carrinho.push(produto);
 
+    salvarCarrinhoNoLocalStorage();
     atualizarCarrinho();
     window.alert("Produto adicionado ao carrinho!");
 }
@@ -45,8 +56,10 @@ function atualizarCarrinho() {
         `;
     });
 }
+
 function removerTudoDoCarrinho() {
     carrinho = [];
+    salvarCarrinhoNoLocalStorage();
     atualizarCarrinho();
 }
 
@@ -54,6 +67,7 @@ function removerDoCarrinho(idProduto) {
     const index = carrinho.findIndex(produto => produto.id === idProduto);
     if (index !== -1) {
         carrinho.splice(index, 1);
+        salvarCarrinhoNoLocalStorage();
         atualizarCarrinho();
     }
 }
@@ -67,7 +81,6 @@ function confirmacaoApagar() {
         window.alert("Operação cancelada");
     }
 }
-
 
 function enviarOrcamento() {
 
@@ -94,3 +107,4 @@ function enviarCarrinho() {
 
     window.open(`https://wa.me/19996430498?text=${mensagem}`);
 }
+

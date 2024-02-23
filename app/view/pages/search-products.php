@@ -1,10 +1,7 @@
 <?php
 include('layout/head.php');
 ?>
-<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/pagina_incial_base.css">
-<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/pagina_incial.css">
-<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/produto-layout.css">
-<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/carrinho-layout.css">
+
 <link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/search-products.css">
 <link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/search-products-all.css">
 
@@ -33,6 +30,7 @@ include('layout/head.php');
     <div class="container-search-results">
 
         <div class="main-search-results">
+            <!--RETIRAR OS INCLUDES E LIGAR COM OS PRODUTOS EM PHP-->
             <?php include 'produto-search-all.php';?>
             <?php include 'produto-search-all.php';?>
             <?php include 'produto-search-all.php';?>

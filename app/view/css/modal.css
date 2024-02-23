@@ -30,6 +30,11 @@
     cursor: pointer;
 }
 
+.x-ico-close img{
+    height: 35px;
+    width: 35px;
+}
+
 #closeMenu{
     text-decoration: none;
     color: black;

@@ -1,8 +1,8 @@
 <?php
 require dirname(__FILE__) . '/../../../../vendor/autoload.php';
 
-session_start();
-
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();}
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +26,13 @@ session_start();
 
     <!-- CDN Icons bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+
 
     <!-- Arquivos CSS -->
     <link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/app.css?v=<?php echo VERSION; ?>" />
+    <link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/requisicoes.css">
+    <script src="<?php echo HOST_APP; ?>/app/view/js/carrinho.js"></script>
+    <script src="<?php echo HOST_APP; ?>/app/view/js/atualizarCarrinho.js" defer></script>
+
