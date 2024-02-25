@@ -28,12 +28,12 @@ function listar(dados_de_pesquisa) {
             }
 
             for (let i = 0; i < produtos.length; i++) {
-                let path_imagem = produtos[i]["imagem_path"] != null ? `app/files/entities/` + produtos[i]["imagem_path"] + `` : `../app/view/images/produto.png`;
+                let path_imagem = produtos[i]["imagem_path"] != null ? path_aplicacao + `/app/files/entities/` + produtos[i]["imagem_path"] + `` : path_aplicacao + `/app/view/images/produto.png`;
                 let quantityId = 'quantity_' + produtos[i].id;
 
                 $("#produtosEncontrados").append(
                     `
-                    <div class="catalago-product-base">
+                    <div class="catalago-product-base">rgba(0, 0, 0, 0.466);
                         <div class="card">
                             <div class="card-img p-3">
                                 <p><img src="`+ path_imagem + `" alt="` + produtos[i]["nome"] + `"></p>
