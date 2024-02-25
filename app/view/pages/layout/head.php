@@ -29,14 +29,13 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
-
-
-
     <!-- Arquivos CSS -->
     <link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/app.css?v=<?php echo VERSION; ?>" />
     <link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/requisicoes.css">
     <script src="<?php echo HOST_APP; ?>/app/view/js/carrinho.js"></script>
+
     <script src="<?php echo HOST_APP; ?>/app/view/js/quantitativo.js"></script>
     <script src="<?php echo HOST_APP; ?>/app/view/js/atualizarCarrinho.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
+    <script src="<?php echo HOST_APP; ?>/app/view/js/atualizarCarrinho.js" defer></script>
