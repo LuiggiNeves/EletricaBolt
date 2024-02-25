@@ -39,4 +39,9 @@
 
 }
 
+@media screen and (max-width: 1030px){
+    #menuContent{
+        width: 100%;
+    }
 
+}

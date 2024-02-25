@@ -31,7 +31,7 @@ function listar(dados_de_pesquisa) {
                 let path_imagem = produtos[i]["imagem_path"] != null ? path_aplicacao + `/app/files/entities/` + produtos[i]["imagem_path"] + `` : path_aplicacao + `/app/view/images/produto.png`;
                 let quantityId = 'quantity_' + produtos[i].id;
 
-                // console.log(produtos[i].codigo_referencia);
+                console.log(produtos[i].codigo_referencia);
 
                 $("#produtosEncontrados").append(
                     `
@@ -55,10 +55,11 @@ function listar(dados_de_pesquisa) {
                                     </div>
                                 </div>
                                 <a class="add-to-cart" href="eb/produtos-visualizar/${produtos[i].id}">
-                                    Visualizar produto
+                                    Ver Produto
                                 </a>
 
-                                <button class="add-to-cart" onclick="adicionarAoCarrinho(${produtos[i].id}, '${produtos[i].nome}', ${produtos[i].preco}, '${path_imagem}', document.getElementById('${quantityId}').value)">Adicionar ao Carrinho</button>
+                                <button class="add-to-cart" onclick="adicionarAoCarrinho(${produtos[i].id}, '${produtos[i].nome}', ${produtos[i].preco}, '${path_imagem}', document.getElementById('${quantityId}').value, '${produtos[i].codigo_referencia}')"> Adicionar Carrinho</button>
+
                             </div>
                         </div>
                     </div>

@@ -107,7 +107,7 @@
                 <div class="container-carrinho-buttons">
                     <div class="carrinho-buttons">
                         <input type="button" value="Enviar orçamento" onclick="enviarCarrinho()">
-                        <input type="button" value="Apagar Orçamento" onclick="confirmacaoApagar()">
+                        <input type="button" value="Apagar Tudo" onclick="confirmacaoApagar()">
                     </div>
                 </div>
 

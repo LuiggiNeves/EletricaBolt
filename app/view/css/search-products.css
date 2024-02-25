@@ -93,7 +93,7 @@
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
     .container-product-search{
         width: 200px;
         height: 490px;
@@ -118,5 +118,6 @@
     .bnt-cart{
         margin-top: 10px;
     }
+
 
 }

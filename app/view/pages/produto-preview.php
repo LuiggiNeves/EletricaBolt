@@ -40,11 +40,15 @@ include('layout/ultimaUrlVisitada.php');
                             <div id="divCategoriaDoProduto">
                                 <strong>Categoria:</strong> <span id="categoriaDoProduto"></span>
                             </div>
-                        </div>
 
+                            <div id="divCodDoProduto">
+                                <strong>Código:</strong> <span id="codDoProduto"></span>
+                            </div>
+                        </div>
+            
                         <div class="product-preview-container-btn">
                             <div class="product-preview-btn">
-                                <input type="button" value="Pedir produto">
+                                <input type="button" value="Adicionar Carrinho" onclick="adicionarAoCarrinho()">
                             </div>
                         </div>
                     </div>
@@ -52,7 +56,6 @@ include('layout/ultimaUrlVisitada.php');
 
                 <div class="product-preview-descricao">
                     <h3>Descrição</h3>
-
                     <p id="descricaoDoProduto"></p>
                 </div>
             </div>
