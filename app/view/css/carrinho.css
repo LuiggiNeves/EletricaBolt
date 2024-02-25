@@ -38,6 +38,11 @@
     justify-content: center;
 }
 
+.carrinho-img img {
+    width: 90px;
+    border: 1px solid rgba(0, 0, 0, 0.466);
+}
+
 .carrinho-nome{
     width: 35%;
 }

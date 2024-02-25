@@ -56,7 +56,7 @@ function listar(dados_de_pesquisa) {
                                     Visualizar produto
                                 </a>
 
-                                <button class="add-to-cart" onclick="adicionarAoCarrinho(${produtos[i].id}, '${produtos[i].nome}', ${produtos[i].preco}, '${produtos[i].imagem_path}', document.getElementById('${quantityId}').value)">Adicionar ao Carrinho</button>
+                                <button class="add-to-cart" onclick="adicionarAoCarrinho(${produtos[i].id}, '${produtos[i].nome}', ${produtos[i].preco}, '${path_imagem}', document.getElementById('${quantityId}').value)">Adicionar ao Carrinho</button>
                             </div>
                         </div>
                     </div>

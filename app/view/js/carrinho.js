@@ -44,7 +44,7 @@ function atualizarCarrinho() {
     carrinho.forEach(produto => {
         carrinhoElement.innerHTML += `
             <div class="carrinho-layout-produto">
-                <div class="carrinho-img ">
+                <div class="carrinho-img bg-white">
                     <img src="${produto.imagem}" alt="${produto.nome}">
                 </div>
                 <div class="carrinho-nome carrinho-generico">
