@@ -31,6 +31,8 @@ function listar(dados_de_pesquisa) {
                 let path_imagem = produtos[i]["imagem_path"] != null ? path_aplicacao + `/app/files/entities/` + produtos[i]["imagem_path"] + `` : path_aplicacao + `/app/view/images/produto.png`;
                 let quantityId = 'quantity_' + produtos[i].id;
 
+                // console.log(produtos[i].codigo_referencia);
+
                 $("#produtosEncontrados").append(
                     `
                     <div class="catalago-product-base">
