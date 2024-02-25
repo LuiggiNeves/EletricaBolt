@@ -1,0 +1,8 @@
+.success-icon-yellow .swal-icon--success__line--tip {
+    background-color: yellow; /* Altera a cor do confere para amarelo */
+}
+
+.modal-custom {
+    max-width: 600px; /* Defina o tamanho máximo desejado */
+    width: 100%;
+}

@@ -1,5 +1,15 @@
-
 let carrinho = [];
+
+function carregarCarrinhoDoLocalStorage() {
+    const carrinhoArmazenado = localStorage.getItem('carrinho');
+    if (carrinhoArmazenado) {
+        carrinho = JSON.parse(carrinhoArmazenado);
+    }
+}
+
+function salvarCarrinhoNoLocalStorage() {
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+}
 
 function adicionarAoCarrinho(idProduto, nomeProduto, precoProduto, imagemProduto, quantidade) {
     const produto = {
@@ -12,9 +22,20 @@ function adicionarAoCarrinho(idProduto, nomeProduto, precoProduto, imagemProduto
 
     carrinho.push(produto);
 
+    salvarCarrinhoNoLocalStorage();
     atualizarCarrinho();
-    window.alert("Produto adicionado ao carrinho!");
+
+    Swal.fire({
+        icon: 'success',
+        title: 'Produto adicionado ao carrinho!',
+        showConfirmButton: false,
+        timer: 1500
+    });
+
+    // Resetar o campo de quantidade para 1
+    document.getElementById("quantity_" + idProduto).value = 1;
 }
+
 
 function atualizarCarrinho() {
     const carrinhoElement = document.getElementById("carrinho");
@@ -27,26 +48,58 @@ function atualizarCarrinho() {
                     <img src="${produto.imagem}" alt="${produto.nome}">
                 </div>
                 <div class="carrinho-nome carrinho-generico">
-                    <p>${produto.nome}</p>
+                    <div class=ident-sup>
+                        <p><strong>NOME</strong></p>
+                    </div>
+
+                    <div class="ident-nome">
+                        <p>${produto.nome}</p>
+                    </div>
+
                 </div>
                 <div class="carrinho-codigo carrinho-generico">
-                    <p>Codigo\n${produto.id}</p>
+
+                    <div class=ident-sup>  
+                        <p><strong>CÓDIGO</strong></p>    
+                    </div>
+
+                    <div>
+                        <p>${produto.id}</p>
+                    </div>
+
                 </div>
                 <div class="carrinho-preco carrinho-generico">
-                    <p>R$ ${formataDinheiro(produto.preco.toFixed(2))}</p>
+                    <div class=ident-sup>  
+                        <p><strong>VALOR</strong></p>
+                    </div>
+                    <div>
+                        <p>${formataDinheiro(produto.preco.toFixed(2))}</p>
+                    </div>
+
                 </div>
                 <div class="carrinho-quantidade carrinho-generico">
-                    <p>${produto.quantidade}</p>
+
+                    <div class=ident-sup border-fim-quantidade>  
+                        <p><strong>QNT</strong></p>
+                    </div>
+
+                    <div>
+                        <p>${produto.quantidade}</p>
+                    </div>
                 </div>
-                <div class="carrinho-remover ">
-                    <button onclick="removerDoCarrinho(${produto.id})">x</button>
+                <div class="container-carrinho-remover ">
+                    <div class="carrinho-remover">
+                       <button onclick="removerDoCarrinho(${produto.id})"><img src="app/view/images/X.png" alt=""></button> 
+                    </div>
                 </div>
             </div>
         `;
     });
 }
+
 function removerTudoDoCarrinho() {
     carrinho = [];
+    salvarCarrinhoNoLocalStorage();
     atualizarCarrinho();
 }
 
@@ -54,6 +107,7 @@ function removerDoCarrinho(idProduto) {
     const index = carrinho.findIndex(produto => produto.id === idProduto);
     if (index !== -1) {
         carrinho.splice(index, 1);
+        salvarCarrinhoNoLocalStorage();
         atualizarCarrinho();
     }
 }
@@ -67,7 +121,6 @@ function confirmacaoApagar() {
         window.alert("Operação cancelada");
     }
 }
-
 
 function enviarOrcamento() {
 
@@ -94,3 +147,4 @@ function enviarCarrinho() {
 
     window.open(`https://wa.me/19996430498?text=${mensagem}`);
 }
+

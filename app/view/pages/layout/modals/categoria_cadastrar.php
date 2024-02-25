@@ -19,6 +19,7 @@
                 <button class="btn btn-sm btn-success" id="criarCategoria">
                     Cadastrar
                 </button>
+
             </div>
         </div>
     </div>

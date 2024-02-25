@@ -3,26 +3,14 @@ include('layout/head.php');
 include('layout/ultimaUrlVisitada.php');
 ?>
 
-<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/pagina_incial_base.css">
-<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/pagina_incial.css">
-<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/produto-layout.css">
-<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/modal.css">
-<link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/carrinho.css">
 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </head>
 
 <body>
     <?php include 'navbar.php'; ?>
     <main>
         <div class="main-container">
-            <a href="#" class="openMenu flutuante"><img src="<?php echo HOST_APP; ?>/app/view/images/bag-ico.png" alt=""></a>
 
-            <a href="#" class="flutuante openMenu">
-                <img src="<?php echo HOST_APP; ?>/app/view/images/bag-ico.png" alt="Texto alternativo">
-            </a>
 
             <div class="carrosel-responsive">
                 <div class="carrosel-container-responsive">
@@ -118,6 +106,7 @@ include('layout/ultimaUrlVisitada.php');
             </div>
         </div>
 
+
         <div class="main-block-pc">
             <div class="main-block-anuncios ">
                 <div class="container-block">
@@ -142,8 +131,6 @@ include('layout/ultimaUrlVisitada.php');
                 </div>
             </div>
         </div>
-
-
         <div class="main-product">
             <div class="main-product-container">
                 <div class="catalago-box-container">
@@ -154,12 +141,7 @@ include('layout/ultimaUrlVisitada.php');
             </div>
         </div>
 
-
-
-
         </div>
-
-
     </main>
 
 
@@ -181,7 +163,8 @@ include('layout/ultimaUrlVisitada.php');
 
     <!-- Arquivos JS -->
     <script src="<?php echo HOST_APP; ?>/app/view/js/inicio.js?v=<?php echo VERSION; ?>"></script>
-    <script src="<?php echo HOST_APP; ?>/app/view/js/carrinho.js"></script>
+
+
 
     <script>
         $(document).ready(function() {
@@ -192,33 +175,7 @@ include('layout/ultimaUrlVisitada.php');
             window.location.href = "html/product-search.html";
         });
 
-        const menuButtons = document.querySelectorAll('.menu-button');
 
-        const openMenuButtons = document.querySelectorAll('.openMenu');
-        const closeMenuButton = document.getElementById('closeMenu');
-        const menuOverlay = document.getElementById('menuOverlay');
-
-        function openModal() {
-            menuOverlay.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            menuOverlay.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        openMenuButtons.forEach(button => {
-            button.addEventListener('click', openModal);
-        });
-
-        closeMenuButton.addEventListener('click', closeModal);
-
-        menuOverlay.addEventListener('click', function(e) {
-            if (e.target === menuOverlay) {
-                closeModal();
-            }
-        });
 
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -235,16 +192,5 @@ include('layout/ultimaUrlVisitada.php');
 
 
 
-        function aumentarQuantidade(id) {
-            let quantidadeInput = document.getElementById(id);
-            quantidadeInput.value = parseInt(quantidadeInput.value) + 1;
-        }
-
-        function diminuirQuantidade(id) {
-            let quantidadeInput = document.getElementById(id);
-            if (parseInt(quantidadeInput.value) > 1) {
-                quantidadeInput.value = parseInt(quantidadeInput.value) - 1;
-            }
-        }
     </script>
 </body>

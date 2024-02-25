@@ -14,8 +14,6 @@
 
 }
 
-
-
 .carrinho-layout-produto{
     width: 100%;
     display: inline-flex;
@@ -26,13 +24,7 @@
 }
 
 .carrinho-generico{
-    margin-left: 5px;
-    margin-right: 5px;
-
-    display: flex;
-    align-items: end;
     text-align: center;
-    margin-bottom: 5px;
 
     
 }
@@ -47,11 +39,11 @@
 }
 
 .carrinho-nome{
-    width: 230px;
+    width: 35%;
 }
 
 .carrinho-codigo{
-    width: 80px;
+    width: 15%;
 }
 
 .carrinho-preco{
@@ -60,6 +52,7 @@
 
 .container-carrinho-buttons{
     width: 100%;
+    height: 24px;
     display: flex;
     justify-content: space-between;
     justify-content: center;
@@ -70,6 +63,11 @@
     width: 100%;
     justify-content: space-between;
     margin-top: 10px;
+}
+
+.ident-nome{
+    text-align: left;
+    margin-left: 5px;
 }
 
 .carrinho-buttons input{
@@ -85,21 +83,34 @@
 
 }
 
-.carrinho-remover{
+.container-carrinho-remover{
     width: 20px;
-    height: 20px;
-   
+
+    display: flex;
+    justify-content: right;
 }
 
 .carrinho-remover button{
-    width: 100%;
-    height: 100%;
     border: none;
-    background-color: #ffffff00;
-    margin: auto;
+    background-color: transparent;
+    
+    border-bottom: 1px solid var(--color-border-div);
 
 }
 
+.carrinho-remover button img{
+    width: 20px;
+
+
+
+}   
+
+.ident-sup p{
+    border-bottom: 1px solid var(--color-border-div);
+}
+.border-fim-quantidade{
+    border-right: 1px solid var(--color-border-div);
+}
 
 .carrinho-buttons input:hover{
     background-color: var(--color-btn-product-hv);
@@ -107,7 +118,7 @@
 }
 
 .carrinho-quantidade{
-    width: 80px;
+    width: 100px;
 }
 
 .container-infos{
