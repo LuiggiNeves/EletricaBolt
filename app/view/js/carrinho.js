@@ -25,12 +25,7 @@ function adicionarAoCarrinho(idProduto, nomeProduto, precoProduto, imagemProduto
     salvarCarrinhoNoLocalStorage();
     atualizarCarrinho();
 
-    Swal.fire({
-        icon: 'success',
-        title: 'Produto adicionado ao carrinho!',
-        showConfirmButton: false,
-        timer: 1500
-    });
+    swal("Produto adicionado ao carrinho!", "", "success");
 
     // Resetar o campo de quantidade para 1
     document.getElementById("quantity_" + idProduto).value = 1;
@@ -89,7 +84,7 @@ function atualizarCarrinho() {
                 </div>
                 <div class="container-carrinho-remover ">
                     <div class="carrinho-remover">
-                       <button onclick="removerDoCarrinho(${produto.id})"><img src="app/view/images/X.png" alt=""></button> 
+                       <button onclick="removerDoCarrinho(${produto.id})"><img src="` + path_aplicacao + `/app/view/images/X.png" alt=""></button> 
                     </div>
                 </div>
             </div>

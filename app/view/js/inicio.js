@@ -33,10 +33,10 @@ function listar(dados_de_pesquisa) {
 
                 $("#produtosEncontrados").append(
                     `
-                    <div class="catalago-product-base">rgba(0, 0, 0, 0.466);
+                    <div class="catalago-product-base">
                         <div class="card">
-                            <div class="card-img p-3">
-                                <p><img src="`+ path_imagem + `" alt="` + produtos[i]["nome"] + `"></p>
+                            <div class="card-img p-3 w-100 text-center">
+                                <img src="`+ path_imagem + `" alt="` + produtos[i]["nome"] + `" class="card-product-img">
                             </div>
                             <div class="card-body">
                                 <div class="product-title" a href="#" onclick="openProductView()">` + produtos[i]["nome"] + `</a></div>

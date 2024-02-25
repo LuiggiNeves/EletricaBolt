@@ -6,7 +6,8 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 20px; /* Aumentei a margem superior para espaçamento */
+    margin-top: 20px;
+    /* Aumentei a margem superior para espaçamento */
 }
 
 .catalago-product-base {
@@ -16,31 +17,35 @@
 
 /* Cartão de Produto */
 .card {
-    max-width: 285px;
-    height: 400px;
+    width: 285px;
+    height: 450px;
     border: 1px solid #ddd;
     padding: 10px;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombras mais sutis */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Sombras mais sutis */
     margin: 10px;
-    transition: box-shadow 0.3s ease; /* Adição de transição para a sombra */
+    transition: box-shadow 0.3s ease;
+    /* Adição de transição para a sombra */
 }
 
 .card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombras mais pronunciadas ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombras mais pronunciadas ao passar o mouse */
 }
 
 .card img {
-    width: 99%;
-    height: 99%;
-    object-fit: cover; /* Mantém a proporção e corta o excesso */
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
 }
 
 .card-img {
     overflow: hidden;
     width: 99%;
-    height: 250px; /* Defina a altura desejada para a div .card-img */
+    height: 250px;
+    /* Defina a altura desejada para a div .card-img */
     margin: 0 auto;
 }
 
@@ -54,16 +59,19 @@
     font-weight: bold;
     margin-bottom: 5px;
     cursor: pointer;
-    transition: color 0.3s ease; /* Adição de transição para a cor do texto */
+    transition: color 0.3s ease;
+    /* Adição de transição para a cor do texto */
 }
 
 .product-title:hover {
-    color: var(--color-primary); /* Mudança de cor ao passar o mouse */
+    color: var(--color-primary);
+    /* Mudança de cor ao passar o mouse */
 }
 
 .product-title a {
     cursor: pointer;
-    text-decoration: none; /* Remoção do sublinhado padrão dos links */
+    text-decoration: none;
+    /* Remoção do sublinhado padrão dos links */
 }
 
 .product-price {
@@ -104,7 +112,8 @@
     display: block;
     width: 100%;
     margin-top: 10px;
-    transition: var(--color-btn-product-hv) 0.3s ease; /* Adição de transição para a cor de fundo */
+    transition: var(--color-btn-product-hv) 0.3s ease;
+    /* Adição de transição para a cor de fundo */
 }
 
 .add-to-cart:hover {
@@ -135,13 +144,12 @@
         height: 150px;
     }
 
-    .card-img img{
-        width: 100%;
-        height: 100%;
+    .card-img img {
+        width: 120px;
         object-fit: cover;
     }
 
-    .catalago-product-base{
+    .catalago-product-base {
         max-width: 250px;
     }
 
