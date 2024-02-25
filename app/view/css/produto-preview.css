@@ -54,6 +54,7 @@ main{
 }
 
 .container-content{
+    width: 1100px;
     display: inline-flex;
     margin-bottom: 50px;
     background-color: #fff;
