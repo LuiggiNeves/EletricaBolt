@@ -2,10 +2,10 @@
 
 .container-product-search{
     background-color: #fff;
-    box-shadow: 0px 0px 3px 1px rgba(26, 25, 25, 0.377);
+    box-shadow: 0px 0px 1px 1px rgba(70, 69, 69, 0.171);
 
-    width: 320px;
-    height: 550px;
+    width: 270px;
+    height: 570px;
     overflow: hidden;
 
 
@@ -17,7 +17,7 @@
 
 }
 .container-product-search:hover {
-    box-shadow: 0px 0px 8px 2px rgba(26, 25, 25, 0.377);
+    box-shadow: 0px 0px 10px 2px rgba(15, 15, 15, 0.308);
 }
 
 .conteiner-img{
@@ -34,7 +34,7 @@
 }
 
 .conteiner-img img{
-    width: 100%;
+    width: 90%;
     height: 100%;
     object-fit: cover;
 
@@ -44,7 +44,7 @@
 .infos{
     margin-top: 10px;
     height: 70px;
-    overflow: hidden;
+    overflow: auto;
 
 }
 
@@ -59,20 +59,24 @@
     padding: 5px;
     margin-top: 50px;
     width: 100%;
-    display: flex;
 
-    justify-content: space-around;
 
+
+    flex-direction: row;
 }
 
 .btn-generic-actions{
-
-
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--color-btn-product);
-    
 
-    border-radius: 10px;
+
+    border-radius: 5px;
+    border: 1px solid rgba(20, 20, 20, 0.363);
     padding: 3px;
+    margin: 5px;
 
 }
 
@@ -81,10 +85,12 @@
     
     display: flex;
     justify-content: center;
-    
+
+    color: #fff;
     align-items: center;
-    width: 130px;
+    width: 140px;
     height: 45px;
+
 }
 
 .btn-generic-actions:hover{
@@ -93,17 +99,47 @@
 }
 
 
-@media screen and (max-width: 800px) {
-    .container-product-search{
-        width: 200px;
-        height: 490px;
 
+@media screen and (max-width: 800px) {
+
+
+    .main-search-results{
+        padding: 0px !important;
+    }
+    .container-product-search{
+        width: 160px;
+        height: 370px;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        padding: 3px;
         box-shadow: 0px 0px 5px 2px rgba(26, 25, 25, 0.377);
     }
 
+    .container-product-search{
+        font-size: 10px;
+    }
+
+    .infos p{
+        font-size: 12px !important;
+    }
+
     .conteiner-img{
+        width: 95%;
+        height: 120px;
+        margin: 5px;
+    }
+
+    .container-buttons{
+
+        padding: 5px;
+        margin-top: 50px;
         width: 100%;
-        height: 180px;
+        display: flex;
+    
+        justify-content: space-around;
+    
     }
     .container-buttons{
         flex-direction: column;
@@ -116,7 +152,20 @@
         
     }
     .bnt-cart{
-        margin-top: 10px;
+        margin-top: 3px;
     }
+
+    .btn-generic-actions a{
+        color: rgb(19, 19, 19);
+        
+        display: flex;
+        justify-content: center;
+        font-size: 12px;
+        color: #fff;
+        align-items: center;
+    
+        height: 30px;
+    }
+
 
 }

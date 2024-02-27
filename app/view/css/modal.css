@@ -1,3 +1,8 @@
+.modal-open {
+    position: fixed;
+    width: 100%;
+}
+
 #menuOverlay {
     display: none;
     position: fixed;
@@ -33,10 +38,27 @@
     width: 35px;
 }
 
+
 #closeMenu{
     text-decoration: none;
     color: black;
 
 }
 
+@media screen and (max-width: 1030px){
+    #menuContent{
+        width: 100%;
+        padding: 0px;
+        overflow: hidden;
 
+    }
+    #menuOverlay{
+        overflow: hidden;
+        width: 99.5%;
+    }
+
+    #class-name-cart-h1{
+        padding: 5px;
+    }
+
+}

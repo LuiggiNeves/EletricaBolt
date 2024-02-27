@@ -15,6 +15,7 @@
     
 }
 
+
 .loc-page{
     width: var(--lateral-site);
     display: flex;
@@ -41,6 +42,8 @@ main{
 
 .container-main-preview{
     width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -126,6 +129,8 @@ main{
     margin-right: 50px;
 }
 
+
+
 .product-preview-btn input{
     background-color: var(--color-btn-product);
     color: #fff;
@@ -133,7 +138,7 @@ main{
     text-align: center;
     cursor: pointer;
     border: none;
-    border-radius: 5px;
+
 
     width: 100%;
     margin-top: 10px;
@@ -146,6 +151,9 @@ main{
 
 .product-preview-descricao{
     margin-left: 50px;
+    overflow: auto; 
+    word-wrap: break-word; 
+    
     height: 200px;
 }
 
@@ -158,10 +166,78 @@ main{
 
 @media screen and (max-width: 800px) {
     .active-img img{
-        width: 300px;
-        height: 300px;
+        width: 200px;
+        height: 200px;
         padding: 5px;
         object-fit: cover;
+    }
+
+    .multiple-imgs{
+        width: 80px;
+    }
+
+    .main-preview-layout{
+        width: 400px;
+        
+    }
+    .container-content{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .active-img-container{
+        width: 200px;
+    }
+
+
+    .product-preview-img{
+        width: 100%;
+        display: flex;
+
+    }
+
+    .multiple-imgs{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .multiple-imgs img {
+        flex: 0 0 33.33%; /* Para dividir igualmente em 3 colunas */
+        max-width: 100%;
+    }
+
+    .product-preview-info-container{
+        width: 100%;
+    }
+    .product-preview-container-btn{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .product-preview-container-btn{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .product-preview-info{
+        text-align: center;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .product-preview-btn{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
     }
 
 }

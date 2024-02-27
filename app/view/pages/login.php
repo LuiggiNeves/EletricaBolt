@@ -23,7 +23,8 @@ include('layout/head.php');
                                 <img src="<?php echo HOST_APP; ?>/app/view/images/bolt-192x192.png" class="w-100">
                             </div>
                         </div>
-                        <div class="card fat" style="background-color: white !important;">
+                        <div class="
+                         fat" style="background-color: white !important;">
                             <div class="card-body m-3">
                                 <h4 class="card-title">Acessar conta</h4>
                                 <form method="POST" id="formularioLogarUsuario" class="my-login-validation mt-5" novalidate="">

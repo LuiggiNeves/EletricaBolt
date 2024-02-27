@@ -19,10 +19,10 @@ include('layout/head.php');
     <div class="container-loc-page">
         <div class="loc-page">
             <div class="loc-page-path">
-                <p><a href="#">home </a> > <a href="#">NomeCategoiaUser</a></p>
+                <p><a href="#">home </a> > <a href="#">Categoria</a></p>
             </div>
             <div>
-                <h2>Categoria ou nome da pequisa...</h2>
+                <h2>Nome da pequisa...</h2>
             </div>
         </div>
 

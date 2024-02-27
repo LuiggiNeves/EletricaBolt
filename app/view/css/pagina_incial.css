@@ -15,22 +15,7 @@
     box-shadow: 0px 3px 9px 0px  rgba(0, 0, 0, 0.178);
 }
 
-.flutuante {
-    position: fixed;
-    background-color: var(--color-btn-search);
-    padding: 10px;
-    border-radius: 100px;
-    bottom: 4%;
-    right: 2%;
-    z-index: 100; /* Posiciona a tag A acima de outros elementos */
-  }
-  
-  .flutuante img {
-    padding: 5px;
-    display: block;
-    width: 50px; /* Ajuste o tamanho da imagem */
-    height: 50px;
-  }
+
 
 
 /*Primeira divisão da nav-header*/
@@ -547,9 +532,7 @@ main a {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 5px;
-    margin-left: 10px;
-    margin-right: 10px;
+
 }
 
 
@@ -832,12 +815,12 @@ main a {
     .social-ico-img,
     .social-name-partnes,
     .anuncios-box_two,
-    .main-block-pc,.container-slides {
+    .main-block-pc,.container-slides, #carouselExampleInterval2 {
         display: none;
     }
 
     * {
-        font-size: var(--font-smart-medio);
+
 
     }
 
@@ -847,6 +830,7 @@ main a {
 
     .menu-search {
         display: block;
+        font-size: var(--font-smart-medio);
     }
 
     .ico-user {
@@ -915,6 +899,8 @@ main a {
         justify-content: center;
     }
 
+    .search-container-paralel {
+        width: 90% !important;}
 
 
 

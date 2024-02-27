@@ -10,10 +10,6 @@
                         
         </div>
 
-        <div class="categorias">
-            <p>categorias</p>
-        </div>
-
         <div>
             <p>código: </p>
         </div>
@@ -24,7 +20,7 @@
 
         <div class="container-buttons">
             <div class="btn-generic-actions">
-                <a href="#">Perguntar preço</a>
+                <a href="#">Ver Produto</a>
             </div>  
             <div class="btn-generic-actions bnt-cart">
                 <a href="">Carrinho</a>

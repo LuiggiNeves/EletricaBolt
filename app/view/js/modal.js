@@ -1,18 +1,17 @@
 const menuButtons = document.querySelectorAll('.menu-button');
-
 const openMenuButtons = document.querySelectorAll('.openMenu');
 const closeMenuButton = document.getElementById('closeMenu');
 const menuOverlay = document.getElementById('menuOverlay');
+const body = document.body;
 
 function openModal() {
-    
     menuOverlay.style.display = 'block';
-    document.body.style.overflow = 'hidden';
+    body.classList.add('modal-open'); // Adiciona a classe para fazer a página de fundo fixa
 }
 
 function closeModal() {
     menuOverlay.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    body.classList.remove('modal-open'); // Remove a classe para restaurar o comportamento normal da página de fundo
 }
 
 openMenuButtons.forEach(button => {
@@ -26,4 +25,3 @@ menuOverlay.addEventListener('click', function(e) {
         closeModal();
     }
 });
-carregarCarrinhoDoLocalStorage(); // Carrega o carrinho do localStorage ao carregar a página

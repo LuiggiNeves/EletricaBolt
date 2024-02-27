@@ -1,0 +1,32 @@
+.flutuante {
+    position: fixed;
+    background-color: var(--color-btn-search);
+    border: 1px solid rgb(211, 180, 2);
+    padding: 10px;
+    border-radius: 100px;
+    bottom: 4%;
+    right: 2%;
+    z-index: 100; /* Posiciona a tag A acima de outros elementos */
+}
+  
+.flutuante img {
+    padding: 5px;
+    display: block;
+    width: 50px; /* Ajuste o tamanho da imagem */
+    height: 50px;
+
+}
+
+
+@media screen and (max-width: 1030px) {
+  
+    .flutuante {
+
+
+        padding: 9px;
+
+        bottom: 2,5%;
+        right: 3%;
+        z-index: 100; /* Posiciona a tag A acima de outros elementos */
+    }
+}

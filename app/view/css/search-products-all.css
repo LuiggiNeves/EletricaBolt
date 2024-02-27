@@ -91,4 +91,8 @@ main{
         margin-right: 7px;
         margin-left: 7px;
     }
+
+    .container-loc-page{
+        width: 90%;
+    }
 }

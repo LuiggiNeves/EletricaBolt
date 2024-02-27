@@ -77,7 +77,7 @@
         <div id="menuOverlay">
             <div id="menuContent">
                 <a href="#" id="closeMenu" class="x-ico-close"><img src="<?php echo HOST_APP; ?>/app/view/images/X.png" alt=""></a>
-                <div>
+                <div id="class-name-cart-h1">
                     <h1>Carrinho</h1>
                 </div>
                 <div class="menu-container">
@@ -107,7 +107,7 @@
                 <div class="container-carrinho-buttons">
                     <div class="carrinho-buttons">
                         <input type="button" value="Enviar orçamento" onclick="enviarCarrinho()">
-                        <input type="button" value="Apagar Orçamento" onclick="confirmacaoApagar()">
+                        <input type="button" value="Apagar " onclick="confirmacaoApagar()">
                     </div>
                 </div>
 

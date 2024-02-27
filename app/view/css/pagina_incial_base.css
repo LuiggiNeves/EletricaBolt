@@ -39,7 +39,16 @@
     --font-smart-small: 10px;
 
     --lateral-site: 1200px;
-    --responsive:1000px
+    --responsive:1030px
 
     --overflow: hidden;
+}
+
+.unselectable {
+    -webkit-touch-callout: none; /* Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Não selecionável em geral */
 }
