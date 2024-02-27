@@ -1,5 +1,5 @@
 <?php
-include('layout/head.php');
+include('layout/cliente/head.php');
 include('layout/ultimaUrlVisitada.php');
 ?>
 
@@ -66,7 +66,7 @@ include('layout/ultimaUrlVisitada.php');
         <?php include 'footer.php' ?>
     </div>
 
-    <?php include 'layout/footer.php' ?>
+    <?php include 'layout/cliente/footer.php' ?>
 
     <!-- Arquivos JS -->
     <script src="<?php echo HOST_APP; ?>/app/view/js/inicio_produtos.js?v=<?php echo VERSION; ?>"></script>

@@ -1,5 +1,5 @@
 <?php
-include('layout/head.php');
+include('layout/cliente/head.php');
 ?>
 
 
@@ -54,7 +54,7 @@ include('layout/head.php');
     <?php include 'footer.php' ?>
 
     <?php
-    include('layout/footer.php');
+    include('layout/cliente/footer.php');
     ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MVEwCi8WsuZu6L5i5zV6VjAGhFDpSc3NM9LAcLk8bFpOxksnDfjsiX2v4blGbX5R" crossorigin="anonymous"></script>

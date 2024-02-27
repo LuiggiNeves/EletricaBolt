@@ -1,9 +1,9 @@
 <?php
-include('../../layout/head.php');
+include('../../layout/usuario/head.php');
 ?>
 
 <?php
-include('../../layout/auth.php');
+include('../../layout/usuario/auth.php');
 ?>
 
 </head>
@@ -111,7 +111,7 @@ include('../../layout/auth.php');
     ?>
 
     <?php
-    include('../../layout/footer.php');
+    include('../../layout/usuario/footer.php');
     ?>
 
     <!-- Arquivos JS -->

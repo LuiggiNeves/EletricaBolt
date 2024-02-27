@@ -1,5 +1,5 @@
 <?php
-include('layout/head.php');
+include('layout/cliente/head.php');
 ?>
 
 <link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/search-products.css">

@@ -1,8 +1,9 @@
 <?php
-require dirname(__FILE__) . '/../../../../vendor/autoload.php';
+require dirname(__FILE__) . '/../../../../../vendor/autoload.php';
 
 if (session_status() === PHP_SESSION_NONE) {
-    session_start();}
+    session_start();
+}
 ?>
 
 <!DOCTYPE html>
@@ -31,11 +32,3 @@ if (session_status() === PHP_SESSION_NONE) {
 
     <!-- Arquivos CSS -->
     <link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/app.css?v=<?php echo VERSION; ?>" />
-    <link rel="stylesheet" href="<?php echo HOST_APP; ?>/app/view/css/requisicoes.css">
-    <script src="<?php echo HOST_APP; ?>/app/view/js/carrinho.js"></script>
-
-    <script src="<?php echo HOST_APP; ?>/app/view/js/quantitativo.js"></script>
-    <script src="<?php echo HOST_APP; ?>/app/view/js/atualizarCarrinho.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
-
-    <script src="<?php echo HOST_APP; ?>/app/view/js/atualizarCarrinho.js" defer></script>
