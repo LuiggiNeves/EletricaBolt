@@ -185,7 +185,7 @@ class ProdutoRepository
                 FROM
                     historico_utilizacao
                 WHERE
-                    historico_utilizacao.mensagem = '[ Produto visualizado ]';";
+                    historico_utilizacao.mensagem = 'Produto visualizado';";
         $stmt = Conexao::getConexao()->prepare($sql);
         $stmt->execute();
         Conexao::desconecta();
