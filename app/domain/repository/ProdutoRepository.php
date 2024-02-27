@@ -156,14 +156,24 @@ class ProdutoRepository
         $sql = "SELECT 
                     produtos.id,
                     produtos.nome,
-                    count(*) AS qtd
+                            (
+                                SELECT 
+                                    imagem_path 
+                                FROM 
+                                    produto_imagens 
+                                WHERE 
+                                    produto_imagens.produto_id = produtos.id 
+                                ORDER BY produto_imagens.id ASC
+                                LIMIT 1
+                            ) AS imagem_path,
+                    COUNT(*) AS qtd
                 FROM
                     historico_produto 
-                INNER JOIN historico_utilizacao ON historico_utilizacao.id = historico_produto.historico_utilizacao_id
                 INNER JOIN produtos ON produtos.id = historico_produto.produto_id
+                LEFT JOIN historico_utilizacao ON historico_utilizacao.id = historico_produto.historico_utilizacao_id
                 WHERE
-                    historico_utilizacao.mensagem = '[ Produto acessado ]'
-                GROUP BY historico_produto.id
+                    historico_utilizacao.mensagem = 'Produto visualizado'
+                GROUP BY produtos.id, produtos.nome
                 LIMIT $qtd";
         $stmt = Conexao::getConexao()->prepare($sql);
         $stmt->execute();

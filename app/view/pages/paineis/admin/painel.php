@@ -28,23 +28,40 @@ include('../../layout/auth.php');
                 </span>
             </div>
 
-            <div class="col-sm-12 col-md-12 rounded bg-white border p-4" style="height: 450px;">
+            <div class="col-sm-12 col-md-12 rounded bg-white border p-4" style="min-height: 450px;">
                 <div class="row mb-3">
                     <div class="col-sm-12 col-md-12">
                         <div class="row g-3 mb-4">
                             <div class="col-sm-12 col-md-12 mb-3">
-                                <h3 class="">
-                                    <i class="bi bi-speedometer2"></i>
-                                    <span class="">Painel</span>
-                                </h3>
-                            </div>
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-12">
+                                        <h4 class="">
+                                            <i class="bi bi-speedometer2"></i>
+                                            <span class="">Painel</span>
+                                        </h4>
+                                    </div>
+                                </div>
 
-                            <div class="col">
                                 <div class="bg-white justify-content-around align-items-center rounded">
                                     <div>
                                         <h3 class="fs-2 text-primary" id="qtd_acessos_a_produtos">0</h3>
                                         <p class="fs-5 labelEstatisticaPainelAdmin">Qtd. de acessos a produtos</p>
                                     </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 col-md-12 mb-3">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-12">
+                                        <h4 class="">
+                                            <i class="bi bi-bar-chart-fill"></i>
+                                            <span class="">Produtos mais acessados</span>
+                                        </h4>
+                                    </div>
+                                </div>
+
+                                <div class="row" id="produtos_mais_acessados">
+
                                 </div>
                             </div>
                         </div>
@@ -68,6 +85,7 @@ include('../../layout/auth.php');
         $(".divPainel").addClass("btn-item-navbar-selecionado");
 
         qtdDeAcessoAProdutos();
+        listaProdutosMaisAcessados();
     </script>
 
 </body>
