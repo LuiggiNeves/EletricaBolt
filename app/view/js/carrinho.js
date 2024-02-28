@@ -13,6 +13,10 @@ function salvarCarrinhoNoLocalStorage() {
 }
 
 function adicionarAoCarrinho(idProduto, nomeProduto, precoProduto, imagemProduto, quantidade, codigoReferencia) {
+    if (usuarioNaoEstaLogado()) {
+        window.location = "../login";
+    }
+
     const produto = {
         id: idProduto,
         nome: nomeProduto,

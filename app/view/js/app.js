@@ -113,6 +113,10 @@ function formataDinheiro(number) {
     return number.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
 }
 
+function usuarioNaoEstaLogado() {
+    return sessionStorage.getItem("idCliente") == null;
+}
+
 $(document).ready(function () {
 
     inicializaMascarasDoSistema();
