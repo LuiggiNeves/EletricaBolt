@@ -1,5 +1,5 @@
 <?php
-include('layout/head.php');
+include('layout/usuario/head.php');
 ?>
 
 <style>
@@ -23,8 +23,7 @@ include('layout/head.php');
                                 <img src="<?php echo HOST_APP; ?>/app/view/images/bolt-192x192.png" class="w-100">
                             </div>
                         </div>
-                        <div class="
-                         fat" style="background-color: white !important;">
+                        <div class="fat p-3" style="background-color: white !important;">
                             <div class="card-body m-3">
                                 <h4 class="card-title">Acessar conta</h4>
                                 <form method="POST" id="formularioLogarUsuario" class="my-login-validation mt-5" novalidate="">
@@ -60,7 +59,7 @@ include('layout/head.php');
     </section>
 
     <?php
-    include('layout/footer.php');
+    include('layout/usuario/footer.php');
     ?>
 
     <!-- Arquivos JS -->
