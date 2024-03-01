@@ -14,7 +14,7 @@ function salvarCarrinhoNoLocalStorage() {
 
 function adicionarAoCarrinho(idProduto, nomeProduto, precoProduto, imagemProduto, quantidade, codigoReferencia) {
     if (usuarioNaoEstaLogado()) {
-        window.location = "../login";
+        window.location = path_aplicacao + "eb/login/";
     }
 
     const produto = {
