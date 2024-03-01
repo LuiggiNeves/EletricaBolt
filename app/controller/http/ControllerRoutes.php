@@ -21,7 +21,7 @@ class ControllerRoutes extends ControllerAbstract
         $this->addRoute("login", "app\\controller\\http\\API\\UsuarioController", "login", false, false, null);
 
         // Cliente
-        $this->addRoute("criar-cliente", "app\\controller\\http\\API\\ClienteController", "criar", true, false, null);
+        $this->addRoute("criar-cliente", "app\\controller\\http\\API\\ClienteController", "criar", false, false, null);
         $this->addRoute("login-cliente", "app\\controller\\http\\API\\ClienteController", "login", false, false, null);
         $this->addRoute("listar-clientes", "app\\controller\\http\\API\\ClienteController", "listar", false, false, null);
         $this->addRoute("altera-status-cliente", "app\\controller\\http\\API\\ClienteController", "altera", false, false, null);
