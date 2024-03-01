@@ -20,10 +20,10 @@ include('layout/cliente/head.php');
         </div>
 
 
-        <div class="container-fluid my-5">
+        <div class="container-fluid my-5 p-5">
             <div class="row mt-2 justify-content-center">
-                <div class="col-sm-12 col-md-4 border rounded shadow-sm p-5">
-                    <h3>Criar conta</h3>
+                <div class="col-sm-12 col-md-4 border bg-white rounded shadow-sm p-5">
+                    <h3 class="mb-5">Criar conta</h3>
 
                     <form id="formClienteCriarConta">
                         <div class="row mb-3">
@@ -43,6 +43,12 @@ include('layout/cliente/head.php');
                         <div class="row mb-3">
                             <div class="col-sm-12 col-md-12">
                                 <button class="btn btn-primary px-3" type="button" id="criarContaCliente">Criar conta</button>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3 mt-5">
+                            <div class="col-sm-12 col-md-12">
+                                <i><a href="../login/" class="text-primary">Já possui conta? Clique aqui.</a></i>
                             </div>
                         </div>
                     </form>
