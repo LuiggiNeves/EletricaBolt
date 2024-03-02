@@ -37,6 +37,8 @@ class ClienteService extends ServiceAbstract
             ->setStatus("Ativo")
             ->setPode_ver_preco("Sim");
 
+        $_SESSION["pode_ver_preco"] = $cliente->getPode_ver_preco();
+
         $this->authCliente->criar($cliente);
 
         return $cliente->setId($this->clienteRepository->criar($cliente))->toArray();
