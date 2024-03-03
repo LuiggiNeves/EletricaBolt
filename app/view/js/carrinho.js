@@ -26,6 +26,8 @@ function adicionarAoCarrinho(idProduto, nomeProduto, precoProduto, imagemProduto
         codigo_referencia: codigoReferencia
     };
 
+    console.log(idProduto, nomeProduto)
+
     carrinho.push(produto);
 
     salvarCarrinhoNoLocalStorage();
@@ -34,7 +36,10 @@ function adicionarAoCarrinho(idProduto, nomeProduto, precoProduto, imagemProduto
     swal("Produto adicionado ao carrinho!", "", "success");
 
     // Resetar o campo de quantidade para 1
-    document.getElementById("quantity_" + idProduto).value = 1;
+    let quantityElement = document.getElementById("quantity_" + idProduto);
+    if (quantityElement) {
+        quantityElement.value = 1;
+    }
 }
 
 
@@ -88,7 +93,7 @@ function atualizarCarrinho() {
 
                                     
                                     <div class="result-valor result-carrinho-generico">
-                                        <p>${formataDinheiro(produto.preco.toFixed(2))}</p>
+                                        <p>${produto.preco ? formataDinheiro(Number(produto.preco).toFixed(2)) : 'Preço não disponível'}</p>
                                     </div>
 
                                     

@@ -10,3 +10,4 @@ function diminuirQuantidade(id) {
         quantidadeInput.value = parseInt(quantidadeInput.value) - 1;
     }
 }
+

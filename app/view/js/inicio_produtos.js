@@ -28,6 +28,12 @@ function leDadosDoProdutoPorId(id) {
     );
 }
 
+function adicionarAoCarrinhoPre(){
+    adicionarAoCarrinho(produto["nome"], produto["codigo_referencia"])
+    
+}
+
+
 function carregaViewDoProduto(nome, preco, categoria, codigo_de_referencia, descricao) {
     $("#nomeDoProduto").text(nome);
     $("#precoDoProduto").text(preco);
