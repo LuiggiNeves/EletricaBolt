@@ -48,10 +48,8 @@ include('layout/ultimaUrlVisitada.php');
             
                         <div class="product-preview-container-btn">
                             <div class="product-preview-btn">
-                            <button class="add-to-cart" onclick="adicionarAoCarrinhoPre()"> Adicionar Carrinho</button>
-
+                                <button class="add-to-cart" onclick="adicionarAoCarrinhoPre()"> Adicionar Carrinho</button>
                             </div>
-
                         </div>
                     </div>
                 </div>

@@ -1,3 +1,5 @@
+var produto = null;
+
 function leDadosDoProdutoPorId(id) {
     let formData = new FormData();
     formData.append("route", "le-produto-por-id");
@@ -8,7 +10,7 @@ function leDadosDoProdutoPorId(id) {
             let dados = response["dados"];
             let mensagem = response["mensagem"];
 
-            let produto = dados["produto"];
+            produto = dados["produto"];
 
             carregaViewDoProduto(
                 produto["nome"],
@@ -28,9 +30,12 @@ function leDadosDoProdutoPorId(id) {
     );
 }
 
-function adicionarAoCarrinhoPre(){
+function adicionarAoCarrinhoPre() {
+    if (produto == null) {
+        return;
+    }
+
     adicionarAoCarrinho(produto["nome"], produto["codigo_referencia"])
-    
 }
 
 
