@@ -15,3 +15,4 @@ RewriteRule ^clientes/(.*)$ app/view/pages/paineis/admin/clientes.php?url=$1 [NC
 RewriteRule ^eb/cadastrar/(.*)$ app/view/pages/criar_conta_cliente.php?url=$1 [NC,L]
 RewriteRule ^eb/login/(.*)$ app/view/pages/login_conta_cliente.php?url=$1 [NC,L]
 RewriteRule ^eb/produtos-visualizar/(.*)$ app/view/pages/produto-preview.php?url=$1 [NC,L]
+RewriteRule ^eb/pesquisar/(.*)$ app/view/pages/search-products.php?url=$1 [NC,L]

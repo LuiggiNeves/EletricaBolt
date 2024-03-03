@@ -46,7 +46,7 @@
                     <div class="search-container-princ">
                         <div class="search-container search-container-paralel">
                             <div class="search-bar-header">
-                                <input type="text" class="search-bar" placeholder="Pesquisar...">
+                                <input id="pesquisa_de_produtos" type="text" class="search-bar" placeholder="Pesquisar...">
                             </div>
                             <div class="search-container-btn">
                                 <button class="search-button" id="search-button">
