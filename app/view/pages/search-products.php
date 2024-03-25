@@ -26,39 +26,19 @@ include('layout/cliente/head.php');
                     <h2 id="texto_valor_da_pesquisa"></h2>
                 </div>
             </div>
-
         </div>
+
         <div class="container-search-results">
 
             <div class="main-search-results">
-                <!--RETIRAR OS INCLUDES E LIGAR COM OS PRODUTOS EM PHP-->
-                <?php include 'produto-search-all.php'; ?>
-                <?php include 'produto-search-all.php'; ?>
-                <?php include 'produto-search-all.php'; ?>
-                <?php include 'produto-search-all.php'; ?>
-                <?php include 'produto-search-all.php'; ?>
-                <?php include 'produto-search-all.php'; ?>
-                <?php include 'produto-search-all.php'; ?>
-                <?php include 'produto-search-all.php'; ?>
-                <?php include 'produto-search-all.php'; ?>
-                <?php include 'produto-search-all.php'; ?>
-                <?php include 'produto-search-all.php'; ?>
-                <?php include 'produto-search-all.php'; ?>
-            </div>
-        </div>
+                <div class="catalago-box-container">
+                    <div class="catalago-box" id="produtosEncontrados">
 
-        <div class="container-next-list-product">
-            <div class="next-list-product">
-                <a href="#">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <p>...</p>
+                    </div>
+                </div>
             </div>
 
         </div>
-
     </main>
 
 
@@ -72,12 +52,18 @@ include('layout/cliente/head.php');
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MVEwCi8WsuZu6L5i5zV6VjAGhFDpSc3NM9LAcLk8bFpOxksnDfjsiX2v4blGbX5R" crossorigin="anonymous"></script>
 
+    <script src="<?php echo HOST_APP; ?>/app/view/js/inicio.js?v=<?php echo VERSION; ?>"></script>
+
     <script>
         $(document).ready(function() {
             const conteudo_url = $(location).attr('pathname').split("/")[4];
             const valorFormatado = decodeURIComponent(conteudo_url);
 
             $("#texto_valor_da_pesquisa").text(
+                valorFormatado
+            );
+
+            pesquisarPorNome(
                 valorFormatado
             );
         });

@@ -6,7 +6,7 @@ function listar(dados_de_pesquisa) {
     formData.append("route", "pesquisa-produtos");
     formData.append("dados-de-pesquisa", dados_de_pesquisa);
 
-    post("app/controller/http/controller.php", formData,
+    post(path_aplicacao + "app/controller/http/controller.php", formData,
         function (response) {
             let dados = response["dados"];
             let mensagem = response["mensagem"];
@@ -31,8 +31,6 @@ function listar(dados_de_pesquisa) {
                 let path_imagem = produtos[i]["imagem_path"] != null ? path_aplicacao + `/app/files/entities/` + produtos[i]["imagem_path"] + `` : path_aplicacao + `/app/view/images/produto.png`;
                 let quantityId = 'quantity_' + produtos[i].id;
 
-                console.log(produtos[i].codigo_referencia);
-
                 $("#produtosEncontrados").append(
                     `
                     <div class="catalago-product-base">
@@ -54,7 +52,7 @@ function listar(dados_de_pesquisa) {
                                         </div>
                                     </div>
                                 </div>
-                                <a class="add-to-cart" href="eb/produtos-visualizar/${produtos[i].id}">
+                                <a class="add-to-cart" href="`+ path_aplicacao + `eb/produtos-visualizar/${produtos[i].id}">
                                     Ver Produto
                                 </a>
 
@@ -82,6 +80,14 @@ function listar(dados_de_pesquisa) {
 function pesquisar() {
     listar(
         JSON.stringify({})
+    );
+}
+
+function pesquisarPorNome(nome) {
+    listar(
+        JSON.stringify({
+            "nome": nome
+        })
     );
 }
 
