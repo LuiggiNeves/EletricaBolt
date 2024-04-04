@@ -6,11 +6,12 @@
 .header-container {
     display: flex;
     justify-content: center;
+    
 
 }
 
 .header-container-second{
-
+    width: 100%;
     margin-bottom: 8px;
     box-shadow: 0px 3px 9px 0px  rgba(0, 0, 0, 0.178);
 }
@@ -419,33 +420,45 @@ main a {
 
 .dropdown-content {
     display: none;
-    position: fixed; /* Mudança para position: fixed */
-    background-color: #f9f9f9;
-    margin-top: 5px;
-    min-width: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 9999; /* Z-index muito alto */
+    position: fixed;
+
+    z-index: 9999;
 }
-
-
 
 .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
+    margin: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
     text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover{
-    text-decoration: underline;
-    text-decoration-color: rgb(168, 21, 21);
+    color: black;
     
 }
 
-.nav-item-generic:hover .dropdown-content {
-    display: block;
-}  
+.dropdown-content a:hover {
+    text-decoration: underline;
+}
 
+.nav-item-generic:hover .dropdown-content {
+    margin-top: 8px;
+    display: flex;
+    justify-content: left;
+    width: 300px;
+    height: 200px;
+
+    background-color: #f1f1f1;
+    border: 1px solid rgba(57, 57, 57, 0.561);
+
+
+}
+
+.drop-list-a{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; /* Permite que os itens sejam distribuídos em várias linhas */
+    max-height: 200px;
+
+}
 
 
 

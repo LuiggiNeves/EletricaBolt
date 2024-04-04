@@ -35,7 +35,7 @@
                         <div class="menu-logo">
                             <div class="logo">
                                 <div class="img-logo">
-                                    <a href=""><img src="<?php echo HOST_APP; ?>/app/view/images/bolt-logo-completa-am.png" alt=""></a>
+                                    <a href="https://eletricabolt.com.br/homologacao/"><img src="<?php echo HOST_APP; ?>/app/view/images/bolt-logo-completa-am.png" alt=""></a>
                                 </div>
                                 <div class="text-logo">
 
@@ -45,9 +45,9 @@
                     </div>
                     <div class="search-container-princ">
                         <div class="search-container search-container-paralel">
-                            <div class="search-bar-header">
-                                <input id="pesquisa_de_produtos" type="text" class="search-bar" placeholder="Pesquisar...">
-                            </div>
+                        <div class="search-bar-header">
+                            <input id="pesquisa_de_produtos" type="text" class="search-bar" placeholder="Pesquisar...">
+                        </div>
                             <div class="search-container-btn">
                                 <button class="search-button" id="search-button">
                                     <p>Buscar</p>
@@ -77,9 +77,11 @@
         <div id="menuOverlay">
             <div id="menuContent">
                 <a href="#" id="closeMenu" class="x-ico-close"><img src="<?php echo HOST_APP; ?>/app/view/images/X.png" alt=""></a>
+
                 <div id="class-name-cart-h1">
                     <h1>Carrinho</h1>
                 </div>
+                
                 <div class="menu-container">
                     <div class="menu-carrinho">
                         <div class="carrinho-container-produto">
@@ -136,10 +138,12 @@
                         </div>
 
                         <div class="dropdown-content">
-                            <a href="#">Zagonel</a>
-                            <a href="#">Lorenzetti</a>
-                            <a href="#">Hydra</a>
-                            <a href="#">Todos</a>
+                            <div class="drop-list-a">
+                                <a href="#">Zagonel</a>
+                                <a href="#">Lorenzetti</a>
+                                <a href="#">Hydra</a>
+                                <a href="#">Todos</a>
+                            </div>
                         </div>
                     </div>
 
@@ -149,12 +153,14 @@
                         </div>
 
                         <div class="dropdown-content">
-                            <a href="#">Margirius</a>
-                            <a href="#">Tramontina</a>
-                            <a href="#">Schnnaider</a>
-                            <a href="#">Alumbra</a>
-                            <a href="#">Inteligente</a>
-                            <a href="#">Todos</a>
+                            <div class="drop-list-a">
+                                <a href="#" >Margirius</a>
+                                <a href="#">Tramontina</a>
+                                <a href="#">Schnnaider</a>
+                                <a href="#">Alumbra</a>
+                                <a href="#">Inteligente</a>
+                                <a href="#">Todos</a>,
+                            </div>
                         </div>
                     </div>
 
@@ -164,11 +170,13 @@
                         </div>
 
                         <div class="dropdown-content">
-                            <a href="#">Philips</a>
-                            <a href="#">Gesso</a>
-                            <a href="#">Arruelas</a>
-                            <a href="#">Porcas</a>
-                            <a href="#">Todos</a>
+                            <div class="drop-list-a">
+                                <a href="#">Philips</a>
+                                <a href="#">Gesso</a>
+                                <a href="#">Arruelas</a>
+                                <a href="#">Porcas</a>
+                                <a href="#">Todos</a>
+                            </div>
                         </div>
                     </div>
 
@@ -178,9 +186,11 @@
                         </div>
 
                         <div class="dropdown-content">
-                            <a href="#">Chaves</a>
-                            <a href="#">Alicates</a>
-                            <a href="#">Todos</a>
+                        <div class="drop-list-a">
+                                <a href="#">Chaves</a>
+                                <a href="#">Alicates</a>
+                                <a href="#">Todos</a>
+                            </div>
                         </div>
                     </div>
 
@@ -190,11 +200,13 @@
                         </div>
 
                         <div class="dropdown-content">
-                            <a href="#">Adesivas</a>
-                            <a href="#">Isolantes</a>
-                            <a href="#">Dupla Face</a>
-                            <a href="#">Alta Fusão</a>
-                            <a href="#">Todos</a>
+                            <div class="drop-list-a">
+                                <a href="#">Adesivas</a>
+                                <a href="#">Isolantes</a>
+                                <a href="#">Dupla Face</a>
+                                <a href="#">Alta Fusão</a>
+                                <a href="#">Todos</a>
+                            </div>
                         </div>
                     </div>
 
@@ -204,9 +216,11 @@
                         </div>
 
                         <div class="dropdown-content">
-                            <a href="#">Torneiras</a>
-                            <a href="#">Lixas</a>
-                            <a href="#">Todos</a>
+                            <div class="drop-list-a">
+                                <a href="#">Torneiras</a>
+                                <a href="#">Lixas</a>
+                                <a href="#">Todos</a>
+                            </div>
                         </div>
                     </div>
 
@@ -216,13 +230,15 @@
                         </div>
 
                         <div class="dropdown-content">
-                            <a href="#">Luminarias</a>
-                            <a href="#">Lâmpadas</a>
-                            <a href="#">Plafons</a>
-                            <a href="#">Refletores</a>
-                            <a href="#">Espeto de Jardim</a>
-                            <a href="#">Spots</a>
-                            <a href="#">Todos</a>
+                            <div class="drop-list-a">
+                                <a href="#">Luminarias</a>
+                                <a href="#">Lâmpadas</a>
+                                <a href="#">Plafons</a>
+                                <a href="#">Refletores</a>
+                                <a href="#">Espeto de Jardim</a>
+                                <a href="#">Spots</a>
+                                <a href="#">Todos</a>
+                            </div>
                         </div>
                     </div>
 
@@ -242,3 +258,23 @@
 
 </header>
 <script src="<?php echo HOST_APP; ?>/app/view/js/modal.js"></script>
+<script>
+    // Obter referência para o campo de pesquisa
+    var campoPesquisa = document.getElementById("pesquisa_de_produtos");
+
+    // Adicionar ouvinte de eventos ao campo de pesquisa para detectar pressionamentos de tecla
+    campoPesquisa.addEventListener("keypress", function(event) {
+        // Verificar se a tecla pressionada é "Enter" (código "Enter" ou "NumpadEnter")
+        if (event.key === "Enter") {
+            // Executar a função de pesquisa (substitua com sua própria lógica)
+            pesquisar();
+        }
+    });
+
+    // Função de pesquisa (substitua com sua própria lógica)
+    function pesquisar() {
+        var termoPesquisa = campoPesquisa.value;
+        // Aqui você pode executar a lógica de pesquisa com o termoPesquisa
+        console.log("Pesquisando por: " + termoPesquisa);
+    }
+</script>

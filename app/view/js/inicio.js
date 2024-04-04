@@ -35,7 +35,7 @@ function listar(dados_de_pesquisa) {
                     `
                     <div class="catalago-product-base">
                         <div class="card">
-                            <div class="card-img p-3 w-100 text-center">
+                            <div class="card-img  text-center">
                                 <img src="`+ path_imagem + `" alt="` + produtos[i]["nome"] + `" class="card-product-img">
                             </div>
                             <div class="card-body">

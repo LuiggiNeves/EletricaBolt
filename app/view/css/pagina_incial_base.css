@@ -11,6 +11,58 @@
 
 }
 
+
+
+.textDeco-red {
+    text-decoration: underline;
+    text-decoration-color: rgb(159, 28, 28); /* Vermelho escuro */
+}
+
+.textDeco-green {
+    text-decoration: underline;
+    text-decoration-color: rgb(28, 159, 28); /* Verde escuro */
+}
+
+.textDeco-blue {
+    text-decoration: underline;
+    text-decoration-color: rgb(28, 28, 159); /* Azul escuro */
+}
+
+.textDeco-yellow {
+    text-decoration: underline;
+    text-decoration-color: rgb(159, 159, 28); /* Amarelo escuro */
+}
+
+.textDeco-purple {
+    text-decoration: underline;
+    text-decoration-color: rgb(159, 28, 159); /* Roxo escuro */
+}
+
+.textDeco-cyan {
+    text-decoration: underline;
+    text-decoration-color: rgb(28, 94, 159); /* Ciano escuro */
+}
+
+.textDeco-orange {
+    text-decoration: underline;
+    text-decoration-color: rgb(255, 128, 0); /* Laranja */
+}
+
+.textDeco-pink {
+    text-decoration: underline;
+    text-decoration-color: rgb(255, 192, 203); /* Rosa */
+}
+
+.textDeco-brown {
+    text-decoration: underline;
+    text-decoration-color: rgb(165, 42, 42); /* Marrom */
+}
+
+.textDeco-gray {
+    text-decoration: underline;
+    text-decoration-color: rgb(128, 128, 128); /* Cinza */
+}
+
 :root {
     --color-uni-br: #fff;
 
@@ -40,6 +92,8 @@
 
     --lateral-site: 1200px;
     --responsive:1030px
+
+
 
     --overflow: hidden;
 }

@@ -49,70 +49,30 @@ function atualizarCarrinho() {
 
     carrinho.forEach(produto => {
         carrinhoElement.innerHTML += `
-            <div class="carrinho-layout-produto">
-                <div class="container-carrinho-layout">
-                    <div class="menu-um">
-                        <div class="layout-img">
-                            <img src="${produto.imagem}" alt="${produto.nome}">
-                        </div>
-                    </div>
-                    <div class="menu-dois unselectable">
-                        <div class="layout-infos">
-                            <div class="menu-divisivel">
-                                <div class="menu-carrinho-nome menu-carrinho-generico">
-                                    <p><strong>NOME</strong></p>
-                                </div>
-
-                                <div class="menu-cod menu-carrinho-generico">
-                                    <p><strong>CÓDIGO</strong></p>  
-                                </div>
-
-                                <div class="menu-valor menu-carrinho-generico">
-                                    <p><strong>VALOR</strong></p>
-                                </div>
-
-                                <div class="menu-qnt menu-carrinho-generico">
-                                    <p><strong>QNT</strong></p>
-                                </div>
-
-                                <div class="btn-remove-produto">
-                                    <div class="carrinho-remover">
-                                    <button onclick="removerDoCarrinho(${carrinho.indexOf(produto)})"><img src="` + path_aplicacao + `/app/view/images/X.png" alt=""></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menu-result">
-                                <div class="menu-return-result">
-                                    <div class="result-nome result-carrinho-generico">
-                                        <p>${produto.nome}</p>
-                                    </div>
-
-                                    <div class="result-cod result-carrinho-generico">
-                                        <p>${produto.codigo_referencia}</p>
-                                    </div>
-
-                                    
-                                    <div class="result-valor result-carrinho-generico">
-                                        <p>${produto.preco ? formataDinheiro(Number(produto.preco).toFixed(2)) : 'Preço não disponível'}</p>
-                                    </div>
-
-                                    
-                                    <div class="result-qnt result-carrinho-generico">
-                                        <p>${produto.quantidade}</p>
-                                    </div>
-
-
-                                    <div class="btn-remove-produto">
-                                        <div class="carrinho-remover">
-                                            <button onclick="removerDoCarrinho(${produto.id})"></button> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="tble">
+            <div class="imagem-total-block">
+                <img src="${produto.imagem}" alt="">
             </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Código</th>
+                        <th>Preço</th>
+                        <th>Qnt</th>
+                        <th><button onclick="removerDoCarrinho(${carrinho.indexOf(produto)})"><img src="` + path_aplicacao + `/app/view/images/X.png" alt=""></button></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>${produto.nome}</td>
+                        <td>${produto.codigo_referencia}</td>
+                        <td>${produto.preco}</td>
+                        <td>${produto.quantidade}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         `;
     });
 }

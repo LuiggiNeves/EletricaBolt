@@ -209,4 +209,22 @@ $(document).ready(function () {
         window.location.href = path_aplicacao + "eb/pesquisar/" + valor_da_pesquisa;
     });
 
+    function pesquisarEPassarURL() {
+        let valor_da_pesquisa = $("#pesquisa_de_produtos").val();
+        window.location.href = path_aplicacao + "eb/pesquisar/" + valor_da_pesquisa;
+    }
+    
+
+    $("#search-button").on("click", function () {
+        pesquisarEPassarURL();
+    });
+    
+
+    $("#pesquisa_de_produtos").on("keypress", function (event) {
+
+        if (event.key === "Enter") {
+            pesquisarEPassarURL();
+        }
+    });
+
 });

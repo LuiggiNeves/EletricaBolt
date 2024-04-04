@@ -36,16 +36,15 @@
 }
 
 .card img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
+    width: 99%;
+    height: 99%;
+
 }
 
 .card-img {
     overflow: hidden;
     width: 99%;
     height: 250px;
-    /* Defina a altura desejada para a div .card-img */
     margin: 0 auto;
 }
 
@@ -120,6 +119,10 @@
     background-color: var(--color-btn-product-hv);
 }
 
+.add-to-cart:hover{
+    color: #fff!important;
+}
+
 /* Botão de Pesquisa */
 .search-button {
     cursor: pointer;
@@ -128,14 +131,14 @@
 
 /*RESPONSIVIDADE*/
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
     .catalago-box-container {
         width: 100%;
     }
 
     .catalago-product-base{
         height: 420px;
-        width: 175px;
+        width: 185px;
     }
 
     .card {
@@ -145,15 +148,16 @@
     }
 
     .card-img {
-        width: 120px;
+        width: 99%;
+        height: 100px;
 
     }
 
     .card-img img{
 
-        width: 100%;
         height: 100%;
-        object-fit: cover;
+        width: 100%;
+        
 
     }
 

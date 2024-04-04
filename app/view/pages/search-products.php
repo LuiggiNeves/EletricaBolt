@@ -20,7 +20,7 @@ include('layout/cliente/head.php');
         <div class="container-loc-page">
             <div class="loc-page">
                 <div class="loc-page-path">
-                    <p><a href="#">home </a> > <a href="#">Categoria</a></p>
+                    <p><a href="#">HOME </a> > <a href="#">CATEGORIA</a></p>
                 </div>
                 <div>
                     <h2 id="texto_valor_da_pesquisa"></h2>
