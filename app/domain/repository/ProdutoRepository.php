@@ -11,15 +11,16 @@ class ProdutoRepository
     public function criar(Produto $produto): int
     {
         $sql = "INSERT INTO produtos 
-                (nome, descricao, preco, codigo_referencia, codigo_barras)
+                (nome, descricao, preco, codigo_referencia, codigo_barras, status)
                 VALUES
-                (:nome, :descricao, :preco, :codigo_referencia, :codigo_barras)";
+                (:nome, :descricao, :preco, :codigo_referencia, :codigo_barras, :status)";
         $stmt = Conexao::getConexao()->prepare($sql);
         $stmt->bindValue(':nome', $produto->getNome());
         $stmt->bindValue(':descricao', $produto->getDescricao());
         $stmt->bindValue(':preco', $produto->getPreco());
         $stmt->bindValue(':codigo_referencia', $produto->getCodigo_referencia());
         $stmt->bindValue(':codigo_barras', $produto->getCodigo_barras());
+        $stmt->bindValue(':status', $produto->getStatus());
         $result = $stmt->execute();
 
         if ($result == 0) {
@@ -69,7 +70,8 @@ class ProdutoRepository
             ->setDescricao($result["descricao"])
             ->setPreco($result["preco"])
             ->setCodigo_referencia($result["codigo_referencia"])
-            ->setCodigo_barras($result["codigo_barras"]);
+            ->setCodigo_barras($result["codigo_barras"])
+            ->setStatus($result["status"]);
     }
 
     public function lePorId(int $id): ?Produto
@@ -92,7 +94,8 @@ class ProdutoRepository
             ->setDescricao($result["descricao"])
             ->setPreco($result["preco"])
             ->setCodigo_referencia($result["codigo_referencia"])
-            ->setCodigo_barras($result["codigo_barras"]);
+            ->setCodigo_barras($result["codigo_barras"])
+            ->setStatus($result["status"]);
     }
 
     public function listarSemCategoria(): array
@@ -132,7 +135,7 @@ class ProdutoRepository
     public function altera(Produto $produto): bool
     {
         $sql = "UPDATE produtos SET 
-                nome = :nome, descricao = :descricao, preco = :preco, codigo_referencia = :codigo_referencia, codigo_barras = :codigo_barras
+                nome = :nome, descricao = :descricao, preco = :preco, codigo_referencia = :codigo_referencia, codigo_barras = :codigo_barras, status = :status
                 WHERE id = :id";
         $stmt = Conexao::getConexao()->prepare($sql);
         $stmt->bindValue(':nome', $produto->getNome());
@@ -140,6 +143,7 @@ class ProdutoRepository
         $stmt->bindValue(':preco', $produto->getPreco());
         $stmt->bindValue(':codigo_referencia', $produto->getCodigo_referencia());
         $stmt->bindValue(':codigo_barras', $produto->getCodigo_barras());
+        $stmt->bindValue(':status', $produto->getStatus());
         $stmt->bindValue(':id', $produto->getId());
         $result = $stmt->execute();
         Conexao::desconecta();

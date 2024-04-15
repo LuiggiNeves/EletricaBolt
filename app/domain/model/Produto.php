@@ -11,6 +11,7 @@ class Produto extends ModelAbstract
     private $preco;
     private $codigo_referencia;
     private $codigo_barras;
+    private $status;
 
     public static function create()
     {
@@ -83,6 +84,17 @@ class Produto extends ModelAbstract
         return $this;
     }
 
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    public function setStatus($status)
+    {
+        $this->status = $status;
+        return $this;
+    }
+
     public function toArrayData()
     {
         return [
@@ -91,7 +103,8 @@ class Produto extends ModelAbstract
             "descricao" => $this->descricao,
             "preco" => $this->preco,
             "codigo_referencia" => $this->codigo_referencia,
-            "codigo_barras" => $this->codigo_barras
+            "codigo_barras" => $this->codigo_barras,
+            "status" => $this->status
         ];
     }
 }

@@ -38,7 +38,8 @@ class ProdutoService extends ServiceAbstract
             ->setPreco($dados["preco"])
             ->setDescricao($dados["descricao"])
             ->setCodigo_referencia($dados["codigo_referencia"])
-            ->setCodigo_barras($dados["codigo_barras"]);
+            ->setCodigo_barras($dados["codigo_barras"])
+            ->setStatus("Ativo");
 
         $produtoArray = $produto->setId($this->produtoRepository->criar($produto))->toArray();
 
