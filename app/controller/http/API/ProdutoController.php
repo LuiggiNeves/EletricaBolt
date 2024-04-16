@@ -120,6 +120,21 @@ class ProdutoController extends ControllerAbstract
         );
     }
 
+    public function alteraStatus($dados)
+    {
+        $id = intval($dados["id"]);
+
+        return $this->respondeComDados(
+            [
+                "dados" => [
+                    "produto" => $this->produtoService->alteraStatus($id, $dados["status"])
+                ],
+                "mensagem" => "Status alterado com sucesso!"
+            ],
+            200
+        );
+    }
+
     public function quantidadeDeAcessoAProdutos($dados)
     {
         return $this->respondeComDados(

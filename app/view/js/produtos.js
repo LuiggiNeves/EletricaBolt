@@ -147,6 +147,8 @@ function leProdutoPorId(id) {
 
             $("#idDoProdutoSelecionado").val(produto["id"]);
 
+            verificaStatus(produto["status"]);
+
             carregaFormAlterarProduto(
                 produto["nome"],
                 produto["categoria"]["id"] != null ? produto["categoria"]["id"] : "0",
@@ -417,6 +419,43 @@ function removeImagem(id) {
     );
 }
 
+function alteraStatusProduto(id, status) {
+    let formData = new FormData();
+    formData.append("route", "altera-status-produto");
+    formData.append("id", id);
+    formData.append("status", status);
+
+    post("../app/controller/http/controller.php", formData,
+        function (response) {
+            let dados = response["dados"];
+            let mensagem = response["mensagem"];
+
+            swal("Status alterado com sucesso!", "", "success");
+
+            verificaStatus(status);
+        },
+        function () {
+
+        }
+    );
+}
+
+function verificaStatus(status) {
+    $("#statusDoProdutoSelecionado").val(status);
+
+    if (status == "Inativo") {
+        $("#alertProdutoInativo").show();
+
+        $("#inativarProduto").hide();
+        $("#ativarProduto").show();
+    } else {
+        $("#alertProdutoInativo").hide();
+
+        $("#ativarProduto").hide();
+        $("#inativarProduto").show();
+    }
+}
+
 $(document).ready(function () {
 
     $("#modalNovoProduto").on("click", function () {
@@ -510,4 +549,18 @@ $(document).ready(function () {
                 }
             });
     })
+
+    $("#inativarProduto").on("click", function () {
+        var id = $("#idDoProdutoSelecionado").val();
+        var status = "Inativo";
+
+        alteraStatusProduto(id, status);
+    });
+
+    $("#ativarProduto").on("click", function () {
+        var id = $("#idDoProdutoSelecionado").val();
+        var status = "Ativo";
+
+        alteraStatusProduto(id, status);
+    });
 });

@@ -41,6 +41,7 @@ class ControllerRoutes extends ControllerAbstract
         $this->addRoute("pesquisa-produtos", "app\\controller\\http\\API\\ProdutoController", "pesquisaProdutos", false, false, null);
         $this->addRoute("le-produto-por-id", "app\\controller\\http\\API\\ProdutoController", "lePorId", false, false, null);
         $this->addRoute("altera-produto", "app\\controller\\http\\API\\ProdutoController", "altera", true, false, null);
+        $this->addRoute("altera-status-produto", "app\\controller\\http\\API\\ProdutoController", "alteraStatus", true, false, null);
         $this->addRoute("qtd-acesso-produtos", "app\\controller\\http\\API\\ProdutoController", "quantidadeDeAcessoAProdutos", true, false, null);
         $this->addRoute("produtos-mais-acessados", "app\\controller\\http\\API\\ProdutoController", "listaProdutosMaisAcessados", true, false, null);
         $this->addRoute("visualizar-produto", "app\\controller\\http\\API\\ProdutoController", "visualizarProduto", false, false, null);

@@ -90,6 +90,15 @@ class ProdutoService extends ServiceAbstract
         return $this->produtoRepository->altera($produto);
     }
 
+    public function alteraStatus(int $id, string $status): bool
+    {
+        $produto = $this->lePorId($id);
+
+        $produto->setStatus($status);
+
+        return $this->produtoRepository->altera($produto);
+    }
+
     public function lePorNome(string $nome): ?Produto
     {
         return $this->produtoRepository->lePorNome($nome);

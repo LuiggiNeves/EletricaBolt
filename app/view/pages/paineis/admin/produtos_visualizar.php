@@ -24,7 +24,7 @@ include('../../layout/usuario/auth.php');
     ?>
 
     <div class="container-fluid mt-3">
-        <div class="row justify-content-center">
+        <div class="row">
             <div class="col-sm-12 col-md-12 my-1">
                 <div class="row">
                     <div class="col-sm-12 col-md-3 my-3">
@@ -40,12 +40,16 @@ include('../../layout/usuario/auth.php');
                 </span>
             </div>
 
+            <div class="col-sm-12 col-md-12 alert alert-danger mb-3" id="alertProdutoInativo" style="display: none;">
+                <span>O produto está inativo!</span>
+            </div>
+
             <div class="col-sm-12 col-md-12 rounded bg-white border mb-3">
                 <div class="row p-4">
                     <div class="col-sm-12 col-md-12">
                         <h3>
                             <i class="bi bi-box"></i>
-                            Produtos
+                            Produto
                         </h3>
                     </div>
 
@@ -82,6 +86,7 @@ include('../../layout/usuario/auth.php');
                         </div>
 
                         <input type="hidden" id="idDoProdutoSelecionado" />
+                        <input type="hidden" id="statusDoProdutoSelecionado" />
                     </div>
                 </div>
             </div>
@@ -128,6 +133,29 @@ include('../../layout/usuario/auth.php');
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-12 rounded bg-white border mb-3">
+                <div class="row p-4">
+                    <div class="col-sm-12 col-md-12">
+                        <h3>
+                            <i class="bi bi-gear"></i>
+                            Configurações
+                        </h3>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-sm-12 col-md-3">
+                            <button class="btn btn-sm btn-danger w-100" id="inativarProduto">
+                                Inativar produto
+                            </button>
+
+                            <button class="btn btn-sm btn-success w-100" id="ativarProduto">
+                                Ativar produto
+                            </button>
                         </div>
                     </div>
                 </div>
