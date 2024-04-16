@@ -554,7 +554,18 @@ $(document).ready(function () {
         var id = $("#idDoProdutoSelecionado").val();
         var status = "Inativo";
 
-        alteraStatusProduto(id, status);
+        swal({
+            title: "Atenção!",
+            text: "Deseja inativar o produto? Ao inativá-lo, os clientes apenas não terão mais acesso ao produto.",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true
+        })
+            .then((btnOkWasPressed) => {
+                if (btnOkWasPressed) {
+                    alteraStatusProduto(id, status);
+                }
+            });
     });
 
     $("#ativarProduto").on("click", function () {
