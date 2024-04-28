@@ -35,7 +35,12 @@ function adicionarAoCarrinhoPre() {
         return;
     }
 
-    adicionarAoCarrinho(produto["nome"], produto["codigo_referencia"])
+    let imagem = path_aplicacao + "app/view/images/produto.png";
+    if (produto["imagens"][0] != undefined) {
+        imagem = path_aplicacao + "/app/files/entities/" + produto["imagens"][0]["imagem_path"];
+    }
+
+    adicionarAoCarrinho(produto["id"], produto["nome"], produto["preco"], imagem, 1, produto["codigo_referencia"])
 }
 
 
