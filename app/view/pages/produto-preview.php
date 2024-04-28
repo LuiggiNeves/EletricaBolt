@@ -72,7 +72,7 @@ include('layout/ultimaUrlVisitada.php');
     <script src="<?php echo HOST_APP; ?>/app/view/js/inicio_produtos.js?v=<?php echo VERSION; ?>"></script>
 
     <script>
-        const id = $(location).attr('pathname').split("/")[4];
+        const id = $(location).attr('pathname').split("/").pop();
 
         leDadosDoProdutoPorId(id);
         visualizarProduto(id);

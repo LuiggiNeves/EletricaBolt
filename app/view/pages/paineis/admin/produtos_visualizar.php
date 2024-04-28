@@ -178,7 +178,7 @@ include('../../layout/usuario/auth.php');
     <script src="<?php echo HOST_APP; ?>/app/view/js/produtos.js?v=<?php echo VERSION; ?>"></script>
 
     <script>
-        const id = $(location).attr('pathname').split("/")[3];
+        const id = $(location).attr('pathname').split("/").pop();
 
         listarCategorias();
         leProdutoPorId(id);

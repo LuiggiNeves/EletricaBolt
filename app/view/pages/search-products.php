@@ -56,7 +56,7 @@ include('layout/cliente/head.php');
 
     <script>
         $(document).ready(function() {
-            const conteudo_url = $(location).attr('pathname').split("/")[4];
+            const conteudo_url = $(location).attr('pathname').split("/").pop();
             const valorFormatado = decodeURIComponent(conteudo_url);
 
             $("#texto_valor_da_pesquisa").text(
