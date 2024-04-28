@@ -35,7 +35,7 @@
                         <div class="menu-logo">
                             <div class="logo">
                                 <div class="img-logo">
-                                    <a href="<?php echo HOST_APP; ?>/app/view/pages/inicio.php"><img src="<?php echo HOST_APP; ?>/app/view/images/bolt-logo-completa-am.png" alt=""></a>
+                                    <a href="<?php echo HOST_APP; ?>/"><img src="<?php echo HOST_APP; ?>/app/view/images/bolt-logo-completa-am.png" alt=""></a>
                                 </div>
                                 <div class="text-logo">
 
