@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="py-2 text-decoration-none col-sm-3 col-md-2 mx-1 text-center my-1">
                     <div class="row justify-content-center">
-                        <div class="col-sm-12 col-md-4">
+                        <div class="col-4">
                             <img src="<?php echo HOST_APP; ?>/app/view/images/bolt-192x192.png" class="w-100">
                         </div>
                     </div>
